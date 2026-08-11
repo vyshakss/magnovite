@@ -69,6 +69,14 @@ export function CosmicScene() {
     const rands = new Float32Array(COUNT * 4);
     const dust = new Float32Array(COUNT * 3);
 
+    const gauss = () => (Math.random() + Math.random() + Math.random() - 1.5) / 1.5;
+    const clusters: [number, number, number][] = [];
+    for (let i = 0; i < 90; i++) {
+      const rr = Math.pow(Math.random(), 0.7) * 78;
+      const a = Math.random() * Math.PI * 2;
+      clusters.push([Math.cos(a) * rr, Math.sin(a) * rr * 0.7, Math.random() * 420]);
+    }
+
     for (let i = 0; i < COUNT; i++) {
       // filamentary (non-uniform) direction so the blast looks astronomical
       const u = Math.random() * 2 - 1;
@@ -84,12 +92,12 @@ export function CosmicScene() {
       rands[i * 4 + 2] = Math.random();
       rands[i * 4 + 3] = Math.random();
 
-      // dust volume: a wide, deep tunnel of cosmic matter
-      const rr = Math.pow(Math.random(), 0.55) * 95;
-      const a = Math.random() * Math.PI * 2;
-      dust[i * 3] = Math.cos(a) * rr;
-      dust[i * 3 + 1] = Math.sin(a) * rr * 0.72;
-      dust[i * 3 + 2] = Math.random() * 420;
+      // dust volume: clustered filaments of cosmic matter, not a uniform starfield
+      const c = clusters[(Math.random() * clusters.length) | 0]!;
+      const spread = 6 + Math.pow(Math.random(), 2) * 34;
+      dust[i * 3] = c[0] + gauss() * spread;
+      dust[i * 3 + 1] = c[1] + gauss() * spread * 0.7;
+      dust[i * 3 + 2] = (c[2] + gauss() * 55 + 420) % 420;
     }
 
     const geo = new THREE.BufferGeometry();
@@ -221,11 +229,11 @@ export function CosmicScene() {
       const blast1 = bump(progress, 0.3, 0.42);
       const blast2 = bump(progress, 0.56, 0.68);
       glowU.uIntensity.value =
-        preBlast * (0.5 + 0.7 * pulse + 2.6 * smoothstep(0.05, 0.3, progress)) +
-        blast1 * 5.5 +
-        blast2 * 3.2;
+        preBlast * (0.45 + 0.6 * pulse + 1.8 * smoothstep(0.05, 0.3, progress)) +
+        bump(progress, 0.32, 0.40) * 3.0 +
+        bump(progress, 0.58, 0.66) * 1.8;
       glowU.uCore.value = preBlast * 1.4 + blast1 * 2.2 + blast2 * 1.2;
-      const glowScale = 14 + 60 * smoothstep(0.1, 0.34, progress) + 120 * blast1;
+      const glowScale = 12 + 40 * smoothstep(0.1, 0.34, progress) + 90 * blast1;
       glow.scale.setScalar(glowScale);
 
       const ringP = Math.max(
@@ -257,12 +265,12 @@ export function CosmicScene() {
       root.style.setProperty("--cine", progress.toFixed(4));
       root.style.setProperty(
         "--flash",
-        (blast1 * 0.95 + blast2 * 0.5).toFixed(4),
+        (bump(progress, 0.31, 0.39) * 0.8 + bump(progress, 0.575, 0.655) * 0.4).toFixed(4),
       );
       root.style.setProperty(
         "--reveal",
         (
-          smoothstep(0.4, 0.47, progress) * (1 - smoothstep(0.56, 0.62, progress))
+          smoothstep(0.39, 0.45, progress) * (1 - smoothstep(0.55, 0.60, progress))
         ).toFixed(4),
       );
       root.style.setProperty(

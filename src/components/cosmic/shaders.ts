@@ -48,6 +48,7 @@ void main() {
   float dm = smoothstep(0.80, 1.0, p);
   vec3 dust = aDust;
   float span = 420.0;
+  dust.xy *= 1.0 + 0.25 * sin(aRand.w * 20.0);
   dust.z = -mod(aDust.z + uTravel * 26.0, span) + 12.0;
   dust.x += 1.6 * sin(uTime * 0.09 + aRand.w * 6.28);
   dust.y += 1.6 * cos(uTime * 0.07 + aRand.x * 6.28);
@@ -58,11 +59,13 @@ void main() {
   gl_Position = projectionMatrix * mv;
 
   // ---- appearance -----------------------------------------------------------
-  float butterfly = smoothstep(0.58, 0.70, p) * (1.0 - 0.85 * smoothstep(0.82, 0.97, p));
+  // a large subset of the swarm literally becomes the Magnovite butterfly
+  float isBf = step(0.42, aRand.z);
+  float butterfly = isBf * smoothstep(0.56, 0.68, p) * (1.0 - 0.9 * smoothstep(0.84, 0.99, p));
   vMix = butterfly;
 
   float sizeBase = uSize * (0.45 + 1.35 * aRand.y);
-  sizeBase *= mix(1.0, 3.4, butterfly);
+  sizeBase *= mix(1.0, 7.0 + 6.0 * aRand.y, butterfly);
   sizeBase *= mix(1.0, 1.25, dm);
   gl_PointSize = sizeBase * uDpr * (260.0 / max(-mv.z, 0.4));
   gl_PointSize = min(gl_PointSize, 190.0 * uDpr);
@@ -71,7 +74,7 @@ void main() {
   float core = 1.0 - smoothstep(0.0, 0.34, p);
   float a = mix(0.30, 1.0, core * (0.55 + 0.45 * pulse));
   a = max(a, 0.16 + 0.55 * e1 * (1.0 - e2 * 0.35));
-  a = mix(a, 0.10 + 0.34 * aRand.y, dm);
+  a = mix(a, (0.07 + 0.5 * pow(aRand.y, 2.2)) * (0.5 + 0.9 * aRand.z), dm);
 
   // fade the very close and very far dust
   float depthFade = smoothstep(-span, -span * 0.72, mv.z) * (1.0 - smoothstep(-6.0, 4.0, mv.z));
