@@ -31,7 +31,7 @@ void main() {
 
   float r = coreR
     + e1 * (2.0 + 7.0 * aRand.x)
-    + e2 * (7.0 + 22.0 * aRand.z);
+    + e2 * (14.0 + 46.0 * aRand.z);
 
   vec3 expl = aDir * r;
 
@@ -65,7 +65,7 @@ void main() {
   vMix = butterfly;
 
   float sizeBase = uSize * (0.45 + 1.35 * aRand.y);
-  sizeBase *= mix(1.0, 7.0 + 6.0 * aRand.y, butterfly);
+  sizeBase *= mix(1.0, 4.5 + 4.5 * aRand.y, butterfly);
   sizeBase *= mix(1.0, 1.25, dm);
   gl_PointSize = sizeBase * uDpr * (260.0 / max(-mv.z, 0.4));
   gl_PointSize = min(gl_PointSize, 190.0 * uDpr);
@@ -74,11 +74,12 @@ void main() {
   float core = 1.0 - smoothstep(0.0, 0.34, p);
   float a = mix(0.30, 1.0, core * (0.55 + 0.45 * pulse));
   a = max(a, 0.16 + 0.55 * e1 * (1.0 - e2 * 0.35));
-  a = mix(a, (0.07 + 0.5 * pow(aRand.y, 2.2)) * (0.5 + 0.9 * aRand.z), dm);
+  a = mix(a, (0.05 + 0.5 * pow(aRand.y, 2.2)) * (0.5 + 0.9 * aRand.z), dm);
 
   // fade the very close and very far dust
   float depthFade = smoothstep(-span, -span * 0.72, mv.z) * (1.0 - smoothstep(-6.0, 4.0, mv.z));
   a *= mix(1.0, depthFade, dm);
+  a *= mix(1.0, 0.45, butterfly);
   vAlpha = clamp(a, 0.0, 1.0);
 
   vRot = aRand.w * 6.2831 + uTime * (aRand.z - 0.5) * 1.4;
