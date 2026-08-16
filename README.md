@@ -1,5 +1,16 @@
 # Cosmic Reveal
 
+## Runtime Requirements
+
+- Node.js `>=20.19.0` (recommended: Node 20 LTS or newer)
+
+If you use `nvm`, run:
+
+```bash
+nvm install
+nvm use
+```
+
 Redesign the MAGNOVITE 2026 website as a cinematic, scroll-driven cosmic experience.
 
 The existing project is a Vite + TypeScript website. Keep the existing content, pages, images, navigation, countdown, event information, Shan Rahman section, competitions, about section, etc., but completely rethink the visual experience and transitions.
@@ -24,17 +35,17 @@ The very first page must be a completely immersive full-screen scene.
 
 There should initially be:
 
- Almost completely black space
+Almost completely black space
 
- A small, extremely bright pulsar/star in the center
+A small, extremely bright pulsar/star in the center
 
- Subtle atmospheric glow
+Subtle atmospheric glow
 
- Very faint particles around it
+Very faint particles around it
 
- No conventional website hero content initially
+No conventional website hero content initially
 
- Header/navigation should either be hidden initially or extremely subtle
+Header/navigation should either be hidden initially or extremely subtle
 
 The pulsar should feel dense, energetic and physical, not like a simple glowing CSS circle.
 
@@ -52,25 +63,25 @@ The pulsar suddenly erupts outward.
 
 Create:
 
- Radial energy
+Radial energy
 
- Thousands of particles
+Thousands of particles
 
- Shockwave
+Shockwave
 
- Dust
+Dust
 
- Gas
+Gas
 
- Bright central flash
+Bright central flash
 
- Expanding debris
+Expanding debris
 
- Volumetric-looking particles
+Volumetric-looking particles
 
- Motion blur
+Motion blur
 
- Depth
+Depth
 
 The explosion should feel similar in energy and cinematic timing to the reference video.
 
@@ -100,13 +111,13 @@ The butterfly must be the exact same shape/design as the butterfly currently pos
 
 Do NOT:
 
- generate generic butterfly silhouettes
+generate generic butterfly silhouettes
 
- use old MAGNOVITE butterfly versions
+use old MAGNOVITE butterfly versions
 
- substitute another butterfly icon
+substitute another butterfly icon
 
- use random SVG butterflies
+use random SVG butterflies
 
 Extract/use the actual existing logo asset or a clean vector version of that exact logo.
 
@@ -130,23 +141,23 @@ Each particle should use the actual new MAGNOVITE butterfly shape.
 
 The butterflies should:
 
- Start inside / around the explosion
+Start inside / around the explosion
 
- Expand outward
+Expand outward
 
- Have different scales
+Have different scales
 
- Have different depths
+Have different depths
 
- Move at different velocities
+Move at different velocities
 
- Have subtle rotation
+Have subtle rotation
 
- Have slight natural fluttering/orientation changes
+Have slight natural fluttering/orientation changes
 
- Produce a dense volumetric swarm
+Produce a dense volumetric swarm
 
- Move in 3D space rather than simply across a 2D plane
+Move in 3D space rather than simply across a 2D plane
 
 The animation should contain hundreds of thousands / millions of visual butterfly particles where performance permits.
 
@@ -154,17 +165,17 @@ Do not literally create millions of independent DOM elements.
 
 Use:
 
- Three.js
+Three.js
 
- Instanced rendering
+Instanced rendering
 
- GPU particles
+GPU particles
 
- shaders
+shaders
 
- sprite textures
+sprite textures
 
- WebGL
+WebGL
 
 or another GPU-efficient approach.
 
@@ -200,21 +211,21 @@ The user should feel like they are continuously travelling through the same cosm
 
 The dust cloud should:
 
- Slowly move
+Slowly move
 
- Have depth
+Have depth
 
- Have subtle parallax
+Have subtle parallax
 
- Have extremely slow particle drift
+Have extremely slow particle drift
 
- Maintain its original color palette
+Maintain its original color palette
 
- Maintain its density
+Maintain its density
 
- Never suddenly change into another color
+Never suddenly change into another color
 
- Never reset between sections
+Never reset between sections
 
 COLOR CONSISTENCY
 
@@ -222,15 +233,15 @@ Preserve the exact visual character established during the butterfly/dust transf
 
 The cloud should remain predominantly:
 
- white
+white
 
- silver
+silver
 
- soft grey
+soft grey
 
- subtle warm highlights where naturally present
+subtle warm highlights where naturally present
 
- black surrounding space
+black surrounding space
 
 Do not introduce random blue/purple/green nebula colors.
 
@@ -250,21 +261,21 @@ the camera is continuously travelling deeper into the same cosmic dust cloud.
 
 As the user scrolls:
 
- Camera slowly moves forward
+Camera slowly moves forward
 
- Dust particles pass around the viewer
+Dust particles pass around the viewer
 
- Depth increases
+Depth increases
 
- Particle parallax becomes visible
+Particle parallax becomes visible
 
- Some particles move toward the camera
+Some particles move toward the camera
 
- Others remain far away
+Others remain far away
 
- The camera gently shifts horizontally/vertically
+The camera gently shifts horizontally/vertically
 
- The cloud remains the same physical environment
+The cloud remains the same physical environment
 
 The movement must be smooth and cinematic.
 
@@ -274,13 +285,13 @@ Prefer:
 
 requestAnimationFrame
 
- interpolation / lerping
+interpolation / lerping
 
- scroll velocity
+scroll velocity
 
- smooth damping
+smooth damping
 
- Three.js camera movement
+Three.js camera movement
 
 rather than abrupt CSS section transitions.
 
@@ -316,17 +327,17 @@ Section 5
 
 Keep the existing categories:
 
- Coding & AI
+Coding & AI
 
- Robotics & Tech
+Robotics & Tech
 
- Management & Pitch
+Management & Pitch
 
- Music & Vocal
+Music & Vocal
 
- Dance & Theater
+Dance & Theater
 
- Gaming & Design
+Gaming & Design
 
 Keep the existing statistics and event information.
 
@@ -334,13 +345,13 @@ Section 6+
 
 Continue with the existing pages/content such as:
 
- About
+About
 
- Events
+Events
 
- Gallery
+Gallery
 
- Other existing website sections
+Other existing website sections
 
 Do not remove existing content merely to implement the animation.
 
@@ -350,17 +361,17 @@ The existing black cards are good, but make them feel more integrated into the e
 
 Use:
 
- translucent dark glass
+translucent dark glass
 
- subtle blur
+subtle blur
 
- extremely thin borders
+extremely thin borders
 
- soft white highlights
+soft white highlights
 
- subtle shadows
+subtle shadows
 
- very restrained gradients
+very restrained gradients
 
 Do NOT make them excessively glossy or colorful.
 
@@ -404,11 +415,11 @@ and feel that they are travelling through one continuous cosmic scene.
 
 Keep the existing header:
 
- New MAGNOVITE butterfly logo
+New MAGNOVITE butterfly logo
 
- CHRIST University logo
+CHRIST University logo
 
- hamburger menu
+hamburger menu
 
 However, during the opening cinematic:
 
@@ -458,19 +469,19 @@ Use GPU rendering.
 
 Prefer:
 
- Three.js
+Three.js
 
- WebGL
+WebGL
 
- InstancedMesh
+InstancedMesh
 
- custom shaders
+custom shaders
 
- particle buffers
+particle buffers
 
- texture atlases
+texture atlases
 
- GPU interpolation
+GPU interpolation
 
 Add adaptive quality based on device performance.
 
@@ -488,21 +499,21 @@ The website must remain responsive.
 
 Before modifying anything:
 
- Inspect the entire existing project.
+Inspect the entire existing project.
 
- Identify all existing pages.
+Identify all existing pages.
 
- Identify all existing assets.
+Identify all existing assets.
 
- Identify the exact new MAGNOVITE butterfly logo asset.
+Identify the exact new MAGNOVITE butterfly logo asset.
 
- Identify the existing particle implementation.
+Identify the existing particle implementation.
 
- Identify the existing countdown.
+Identify the existing countdown.
 
- Identify the existing page navigation.
+Identify the existing page navigation.
 
- Identify the existing images used in each section.
+Identify the existing images used in each section.
 
 Then integrate the cinematic system rather than blindly replacing everything.
 
@@ -558,37 +569,27 @@ NASA-scale cosmic visuals + premium festival branding + Apple-style restraint + 
 
 Avoid:
 
- generic star backgrounds
+generic star backgrounds
 
- random glowing gradients
+random glowing gradients
 
- generic butterfly icons
+generic butterfly icons
 
- excessive neon
+excessive neon
 
- excessive animations on cards
+excessive animations on cards
 
- abrupt section transitions
+abrupt section transitions
 
- different backgrounds for different sections
+different backgrounds for different sections
 
- cheap particle effects
+cheap particle effects
 
- 2D-looking explosions
+2D-looking explosions
 
 The pulsar → explosion → butterfly → dust → camera travel sequence should be the defining feature of the entire website.
 
 these images are the original website, i want you to change them
-
-This project was built with [Lovable](https://lovable.dev).
-
-## Build with Lovable
-
-Continue developing this project in the [Lovable editor](https://lovable.dev/projects/5fd06256-375d-4306-a0bf-2f2367fc1f18).
-
-- **Ship faster**: describe what you want to build and Lovable handles the code.
-- **Stay in sync**: every change made in Lovable is committed straight to this repository.
-- **Full ownership**: this code is yours. Push to `main` on GitHub and your changes sync back into Lovable, ready for your next prompt.
 
 ## Development
 
