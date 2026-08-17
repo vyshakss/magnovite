@@ -1,0 +1,348 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Gallery & Media — MAGNOVITE 2026</title>
+    <meta
+      name="description"
+      content="Captured moments, stage performances, tech showcases, and concerts from sixteen editions of Magnovite."
+    />
+    <link rel="canonical" href="gallery.html" />
+    <meta property="og:title" content="Gallery & Media — MAGNOVITE 2026" />
+    <meta
+      property="og:description"
+      content="Captured moments, stage performances, tech showcases, and concerts from sixteen editions of Magnovite."
+    />
+    <meta property="og:type" content="website" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <link rel="icon" href="favicon.ico" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700&family=DM+Sans:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/styles.css" />
+    <link rel="stylesheet" href="css/gallery.css" />
+  </head>
+  <body class="page-solid">
+    <div class="ambient"></div>
+    <div id="site-header"></div>
+
+    <!-- Gallery Hero -->
+    <div class="page-top">
+      <div class="container container-sm">
+        <span class="badge-indigo">
+          <svg class="icon icon-sm" viewBox="0 0 24 24">
+            <path d="M12 2l1.5 4.5L18 8l-4.5 1.5L12 14l-1.5-4.5L6 8l4.5-1.5L12 2z" />
+          </svg>
+          16th Edition Memories
+        </span>
+        <h1 class="font-display h1 mt-3">Visual Showcase</h1>
+        <p class="lead mt-3" style="max-width: 40rem; margin-inline: auto">
+          Relive the lights, sound, and electrifying energy captured across national battlegrounds,
+          concerts, and campus celebrations.
+        </p>
+
+        <div class="gallery-filters" data-filters>
+          <button class="glass-pill is-active" data-filter="all">All Photos</button>
+          <button class="glass-pill" data-filter="cultural">Cultural & Stage</button>
+          <button class="glass-pill" data-filter="music">Music & Bands</button>
+          <button class="glass-pill" data-filter="dj">DJ Nights</button>
+          <button class="glass-pill" data-filter="campus">Campus Life</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Bento Grid -->
+    <section class="section" style="padding-top: 1rem">
+      <div class="container container-lg">
+        <div class="bento-grid" data-bento-grid></div>
+      </div>
+    </section>
+
+    <!-- Lightbox -->
+    <div class="lightbox" data-lightbox>
+      <div class="lightbox-inner">
+        <button class="round-btn" data-lightbox-close style="top: 0.5rem; right: 0.5rem">
+          <svg class="icon" viewBox="0 0 24 24"><path d="M18 6 6 18M6 6l12 12" /></svg>
+        </button>
+        <button
+          class="round-btn"
+          data-lightbox-prev
+          style="left: 0.5rem; top: 50%; transform: translateY(-50%)"
+        >
+          <svg class="icon" viewBox="0 0 24 24"><path d="m15 18-6-6 6-6" /></svg>
+        </button>
+        <button
+          class="round-btn"
+          data-lightbox-next
+          style="right: 0.5rem; top: 50%; transform: translateY(-50%)"
+        >
+          <svg class="icon" viewBox="0 0 24 24"><path d="m9 18 6-6-6-6" /></svg>
+        </button>
+        <img data-lightbox-img src="" alt="" />
+        <div class="mt-3 center">
+          <span class="glass-pill" data-lightbox-badge style="font-size: 0.7rem"></span>
+          <h2 class="font-display h2 mt-2" data-lightbox-title></h2>
+        </div>
+      </div>
+    </div>
+
+    <footer class="gallery-footnote">MAGNOVITE 2026 · CHRIST UNIVERSITY KENGERI CAMPUS</footer>
+
+    <div id="site-footer"></div>
+
+    <script type="module">
+      import { mountChrome } from "./js/chrome.js";
+      mountChrome({ solidHeader: true });
+
+      const GALLERY_ITEMS = [
+        {
+          id: "1",
+          src: "images/Gallery/GroupDance.jpg",
+          title: "Mega Group Dance Showcase",
+          category: "cultural",
+          badge: "Cultural",
+          aspect: "large",
+        },
+        {
+          id: "2",
+          src: "images/Gallery/FashionShow.jpg",
+          title: "Couture & Architecture Walk",
+          category: "cultural",
+          badge: "Fashion",
+          aspect: "tall",
+        },
+        {
+          id: "3",
+          src: "images/Gallery/PrettyLady.jpg",
+          title: "Theatrical Ramp Walk",
+          category: "cultural",
+          badge: "Fashion",
+          aspect: "square",
+        },
+        {
+          id: "4",
+          src: "images/Gallery/StreetDance.jpg",
+          title: "Street Cypher Battle",
+          category: "cultural",
+          badge: "Street Dance",
+          aspect: "wide",
+        },
+        {
+          id: "5",
+          src: "images/Gallery/StreetPlay.jpg",
+          title: "Nukkad Natak Street Play",
+          category: "cultural",
+          badge: "Drama",
+          aspect: "square",
+        },
+        {
+          id: "6",
+          src: "images/Gallery/DJnight.jpg",
+          title: "Main Stage EDM DJ Night",
+          category: "dj",
+          badge: "Concert",
+          aspect: "wide",
+        },
+        {
+          id: "7",
+          src: "images/Gallery/JinBro.jpg",
+          title: "Inaugural Lamp Lighting Ceremony",
+          category: "campus",
+          badge: "Campus Life",
+          aspect: "square",
+        },
+        {
+          id: "8",
+          src: "images/Gallery/DJRubz.jpg",
+          title: "DJ Rubz Headlining Set",
+          category: "dj",
+          badge: "Concert",
+          aspect: "tall",
+        },
+        {
+          id: "9",
+          src: "images/Gallery/AnotherDance.jpg",
+          title: "Futuristic Themed Dance",
+          category: "cultural",
+          badge: "Cultural",
+          aspect: "square",
+        },
+        {
+          id: "10",
+          src: "images/Gallery/imsolonely.jpg",
+          title: "Contemporary Solo Act",
+          category: "cultural",
+          badge: "Solo",
+          aspect: "square",
+        },
+        {
+          id: "11",
+          src: "images/Gallery/BattleOfBands.jpg",
+          title: "Battle of the Bands Grand Finale",
+          category: "music",
+          badge: "Live Bands",
+          aspect: "large",
+        },
+        {
+          id: "12",
+          src: "images/Gallery/brightcoffee.jpg",
+          title: "Masala Coffee Live in Concert",
+          category: "music",
+          badge: "Pro Show",
+          aspect: "wide",
+        },
+        {
+          id: "13",
+          src: "images/Gallery/masalacoffeelead.jpg",
+          title: "Acoustic Lead Vocal Solo",
+          category: "music",
+          badge: "Music",
+          aspect: "tall",
+        },
+        {
+          id: "14",
+          src: "images/Gallery/masalacoffeepremass.jpg",
+          title: "Band Soundcheck & Backstage",
+          category: "music",
+          badge: "Backstage",
+          aspect: "square",
+        },
+        {
+          id: "15",
+          src: "images/Gallery/masscoffee.jpg",
+          title: "Auditorium Crowd Wave",
+          category: "music",
+          badge: "Crowd",
+          aspect: "wide",
+        },
+        {
+          id: "16",
+          src: "images/Gallery/masalacoffeeviolin.jpg",
+          title: "Violin Solo Performance",
+          category: "music",
+          badge: "Instruments",
+          aspect: "square",
+        },
+        {
+          id: "17",
+          src: "images/Gallery/deadman.jpg",
+          title: "Avant-Garde Runway Act",
+          category: "cultural",
+          badge: "Fashion",
+          aspect: "square",
+        },
+        {
+          id: "18",
+          src: "images/Gallery/kathak.jpg",
+          title: "Classical Kathak Recital",
+          category: "cultural",
+          badge: "Classical",
+          aspect: "tall",
+        },
+      ];
+
+      const grid = document.querySelector("[data-bento-grid]");
+      const filterBtns = [...document.querySelectorAll("[data-filter]")];
+      const lightbox = document.querySelector("[data-lightbox]");
+      const lightboxImg = document.querySelector("[data-lightbox-img]");
+      const lightboxTitle = document.querySelector("[data-lightbox-title]");
+      const lightboxBadge = document.querySelector("[data-lightbox-badge]");
+
+      let activeFilter = "all";
+      let filteredItems = GALLERY_ITEMS;
+      let modalIndex = null;
+
+      function render() {
+        filteredItems =
+          activeFilter === "all"
+            ? GALLERY_ITEMS
+            : GALLERY_ITEMS.filter((item) => item.category === activeFilter);
+
+        grid.innerHTML = filteredItems
+          .map(
+            (item, idx) => `
+          <div class="bento-item aspect-${item.aspect || "square"}" data-idx="${idx}">
+            <img src="${item.src}" alt="${item.title}" loading="lazy" onerror="this.src='images/shaanrahman.jpg'" />
+            <div class="bento-overlay"></div>
+            <div class="bento-content">
+              <div class="bento-top">
+                <span class="glass-pill" style="font-size: 0.6rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: #a5b4fc;">${item.badge}</span>
+                <span class="bento-zoom">
+                  <svg class="icon icon-sm" viewBox="0 0 24 24"><circle cx="11" cy="11" r="7" /><path d="m21 21-4.3-4.3M11 8v6M8 11h6" /></svg>
+                </span>
+              </div>
+              <div>
+                <h3 class="bento-title">${item.title}</h3>
+                <p class="bento-sub">CHRIST University Kengeri Campus</p>
+              </div>
+            </div>
+          </div>`,
+          )
+          .join("");
+
+        grid.querySelectorAll("[data-idx]").forEach((el) => {
+          el.addEventListener("click", () => openLightbox(Number(el.dataset.idx)));
+        });
+      }
+
+      filterBtns.forEach((btn) => {
+        btn.addEventListener("click", () => {
+          activeFilter = btn.dataset.filter;
+          filterBtns.forEach((b) => b.classList.toggle("is-active", b === btn));
+          render();
+        });
+      });
+
+      function openLightbox(idx) {
+        modalIndex = idx;
+        updateLightbox();
+        lightbox.classList.add("is-open");
+      }
+
+      function closeLightbox() {
+        modalIndex = null;
+        lightbox.classList.remove("is-open");
+      }
+
+      function updateLightbox() {
+        if (modalIndex === null) return;
+        const item = filteredItems[modalIndex];
+        lightboxImg.src = item.src;
+        lightboxImg.alt = item.title;
+        lightboxTitle.textContent = item.title;
+        lightboxBadge.textContent = item.badge;
+      }
+
+      function prev() {
+        if (modalIndex === null) return;
+        modalIndex = (modalIndex - 1 + filteredItems.length) % filteredItems.length;
+        updateLightbox();
+      }
+
+      function next() {
+        if (modalIndex === null) return;
+        modalIndex = (modalIndex + 1) % filteredItems.length;
+        updateLightbox();
+      }
+
+      document.querySelector("[data-lightbox-close]").addEventListener("click", closeLightbox);
+      document.querySelector("[data-lightbox-prev]").addEventListener("click", prev);
+      document.querySelector("[data-lightbox-next]").addEventListener("click", next);
+      lightbox.addEventListener("click", (e) => {
+        if (e.target === lightbox) closeLightbox();
+      });
+      document.addEventListener("keydown", (e) => {
+        if (!lightbox.classList.contains("is-open")) return;
+        if (e.key === "Escape") closeLightbox();
+        if (e.key === "ArrowLeft") prev();
+        if (e.key === "ArrowRight") next();
+      });
+
+      render();
+    </script>
+  </body>
+</html>
