@@ -268,12 +268,7 @@
 .prize-card {
   border-radius: 1rem;
   border: 1px solid rgba(99, 102, 241, 0.35);
-  background: linear-gradient(
-    135deg,
-    rgba(79, 70, 229, 0.2),
-    rgba(124, 58, 237, 0.1),
-    transparent
-  );
+  background: linear-gradient(135deg, rgba(79, 70, 229, 0.2), rgba(124, 58, 237, 0.1), transparent);
   padding: 1.5rem;
 }
 
