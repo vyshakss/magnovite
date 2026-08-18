@@ -282,10 +282,14 @@ export function useCosmicScene(hostRef: React.RefObject<HTMLDivElement | null>) 
               `
               #include <fog_vertex>
               
+              // Hide particles completely during the initial pulsing core phase (p < 0.2)
+              // so they don't form a glitchy aliased ball.
+              float visibility = smoothstep(0.15, 0.25, p);
+              
               // Slightly scale up particles during the blast and scatter phase
               // so they are highly visible as they fly inward.
               float blastScale = mix(3.0, 1.0, smoothstep(0.85, 1.0, p));
-              gl_PointSize *= blastScale;
+              gl_PointSize *= blastScale * visibility;
               `
             );
           };
@@ -365,7 +369,7 @@ export function useCosmicScene(hostRef: React.RefObject<HTMLDivElement | null>) 
 
     function renderFrame() {
       const now = performance.now();
-      const deltaSeconds = (now - lastFrameTime) / 1000;
+      const deltaSeconds = Math.min((now - lastFrameTime) / 1000, 0.1); // Cap to prevent massive jumps when model parses
       lastFrameTime = now;
 
       ambientSpin += deltaSeconds * 0.12;
@@ -415,10 +419,6 @@ export function useCosmicScene(hostRef: React.RefObject<HTMLDivElement | null>) 
       const fade = 1 - smoothstep(0.82, 0.98, p);
       glow.visible = glowU.uIntensity.value * fade > 0.002;
       glowU.uIntensity.value *= fade;
-
-      // Make the glow and ring always perfectly face the camera (billboarding)
-      glow.quaternion.copy(camera.quaternion);
-      ring.quaternion.copy(camera.quaternion);
 
       // Fade in the UI (MAGNOVITE text, countdown) after the explosion peaks
       const uiFade = smoothstep(0.65, 0.95, p).toFixed(4);
@@ -493,6 +493,11 @@ export function useCosmicScene(hostRef: React.RefObject<HTMLDivElement | null>) 
 
       camera.position.copy(interactiveCamPos);
       camera.lookAt(currentCamTarget);
+
+      // Make the glow and ring always perfectly face the camera (billboarding)
+      // This MUST happen after camera.lookAt so there is no 1-frame lag jitter
+      glow.quaternion.copy(camera.quaternion);
+      ring.quaternion.copy(camera.quaternion);
 
       if (isMobileDevice) {
         renderer.render(scene, camera);

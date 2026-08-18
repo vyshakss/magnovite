@@ -34,7 +34,7 @@ export function HomePage() {
               style={{ filter: 'drop-shadow(0 0 10px rgba(255,255,255,0.15))' }}
             />
             <h1 className="font-display text-5xl font-bold tracking-widest text-white sm:text-7xl" style={{ textShadow: '0 0 30px rgba(0,0,0,0.8)' }}>
-              MAGNOVITE
+              MAGN<span className="relative inline-block">O<svg className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-4 h-4 sm:w-6 sm:h-6" viewBox="0 0 24 24" fill="white" xmlns="http://www.w3.org/2000/svg" style={{ filter: 'drop-shadow(0 0 4px rgba(255,255,255,0.8))' }}><path d="M12 0C12 11 13 12 24 12C13 12 12 13 12 24C12 13 11 12 0 12C11 12 12 11 12 0Z" /></svg></span>VITE
             </h1>
           </div>
 
