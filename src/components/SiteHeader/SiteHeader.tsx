@@ -115,9 +115,9 @@ export function SiteHeader({ isFixed = false }: SiteHeaderProps) {
         <div
           role="dialog"
           aria-modal="true"
-          className="fixed inset-0 z-50 flex items-center justify-center bg-[#06080e]/98 p-4 sm:p-8 overflow-y-auto"
+          className="fixed inset-0 z-50 flex bg-[#06080e]/98 p-4 sm:p-8 overflow-y-auto"
         >
-          <div className="relative mx-auto w-full max-w-6xl py-8">
+          <div className="relative m-auto w-full max-w-6xl py-8">
             {/* Top Close Bar */}
             <div className="flex items-center justify-between border-b border-white/10 pb-6">
               <div className="flex items-center gap-3">
@@ -172,13 +172,13 @@ export function SiteHeader({ isFixed = false }: SiteHeaderProps) {
 
               {/* MIDDLE COLUMN: 6 Arenas Showcase */}
               <div className="glass-panel p-6">
-                <div className="flex items-center justify-between border-b border-white/8 pb-4">
-                  <div>
-                    <span className="eyebrow text-indigo-400">34+ COMPETITIONS</span>
-                    <h3 className="font-display text-lg font-bold text-white">Event Domains</h3>
+                <div className="flex items-center justify-between gap-2 border-b border-white/8 pb-4">
+                  <div className="min-w-0">
+                    <span className="eyebrow text-indigo-400 truncate block">34+ COMPETITIONS</span>
+                    <h3 className="font-display text-lg font-bold text-white truncate">Event Domains</h3>
                   </div>
-                  <div className="flex gap-2">
-                    <span className="glass-pill px-3 py-1 text-[0.65rem] font-bold text-indigo-300">
+                  <div className="flex shrink-0 gap-2">
+                    <span className="glass-pill whitespace-nowrap px-3 py-1 text-[0.65rem] font-bold text-indigo-300">
                       ₹5L+ PRIZES
                     </span>
                   </div>
