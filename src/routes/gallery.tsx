@@ -265,7 +265,7 @@ export function GalleryPage() {
                     loading="lazy"
                     className="h-full w-full object-cover object-center transition-transform duration-700 group-hover:scale-105"
                     onError={(e) => {
-                      (e.target as HTMLImageElement).src = "/images/shaanrahman.jpg";
+                      (e.target as HTMLImageElement).style.opacity = '0';
                     }}
                   />
 
