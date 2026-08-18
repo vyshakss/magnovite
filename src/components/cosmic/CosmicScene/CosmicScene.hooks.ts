@@ -3,6 +3,96 @@ import * as THREE from "three";
 import { ASSETS } from "./CosmicScene.data";
 import { PARTICLE_FRAG, PARTICLE_VERT, GLOW_FRAG, GLOW_VERT, RING_FRAG } from "../shaders";
 
+/**
+ * Sample opaque pixels from the butterfly logo to create formation target positions.
+ * Returns a Float32Array of (x, y, z) positions in world space.
+ */
+/**
+ * Compute the world-space width for the butterfly formation so it
+ * always fits fully inside the camera frustum at the given depth,
+ * while preserving the image's aspect ratio.
+ *
+ * Camera: FOV=58°, target depth = FORMATION_Z = 60 units away.
+ * The image is landscape (1536×1024 → imageAspect = 1.5).
+ * We fit the image to 88% of the smaller of visible-width or
+ * height-derived width, so it never clips on any screen size.
+ */
+const CAMERA_FOV_DEG = 58;
+const FORMATION_DEPTH = 60; // |z| of the formation plane
+const IMAGE_ASPECT = 1536 / 1024; // width / height of butterfly-pattern.png
+const FILL = 0.88; // fraction of frustum to occupy
+
+function responsiveWorldWidth(): number {
+  const vw = window.innerWidth;
+  const vh = window.innerHeight;
+  const halfFovY = Math.tan((CAMERA_FOV_DEG / 2) * (Math.PI / 180));
+  // Visible half-extents at the formation plane
+  const visibleHalfH = halfFovY * FORMATION_DEPTH;
+  const visibleHalfW = visibleHalfH * (vw / vh);
+  const visibleFullW = visibleHalfW * 2;
+  const visibleFullH = visibleHalfH * 2;
+
+  // Max width so image fits horizontally
+  const maxByW = visibleFullW * FILL;
+  // Max width so image fits vertically (height = worldWidth / IMAGE_ASPECT)
+  const maxByH = visibleFullH * FILL * IMAGE_ASPECT;
+
+  return Math.min(maxByW, maxByH);
+}
+
+function sampleLogoTargets(
+  image: HTMLImageElement,
+  count: number,
+  worldWidth: number,
+  worldZ: number,
+): Float32Array {
+  const canvas = document.createElement("canvas");
+  canvas.width = image.width;
+  canvas.height = image.height;
+  const ctx = canvas.getContext("2d")!;
+  ctx.drawImage(image, 0, 0, image.width, image.height);
+  const data = ctx.getImageData(0, 0, image.width, image.height).data;
+
+  // Collect all opaque pixel coordinates
+  const opaquePixels: [number, number][] = [];
+  for (let y = 0; y < image.height; y++) {
+    for (let x = 0; x < image.width; x++) {
+      const alpha = data[(y * image.width + x) * 4 + 3];
+      if (alpha > 80) opaquePixels.push([x, y]);
+    }
+  }
+
+  const targets = new Float32Array(count * 3);
+  const aspect = image.height / image.width;
+  const halfW = worldWidth / 2;
+  const halfH = halfW * aspect;
+
+  if (opaquePixels.length === 0) {
+    // Fallback: no opaque pixels found, fill with sentinel
+    for (let i = 0; i < count; i++) {
+      targets[i * 3] = 0;
+      targets[i * 3 + 1] = 0;
+      targets[i * 3 + 2] = -9999;
+    }
+    return targets;
+  }
+
+  for (let i = 0; i < count; i++) {
+    // Pick a random opaque pixel and map to world coords
+    const px = opaquePixels[Math.floor(Math.random() * opaquePixels.length)]!;
+    // Add sub-pixel jitter for organic feel
+    const jx = (Math.random() - 0.5) * 1.2;
+    const jy = (Math.random() - 0.5) * 1.2;
+    const nx = (px[0] + jx) / image.width; // 0..1
+    const ny = (px[1] + jy) / image.height; // 0..1
+    targets[i * 3] = (nx - 0.5) * worldWidth; // centered X
+    targets[i * 3 + 1] = -(ny - 0.5) * worldWidth * aspect; // centered Y (flip)
+    targets[i * 3 + 2] = worldZ + (Math.random() - 0.5) * 2; // slight Z scatter
+  }
+
+  return targets;
+}
+
 export function useCosmicScene(hostRef: React.RefObject<HTMLDivElement | null>) {
   useEffect(() => {
     const host = hostRef.current;
@@ -51,6 +141,14 @@ export function useCosmicScene(hostRef: React.RefObject<HTMLDivElement | null>) 
     const rands = new Float32Array(COUNT * 4);
     const dust = new Float32Array(COUNT * 3);
 
+    // Placeholder target positions — will be filled once logo image loads
+    const targetPositions = new Float32Array(COUNT * 3);
+    for (let i = 0; i < COUNT; i++) {
+      targetPositions[i * 3] = 0;
+      targetPositions[i * 3 + 1] = 0;
+      targetPositions[i * 3 + 2] = -9999; // sentinel: "no target"
+    }
+
     const gauss = () => (Math.random() + Math.random() + Math.random() - 1.5) / 1.5;
     const clusters: [number, number, number][] = [];
     for (let i = 0; i < 90; i++) {
@@ -85,6 +183,8 @@ export function useCosmicScene(hostRef: React.RefObject<HTMLDivElement | null>) 
     geo.setAttribute("aDir", new THREE.BufferAttribute(dirs, 3));
     geo.setAttribute("aRand", new THREE.BufferAttribute(rands, 4));
     geo.setAttribute("aDust", new THREE.BufferAttribute(dust, 3));
+    const targetAttr = new THREE.BufferAttribute(targetPositions, 3);
+    geo.setAttribute("aTarget", targetAttr);
     geo.boundingSphere = new THREE.Sphere(new THREE.Vector3(), 1e4);
 
     const tex = new THREE.TextureLoader().load(ASSETS.butterfly, (t) => {
@@ -92,6 +192,22 @@ export function useCosmicScene(hostRef: React.RefObject<HTMLDivElement | null>) 
         uniforms.uAspect.value = t.image.height / t.image.width;
       }
     });
+
+    // Load the starry reference image to use as the formation map
+    let patternImage: HTMLImageElement | null = null;
+    const resampleTargets = () => {
+      if (!patternImage) return;
+      const worldWidth = responsiveWorldWidth();
+      const sampled = sampleLogoTargets(patternImage, COUNT, worldWidth, -60);
+      targetPositions.set(sampled);
+      targetAttr.needsUpdate = true;
+    };
+    const img = new Image();
+    img.src = "/images/butterfly-pattern.png";
+    img.onload = () => {
+      patternImage = img;
+      resampleTargets();
+    };
     tex.colorSpace = THREE.SRGBColorSpace;
     tex.generateMipmaps = true;
     tex.minFilter = THREE.LinearMipmapLinearFilter;
@@ -105,6 +221,9 @@ export function useCosmicScene(hostRef: React.RefObject<HTMLDivElement | null>) 
       uDpr: { value: dpr },
       uTex: { value: tex },
       uAspect: { value: 813 / 1187 },
+      uFormation: { value: 0 },
+      uScrollVel: { value: 0 },
+      uViewScale: { value: Math.min(window.innerWidth, window.innerHeight) / 600 },
     };
 
     const mat = new THREE.ShaderMaterial({
@@ -167,6 +286,15 @@ export function useCosmicScene(hostRef: React.RefObject<HTMLDivElement | null>) 
     let last = performance.now();
     let running = true;
 
+    // Formation control
+    let formationTarget = 0;
+    let formationCurrent = 0;
+
+    // Scroll velocity tracking
+    let lastScrollY = 0;
+    let scrollVelocity = 0;
+    let smoothScrollVel = 0;
+
     // Cache opening length — recalculated only on resize, not every frame
     let cachedOpeningLen = 0;
     const recalcOpeningLength = () => {
@@ -186,6 +314,10 @@ export function useCosmicScene(hostRef: React.RefObject<HTMLDivElement | null>) 
         camera.aspect = window.innerWidth / window.innerHeight;
         camera.updateProjectionMatrix();
         recalcOpeningLength();
+        // Responsive particle scale
+        uniforms.uViewScale.value = Math.min(window.innerWidth, window.innerHeight) / 600;
+        // Resample formation so wings fit the new viewport
+        resampleTargets();
       }, 100);
     };
     window.addEventListener("resize", onResize);
@@ -236,9 +368,32 @@ export function useCosmicScene(hostRef: React.RefObject<HTMLDivElement | null>) 
       smoothScroll += (scrolled - smoothScroll) * Math.min(1, dt * 3.2);
       travel = smoothScroll / window.innerHeight;
 
+      // --- Scroll velocity tracking ---
+      scrollVelocity = Math.abs(scrolled - lastScrollY) / Math.max(dt, 0.001);
+      lastScrollY = scrolled;
+      // Normalise: ~500px/s = full disruption
+      const rawVel = Math.min(1, scrollVelocity / 500);
+      // Smooth it: fast attack, slow decay
+      if (rawVel > smoothScrollVel) {
+        smoothScrollVel += (rawVel - smoothScrollVel) * Math.min(1, dt * 12);
+      } else {
+        smoothScrollVel += (rawVel - smoothScrollVel) * Math.min(1, dt * 4.0); // Recover faster
+      }
+
+      // --- Formation control ---
+      // Once the opening cinematic is complete (deep mode), start formation
+      const dm = smoothstep(0.8, 1.0, progress);
+      // Formation engages when scroll is slow and we're in deep mode
+      formationTarget = dm * (1 - Math.min(1, smoothScrollVel * 0.4)); // Scatter less aggressively
+      // Smooth lerp: slow build-up (2s), faster scatter
+      const formRate = formationTarget > formationCurrent ? dt * 1.5 : dt * 3.0; // Build up faster
+      formationCurrent += (formationTarget - formationCurrent) * Math.min(1, formRate);
+
       uniforms.uTime.value += dt;
       uniforms.uP.value = progress;
       uniforms.uTravel.value = travel;
+      uniforms.uFormation.value = formationCurrent;
+      uniforms.uScrollVel.value = smoothScrollVel;
 
       // Pulsar tension + explosion flashes
       const pulse = 0.5 + 0.5 * Math.sin(uniforms.uTime.value * 2.6);
@@ -272,7 +427,6 @@ export function useCosmicScene(hostRef: React.RefObject<HTMLDivElement | null>) 
       // Camera: settles then travels forward through the cloud
       pointer.x += (pointer.tx - pointer.x) * Math.min(1, dt * 2.0);
       pointer.y += (pointer.ty - pointer.y) * Math.min(1, dt * 2.0);
-      const dm = smoothstep(0.8, 1.0, progress);
       camera.position.x = pointer.x * 1.6 * dm + Math.sin(travel * 0.35) * 3.2 * dm;
       camera.position.y = -pointer.y * 1.1 * dm + Math.cos(travel * 0.27) * 2.4 * dm;
       camera.position.z = 6 * (1 - dm);

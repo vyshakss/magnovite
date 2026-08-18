@@ -10,6 +10,7 @@ precision highp float;
 attribute vec3 aDir;
 attribute vec4 aRand;
 attribute vec3 aDust;
+attribute vec3 aTarget;
 
 // Uniforms
 uniform float uTime;
@@ -17,6 +18,9 @@ uniform float uP;
 uniform float uTravel;
 uniform float uSize;
 uniform float uDpr;
+uniform float uFormation;
+uniform float uScrollVel;
+uniform float uViewScale;  // responsive: 1.0 on desktop, < 1 on phones
 
 // Varyings to Fragment Shader
 varying float vAlpha;
@@ -66,6 +70,26 @@ void main() {
   dustPos.x += 5.0 * sin(uTime * 0.09 + aRand.w * 6.28);
   dustPos.y += 5.0 * cos(uTime * 0.07 + aRand.x * 6.28);
 
+  // ---------------------------------------------------------------------------
+  // 3b. FORMATION — butterflies converge into logo shape
+  // ---------------------------------------------------------------------------
+  // Scroll disruption: add turbulence proportional to scroll velocity
+  float scrollDisrupt = clamp(uScrollVel, 0.0, 1.0);
+  float formStrength = uFormation * (1.0 - scrollDisrupt * 0.2); // Reduced from 0.85 to 0.2
+
+  // Only particles with valid targets participate (aTarget.z > -9000)
+  float hasTarget = step(-9000.0, aTarget.z + 9001.0);
+  formStrength *= hasTarget;
+
+  // Breathing / hovering offset on formation particles
+  vec3 formPos = aTarget;
+  formPos.x += sin(uTime * 1.2 + aRand.w * 6.28) * 0.3 * (1.0 - formStrength * 0.5);
+  formPos.y += cos(uTime * 0.9 + aRand.x * 6.28) * 0.25 * (1.0 - formStrength * 0.5);
+  formPos.z += sin(uTime * 0.7 + aRand.y * 6.28) * 0.2;
+
+  // Lerp dust toward formation
+  dustPos = mix(dustPos, formPos, formStrength);
+
   // Interpolate between radial explosion and deep-space flight
   vec3 finalPos = mix(explPos, dustPos, dm);
 
@@ -78,8 +102,12 @@ void main() {
   // ---------------------------------------------------------------------------
   float sizeBase = uSize * (1.6 + 2.2 * aRand.y);
   sizeBase *= mix(1.0, 1.35, dm);
+  // Formation particles are significantly larger so the shape is clearly legible
+  sizeBase *= mix(1.0, 1.8, formStrength * hasTarget);
+  // Responsive scaling: clamp so phones never go below 80% of desktop size
+  sizeBase *= max(0.8, uViewScale);
   gl_PointSize = sizeBase * uDpr * (420.0 / max(-mvPosition.z, 0.4));
-  gl_PointSize = clamp(gl_PointSize, 14.0 * uDpr, 200.0 * uDpr);
+  gl_PointSize = clamp(gl_PointSize, 2.0 * uDpr, 180.0 * uDpr);
 
   // ---------------------------------------------------------------------------
   // 5. BRIGHTNESS & OPACITY
@@ -89,9 +117,13 @@ void main() {
   alpha = max(alpha, 0.25 + 0.65 * e1 * (1.0 - e2 * 0.35));
   alpha = mix(alpha, (0.10 + 0.6 * pow(aRand.y, 2.2)) * (0.5 + 0.9 * aRand.z), dm);
 
-  // Distance fading in tunnel mode
+  // Formation particles: push alpha very high so the shape is clearly visible
+  float formAlpha = mix(0.85, 1.0, aRand.y); // dense, bright
+  alpha = mix(alpha, formAlpha, formStrength * hasTarget * dm);
+
+  // Distance fading in tunnel mode (don't fade formation particles)
   float depthFade = smoothstep(-span, -span * 0.72, mvPosition.z) * (1.0 - smoothstep(-6.0, 4.0, mvPosition.z));
-  alpha *= mix(1.0, depthFade, dm);
+  alpha *= mix(1.0, depthFade, dm * (1.0 - formStrength * 0.85));
   vAlpha = clamp(alpha, 0.0, 1.0);
 
   // Individual butterfly rotation & banking in flight
@@ -113,34 +145,24 @@ void main() {
 export const PARTICLE_FRAG = /* glsl */ `
 precision highp float;
 
-uniform sampler2D uTex;
-uniform float uAspect;
-
 varying float vAlpha;
-varying float vRot;
 varying vec3 vColor;
 
 void main() {
   // Point-sprite coordinates centered at (0, 0)
   vec2 uv = gl_PointCoord - 0.5;
 
-  // Rotate sprite
-  float c = cos(vRot);
-  float s = sin(vRot);
-  uv = mat2(c, -s, s, c) * uv;
+  // Create a soft glowing dot with a bright core — blurry halo but visible centre
+  float d = length(uv) * 2.0;
 
-  // Map to texture space with aspect ratio correction
-  vec2 tuv = vec2(uv.x, uv.y / uAspect) * 1.05 + 0.5;
-  float inside = step(0.0, tuv.x) * step(tuv.x, 1.0) * step(0.0, tuv.y) * step(tuv.y, 1.0);
+  // Hard bright core + soft wide halo
+  float core = smoothstep(0.55, 0.0, d);          // bright inner region
+  float halo = pow(smoothstep(1.0, 0.0, d), 2.2); // wide soft glow
+  float alpha = max(core, halo * 0.6);
 
-  // Sample butterfly logo — shape lives in the alpha channel only
-  vec4 texColor = texture2D(uTex, clamp(tuv, 0.0, 1.0));
-  float texA = texColor.a * inside;
+  if (alpha < 0.01) discard;
 
-  if (texA < 0.01) discard;
-
-  float finalAlpha = texA * vAlpha;
-  gl_FragColor = vec4(vColor, finalAlpha);
+  gl_FragColor = vec4(vColor, alpha * vAlpha);
 }
 `;
 

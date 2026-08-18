@@ -23,16 +23,6 @@ export const Route = createFileRoute("/events")({
       event: (search.event as string) || undefined,
     };
   },
-  head: () => ({
-    meta: [
-      { title: "Events & Competitions — MAGNOVITE 2026" },
-      {
-        name: "description",
-        content:
-          "Explore 34+ National Battlegrounds across Coding, Robotics, Management, Design, and Performing Arts.",
-      },
-    ],
-  }),
   component: EventsPage,
 });
 

@@ -4,16 +4,6 @@ import { X, Sparkles, Image as ImageIcon, ChevronLeft, ChevronRight, ZoomIn } fr
 import { SiteHeader } from "@/components/SiteHeader";
 
 export const Route = createFileRoute("/gallery")({
-  head: () => ({
-    meta: [
-      { title: "Gallery & Media — MAGNOVITE 2026" },
-      {
-        name: "description",
-        content:
-          "Captured moments, stage performances, tech showcases, and concerts from sixteen editions of Magnovite.",
-      },
-    ],
-  }),
   component: GalleryPage,
 });
 

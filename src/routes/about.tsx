@@ -14,16 +14,6 @@ import {
 import { SiteHeader } from "@/components/SiteHeader";
 
 export const Route = createFileRoute("/about")({
-  head: () => ({
-    meta: [
-      { title: "About & Leadership — MAGNOVITE 2026" },
-      {
-        name: "description",
-        content:
-          "Discover the legacy of Magnovite, CHRIST University Kengeri Campus, and meet the organizing faculty and student coordinators.",
-      },
-    ],
-  }),
   component: AboutPage,
 });
 
