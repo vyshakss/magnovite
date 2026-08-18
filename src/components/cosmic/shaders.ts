@@ -73,9 +73,7 @@ void main() {
   // ---------------------------------------------------------------------------
   // 3b. FORMATION — butterflies converge into logo shape
   // ---------------------------------------------------------------------------
-  // Scroll disruption: add turbulence proportional to scroll velocity
-  float scrollDisrupt = clamp(uScrollVel, 0.0, 1.0);
-  float formStrength = uFormation * (1.0 - scrollDisrupt * 0.2); // Reduced from 0.85 to 0.2
+  float formStrength = uFormation;
 
   // Only particles with valid targets participate (aTarget.z > -9000)
   float hasTarget = step(-9000.0, aTarget.z + 9001.0);

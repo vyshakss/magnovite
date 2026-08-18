@@ -63,7 +63,24 @@ export function HomePage() {
 
           {/* Festival Stage UI (Countdown & CTA) */}
           <div className="cine-content flex flex-col items-center gap-8">
-            <p className="eyebrow">Countdown to Magnovite</p>
+            <h2 className="text-4xl leading-tight font-semibold sm:text-6xl">
+              MAG
+              <span className="relative inline-flex items-center justify-center">
+                <img 
+                  src="/logos/magnovite-butterfly.png" 
+                  alt="" 
+                  className="absolute bottom-full left-1/2 -translate-x-1/2 mb-1 h-7 sm:h-10 w-auto opacity-90"
+                />
+                N
+                <span className="relative inline-flex items-center justify-center">
+                  O
+                  <svg viewBox="0 0 24 24" className="absolute w-[0.4em] h-[0.4em] text-white" fill="currentColor">
+                    <path d="M12 2C12 7.5 16.5 12 22 12C16.5 12 12 16.5 12 22C12 16.5 7.5 12 2 12C7.5 12 12 7.5 12 2Z" />
+                  </svg>
+                </span>
+              </span>
+              VITE
+            </h2>
             <Countdown />
             <Link
               to="/events"
@@ -267,13 +284,19 @@ export function HomePage() {
         <h2 className="mt-8 max-w-3xl text-4xl leading-tight font-semibold sm:text-6xl">
           We're excited to see you there.
         </h2>
-        <p className="mt-5 text-sm tracking-[0.28em] text-muted-foreground uppercase">
+        <p 
+          className="mt-5 text-sm tracking-[0.28em] text-white/90 uppercase font-medium"
+          style={{ textShadow: '0 2px 10px rgba(0,0,0,0.8)' }}
+        >
           CHRIST University · Kengeri Campus
         </p>
       </section>
 
-      <footer className="site-footer">
-        <div className="footer-inner">
+      <footer 
+        className="relative z-10 mt-10 glass-panel rounded-none border-x-0 border-b-0"
+        style={{ background: 'linear-gradient(160deg, oklch(1 0 0 / 4%) 0%, oklch(1 0 0 / 1%) 38%, oklch(0 0 0 / 15%) 100%), oklch(0.07 0.004 260 / 30%)' }}
+      >
+        <div className="mx-auto max-w-6xl px-6 py-10 sm:px-8 sm:py-12 flex flex-col gap-5">
 
         <div
           className="footer-brand"

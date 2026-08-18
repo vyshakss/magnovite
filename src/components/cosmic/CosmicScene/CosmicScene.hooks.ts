@@ -40,11 +40,23 @@ function responsiveWorldWidth(): number {
   return Math.min(maxByW, maxByH);
 }
 
+function responsiveWorldYOffset(): number {
+  const vw = window.innerWidth;
+  const vh = window.innerHeight;
+  // On portrait phones, shift the formation UP by 7 units so it sits perfectly 
+  // between the MAGNOVITE header and the countdown blocks.
+  if (vh > vw) {
+    return 7;
+  }
+  return 0;
+}
+
 function sampleLogoTargets(
   image: HTMLImageElement,
   count: number,
   worldWidth: number,
   worldZ: number,
+  yOffset: number = 0,
 ): Float32Array {
   const canvas = document.createElement("canvas");
   canvas.width = image.width;
@@ -64,8 +76,6 @@ function sampleLogoTargets(
 
   const targets = new Float32Array(count * 3);
   const aspect = image.height / image.width;
-  const halfW = worldWidth / 2;
-  const halfH = halfW * aspect;
 
   if (opaquePixels.length === 0) {
     // Fallback: no opaque pixels found, fill with sentinel
@@ -86,7 +96,7 @@ function sampleLogoTargets(
     const nx = (px[0] + jx) / image.width; // 0..1
     const ny = (px[1] + jy) / image.height; // 0..1
     targets[i * 3] = (nx - 0.5) * worldWidth; // centered X
-    targets[i * 3 + 1] = -(ny - 0.5) * worldWidth * aspect; // centered Y (flip)
+    targets[i * 3 + 1] = -(ny - 0.5) * worldWidth * aspect + yOffset; // centered Y + shift
     targets[i * 3 + 2] = worldZ + (Math.random() - 0.5) * 2; // slight Z scatter
   }
 
@@ -198,7 +208,8 @@ export function useCosmicScene(hostRef: React.RefObject<HTMLDivElement | null>) 
     const resampleTargets = () => {
       if (!patternImage) return;
       const worldWidth = responsiveWorldWidth();
-      const sampled = sampleLogoTargets(patternImage, COUNT, worldWidth, -60);
+      const yOffset = responsiveWorldYOffset();
+      const sampled = sampleLogoTargets(patternImage, COUNT, worldWidth, -60, yOffset);
       targetPositions.set(sampled);
       targetAttr.needsUpdate = true;
     };
@@ -381,12 +392,11 @@ export function useCosmicScene(hostRef: React.RefObject<HTMLDivElement | null>) 
       }
 
       // --- Formation control ---
-      // Once the opening cinematic is complete (deep mode), start formation
+      // Once the opening cinematic is complete (deep mode), lock into formation
       const dm = smoothstep(0.8, 1.0, progress);
-      // Formation engages when scroll is slow and we're in deep mode
-      formationTarget = dm * (1 - Math.min(1, smoothScrollVel * 0.4)); // Scatter less aggressively
-      // Smooth lerp: slow build-up (2s), faster scatter
-      const formRate = formationTarget > formationCurrent ? dt * 1.5 : dt * 3.0; // Build up faster
+      formationTarget = dm; // Formation stays solid, no scroll disruption
+      // Smooth lerp into formation
+      const formRate = dt * 1.5;
       formationCurrent += (formationTarget - formationCurrent) * Math.min(1, formRate);
 
       uniforms.uTime.value += dt;
