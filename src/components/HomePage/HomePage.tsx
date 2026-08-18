@@ -20,75 +20,32 @@ export function HomePage() {
 
       <SiteHeader />
 
-      {/* cinematic opening */}
-      <section
-        data-cinematic-scroll
-        className="relative z-10 h-[150vh]"
-        aria-label="Magnovite 2026 cinematic opening"
-      >
-        <div className="sticky top-0 flex h-screen flex-col items-center justify-center overflow-hidden px-6">
-          {/* wordmark revealed at the peak of the first explosion */}
-          <div
-            aria-hidden={false}
-            className="pointer-events-none absolute inset-0 flex flex-col items-center justify-center text-center"
-            style={{
-              opacity: "var(--reveal)",
-              transform: "scale(calc(0.96 + var(--reveal) * 0.04))",
-            }}
-          >
-            {/* Dark vignette so text reads over the bright particle burst */}
-            <div
-              className="absolute inset-0"
-              style={{
-                background: 'radial-gradient(ellipse at center, rgba(0,0,0,0.65) 0%, rgba(0,0,0,0.35) 40%, transparent 70%)',
-              }}
-            />
+      {/* Hero Section */}
+      <section className="relative z-10 flex h-screen flex-col items-center justify-center px-6 pointer-events-none">
+        <div 
+          className="flex flex-col items-center gap-8 text-center mt-[5vh] pointer-events-auto"
+          style={{ opacity: "var(--ui-fade, 0)" }}
+        >
+          <div className="flex flex-col items-center gap-5">
             <img
               src="/logos/magnovite-butterfly.png"
-              alt="Magnovite"
-              className="relative z-10 mb-6 h-16 w-auto sm:h-24"
-              style={{ filter: 'drop-shadow(0 0 20px rgba(0,0,0,0.8))' }}
+              alt="Magnovite Logo"
+              className="h-12 w-auto opacity-90 sm:h-16"
+              style={{ filter: 'drop-shadow(0 0 10px rgba(255,255,255,0.15))' }}
             />
-            <h1
-              className="relative z-10 font-display text-[13vw] leading-[0.85] font-semibold tracking-[0.06em] sm:text-[9vw] text-white"
-              style={{ textShadow: '0 0 40px rgba(0,0,0,0.9), 0 0 80px rgba(0,0,0,0.7), 0 2px 4px rgba(0,0,0,0.9)' }}
-            >
+            <h1 className="font-display text-5xl font-bold tracking-widest text-white sm:text-7xl" style={{ textShadow: '0 0 30px rgba(0,0,0,0.8)' }}>
               MAGNOVITE
             </h1>
-            <p
-              className="relative z-10 mt-4 text-[0.9rem] tracking-[1.1em] text-white/70 sm:text-lg"
-              style={{ textShadow: '0 0 20px rgba(0,0,0,0.9)' }}
-            >2026</p>
           </div>
 
-          {/* Festival Stage UI (Countdown & CTA) */}
-          <div className="cine-content flex flex-col items-center gap-8">
-            <h2 className="text-4xl leading-tight font-semibold sm:text-6xl">
-              MAG
-              <span className="relative inline-flex items-center justify-center">
-                <img 
-                  src="/logos/magnovite-butterfly.png" 
-                  alt="" 
-                  className="absolute bottom-full left-1/2 -translate-x-1/2 mb-1 h-7 sm:h-10 w-auto opacity-90"
-                />
-                N
-                <span className="relative inline-flex items-center justify-center">
-                  O
-                  <svg viewBox="0 0 24 24" className="absolute w-[0.4em] h-[0.4em] text-white" fill="currentColor">
-                    <path d="M12 2C12 7.5 16.5 12 22 12C16.5 12 12 16.5 12 22C12 16.5 7.5 12 2 12C7.5 12 12 7.5 12 2Z" />
-                  </svg>
-                </span>
-              </span>
-              VITE
-            </h2>
-            <Countdown />
-            <Link
-              to="/events"
-              className="glass-pill pointer-events-auto inline-flex items-center gap-2 px-7 py-3.5 text-sm font-medium transition-all hover:scale-105"
-            >
-              Explore Events <ArrowUpRight className="size-4" />
-            </Link>
-          </div>
+          <Countdown />
+
+          <Link
+            to="/events"
+            className="glass-pill mt-2 inline-flex items-center gap-2 px-7 py-3.5 text-sm font-medium transition-all hover:scale-105"
+          >
+            Explore Events <ArrowUpRight className="size-4" />
+          </Link>
         </div>
       </section>
 

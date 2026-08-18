@@ -21,12 +21,16 @@ const mapCategory = (dept) => {
   if (d.includes('business') || d.includes('mba') || d.includes('bba')) return 'Management';
   if (d.includes('psychology') || d.includes('humanities')) return 'Arts & Humanities';
   if (d.includes('architecture')) return 'Design';
+  if (d.includes('cultural') || d.includes('dance') || d.includes('music') || d.includes('play')) return 'Cultural';
   return 'General Fest Events';
 };
 
-const normalizeSlug = (s) => s.toLowerCase().replace(/[^a-z0-9]/g, '');
+const normalizeSlug = (s) => (s || '').toLowerCase().replace(/[^a-z0-9]/g, '');
 
-const extractEvent = (filename) => {
+const allEventsMap = new Map();
+
+// 1. Process HTML files first
+files.forEach(filename => {
   const filepath = path.join(htmlDir, filename);
   const html = fs.readFileSync(filepath, 'utf8');
   const $ = cheerio.load(html);
@@ -88,20 +92,62 @@ const extractEvent = (filename) => {
 
   const format = "Live Event";
   
-  // Fuzzy match with Excel to find Form Link
   const normHtmlSlug = normalizeSlug(originalSlug);
   const matchedRow = excelData.find(row => normalizeSlug(row.Slug) === normHtmlSlug || normalizeSlug(row.Event) === normalizeSlug(title));
-  const registrationLink = matchedRow ? (matchedRow['Form Link'] || "") : "";
+  let registrationLink = matchedRow ? (matchedRow['Form Link'] || "") : "";
+  if (originalSlug === 'quiz-whizz') registrationLink = "https://docs.google.com/forms/d/e/1FAIpQLSfJIH5GkgFVNkV5vPX5LdX6OdVfOzjBsSmYZ-0osJgbPkZWRQ/viewform?usp=publish-editor";
 
-  return {
+  allEventsMap.set(normHtmlSlug, {
     slug: originalSlug, title, tagline, category, department, overview,
     stages, rules, faqs: [], prizePool, date, fee, teamSize, format,
     coordinator: coordinators.length > 0 ? coordinators[0] : { name: "Magnovite Support", email: "support@magnovite.com" },
     image, registrationLink
-  };
-};
+  });
+});
 
-const allEvents = files.map(extractEvent);
+// 2. Process remaining Excel rows
+excelData.forEach(row => {
+  const normSlug = normalizeSlug(row.Slug);
+  const normEvent = normalizeSlug(row.Event);
+  
+  // Check if it was already matched
+  let alreadyMatched = false;
+  for (const [key, val] of allEventsMap.entries()) {
+    if (key === normSlug || normalizeSlug(val.title) === normEvent) {
+      alreadyMatched = true;
+      break;
+    }
+  }
+
+  if (!alreadyMatched) {
+    // Generate placeholder slug and title
+    const title = row.Slug || row.Event; // Sometimes Event is "Culturals" and Slug is the actual title
+    const slug = title.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, '');
+    const department = row.Department || row.Event || "General";
+    
+    allEventsMap.set(normalizeSlug(slug), {
+      slug,
+      title: title,
+      tagline: "Shape the Wave.",
+      category: mapCategory(department),
+      department: department,
+      overview: "Details coming soon.",
+      stages: [],
+      rules: ["Details coming soon."],
+      faqs: [],
+      prizePool: "TBA",
+      date: "15 Sept 2026",
+      fee: "TBA",
+      teamSize: "TBA",
+      format: "Live Event",
+      coordinator: { name: "Magnovite Support", email: "support@magnovite.com" },
+      image: "/images/shaanrahman.jpg",
+      registrationLink: row['Form Link'] || ""
+    });
+  }
+});
+
+const allEvents = Array.from(allEventsMap.values());
 
 const outputContent = `export interface EventDetail {
   slug: string;

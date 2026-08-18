@@ -1,254 +1,111 @@
-import { useEffect } from "react";
-import * as THREE from "three";
-import { ASSETS } from "./CosmicScene.data";
-import { PARTICLE_FRAG, PARTICLE_VERT, GLOW_FRAG, GLOW_VERT, RING_FRAG } from "../shaders";
+import { useEffect, useRef } from 'react';
+import * as THREE from 'three';
+import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader.js';
+import { EffectComposer } from 'three/examples/jsm/postprocessing/EffectComposer.js';
+import { RenderPass } from 'three/examples/jsm/postprocessing/RenderPass.js';
+import { UnrealBloomPass } from 'three/examples/jsm/postprocessing/UnrealBloomPass.js';
+import { GLOW_VERT, GLOW_FRAG, RING_FRAG } from "../shaders";
 
-/**
- * Sample opaque pixels from the butterfly logo to create formation target positions.
- * Returns a Float32Array of (x, y, z) positions in world space.
- */
-/**
- * Compute the world-space width for the butterfly formation so it
- * always fits fully inside the camera frustum at the given depth,
- * while preserving the image's aspect ratio.
- *
- * Camera: FOV=58°, target depth = FORMATION_Z = 60 units away.
- * The image is landscape (1536×1024 → imageAspect = 1.5).
- * We fit the image to 88% of the smaller of visible-width or
- * height-derived width, so it never clips on any screen size.
- */
-const CAMERA_FOV_DEG = 58;
-const FORMATION_DEPTH = 60; // |z| of the formation plane
-const IMAGE_ASPECT = 1536 / 1024; // width / height of butterfly-pattern.png
-const FILL = 0.88; // fraction of frustum to occupy
+function createStarSprite(): THREE.Texture {
+  const size = 64;
+  const canvas = document.createElement('canvas');
+  canvas.width = size;
+  canvas.height = size;
+  const ctx = canvas.getContext('2d')!;
+  const half = size / 2;
 
-function responsiveWorldWidth(): number {
-  const vw = window.innerWidth;
-  const vh = window.innerHeight;
-  const halfFovY = Math.tan((CAMERA_FOV_DEG / 2) * (Math.PI / 180));
-  // Visible half-extents at the formation plane
-  const visibleHalfH = halfFovY * FORMATION_DEPTH;
-  const visibleHalfW = visibleHalfH * (vw / vh);
-  const visibleFullW = visibleHalfW * 2;
-  const visibleFullH = visibleHalfH * 2;
+  ctx.beginPath();
+  ctx.arc(half, half, half - 1, 0, Math.PI * 2);
+  ctx.fillStyle = '#ffffff';
+  ctx.fill();
 
-  // Max width so image fits horizontally
-  const maxByW = visibleFullW * FILL;
-  // Max width so image fits vertically (height = worldWidth / IMAGE_ASPECT)
-  const maxByH = visibleFullH * FILL * IMAGE_ASPECT;
-
-  return Math.min(maxByW, maxByH);
+  return new THREE.CanvasTexture(canvas);
 }
 
-function responsiveWorldYOffset(): number {
-  const vw = window.innerWidth;
-  const vh = window.innerHeight;
-  // On portrait phones, shift the formation UP by 7 units so it sits perfectly 
-  // between the MAGNOVITE header and the countdown blocks.
-  if (vh > vw) {
-    return 7;
-  }
-  return 0;
-}
+const sections = [
+  // 0: HERO - Wide orbital start
+  { angle: 0, radius: 6.5, height: 1.2 },
+  // 1: INTRODUCING - Sweep inward
+  { angle: Math.PI * 1.0, radius: 4.2, height: 0.5 },
+  // 2: MAGNOVITE - Zooms close into galaxy core
+  { angle: Math.PI * 1.8, radius: 2.2, height: 0.15 },
+  // 3: VIDEO - Scroll-controlled steps start here
+  { angle: Math.PI * 2.5, radius: 2.6, height: -0.2 },
+  // 4: CHRIS
+  { angle: Math.PI * 3.2, radius: 2.8, height: 0.4 },
+  // 5: SPEAKER
+  { angle: Math.PI * 3.9, radius: 2.5, height: 0.6 },
+  // 6: EXITED
+  { angle: Math.PI * 4.6, radius: 2.3, height: -0.3 },
+  // 7: COUNTDOWN
+  { angle: Math.PI * 5.2, radius: 2.0, height: 0.1 }
+];
 
-function sampleLogoTargets(
-  image: HTMLImageElement,
-  count: number,
-  worldWidth: number,
-  worldZ: number,
-  yOffset: number = 0,
-): Float32Array {
-  const canvas = document.createElement("canvas");
-  canvas.width = image.width;
-  canvas.height = image.height;
-  const ctx = canvas.getContext("2d")!;
-  ctx.drawImage(image, 0, 0, image.width, image.height);
-  const data = ctx.getImageData(0, 0, image.width, image.height).data;
-
-  // Collect all opaque pixel coordinates
-  const opaquePixels: [number, number][] = [];
-  for (let y = 0; y < image.height; y++) {
-    for (let x = 0; x < image.width; x++) {
-      const alpha = data[(y * image.width + x) * 4 + 3];
-      if (alpha > 80) opaquePixels.push([x, y]);
-    }
-  }
-
-  const targets = new Float32Array(count * 3);
-  const aspect = image.height / image.width;
-
-  if (opaquePixels.length === 0) {
-    // Fallback: no opaque pixels found, fill with sentinel
-    for (let i = 0; i < count; i++) {
-      targets[i * 3] = 0;
-      targets[i * 3 + 1] = 0;
-      targets[i * 3 + 2] = -9999;
-    }
-    return targets;
-  }
-
-  for (let i = 0; i < count; i++) {
-    // Pick a random opaque pixel and map to world coords
-    const px = opaquePixels[Math.floor(Math.random() * opaquePixels.length)]!;
-    // Add sub-pixel jitter for organic feel
-    const jx = (Math.random() - 0.5) * 1.2;
-    const jy = (Math.random() - 0.5) * 1.2;
-    const nx = (px[0] + jx) / image.width; // 0..1
-    const ny = (px[1] + jy) / image.height; // 0..1
-    targets[i * 3] = (nx - 0.5) * worldWidth; // centered X
-    targets[i * 3 + 1] = -(ny - 0.5) * worldWidth * aspect + yOffset; // centered Y + shift
-    targets[i * 3 + 2] = worldZ + (Math.random() - 0.5) * 2; // slight Z scatter
-  }
-
-  return targets;
+function smootherStep(t: number): number {
+  t = Math.max(0, Math.min(1, t));
+  return t * t * t * (t * (t * 6 - 15) + 10);
 }
 
 export function useCosmicScene(hostRef: React.RefObject<HTMLDivElement | null>) {
+  const mountRef = useRef<boolean>(false);
+
   useEffect(() => {
     const host = hostRef.current;
-    if (!host) return;
-
-    function qualityTier() {
-      if (typeof navigator === "undefined") return 1;
-      const mobile = /Android|iPhone|iPad|iPod|webOS|BlackBerry|IEMobile|Opera Mini/i.test(
-        navigator.userAgent,
-      );
-      if (mobile) return 0;
-      return 1;
-    }
-
-    const tier = qualityTier();
-    const COUNT = tier === 0 ? 4000 : 7000;
-    const dpr = Math.min(window.devicePixelRatio || 1, tier === 0 ? 1.5 : 2.0);
-
-    let renderer: THREE.WebGLRenderer;
-    try {
-      renderer = new THREE.WebGLRenderer({
-        antialias: false,
-        alpha: true,
-        powerPreference: "high-performance",
-      });
-    } catch {
-      return;
-    }
-    renderer.setPixelRatio(dpr);
-    renderer.setSize(window.innerWidth, window.innerHeight);
-    renderer.setClearColor(0x000000, 0);
-    host.appendChild(renderer.domElement);
+    if (!host || mountRef.current) return;
+    mountRef.current = true;
 
     const scene = new THREE.Scene();
+    scene.background = new THREE.Color(0x040404);
+    scene.fog = new THREE.FogExp2(0x060606, 0.0075);
+
     const camera = new THREE.PerspectiveCamera(
-      58,
+      55,
       window.innerWidth / window.innerHeight,
       0.1,
-      2000,
+      1000
     );
-    camera.position.set(0, 0, 0);
 
-    // ---- particles ---------------------------------------------------------
-    const positions = new Float32Array(COUNT * 3);
-    const dirs = new Float32Array(COUNT * 3);
-    const rands = new Float32Array(COUNT * 4);
-    const dust = new Float32Array(COUNT * 3);
+    const checkMobile = () => window.innerWidth <= 768 || ('ontouchstart' in window && window.innerWidth <= 1024);
+    let isMobileDevice = checkMobile();
 
-    // Placeholder target positions — will be filled once logo image loads
-    const targetPositions = new Float32Array(COUNT * 3);
-    for (let i = 0; i < COUNT; i++) {
-      targetPositions[i * 3] = 0;
-      targetPositions[i * 3 + 1] = 0;
-      targetPositions[i * 3 + 2] = -9999; // sentinel: "no target"
-    }
-
-    const gauss = () => (Math.random() + Math.random() + Math.random() - 1.5) / 1.5;
-    const clusters: [number, number, number][] = [];
-    for (let i = 0; i < 90; i++) {
-      const rr = Math.pow(Math.random(), 0.7) * 78;
-      const a = Math.random() * Math.PI * 2;
-      clusters.push([Math.cos(a) * rr, Math.sin(a) * rr * 0.7, Math.random() * 420]);
-    }
-
-    for (let i = 0; i < COUNT; i++) {
-      const u = Math.random() * 2 - 1;
-      const th = Math.random() * Math.PI * 2;
-      const sq = Math.sqrt(1 - u * u);
-      const jitter = 0.55 + Math.random() * 0.75;
-      dirs[i * 3] = sq * Math.cos(th) * jitter;
-      dirs[i * 3 + 1] = sq * Math.sin(th) * (0.65 + Math.random() * 0.7);
-      dirs[i * 3 + 2] = u * jitter;
-
-      rands[i * 4] = Math.random();
-      rands[i * 4 + 1] = Math.random();
-      rands[i * 4 + 2] = Math.random();
-      rands[i * 4 + 3] = Math.random();
-
-      const c = clusters[(Math.random() * clusters.length) | 0]!;
-      const spread = 6 + Math.pow(Math.random(), 2) * 34;
-      dust[i * 3] = c[0] + gauss() * spread;
-      dust[i * 3 + 1] = c[1] + gauss() * spread * 0.7;
-      dust[i * 3 + 2] = (c[2] + gauss() * 55 + 420) % 420;
-    }
-
-    const geo = new THREE.BufferGeometry();
-    geo.setAttribute("position", new THREE.BufferAttribute(positions, 3));
-    geo.setAttribute("aDir", new THREE.BufferAttribute(dirs, 3));
-    geo.setAttribute("aRand", new THREE.BufferAttribute(rands, 4));
-    geo.setAttribute("aDust", new THREE.BufferAttribute(dust, 3));
-    const targetAttr = new THREE.BufferAttribute(targetPositions, 3);
-    geo.setAttribute("aTarget", targetAttr);
-    geo.boundingSphere = new THREE.Sphere(new THREE.Vector3(), 1e4);
-
-    const tex = new THREE.TextureLoader().load(ASSETS.butterfly, (t) => {
-      if (t.image && t.image.width > 0) {
-        uniforms.uAspect.value = t.image.height / t.image.width;
-      }
+    const renderer = new THREE.WebGLRenderer({
+      antialias: !isMobileDevice,
+      alpha: false,
+      powerPreference: 'high-performance'
     });
+    renderer.setSize(window.innerWidth, window.innerHeight);
+    renderer.setPixelRatio(isMobileDevice ? 1.0 : Math.min(window.devicePixelRatio, 2));
+    renderer.outputColorSpace = THREE.SRGBColorSpace;
+    renderer.toneMapping = THREE.ACESFilmicToneMapping;
+    renderer.toneMappingExposure = 0.65;
 
-    // Load the starry reference image to use as the formation map
-    let patternImage: HTMLImageElement | null = null;
-    const resampleTargets = () => {
-      if (!patternImage) return;
-      const worldWidth = responsiveWorldWidth();
-      const yOffset = responsiveWorldYOffset();
-      const sampled = sampleLogoTargets(patternImage, COUNT, worldWidth, -60, yOffset);
-      targetPositions.set(sampled);
-      targetAttr.needsUpdate = true;
-    };
-    const img = new Image();
-    img.src = "/images/butterfly-pattern.png";
-    img.onload = () => {
-      patternImage = img;
-      resampleTargets();
-    };
-    tex.colorSpace = THREE.SRGBColorSpace;
-    tex.generateMipmaps = true;
-    tex.minFilter = THREE.LinearMipmapLinearFilter;
-    tex.magFilter = THREE.LinearFilter;
+    host.appendChild(renderer.domElement);
 
-    const uniforms = {
-      uTime: { value: 0 },
-      uP: { value: 0 },
-      uTravel: { value: 0 },
-      uSize: { value: tier === 0 ? 0.085 : 0.068 },
-      uDpr: { value: dpr },
-      uTex: { value: tex },
-      uAspect: { value: 813 / 1187 },
-      uFormation: { value: 0 },
-      uScrollVel: { value: 0 },
-      uViewScale: { value: Math.min(window.innerWidth, window.innerHeight) / 600 },
-    };
+    const composer = new EffectComposer(renderer);
+    const renderPass = new RenderPass(scene, camera);
+    composer.addPass(renderPass);
 
-    const mat = new THREE.ShaderMaterial({
-      uniforms,
-      vertexShader: PARTICLE_VERT,
-      fragmentShader: PARTICLE_FRAG,
-      transparent: true,
-      depthWrite: false,
-      depthTest: false,
-      blending: THREE.AdditiveBlending,
-    });
-    scene.add(new THREE.Points(geo, mat));
+    const bloomPass = new UnrealBloomPass(
+      new THREE.Vector2(window.innerWidth, window.innerHeight),
+      0.14,
+      0.35,
+      0.85
+    );
+    if (!isMobileDevice) {
+      composer.addPass(bloomPass);
+    }
 
-    // ---- central glow + shockwave -----------------------------------------
+    const ambientLight = new THREE.AmbientLight(0xffffff, 0.22);
+    scene.add(ambientLight);
+
+    const starSprite = createStarSprite();
+    let baseStarSize = 0.012;
+    let activePointsMat: THREE.PointsMaterial | null = null;
+    let activeAmbientGlowMat: THREE.PointsMaterial | null = null;
+
+    let progressUniform = { value: 0.0 };
+    let timeUniform = { value: 0.0 };
+
     const glowU = {
       uIntensity: { value: 0 },
       uCore: { value: 1 },
@@ -263,9 +120,9 @@ export function useCosmicScene(hostRef: React.RefObject<HTMLDivElement | null>) 
         depthWrite: false,
         depthTest: false,
         blending: THREE.AdditiveBlending,
-      }),
+      })
     );
-    glow.position.z = -24;
+    glow.position.set(0, 0, 0);
     scene.add(glow);
 
     const ringU = {
@@ -282,194 +139,379 @@ export function useCosmicScene(hostRef: React.RefObject<HTMLDivElement | null>) 
         depthWrite: false,
         depthTest: false,
         blending: THREE.AdditiveBlending,
-      }),
+      })
     );
-    ring.position.z = -24;
+    ring.position.set(0, 0, 0);
     scene.add(ring);
 
-    // ---- scroll / timeline -------------------------------------------------
+    let isModelLoaded = false;
+    const gltfLoader = new GLTFLoader();
+    gltfLoader.load('/models/hero.glb', (gltf) => {
+      const heroModel = gltf.scene;
+
+      const box = new THREE.Box3().setFromObject(heroModel);
+      const worldCenter = box.getCenter(new THREE.Vector3());
+      heroModel.position.sub(worldCenter);
+
+      const sphere = box.getBoundingSphere(new THREE.Sphere());
+      const clusterRadius = sphere.radius;
+      baseStarSize = Math.max(clusterRadius * 0.0018, 0.012);
+
+      heroModel.traverse((child) => {
+        if (child instanceof THREE.Points) {
+          const posAttr = child.geometry.attributes.position;
+          const colorAttr = child.geometry.attributes.color;
+
+          if (posAttr && colorAttr) {
+            const count = posAttr.count;
+            const tempColor = new THREE.Color();
+            const hsl = { h: 0, s: 0, l: 0 };
+            
+            const dirs = new Float32Array(count * 3);
+            const rands = new Float32Array(count * 4);
+
+            for (let i = 0; i < count; i++) {
+              const x = posAttr.getX(i);
+              const y = posAttr.getY(i);
+              const z = posAttr.getZ(i);
+              const dist = Math.sqrt(x * x + y * y + z * z);
+              
+              const u = Math.random() * 2 - 1;
+              const th = Math.random() * Math.PI * 2;
+              const sq = Math.sqrt(1 - u * u);
+              const jitter = 0.55 + Math.random() * 0.75;
+              dirs[i * 3] = sq * Math.cos(th) * jitter;
+              dirs[i * 3 + 1] = sq * Math.sin(th) * (0.65 + Math.random() * 0.7);
+              dirs[i * 3 + 2] = u * jitter;
+
+              rands[i * 4] = Math.random();
+              rands[i * 4 + 1] = Math.random();
+              rands[i * 4 + 2] = Math.random();
+              rands[i * 4 + 3] = Math.random();
+
+              tempColor.setRGB(colorAttr.getX(i), colorAttr.getY(i), colorAttr.getZ(i));
+              tempColor.getHSL(hsl);
+              hsl.s = Math.min(hsl.s * 1.1, 1.0);
+              tempColor.setHSL(hsl.h, hsl.s, hsl.l);
+
+              if (dist > 12) {
+                const fade = Math.max(1.0 - (dist - 12) / 12.0, 0.12);
+                tempColor.r *= fade;
+                tempColor.g *= fade;
+                tempColor.b *= fade;
+              }
+
+              colorAttr.setXYZ(i, tempColor.r, tempColor.g, tempColor.b);
+            }
+            colorAttr.needsUpdate = true;
+            child.geometry.setAttribute('aDir', new THREE.BufferAttribute(dirs, 3));
+            child.geometry.setAttribute('aRand', new THREE.BufferAttribute(rands, 4));
+          }
+
+          const mat = child.material as THREE.PointsMaterial;
+          activePointsMat = mat;
+
+          mat.color = new THREE.Color(0xffffff);
+          mat.vertexColors = true;
+          mat.map = starSprite;
+          mat.size = baseStarSize;
+          mat.sizeAttenuation = true;
+          mat.transparent = true;
+          mat.depthWrite = false;
+          mat.blending = THREE.AdditiveBlending;
+          mat.opacity = 0.85;
+          mat.needsUpdate = true;
+          
+          child.geometry.computeBoundingSphere();
+          const localCenter = child.geometry.boundingSphere!.center;
+
+          mat.onBeforeCompile = (shader) => {
+            shader.uniforms.uP = progressUniform;
+            shader.uniforms.uTime = timeUniform;
+            shader.uniforms.uCenter = { value: localCenter };
+            shader.vertexShader = `
+              attribute vec3 aDir;
+              attribute vec4 aRand;
+              uniform float uP;
+              uniform float uTime;
+              uniform vec3 uCenter;
+              ${shader.vertexShader}
+            `.replace(
+              `#include <begin_vertex>`,
+              `
+              vec3 transformed = vec3(position);
+              
+              float p = uP;
+              
+              // 1. DENSE PULSAR CORE
+              float pulse = 0.5 + 0.5 * sin(uTime * 2.6 + aRand.w * 6.2831);
+              float tension = smoothstep(0.05, 0.20, p);
+              float coreRadius = 0.10 * (0.25 + aRand.y) * (1.0 + 0.35 * pulse + 1.6 * tension);
+              
+              // 2. STELLAR EXPLOSION
+              float e1 = pow(smoothstep(0.20, 0.40, p), 0.55);
+              float e2 = pow(smoothstep(0.40, 0.60, p), 0.65);
+              float explosionRadius = coreRadius
+                + e1 * (2.5 + 8.0 * aRand.x)
+                + e2 * (16.0 + 55.0 * aRand.z);
+                
+              // The GLTF model is scaled down by ~0.01 internally.
+              // To keep particles densely visible on screen without flying too far out,
+              // we scale the local explosion radius by ~12x.
+              explosionRadius *= 12.0;
+                
+              vec3 explPos = uCenter + aDir * explosionRadius;
+              
+              // Organic drift while scattered
+              float flap = sin(uTime * 14.0 + aRand.w * 18.0);
+              float flutterFactor = 0.75 * e2 + 0.25 * e1;
+              explPos += flutterFactor * vec3(
+                sin(uTime * 1.8 + aRand.w * 12.0) * 8.0 + flap * 2.0,
+                cos(uTime * 1.5 + aRand.x * 11.0) * 8.0 + flap * 2.0,
+                sin(uTime * 1.2 + aRand.y * 9.0) * 6.0
+              ) * 4.0;
+              
+              // 3. MORPH INTO GALAXY (starts later, so particles hang in the air scattered)
+              float morph = smoothstep(0.75, 1.0, p);
+              float morphStagger = clamp((morph - (aRand.x * 0.2)) * 1.2, 0.0, 1.0);
+              
+              transformed = mix(explPos, position, smoothstep(0.0, 1.0, morphStagger));
+              `
+            ).replace(
+              `#include <fog_vertex>`,
+              `
+              #include <fog_vertex>
+              
+              // Slightly scale up particles during the blast and scatter phase
+              // so they are highly visible as they fly inward.
+              float blastScale = mix(3.0, 1.0, smoothstep(0.85, 1.0, p));
+              gl_PointSize *= blastScale;
+              `
+            );
+          };
+
+          // Removed ambientGlowPoints to ensure crisp, distinct particles
+        }
+      });
+
+      scene.add(heroModel);
+      isModelLoaded = true; // Wait for model before starting sequence
+    });
+
+    const currentCamPos = new THREE.Vector3();
+    const currentCamTarget = new THREE.Vector3(0, 0, 0);
+
+    let ambientSpin = 0;
+    let currentSmoothRawIndex = 0;
+    let targetScrollIndex = 2.0;
+    let autoProgress = 0;
+    let autoSequenceComplete = false;
+
+    let lastFrameTime = performance.now();
+    let animId = 0;
+    
+    let lastUiFade = '';
     const root = document.documentElement;
-    let auto = 0;
-    let progress = 0;
-    let travel = 0;
-    let smoothScroll = 0;
-    let raf = 0;
-    let last = performance.now();
-    let running = true;
 
-    // Formation control
-    let formationTarget = 0;
-    let formationCurrent = 0;
-
-    // Scroll velocity tracking
-    let lastScrollY = 0;
-    let scrollVelocity = 0;
-    let smoothScrollVel = 0;
-
-    // Cache opening length — recalculated only on resize, not every frame
-    let cachedOpeningLen = 0;
-    const recalcOpeningLength = () => {
-      const el = document.querySelector("[data-cinematic-scroll]") as HTMLElement | null;
-      cachedOpeningLen = el
-        ? Math.max(1, el.offsetHeight - window.innerHeight)
-        : Math.max(1, window.innerHeight * 2.8);
-    };
-    recalcOpeningLength();
-
-    // Debounced resize — avoid hundreds of setSize calls during drag-resize
-    let resizeTimer = 0;
-    const onResize = () => {
-      clearTimeout(resizeTimer);
-      resizeTimer = window.setTimeout(() => {
-        renderer.setSize(window.innerWidth, window.innerHeight);
-        camera.aspect = window.innerWidth / window.innerHeight;
-        camera.updateProjectionMatrix();
-        recalcOpeningLength();
-        // Responsive particle scale
-        uniforms.uViewScale.value = Math.min(window.innerWidth, window.innerHeight) / 600;
-        // Resample formation so wings fit the new viewport
-        resampleTargets();
-      }, 100);
-    };
-    window.addEventListener("resize", onResize);
-
-    const onVisibility = () => {
-      running = document.visibilityState === "visible";
-      last = performance.now();
-      if (running) raf = requestAnimationFrame(tick);
-    };
-    document.addEventListener("visibilitychange", onVisibility);
-
-    const pointer = { x: 0, y: 0, tx: 0, ty: 0 };
-    const onMove = (e: PointerEvent) => {
-      pointer.tx = (e.clientX / window.innerWidth - 0.5) * 2;
-      pointer.ty = (e.clientY / window.innerHeight - 0.5) * 2;
-    };
-    window.addEventListener("pointermove", onMove, { passive: true });
-
-    // Track last CSS variable values to skip unnecessary style writes
-    let lastCine = '';
-    let lastFlash = '';
-    let lastReveal = '';
-    let lastChrome = '';
-
-    function smoothstep(a: number, b: number, x: number) {
-      const t = Math.min(1, Math.max(0, (x - a) / (b - a)));
-      return t * t * (3 - 2 * t);
-    }
-
-    function bump(x: number, a: number, b: number) {
-      const t = Math.min(1, Math.max(0, (x - a) / (b - a)));
-      return Math.sin(t * Math.PI) ** 2 * (t > 0 && t < 1 ? 1 : 0);
-    }
-
-    function tick(now: number) {
-      if (!running) return;
-      const dt = Math.min(0.05, (now - last) / 1000);
-      last = now;
-
-      // Auto-play opening animation sequence to completion
-      auto = Math.min(1.0, auto + dt / 10.0);
-
-      const scrolled = window.scrollY;
-      const scrollP = Math.min(1, Math.max(0, scrolled / cachedOpeningLen));
-      const target = Math.max(auto, scrollP);
-
-      progress += (target - progress) * Math.min(1, dt * 4.5);
-      smoothScroll += (scrolled - smoothScroll) * Math.min(1, dt * 3.2);
-      travel = smoothScroll / window.innerHeight;
-
-      // --- Scroll velocity tracking ---
-      scrollVelocity = Math.abs(scrolled - lastScrollY) / Math.max(dt, 0.001);
-      lastScrollY = scrolled;
-      // Normalise: ~500px/s = full disruption
-      const rawVel = Math.min(1, scrollVelocity / 500);
-      // Smooth it: fast attack, slow decay
-      if (rawVel > smoothScrollVel) {
-        smoothScrollVel += (rawVel - smoothScrollVel) * Math.min(1, dt * 12);
+    function updateCameraFov() {
+      const aspect = window.innerWidth / window.innerHeight;
+      camera.aspect = aspect;
+      camera.near = 0.1;
+      camera.far = 1000;
+  
+      if (aspect < 1.4) {
+        const refFovRad = (55 * Math.PI) / 180;
+        const refAspect = 1.4;
+        const hFovRad = 2 * Math.atan(Math.tan(refFovRad / 2) * refAspect);
+        const targetFovRad = 2 * Math.atan(Math.tan(hFovRad / 2) / aspect);
+        camera.fov = Math.min(82, (targetFovRad * 180) / Math.PI);
       } else {
-        smoothScrollVel += (rawVel - smoothScrollVel) * Math.min(1, dt * 4.0); // Recover faster
+        camera.fov = 55;
+      }
+      camera.updateProjectionMatrix();
+    }
+
+    updateCameraFov();
+
+    const onResize = () => {
+      isMobileDevice = checkMobile();
+      updateCameraFov();
+      renderer.setSize(window.innerWidth, window.innerHeight);
+      composer.setSize(window.innerWidth, window.innerHeight);
+      renderer.setPixelRatio(isMobileDevice ? 1.0 : Math.min(window.devicePixelRatio, 2));
+    };
+    window.addEventListener('resize', onResize);
+
+    const onScroll = () => {
+      if (!autoSequenceComplete) return;
+
+      const scrollY = window.scrollY;
+      const maxScroll = Math.max(document.documentElement.scrollHeight - window.innerHeight, 1);
+      const scrollFrac = Math.min(Math.max(scrollY / maxScroll, 0), 1);
+
+      // Map scroll progress from section 2.0 to 7.0
+      targetScrollIndex = 2.0 + scrollFrac * 5.0;
+    };
+    window.addEventListener('scroll', onScroll, { passive: true });
+
+    let mouseX = 0;
+    let mouseY = 0;
+    const onMouseMove = (e: MouseEvent) => {
+      if (isMobileDevice) return;
+      mouseX = (e.clientX / window.innerWidth - 0.5) * 2;
+      mouseY = (e.clientY / window.innerHeight - 0.5) * 2;
+    };
+    window.addEventListener('mousemove', onMouseMove, { passive: true });
+
+    function renderFrame() {
+      const now = performance.now();
+      const deltaSeconds = (now - lastFrameTime) / 1000;
+      lastFrameTime = now;
+
+      ambientSpin += deltaSeconds * 0.12;
+      timeUniform.value += deltaSeconds;
+
+      // Update the progress uniform based on autoProgress
+      // autoProgress goes 0 -> 2 over ~6 seconds.
+      // We want uP to go 0 -> 1 over the first 4 seconds.
+      let p = Math.min(1.0, autoProgress * 0.75);
+      progressUniform.value = p;
+
+      // Update glow and ring based on uP (progress)
+      function bump(x: number, a: number, b: number) {
+        const t = Math.min(1, Math.max(0, (x - a) / (b - a)));
+        return Math.sin(t * Math.PI) ** 2 * (t > 0 && t < 1 ? 1 : 0);
+      }
+      function smoothstep(a: number, b: number, x: number) {
+        const t = Math.min(1, Math.max(0, (x - a) / (b - a)));
+        return t * t * (3 - 2 * t);
       }
 
-      // --- Formation control ---
-      // Once the opening cinematic is complete (deep mode), lock into formation
-      const dm = smoothstep(0.8, 1.0, progress);
-      formationTarget = dm; // Formation stays solid, no scroll disruption
-      // Smooth lerp into formation
-      const formRate = dt * 1.5;
-      formationCurrent += (formationTarget - formationCurrent) * Math.min(1, formRate);
-
-      uniforms.uTime.value += dt;
-      uniforms.uP.value = progress;
-      uniforms.uTravel.value = travel;
-      uniforms.uFormation.value = formationCurrent;
-      uniforms.uScrollVel.value = smoothScrollVel;
-
-      // Pulsar tension + explosion flashes
-      const pulse = 0.5 + 0.5 * Math.sin(uniforms.uTime.value * 2.6);
-      const preBlast = 1 - smoothstep(0.28, 0.36, progress);
-      const blast1 = bump(progress, 0.3, 0.42);
-      const blast2 = bump(progress, 0.56, 0.68);
+      const pulse = 0.5 + 0.5 * Math.sin(timeUniform.value * 2.6);
+      const preBlast = 1 - smoothstep(0.28, 0.36, p);
+      const blast1 = bump(p, 0.3, 0.42);
+      const blast2 = bump(p, 0.56, 0.68);
 
       glowU.uIntensity.value =
-        preBlast * (0.45 + 0.6 * pulse + 1.8 * smoothstep(0.05, 0.3, progress)) +
-        bump(progress, 0.32, 0.4) * 3.0 +
-        bump(progress, 0.58, 0.66) * 1.8;
+        preBlast * (0.45 + 0.6 * pulse + 1.8 * smoothstep(0.05, 0.3, p)) +
+        bump(p, 0.32, 0.4) * 3.0 +
+        bump(p, 0.58, 0.66) * 1.8;
       glowU.uCore.value = preBlast * 1.4 + blast1 * 2.2 + blast2 * 1.2;
 
-      // Dim the central glow during the wordmark reveal window so text stays readable
-      const revealDim = 1 - bump(progress, 0.38, 0.56) * 0.7;
+      // Dim the central glow during wordmark reveal (p=0.4 to 0.6)
+      const revealDim = 1 - bump(p, 0.38, 0.56) * 0.7;
       glowU.uIntensity.value *= revealDim;
       glowU.uCore.value *= revealDim;
 
-      const glowScale = 12 + 40 * smoothstep(0.1, 0.34, progress) + 90 * blast1;
+      // Keep scale appropriate for our closer camera (e.g. 5 to 40 instead of 12 to 102)
+      const glowScale = 3 + 12 * smoothstep(0.1, 0.34, p) + 30 * blast1;
       glow.scale.setScalar(glowScale);
 
-      const ringP = Math.max(smoothstep(0.3, 0.56, progress), smoothstep(0.56, 0.84, progress));
+      const ringP = Math.max(smoothstep(0.3, 0.56, p), smoothstep(0.56, 0.84, p));
       ringU.uProgress.value = ringP;
-      ringU.uIntensity.value = (blast1 * 2.2 + blast2 * 1.6) * (1 - smoothstep(0.9, 1.0, progress));
-      ring.scale.setScalar(60 + 320 * ringP);
+      ringU.uIntensity.value = (blast1 * 2.2 + blast2 * 1.6) * (1 - smoothstep(0.9, 1.0, p));
+      ring.scale.setScalar(15 + 80 * ringP);
 
-      const fade = 1 - smoothstep(0.82, 0.98, progress);
+      const fade = 1 - smoothstep(0.82, 0.98, p);
       glow.visible = glowU.uIntensity.value * fade > 0.002;
       glowU.uIntensity.value *= fade;
 
-      // Camera: settles then travels forward through the cloud
-      pointer.x += (pointer.tx - pointer.x) * Math.min(1, dt * 2.0);
-      pointer.y += (pointer.ty - pointer.y) * Math.min(1, dt * 2.0);
-      camera.position.x = pointer.x * 1.6 * dm + Math.sin(travel * 0.35) * 3.2 * dm;
-      camera.position.y = -pointer.y * 1.1 * dm + Math.cos(travel * 0.27) * 2.4 * dm;
-      camera.position.z = 6 * (1 - dm);
-      camera.rotation.z = Math.sin(travel * 0.18) * 0.02;
-      camera.lookAt(camera.position.x * 0.4, camera.position.y * 0.4, -60);
+      // Make the glow and ring always perfectly face the camera (billboarding)
+      glow.quaternion.copy(camera.quaternion);
+      ring.quaternion.copy(camera.quaternion);
 
-      // Expose timeline to DOM overlays — only write when value actually changed
-      const cineV = progress.toFixed(4);
-      const flashV = (bump(progress, 0.31, 0.39) * 0.8 + bump(progress, 0.575, 0.655) * 0.4).toFixed(4);
-      const revealV = (smoothstep(0.39, 0.45, progress) * (1 - smoothstep(0.55, 0.6, progress))).toFixed(4);
-      const chromeV = smoothstep(0.7, 0.88, progress).toFixed(4);
-      if (cineV !== lastCine) { root.style.setProperty("--cine", cineV); lastCine = cineV; }
-      if (flashV !== lastFlash) { root.style.setProperty("--flash", flashV); lastFlash = flashV; }
-      if (revealV !== lastReveal) { root.style.setProperty("--reveal", revealV); lastReveal = revealV; }
-      if (chromeV !== lastChrome) { root.style.setProperty("--chrome", chromeV); lastChrome = chromeV; }
+      // Fade in the UI (MAGNOVITE text, countdown) after the explosion peaks
+      const uiFade = smoothstep(0.65, 0.95, p).toFixed(4);
+      if (uiFade !== lastUiFade) {
+          root.style.setProperty('--ui-fade', uiFade);
+          lastUiFade = uiFade;
+      }
 
-      renderer.render(scene, camera);
-      raf = requestAnimationFrame(tick);
+      if (!autoSequenceComplete && isModelLoaded) {
+        let stepSpeed = 0.167;
+
+        if (autoProgress > 0.5 && autoProgress <= 1.25) {
+          stepSpeed = 0.35;
+        } else if (autoProgress > 1.25) {
+          const decelFactor = 1.0 - ((autoProgress - 1.25) / 0.75);
+          stepSpeed = 0.12 + (0.23 * Math.max(decelFactor, 0));
+        }
+
+        autoProgress += deltaSeconds * stepSpeed;
+
+        if (autoProgress >= 2.0) {
+          autoProgress = 2.0;
+          autoSequenceComplete = true;
+          // Synchronize target with current scroll when startup finishes
+          onScroll();
+        }
+        currentSmoothRawIndex = autoProgress;
+      } else {
+        const diff = targetScrollIndex - currentSmoothRawIndex;
+        currentSmoothRawIndex += diff * Math.min(deltaSeconds * 6.0, 1.0);
+      }
+
+      const totalSections = sections.length - 1;
+      const safeRawIndex = Math.max(0, Math.min(currentSmoothRawIndex, totalSections));
+
+      const fromIdx = Math.floor(safeRawIndex);
+      const toIdx = Math.min(fromIdx + 1, totalSections);
+      const stepFrac = safeRawIndex - fromIdx;
+
+      const from = sections[fromIdx];
+      const to = sections[toIdx];
+
+      const t = smootherStep(stepFrac);
+
+      const baseAngle = from.angle + (to.angle - from.angle) * t;
+      const currentRadius = from.radius + (to.radius - from.radius) * t;
+      const currentHeight = from.height + (to.height - from.height) * t;
+
+      const totalAngle = baseAngle + ambientSpin;
+
+      currentCamPos.set(
+        Math.sin(totalAngle) * currentRadius,
+        currentHeight,
+        Math.cos(totalAngle) * currentRadius
+      );
+      currentCamTarget.set(0, 0, 0);
+
+      if (activePointsMat) {
+        const scrollFrac = Math.min(safeRawIndex / totalSections, 1);
+        const cp = Math.max((scrollFrac - 0.5) / 0.5, 0);
+        const sz = 1.0 - cp * 0.45;
+        const op = 1.0 - cp * 0.35;
+        activePointsMat.size = baseStarSize * sz * 0.35; // Significantly reduce size to match the old tiny butterfly particles
+        activePointsMat.opacity = 1.0 * op; // Make fully opaque for maximum clarity
+      }
+
+      const interactiveCamPos = currentCamPos.clone();
+      if (!isMobileDevice) {
+        interactiveCamPos.x += mouseX * 0.006;
+        interactiveCamPos.y += -mouseY * 0.006;
+      }
+
+      camera.position.copy(interactiveCamPos);
+      camera.lookAt(currentCamTarget);
+
+      if (isMobileDevice) {
+        renderer.render(scene, camera);
+      } else {
+        composer.render();
+      }
+
+      animId = requestAnimationFrame(renderFrame);
     }
-    raf = requestAnimationFrame(tick);
+
+    renderFrame();
 
     return () => {
-      cancelAnimationFrame(raf);
-      window.removeEventListener("resize", onResize);
-      window.removeEventListener("pointermove", onMove);
-      document.removeEventListener("visibilitychange", onVisibility);
-      geo.dispose();
-      mat.dispose();
-      tex.dispose();
+      cancelAnimationFrame(animId);
+      window.removeEventListener('resize', onResize);
+      window.removeEventListener('scroll', onScroll);
+      window.removeEventListener('mousemove', onMouseMove);
       renderer.dispose();
-      if (host.contains(renderer.domElement)) {
-        host.removeChild(renderer.domElement);
-      }
+      host.removeChild(renderer.domElement);
     };
   }, [hostRef]);
 }

@@ -9,7 +9,9 @@ export default defineConfig({
   },
   plugins: [
     tailwindcss(),
-    TanStackRouterVite(),
+    TanStackRouterVite({
+      autoCodeSplitting: true,
+    }),
     react(),
   ],
 });

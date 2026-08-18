@@ -186,7 +186,7 @@ export function EventsPage() {
                 alt={currentEvent.title}
                 className="h-full w-full object-cover object-center"
                 onError={(e) => {
-                  (e.target as HTMLImageElement).src = "/images/shaanrahman.jpg";
+                  (e.target as HTMLImageElement).src = "/images/shaan-new-poster.jpg";
                 }}
               />
               <div className="absolute inset-0 bg-gradient-to-t from-[#06080e] via-transparent to-transparent opacity-80" />
@@ -312,14 +312,35 @@ export function EventsPage() {
                   <h4 className="font-display text-sm font-semibold tracking-wide text-white uppercase">
                     Event Coordinators
                   </h4>
-                  <div className="mt-4 rounded-xl border border-white/8 bg-white/[0.025] p-4">
-                    <div className="font-semibold text-white">{currentEvent.coordinator.name}</div>
-                    <a
-                      href={`tel:${currentEvent.coordinator.email.replace(/\\s+/g, '')}`}
-                      className="mt-1 flex items-center gap-2 text-xs text-indigo-300 transition-colors hover:text-indigo-200"
-                    >
-                      <Phone className="size-3.5" /> {currentEvent.coordinator.email}
-                    </a>
+                  <div className="mt-4 flex flex-col gap-3">
+                    {currentEvent.coordinators && currentEvent.coordinators.map((coord, idx) => (
+                      <div key={idx} className="rounded-xl border border-white/8 bg-white/[0.025] p-4">
+                        <div className="font-semibold text-white">{coord.name}</div>
+                        {coord.role && (
+                          <div className="text-[0.65rem] font-bold text-indigo-400/80 uppercase tracking-widest mt-0.5">
+                            {coord.role}
+                          </div>
+                        )}
+                        <div className="mt-2 flex flex-col gap-1">
+                          {coord.phone && (
+                            <a
+                              href={`tel:${coord.phone.replace(/\\s+/g, '')}`}
+                              className="flex items-center gap-2 text-xs text-indigo-300 transition-colors hover:text-indigo-200"
+                            >
+                              <Phone className="size-3.5" /> {coord.phone}
+                            </a>
+                          )}
+                          {coord.email && (
+                            <a
+                              href={`mailto:${coord.email}`}
+                              className="flex items-center gap-2 text-xs text-white/70 transition-colors hover:text-white"
+                            >
+                              <Mail className="size-3.5" /> {coord.email}
+                            </a>
+                          )}
+                        </div>
+                      </div>
+                    ))}
                   </div>
                 </div>
 
@@ -419,7 +440,7 @@ export function EventsPage() {
                       loading="lazy"
                       className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
                       onError={(e) => {
-                        (e.target as HTMLImageElement).src = "/images/shaanrahman.jpg";
+                        (e.target as HTMLImageElement).src = "/images/shaan-new-poster.jpg";
                       }}
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-[#06080e] via-transparent to-transparent" />

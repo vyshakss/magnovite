@@ -13,7 +13,7 @@ export interface EventDetail {
   fee: string;
   teamSize: string;
   format: string;
-  coordinator: { name: string; email: string };
+  coordinators: { name: string; phone: string; email: string; role: string }[];
   image: string;
   registrationLink?: string;
 }
@@ -51,16 +51,20 @@ export const EVENTS_DATA: EventDetail[] = [
     ],
     "faqs": [],
     "prizePool": "22K",
-    "date": "15 Sept 2026",
+    "date": "46280",
     "fee": "₹400 per team",
     "teamSize": "2",
-    "format": "Live Event",
-    "coordinator": {
-      "name": "Dr. Shashi Kumar D",
-      "email": "9916947645"
-    },
+    "format": "Team",
     "image": "/images/events/antrix.png",
-    "registrationLink": "https://forms.gle/srhDJHDLEG9JLUmN6"
+    "registrationLink": "https://forms.gle/srhDJHDLEG9JLUmN6",
+    "coordinators": [
+      {
+        "name": "Dr. Shashi Kumar D",
+        "phone": "9916947645",
+        "email": "",
+        "role": "Coordinator"
+      }
+    ]
   },
   {
     "slug": "apex-strategy",
@@ -88,16 +92,32 @@ export const EVENTS_DATA: EventDetail[] = [
     ],
     "faqs": [],
     "prizePool": "22K",
-    "date": "15 Sept 2026",
+    "date": "15",
     "fee": "₹700 per team",
     "teamSize": "2–5",
-    "format": "Live Event",
-    "coordinator": {
-      "name": "Dr. Ravikumar R",
-      "email": "9964167735"
-    },
+    "format": "Team",
     "image": "/images/events/apex-strategy.png",
-    "registrationLink": "https://docs.google.com/forms/d/e/1FAIpQLScDjJnENvIJJNrBV6VUGO5jGaKd_Qmy4_jc9kMBnBsZw-FCWw/viewform?usp=publish-editor"
+    "registrationLink": "https://docs.google.com/forms/d/e/1FAIpQLScDjJnENvIJJNrBV6VUGO5jGaKd_Qmy4_jc9kMBnBsZw-FCWw/viewform?usp=publish-editor",
+    "coordinators": [
+      {
+        "name": "Dr Niranjan SJ",
+        "phone": "9164779971",
+        "email": "niranjana.s@christuniversity.in",
+        "role": "Faculty Coordinator"
+      },
+      {
+        "name": "Ivin Sabu",
+        "phone": "7400232877",
+        "email": "ivin.sabu@btech.christuniversity.in",
+        "role": "Student Coordinator"
+      },
+      {
+        "name": "Avyay L S",
+        "phone": "9940010731",
+        "email": "avyay.ls@btech.christuniversity.in",
+        "role": "Student Coordinator"
+      }
+    ]
   },
   {
     "slug": "arkicraft",
@@ -127,12 +147,16 @@ export const EVENTS_DATA: EventDetail[] = [
     "fee": "₹500 per team",
     "teamSize": "2",
     "format": "Live Event",
-    "coordinator": {
-      "name": "Dr. Tejas H.K.",
-      "email": "9686798951"
-    },
     "image": "/images/events/arkicraft.png",
-    "registrationLink": "https://docs.google.com/forms/d/e/1FAIpQLSdtmwLIO4NbikAp0BqHjKqGKSsicjB_DrDYRvNfQW6gVzpt_Q/viewform?usp=dialog"
+    "registrationLink": "https://docs.google.com/forms/d/e/1FAIpQLSdtmwLIO4NbikAp0BqHjKqGKSsicjB_DrDYRvNfQW6gVzpt_Q/viewform?usp=dialog",
+    "coordinators": [
+      {
+        "name": "Dr. Tejas H.K.",
+        "phone": "9686798951",
+        "email": "",
+        "role": "Coordinator"
+      }
+    ]
   },
   {
     "slug": "bards-gambit",
@@ -161,16 +185,32 @@ export const EVENTS_DATA: EventDetail[] = [
     ],
     "faqs": [],
     "prizePool": "22K",
-    "date": "15 Sept 2026",
+    "date": "15-16",
     "fee": "₹400 per team",
     "teamSize": "2",
-    "format": "Live Event",
-    "coordinator": {
-      "name": "Prof.  Navaneetha Suresh",
-      "email": "8547343870"
-    },
+    "format": "Team",
     "image": "/images/events/bards-gambit.png",
-    "registrationLink": "https://docs.google.com/forms/d/e/1FAIpQLSc65v6inFjiO8l4TDoU8rXNRjPNZLLi07flASttEsurC5m6cw/viewform?usp=publish-editor"
+    "registrationLink": "https://docs.google.com/forms/d/e/1FAIpQLSc65v6inFjiO8l4TDoU8rXNRjPNZLLi07flASttEsurC5m6cw/viewform?usp=publish-editor",
+    "coordinators": [
+      {
+        "name": "Dr. Jopaul Mathew",
+        "phone": "8138011592",
+        "email": "jopaul.mathew@christuniversity.in",
+        "role": "Faculty Coordinator"
+      },
+      {
+        "name": "Catherine",
+        "phone": "99677 83363",
+        "email": "Catherine.susan@btech.christuniversity.in",
+        "role": "Student Coordinator"
+      },
+      {
+        "name": "Rithvik Sunil",
+        "phone": "7306599726",
+        "email": "Rithvik.sunil@btech.christuniversity.in",
+        "role": "Student Coordinator"
+      }
+    ]
   },
   {
     "slug": "battle-clay",
@@ -178,7 +218,7 @@ export const EVENTS_DATA: EventDetail[] = [
     "tagline": "A creative clay modelling challenge where participants transform ideas into unique three-dimensional forms through imagination, skill, and craftsmanship.",
     "category": "Design",
     "department": "School of Architecture",
-    "overview": "About the Event:Battle Clay is a creative and engaging clay modelling competition that brings together imagination, creativity, and hands-on skills. Participants are challenged to transform their ideas into meaningful three-dimensional forms using clay as the primary medium. The event encourages experimentation, innovative thinking, and artistic expression while developing patience, precision, and craftsmanship. With a limited time to create, participants must think creatively and work efficiently to bring their concepts to life. Battle Clay provides an exciting platform for students to explore form, texture, and structure while competing with others. It celebrates creativity, encourages collaboration, and turns simple ideas into tangible creations.",
+    "overview": "Battle Clay is a creative and engaging clay modelling competition that brings together imagination, creativity, and hands-on skills. Participants are challenged to transform their ideas into meaningful three-dimensional forms using clay as the primary medium. The event encourages experimentation, innovative thinking, and artistic expression while developing patience, precision, and craftsmanship. With a limited time to create, participants must think creatively and work efficiently to bring their concepts to life. Battle Clay provides an exciting platform for students to explore form, texture, and structure while competing with others. It celebrates creativity, encourages collaboration, and turns simple ideas into tangible creations.",
     "stages": [
       {
         "title": "Event Structure",
@@ -202,16 +242,32 @@ export const EVENTS_DATA: EventDetail[] = [
     ],
     "faqs": [],
     "prizePool": "22K",
-    "date": "15 Sept 2026",
+    "date": "15",
     "fee": "₹500 per team",
     "teamSize": "2–3",
-    "format": "Live Event",
-    "coordinator": {
-      "name": "Prof.  Rashmi S",
-      "email": "9986406742"
-    },
+    "format": "Team",
     "image": "/images/events/battle-clay.png",
-    "registrationLink": "https://docs.google.com/forms/d/e/1FAIpQLSdSSZfUhj2o_hCcC_cPubUpa4sdlFEwOeORZ0LOX_FI0LnuAw/viewform?usp=publish-editor"
+    "registrationLink": "https://docs.google.com/forms/d/e/1FAIpQLSdSSZfUhj2o_hCcC_cPubUpa4sdlFEwOeORZ0LOX_FI0LnuAw/viewform?usp=publish-editor",
+    "coordinators": [
+      {
+        "name": "Prof. Betty Bharathi Sharath",
+        "phone": "9900129124",
+        "email": "betty.bharathi@christuniversity.in",
+        "role": "Faculty Coordinator"
+      },
+      {
+        "name": "Kuprala Sanjeev Hemanth",
+        "phone": "7416352580",
+        "email": "kuparala.sanjeev@christuniversity.in",
+        "role": "Student Coordinator"
+      },
+      {
+        "name": "Prarthana Sarkar",
+        "phone": "8017062443",
+        "email": "prarthana.sarkar@arch.christuniversity.in",
+        "role": "Student Coordinator"
+      }
+    ]
   },
   {
     "slug": "best-management-team",
@@ -248,16 +304,32 @@ export const EVENTS_DATA: EventDetail[] = [
     ],
     "faqs": [],
     "prizePool": "22K",
-    "date": "15 Sept 2026",
+    "date": "15,16",
     "fee": "₹900 per team",
     "teamSize": "3 members",
-    "format": "Live Event",
-    "coordinator": {
-      "name": "Prof.  Nishanth",
-      "email": "9845458055"
-    },
+    "format": "Team",
     "image": "/images/events/best-management-team.png",
-    "registrationLink": "https://docs.google.com/forms/d/e/1FAIpQLSdfz88LDlhAE4q3kVLOvc-AVIDYMzIm3PGhS2VAL7jeWI5lDQ/viewform?usp=publish-editor"
+    "registrationLink": "https://docs.google.com/forms/d/e/1FAIpQLSdfz88LDlhAE4q3kVLOvc-AVIDYMzIm3PGhS2VAL7jeWI5lDQ/viewform?usp=publish-editor",
+    "coordinators": [
+      {
+        "name": "Dr Vinay TV",
+        "phone": "9582580854",
+        "email": "vinay.tv@christuniversity.in",
+        "role": "Faculty Coordinator"
+      },
+      {
+        "name": "Anuja Theres",
+        "phone": "9188038095",
+        "email": "anuja.theres@mba.christuniversity.in",
+        "role": "Student Coordinator"
+      },
+      {
+        "name": "Shaik Mohammad Rizwan",
+        "phone": "9676257621",
+        "email": "shaik.Mohammad@mba.christuniversity.in",
+        "role": "Student Coordinator"
+      }
+    ]
   },
   {
     "slug": "best-manager",
@@ -265,7 +337,7 @@ export const EVENTS_DATA: EventDetail[] = [
     "tagline": "Know the Game, Master the Challenge, Lead the Way",
     "category": "Management",
     "department": "BBA",
-    "overview": "Best Manager is a flagship management event designed to test participants on their ability to think, strategise, communicate, lead, and make effective decisions under pressure. The event simulates real-world managerial situations, challenging participants to step into the shoes of a manager and navigate diverse business scenarios.The competition encompasses multiple facets of management, including Human Resources, Marketing, Finance, Operations, Strategy, Leadership, Communication, and Decision-Making. Through a series of engaging rounds, participants will be tested on their analytical thinking, creativity, problem-solving abilities, managerial aptitude, and ability to adapt to dynamic situations.Rather than evaluating participants on a single skill set, Best Manager takes a 360° approach to management, assessing how effectively an individual can balance people, resources, strategy, and business objectives. The event ultimately seeks to identify the participant who demonstrates the versatility, confidence, leadership, and managerial acumen required to become the complete manager.",
+    "overview": "Best Manager is a flagship management event designed to test participants on their ability to think, strategise, communicate, lead, and make effective decisions under pressure. The event simulates real-world managerial situations, challenging participants to step into the shoes of a manager and navigate diverse business scenarios.\nThe competition encompasses multiple facets of management, including Human Resources, Marketing, Finance, Operations, Strategy, Leadership, Communication, and Decision-Making. Through a series of engaging rounds, participants will be tested on their analytical thinking, creativity, problem-solving abilities, managerial aptitude, and ability to adapt to dynamic situations.\nRather than evaluating participants on a single skill set, Best Manager takes a 360° approach to management, assessing how effectively an individual can balance people, resources, strategy, and business objectives. The event ultimately seeks to identify the participant who demonstrates the versatility, confidence, leadership, and managerial acumen required to become the complete manager.",
     "stages": [
       {
         "title": "Event Structure",
@@ -288,13 +360,29 @@ export const EVENTS_DATA: EventDetail[] = [
     "date": "15 Sept 2026",
     "fee": "₹600 per team",
     "teamSize": "Individual",
-    "format": "Live Event",
-    "coordinator": {
-      "name": "Dr. Charunayanak Math",
-      "email": "9585587443"
-    },
+    "format": "Solo",
     "image": "/images/events/bestmanager.avif",
-    "registrationLink": "https://docs.google.com/forms/d/e/1FAIpQLSdrfAVuAfJqZhYe_QCt5fLvfjORFlrm9Q1Ah_PbSj5m4Fyosw/viewform?usp=publish-editor"
+    "registrationLink": "https://docs.google.com/forms/d/e/1FAIpQLSdrfAVuAfJqZhYe_QCt5fLvfjORFlrm9Q1Ah_PbSj5m4Fyosw/viewform?usp=publish-editor",
+    "coordinators": [
+      {
+        "name": "Dr. Arun RJ",
+        "phone": "9620043436",
+        "email": "",
+        "role": "Faculty Coordinator"
+      },
+      {
+        "name": "Nipun Agarwal",
+        "phone": "83026 66351",
+        "email": "",
+        "role": "Student Coordinator"
+      },
+      {
+        "name": "Pragya",
+        "phone": "70110 28993",
+        "email": "",
+        "role": "Student Coordinator"
+      }
+    ]
   },
   {
     "slug": "bitforge",
@@ -302,7 +390,7 @@ export const EVENTS_DATA: EventDetail[] = [
     "tagline": "The code is flawed. The clock is ticking.Bring the logic to life.",
     "category": "Engineering",
     "department": "Electronics and Communication Engineering (ECE)",
-    "overview": "BitForge is a high-energy, multi-round digital logic and hardware engineering challenge designed to bridge the gap between theoretical concept and practical execution. The event tests number system conversions, logic gate optimization, cryptographic problem-solving, and live hardware prototyping.Starting with a fast-paced cryptographic and riddle-based paper sprint, teams must decode a chain of interlinked puzzles — hexadecimal riddles, direction-finding clues, and a logic gate maze — before moving on to a three-stage classical cryptography round covering Caesar, Vigenère, and Playfair ciphers. Finalist teams then bring abstract paper logic to life by manually wiring physical Digital IC Trainer Kits under a ticking clock, before the grand finale tests their ability to design and optimize a circuit against a live fluctuating cost market. The event has a low barrier to entry but a high skill ceiling, making it challenging for engineering students while remaining intuitive and playable.",
+    "overview": "BitForge is a high-energy, multi-round digital logic and hardware engineering challenge designed to bridge the gap between theoretical concept and practical execution. The event tests number system conversions, logic gate optimization, cryptographic problem-solving, and live hardware prototyping.\nStarting with a fast-paced cryptographic and riddle-based paper sprint, teams must decode a chain of interlinked puzzles — hexadecimal riddles, direction-finding clues, and a logic gate maze — before moving on to a three-stage classical cryptography round covering Caesar, Vigenère, and Playfair ciphers. Finalist teams then bring abstract paper logic to life by manually wiring physical Digital IC Trainer Kits under a ticking clock, before the grand finale tests their ability to design and optimize a circuit against a live fluctuating cost market. The event has a low barrier to entry but a high skill ceiling, making it challenging for engineering students while remaining intuitive and playable.",
     "stages": [
       {
         "title": "Event Structure",
@@ -328,16 +416,20 @@ export const EVENTS_DATA: EventDetail[] = [
     ],
     "faqs": [],
     "prizePool": "22K",
-    "date": "15 Sept 2026",
+    "date": "46281",
     "fee": "₹400 per team",
     "teamSize": "3",
-    "format": "Live Event",
-    "coordinator": {
-      "name": "Dr. Praghash K",
-      "email": "95856 35381"
-    },
+    "format": "Team",
     "image": "/images/events/bitforge.png",
-    "registrationLink": "https://forms.gle/nv6z4T6bDnmH7XGa7"
+    "registrationLink": "https://forms.gle/nv6z4T6bDnmH7XGa7",
+    "coordinators": [
+      {
+        "name": "Dr. Praghash K",
+        "phone": "95856 35381",
+        "email": "",
+        "role": "Coordinator"
+      }
+    ]
   },
   {
     "slug": "bot-wars",
@@ -384,16 +476,20 @@ export const EVENTS_DATA: EventDetail[] = [
     ],
     "faqs": [],
     "prizePool": "22K",
-    "date": "15 Sept 2026",
+    "date": "15,16",
     "fee": "₹800 per team",
     "teamSize": "4–6",
-    "format": "Live Event",
-    "coordinator": {
-      "name": "Dr. Jangam Sasidhar, Dr. Umesh V",
-      "email": "9164368155"
-    },
+    "format": "Team",
     "image": "/images/events/bot-wars.png",
-    "registrationLink": "https://docs.google.com/forms/d/e/1FAIpQLSdG1KnrDU70YdjZb-FWfhAQMert_tDCCI6w-ubPNGmoKcViHQ/viewform?usp=publish-editor"
+    "registrationLink": "https://docs.google.com/forms/d/e/1FAIpQLSdG1KnrDU70YdjZb-FWfhAQMert_tDCCI6w-ubPNGmoKcViHQ/viewform?usp=publish-editor",
+    "coordinators": [
+      {
+        "name": "Dr. Jangam Sasidhar, Dr. Umesh V",
+        "phone": "9164368155",
+        "email": "",
+        "role": "Coordinator"
+      }
+    ]
   },
   {
     "slug": "canvas-of-minds",
@@ -427,12 +523,16 @@ export const EVENTS_DATA: EventDetail[] = [
     "fee": "₹400 per team",
     "teamSize": "2",
     "format": "Live Event",
-    "coordinator": {
-      "name": "Dr. Aparna Sridharan",
-      "email": "7598430592"
-    },
     "image": "/images/events/canvas-of-minds.png",
-    "registrationLink": "https://docs.google.com/forms/d/e/1FAIpQLScSxLCHw9YroO7c_9zxrEnmoLx8h8GCL3brhen7T5h65t6ukw/viewform?usp=header"
+    "registrationLink": "https://docs.google.com/forms/d/e/1FAIpQLScSxLCHw9YroO7c_9zxrEnmoLx8h8GCL3brhen7T5h65t6ukw/viewform?usp=header",
+    "coordinators": [
+      {
+        "name": "Dr. Aparna Sridharan",
+        "phone": "7598430592",
+        "email": "",
+        "role": "Coordinator"
+      }
+    ]
   },
   {
     "slug": "casecraft-pitch-and-pivot",
@@ -440,7 +540,7 @@ export const EVENTS_DATA: EventDetail[] = [
     "tagline": "An immersive industry case challenge where teams analyse, strategise, adapt to the unexpected, and convince stakeholders that their solution can survive.",
     "category": "General Fest Events",
     "department": "IIIC",
-    "overview": "This event is designed to enable student teams to apply strategic and technical reasoning to a live, real-world industry case, thereby bridging academic theory with the pace and complexity of actual critical problem-solving.  Participating teams are presented with an unseen industry case on the day of the event and are required to analyse it and formulate a viable solution, submitted as a strategic pitch deck of up to three slides. Every team then draws a random twist, an unforeseen disruption to their case, and must revise their solution's future prospects accordingly, presenting and defending it as a hand-made poster, created using art supplies provided by the organising committee, before a panel acting as skeptical investors. Results are announced at a valedictory ceremony the following day.",
+    "overview": "This event is designed to enable student teams to apply strategic and technical reasoning to a live, real-world industry case, thereby bridging academic theory with the pace and complexity of actual critical problem-solving. \n Participating teams are presented with an unseen industry case on the day of the event and are required to analyse it and formulate a viable solution, submitted as a strategic pitch deck of up to three slides. Every team then draws a random twist, an unforeseen disruption to their case, and must revise their solution's future prospects accordingly, presenting and defending it as a hand-made poster, created using art supplies provided by the organising committee, before a panel acting as skeptical investors. Results are announced at a valedictory ceremony the following day.",
     "stages": [
       {
         "title": "Event Structure",
@@ -463,16 +563,32 @@ export const EVENTS_DATA: EventDetail[] = [
     ],
     "faqs": [],
     "prizePool": "22K",
-    "date": "15 Sept 2026",
+    "date": "46280",
     "fee": "₹500 per team",
     "teamSize": "2-4 members",
-    "format": "Live Event",
-    "coordinator": {
-      "name": "Dr. Joseph Rodrigues",
-      "email": "94205 94564"
-    },
+    "format": "Team",
     "image": "/images/events/casecraft.jpg",
-    "registrationLink": "https://forms.gle/y3jVJjrsipLa3a2NA"
+    "registrationLink": "https://forms.gle/y3jVJjrsipLa3a2NA",
+    "coordinators": [
+      {
+        "name": "Dr. Joseph Rodrigues",
+        "phone": "94205 94564",
+        "email": "joseph.rodrigues@christuniversity.in",
+        "role": "Faculty Coordinator"
+      },
+      {
+        "name": "Rebecca Lenin Koshy",
+        "phone": "63561 17125",
+        "email": "rebecca.lenin@btech.christuniversity.in",
+        "role": "Student Coordinator"
+      },
+      {
+        "name": "Annmarie Vinish",
+        "phone": "89213 23033",
+        "email": "annmarie.vinish@btech.christuniversity.in",
+        "role": "Student Coordinator"
+      }
+    ]
   },
   {
     "slug": "chess-grandmaster",
@@ -493,12 +609,16 @@ export const EVENTS_DATA: EventDetail[] = [
     "fee": "₹200",
     "teamSize": "Individual",
     "format": "Live Event",
-    "coordinator": {
-      "name": "Chess Desk",
-      "email": "Email: chess.events@christuniversity.in"
-    },
     "image": "/images/events/chess-grandmaster.png",
-    "registrationLink": "https://docs.google.com/forms/d/e/1FAIpQLScl5_s9O-V-DrnAg70WvLdN1F4oYGvJ4rWSPReLK9ZUIRvb4A/viewform?usp=publish-editor"
+    "registrationLink": "https://docs.google.com/forms/d/e/1FAIpQLScl5_s9O-V-DrnAg70WvLdN1F4oYGvJ4rWSPReLK9ZUIRvb4A/viewform?usp=publish-editor",
+    "coordinators": [
+      {
+        "name": "Chess Desk",
+        "phone": "Email: chess.events@christuniversity.in",
+        "email": "",
+        "role": "Coordinator"
+      }
+    ]
   },
   {
     "slug": "cipher-quest",
@@ -530,16 +650,32 @@ export const EVENTS_DATA: EventDetail[] = [
     ],
     "faqs": [],
     "prizePool": "22K",
-    "date": "15 Sept 2026",
-    "fee": "₹500 per team",
+    "date": "15 Sept",
+    "fee": "₹400 per team",
     "teamSize": "2–4",
-    "format": "Live Event",
-    "coordinator": {
-      "name": "Dr. Bejoy B. J.",
-      "email": "9385446508"
-    },
+    "format": "Team",
     "image": "/images/events/cipher-quest.png",
-    "registrationLink": "https://docs.google.com/forms/d/e/1FAIpQLSdWG_widE2nn2jJpioIKVj5bhCcgSdvK6N1jNh72KsO_KoccA/viewform?usp=publish-editor"
+    "registrationLink": "https://docs.google.com/forms/d/e/1FAIpQLSdWG_widE2nn2jJpioIKVj5bhCcgSdvK6N1jNh72KsO_KoccA/viewform?usp=publish-editor",
+    "coordinators": [
+      {
+        "name": "Dr Bejoy BJ",
+        "phone": "8281300742",
+        "email": "bejoy.bj@christuniversity.in",
+        "role": "Faculty Coordinator"
+      },
+      {
+        "name": "Mathew Thomas",
+        "phone": "9036510075",
+        "email": "thomas.mathew@btech.christuniversity.in",
+        "role": "Student Coordinator"
+      },
+      {
+        "name": "Sneha Rohith",
+        "phone": "9008102224",
+        "email": "sneha.rohith@btech.christuniversity.in",
+        "role": "Student Coordinator"
+      }
+    ]
   },
   {
     "slug": "corporate-crossfire",
@@ -547,7 +683,7 @@ export const EVENTS_DATA: EventDetail[] = [
     "tagline": "Where Diplomacy Meets the Knife, and Every Decision Has a Price",
     "category": "Management",
     "department": "BBA",
-    "overview": "Corporate Crossfire simulates real-world corporate situations where participants mustnavigate conflicting perspectives, stakeholder interests, ethical dilemmas, and unexpected challenges. The event moves beyond conventional debates by placing participants indynamic situations that demand strategic thinking, informed decision-making, adaptability, and the ability to respond effectively under pressure.",
+    "overview": "Corporate Crossfire simulates real-world corporate situations where participants must\nnavigate conflicting perspectives, stakeholder interests, ethical dilemmas, and unexpected challenges. The event moves beyond conventional debates by placing participants in\ndynamic situations that demand strategic thinking, informed decision-making, adaptability, and the ability to respond effectively under pressure.",
     "stages": [
       {
         "title": "Event Structure",
@@ -576,13 +712,17 @@ export const EVENTS_DATA: EventDetail[] = [
     "date": "15 Sept 2026",
     "fee": "₹400 per team",
     "teamSize": "2",
-    "format": "Live Event",
-    "coordinator": {
-      "name": "Dr. Shilpa Rajagopal",
-      "email": "8301057146"
-    },
+    "format": "Team",
     "image": "/images/events/businessplan.jpg",
-    "registrationLink": "https://docs.google.com/forms/d/e/1FAIpQLSfVnyfr_0qqV59Lc_3wcYvEERUVjx8MlOBmznqyzNnRSB3A8g/viewform?usp=publish-editor"
+    "registrationLink": "https://docs.google.com/forms/d/e/1FAIpQLSfVnyfr_0qqV59Lc_3wcYvEERUVjx8MlOBmznqyzNnRSB3A8g/viewform?usp=publish-editor",
+    "coordinators": [
+      {
+        "name": "Dr. Shilpa Rajagopal",
+        "phone": "8301057146",
+        "email": "",
+        "role": "Coordinator"
+      }
+    ]
   },
   {
     "slug": "drag-race-xtreme",
@@ -590,7 +730,7 @@ export const EVENTS_DATA: EventDetail[] = [
     "tagline": "A high-speed RC drag racing challenge where teams race their custom-built vehicles over a straight track, competing for the fastest finish.",
     "category": "Engineering",
     "department": "Automotive Engineering",
-    "overview": "RC Drag Race is a high-speed remote-controlled vehicle competition where participants compete to cover a 35-metre straight-line track in the shortest possible time.The event gives participants freedom to design, build, modify and optimize their own RC vehicles while applying concepts of acceleration, traction, power transmission, gearing, vehicle dynamics and control.The competition follows an Open Build approach, with only essential dimensional, weight, drivetrain, battery and safety restrictions. Participants can experiment with different motors, gearing, tyres, chassis configurations and other engineering solutions.The event aims to promote hands-on engineering, innovation, practical problem-solving and competitive spirit among students from different institutions.",
+    "overview": "RC Drag Race is a high-speed remote-controlled vehicle competition where participants compete to cover a 50-metre straight-line track in the shortest possible time.\nThe event gives participants freedom to design, build, modify and optimize their own RC vehicles while applying concepts of acceleration, traction, power transmission, gearing, vehicle dynamics and control.\nThe competition follows an Open Build approach, with only essential dimensional, weight, drivetrain, battery and safety restrictions. Participants can experiment with different motors, gearing, tyres, chassis configurations and other engineering solutions.\nThe event aims to promote hands-on engineering, innovation, practical problem-solving and competitive spirit among students from different institutions.",
     "stages": [
       {
         "title": "Event Structure",
@@ -630,16 +770,20 @@ export const EVENTS_DATA: EventDetail[] = [
     ],
     "faqs": [],
     "prizePool": "22K",
-    "date": "15 Sept 2026",
+    "date": "15,16",
     "fee": "₹800 per team",
     "teamSize": "2–4",
-    "format": "Live Event",
-    "coordinator": {
-      "name": "Dr. Hadiya Pritesh",
-      "email": "9591668787"
-    },
+    "format": "Team",
     "image": "/images/events/drag-race-xtreme.png",
-    "registrationLink": "https://docs.google.com/forms/d/e/1FAIpQLScdhvBav78141DyPQpEmsSDP6kFpGdKKuHaqFFVYZLB7j6FfA/viewform?usp=dialog"
+    "registrationLink": "https://docs.google.com/forms/d/e/1FAIpQLScdhvBav78141DyPQpEmsSDP6kFpGdKKuHaqFFVYZLB7j6FfA/viewform?usp=dialog",
+    "coordinators": [
+      {
+        "name": "Dr. Hadiya Pritesh",
+        "phone": "9591668787",
+        "email": "",
+        "role": "Coordinator"
+      }
+    ]
   },
   {
     "slug": "drone-maze-challenge",
@@ -698,16 +842,20 @@ export const EVENTS_DATA: EventDetail[] = [
     ],
     "faqs": [],
     "prizePool": "22K",
-    "date": "15 Sept 2026",
+    "date": "16",
     "fee": "₹800 per team",
     "teamSize": "4",
-    "format": "Live Event",
-    "coordinator": {
-      "name": "Dr. Amruta Rout, Dr Sajna P Panigrahi",
-      "email": "7008561379"
-    },
+    "format": "Team",
     "image": "/images/events/drone.jpg",
-    "registrationLink": "https://docs.google.com/forms/d/e/1FAIpQLSdum7ERDW35nOUZ20XmsqnTXiWki_2LjVSbUfy4zuK8HHQL7A/viewform?usp=publish-editor"
+    "registrationLink": "https://docs.google.com/forms/d/e/1FAIpQLSdum7ERDW35nOUZ20XmsqnTXiWki_2LjVSbUfy4zuK8HHQL7A/viewform?usp=publish-editor",
+    "coordinators": [
+      {
+        "name": "Dr. Amruta Rout, Dr Sajna P Panigrahi",
+        "phone": "7008561379",
+        "email": "",
+        "role": "Coordinator"
+      }
+    ]
   },
   {
     "slug": "ecoforge-2-0",
@@ -733,16 +881,20 @@ export const EVENTS_DATA: EventDetail[] = [
     ],
     "faqs": [],
     "prizePool": "22K",
-    "date": "15 Sept 2026",
+    "date": "46280",
     "fee": "₹500 per team",
     "teamSize": "2–4",
-    "format": "Live Event",
-    "coordinator": {
-      "name": "Dr. Arpan Pradhan",
-      "email": "9439291900"
-    },
+    "format": "Team",
     "image": "/images/events/ecoforge.jpg",
-    "registrationLink": "https://docs.google.com/forms/d/e/1FAIpQLSfQnvaYdFwdmgv1PIodCkED6_W0MqHiBxDAAvIhLqGmVIFAdA/viewform?usp=dialog"
+    "registrationLink": "https://docs.google.com/forms/d/e/1FAIpQLSfQnvaYdFwdmgv1PIodCkED6_W0MqHiBxDAAvIhLqGmVIFAdA/viewform?usp=dialog",
+    "coordinators": [
+      {
+        "name": "Dr. Arpan Pradhan",
+        "phone": "9439291900",
+        "email": "",
+        "role": "Coordinator"
+      }
+    ]
   },
   {
     "slug": "etherea",
@@ -770,16 +922,20 @@ export const EVENTS_DATA: EventDetail[] = [
     ],
     "faqs": [],
     "prizePool": "15K",
-    "date": "15 Sept 2026",
+    "date": "15",
     "fee": "₹200 per person",
     "teamSize": "Individual",
-    "format": "Live Event",
-    "coordinator": {
-      "name": "Prof.Rashmi Pai",
-      "email": "9481943788"
-    },
+    "format": "Solo",
     "image": "/images/events/etherea.png",
-    "registrationLink": "https://docs.google.com/forms/d/e/1FAIpQLSfqc9fnzO9Jtc_vdqONaA-gGS5yvyyPS05yBYVUWnU7C_-dow/viewform?usp=publish-editor"
+    "registrationLink": "https://docs.google.com/forms/d/e/1FAIpQLSfqc9fnzO9Jtc_vdqONaA-gGS5yvyyPS05yBYVUWnU7C_-dow/viewform?usp=publish-editor",
+    "coordinators": [
+      {
+        "name": "Prof.Rashmi Pai",
+        "phone": "9481943788",
+        "email": "",
+        "role": "Coordinator"
+      }
+    ]
   },
   {
     "slug": "evmotion-26",
@@ -818,16 +974,20 @@ export const EVENTS_DATA: EventDetail[] = [
     ],
     "faqs": [],
     "prizePool": "22K",
-    "date": "15 Sept 2026",
+    "date": "46280",
     "fee": "₹400 per team",
-    "teamSize": "2026-02-04 00:00:00",
-    "format": "Live Event",
-    "coordinator": {
-      "name": "Dr. Venkataswamy. R",
-      "email": "7829222446"
-    },
+    "teamSize": "46057",
+    "format": "Team",
     "image": "/images/events/evmotion26.png",
-    "registrationLink": "https://docs.google.com/forms/d/e/1FAIpQLSeRQ002Hr-N0oWkKxA0q30BwI2oz3VWwJWbSUV9A2sn8JWkgg/viewform?usp=publish-editor"
+    "registrationLink": "https://docs.google.com/forms/d/e/1FAIpQLSeRQ002Hr-N0oWkKxA0q30BwI2oz3VWwJWbSUV9A2sn8JWkgg/viewform?usp=publish-editor",
+    "coordinators": [
+      {
+        "name": "Dr. Venkataswamy. R",
+        "phone": "7829222446",
+        "email": "",
+        "role": "Coordinator"
+      }
+    ]
   },
   {
     "slug": "final-override",
@@ -879,16 +1039,20 @@ export const EVENTS_DATA: EventDetail[] = [
     ],
     "faqs": [],
     "prizePool": "22K",
-    "date": "15 Sept 2026",
+    "date": "46281",
     "fee": "₹400 per team",
-    "teamSize": "2026-03-04 00:00:00",
-    "format": "Live Event",
-    "coordinator": {
-      "name": "8148364568",
-      "email": "Prof Wims Magdalene Mary"
-    },
+    "teamSize": "46085",
+    "format": "Team",
     "image": "/images/events/finaloverride.png",
-    "registrationLink": "https://docs.google.com/forms/d/e/1FAIpQLScmen14FqKNeoE4R1bkg0ndTnTaNQCSdLJfS3MkVFfnjNTqrQ/viewform?usp=publish-editor"
+    "registrationLink": "https://docs.google.com/forms/d/e/1FAIpQLScmen14FqKNeoE4R1bkg0ndTnTaNQCSdLJfS3MkVFfnjNTqrQ/viewform?usp=publish-editor",
+    "coordinators": [
+      {
+        "name": "8148364568",
+        "phone": "Prof Wims Magdalene Mary",
+        "email": "",
+        "role": "Coordinator"
+      }
+    ]
   },
   {
     "slug": "frames-unboxed",
@@ -921,16 +1085,20 @@ export const EVENTS_DATA: EventDetail[] = [
     ],
     "faqs": [],
     "prizePool": "22K",
-    "date": "15 Sept 2026",
-    "fee": "₹500 per team",
+    "date": "15,16",
+    "fee": "₹600 per team",
     "teamSize": "6",
-    "format": "Live Event",
-    "coordinator": {
-      "name": "Dr. Varsha Singh",
-      "email": "99729 39466"
-    },
+    "format": "Team",
     "image": "/images/events/framesunboxed.jpg",
-    "registrationLink": "https://docs.google.com/forms/d/e/1FAIpQLSeWJIyY35YtRBq94i4MW2pHHwSEHjdCa7-AvgAJ0Nh9osbzKw/viewform?usp=dialog"
+    "registrationLink": "https://docs.google.com/forms/d/e/1FAIpQLSeWJIyY35YtRBq94i4MW2pHHwSEHjdCa7-AvgAJ0Nh9osbzKw/viewform?usp=dialog",
+    "coordinators": [
+      {
+        "name": "Dr. Varsha Singh",
+        "phone": "99729 39466",
+        "email": "",
+        "role": "Coordinator"
+      }
+    ]
   },
   {
     "slug": "gridlock",
@@ -965,16 +1133,32 @@ export const EVENTS_DATA: EventDetail[] = [
     ],
     "faqs": [],
     "prizePool": "22K",
-    "date": "15 Sept 2026",
+    "date": "46281",
     "fee": "₹400 per team",
-    "teamSize": "2026-02-04 00:00:00",
-    "format": "Live Event",
-    "coordinator": {
-      "name": "Dr. Varaprasad Janamala",
-      "email": "9620446677"
-    },
+    "teamSize": "46057",
+    "format": "Team",
     "image": "/images/events/grid.jpg",
-    "registrationLink": "https://docs.google.com/forms/d/e/1FAIpQLSfDCFRLBkoWWKhFL7QwU0B7cd-Pv2bNO-3c_QlTQlfGd7MUbA/viewform?usp=publish-editor"
+    "registrationLink": "https://docs.google.com/forms/d/e/1FAIpQLSfDCFRLBkoWWKhFL7QwU0B7cd-Pv2bNO-3c_QlTQlfGd7MUbA/viewform?usp=publish-editor",
+    "coordinators": [
+      {
+        "name": "Dr. Arun Chithrabhanu",
+        "phone": "8939673940",
+        "email": "arun.chithrabhanu@christuniversity.in",
+        "role": "Faculty Coordinator"
+      },
+      {
+        "name": "Gayini D",
+        "phone": "9150412925",
+        "email": "gayini.d@btech.christuniversity.in",
+        "role": "Student Coordinator"
+      },
+      {
+        "name": "Anan Mathew",
+        "phone": "83040838815",
+        "email": "anan.mathew@btech.christuniversity.in",
+        "role": "Student Coordinator"
+      }
+    ]
   },
   {
     "slug": "how-i-met-your-killer",
@@ -1004,16 +1188,32 @@ export const EVENTS_DATA: EventDetail[] = [
     ],
     "faqs": [],
     "prizePool": "22K",
-    "date": "15 Sept 2026",
-    "fee": "₹500 per team",
+    "date": "15,16",
+    "fee": "₹400 per team",
     "teamSize": "4",
-    "format": "Live Event",
-    "coordinator": {
-      "name": "Dr. Ganesh Kumar J",
-      "email": "95004 90815"
-    },
+    "format": "Team",
     "image": "/images/events/howimeturkiller.jpg",
-    "registrationLink": "https://docs.google.com/forms/d/e/1FAIpQLScBPv8Ick77YirDfr1rE4xQR5ki3PXkwtgGlksBhTLTILG_yA/viewform?usp=dialog"
+    "registrationLink": "https://docs.google.com/forms/d/e/1FAIpQLScBPv8Ick77YirDfr1rE4xQR5ki3PXkwtgGlksBhTLTILG_yA/viewform?usp=dialog",
+    "coordinators": [
+      {
+        "name": "Dr. Bhanu BS",
+        "phone": "9591062948",
+        "email": "bhanu.bs@christuniversity.in",
+        "role": "Faculty Coordinator"
+      },
+      {
+        "name": "anjali khatri",
+        "phone": "9398950867",
+        "email": "anjali.khatri@psyh.christuniversity.in",
+        "role": "Student Coordinator"
+      },
+      {
+        "name": "Navya grover",
+        "phone": "8368487271",
+        "email": "navya.grover@psyh.christuniversity.in",
+        "role": "Student Coordinator"
+      }
+    ]
   },
   {
     "slug": "infinity-code-red",
@@ -1033,16 +1233,32 @@ export const EVENTS_DATA: EventDetail[] = [
     ],
     "faqs": [],
     "prizePool": "22K",
-    "date": "15 Sept 2026",
+    "date": "46280",
     "fee": "₹450 per team",
     "teamSize": "4",
-    "format": "Live Event",
-    "coordinator": {
-      "name": "Dr. Ambily Babu",
-      "email": "9632581800"
-    },
+    "format": "Team",
     "image": "/images/events/infinity-code-red.png",
-    "registrationLink": "https://forms.gle/nNKk1G8uEybNkM8e6"
+    "registrationLink": "https://forms.gle/nNKk1G8uEybNkM8e6",
+    "coordinators": [
+      {
+        "name": "Dr. Syam Chandran K",
+        "phone": "9496348771",
+        "email": "syam.chandran@christuniversity.in",
+        "role": "Faculty Coordinator"
+      },
+      {
+        "name": "Kingsley",
+        "phone": "8754182808",
+        "email": "kingsley.judewin@btech.christuniversity.in",
+        "role": "Student Coordinator"
+      },
+      {
+        "name": "Surasmitha",
+        "phone": "8078 156 512",
+        "email": "surasmita.parida@btech.christuniversity.n",
+        "role": "Student Coordinator"
+      }
+    ]
   },
   {
     "slug": "marketing-x-pr",
@@ -1074,13 +1290,17 @@ export const EVENTS_DATA: EventDetail[] = [
     "date": "15 Sept 2026",
     "fee": "₹500 per team",
     "teamSize": "2",
-    "format": "Live Event",
-    "coordinator": {
-      "name": "Dr. Ramya J.B.",
-      "email": "9894799610"
-    },
+    "format": "Team",
     "image": "/images/events/marketing.jpg",
-    "registrationLink": "https://docs.google.com/forms/d/e/1FAIpQLSfwh6ZfnFcvlcHh-X0BeN8Ecx_9Q1RPpDpOEaGRCfljrfjLuA/viewform?usp=publish-editor"
+    "registrationLink": "https://docs.google.com/forms/d/e/1FAIpQLSfwh6ZfnFcvlcHh-X0BeN8Ecx_9Q1RPpDpOEaGRCfljrfjLuA/viewform?usp=publish-editor",
+    "coordinators": [
+      {
+        "name": "Dr. Ramya J.B.",
+        "phone": "9894799610",
+        "email": "",
+        "role": "Coordinator"
+      }
+    ]
   },
   {
     "slug": "mud-run",
@@ -1088,7 +1308,7 @@ export const EVENTS_DATA: EventDetail[] = [
     "tagline": "Race your RC vehicle through challenging off road obstacles, where speed, skill, and precision decide the winner.",
     "category": "Engineering",
     "department": "Automotive Engineering",
-    "overview": "MUD RUN – RC Off-Road Challenge is an adrenaline-fuelled off-road racing experience that puts precision, control, and driving skill to the ultimate test.Participants will take on a specially engineered off-road arena featuring mud pits, rock gardens, ramps, uneven terrain, bridges, tight turns, and challenging technical sections, with every obstacle demanding a different approach.The objective is simple: conquer the terrain and complete the course in the shortest possible time. But speed alone won't be enough—every turn, climb, jump, and obstacle will test the driver's concentration, control, and ability to master their machine. Penalties for collisions and missed sections will ensure that precision is just as important as pace.Designed to bring the excitement of off-road motorsport to the college arena, MUD RUN promises an immersive and highly competitive experience for bothparticipants and spectators. The event aims to ignite an interest in automobiles and motorsport while encouraging teamwork, confidence, strategic thinking, and skilled vehicle handling—turning every lap into a battle between speed, skill, and terrain.",
+    "overview": "MUD RUN – RC Off-Road Challenge is an adrenaline-fuelled off-road racing experience that puts precision, control, and driving skill to the ultimate test. Participants will take on a specially engineered off-road arena featuring mud pits, rock gardens, ramps, uneven terrain, bridges, tight turns, and challenging technical sections, with every obstacle demanding a different approach. The objective is simple: conquer the terrain and complete the course in the shortest possible time. But speed alone won't be enough—every turn, climb, jump, and obstacle will test the driver's concentration, control, and ability to master their machine. Penalties for collisions and missed sections will ensure that precision is just as important as pace. Designed to bring the excitement of off-road motorsport to the college arena. The event aims to ignite an interest in automobiles and motorsport while encouraging teamwork, confidence, strategic thinking, and skilled vehicle handling, turning every lap into a battle between speed, skill, and terrain.",
     "stages": [
       {
         "title": "Event Structure",
@@ -1120,17 +1340,21 @@ export const EVENTS_DATA: EventDetail[] = [
       "disqualification."
     ],
     "faqs": [],
-    "prizePool": "22K",
-    "date": "15 Sept 2026",
+    "prizePool": "22k",
+    "date": "15,16",
     "fee": "₹800 per team",
-    "teamSize": "2–5",
-    "format": "Live Event",
-    "coordinator": {
-      "name": "Dr. Aneesh Jose",
-      "email": "9535339545"
-    },
+    "teamSize": "46058",
+    "format": "Team",
     "image": "/images/events/mud-run.png",
-    "registrationLink": "https://docs.google.com/forms/d/e/1FAIpQLSfZV6QoABzAvXT4SAjjS9D8h4rTHO9fv9fVDbQ2xhL7l-sfnQ/viewform?usp=publish-editor"
+    "registrationLink": "https://docs.google.com/forms/d/e/1FAIpQLSfZV6QoABzAvXT4SAjjS9D8h4rTHO9fv9fVDbQ2xhL7l-sfnQ/viewform?usp=publish-editor",
+    "coordinators": [
+      {
+        "name": "Dr. Aneesh Jose",
+        "phone": "9535339545",
+        "email": "",
+        "role": "Coordinator"
+      }
+    ]
   },
   {
     "slug": "pixel-whisper",
@@ -1138,7 +1362,7 @@ export const EVENTS_DATA: EventDetail[] = [
     "tagline": "A team-based AI challenge where participants study a complex target image, recreate it through a communication-free generation relay, and compete to achieve the highest visual similarity to the original.",
     "category": "Coding & Tech",
     "department": "Artificial Intelligence & Data Science (AIDS)",
-    "overview": "Pixel Whisper is a creative, team-based AI image recreation challenge in which participants compete to reproduce a bizarre and visually complex target image using an organizer-provided image-generation platform. The event combines observation, memory, creativity, and teamwork in a structured relay format that prevents direct collaboration during the generation process.At the beginning of each match, both competing teams are shown the same target image and are given a short discussion period to analyze its composition, objects, colours, and unusual visual details. Once the relay begins, team members take turns generating their interpretations without communicating with one another. Each participant may either refine the previous image or create a completely new interpretation before passing only the final generated image to the next teammate.The event is designed to test visual observation, strategic thinking, adaptability, time management, and creative interpretation under communication constraints. It provides an engaging and entertaining competitive experience while encouraging participants to think critically about visual details and collaborative decision-making in an AI-assisted creative environment.",
+    "overview": "Pixel Whisper is a creative, team-based AI image recreation challenge in which participants compete to reproduce a bizarre and visually complex target image using an organizer-provided image-generation platform. The event combines observation, memory, creativity, and teamwork in a structured relay format that prevents direct collaboration during the generation process.\nAt the beginning of each match, both competing teams are shown the same target image and are given a short discussion period to analyze its composition, objects, colours, and unusual visual details. Once the relay begins, team members take turns generating their interpretations without communicating with one another. Each participant may either refine the previous image or create a completely new interpretation before passing only the final generated image to the next teammate.\nThe event is designed to test visual observation, strategic thinking, adaptability, time management, and creative interpretation under communication constraints. It provides an engaging and entertaining competitive experience while encouraging participants to think critically about visual details and collaborative decision-making in an AI-assisted creative environment.",
     "stages": [
       {
         "title": "Event Structure",
@@ -1202,16 +1426,20 @@ export const EVENTS_DATA: EventDetail[] = [
     ],
     "faqs": [],
     "prizePool": "22K",
-    "date": "15 Sept 2026",
+    "date": "46281",
     "fee": "₹400 per team",
     "teamSize": "3",
-    "format": "Live Event",
-    "coordinator": {
-      "name": "9535635046",
-      "email": "Prof Cynthia C"
-    },
+    "format": "Team",
     "image": "/images/events/pixel-whisper.png",
-    "registrationLink": "https://docs.google.com/forms/d/e/1FAIpQLSd0dcLSGxCCtNoWj4v9O5owFI6Ak9ovNnbBQE5vEBRUZ7lcXg/viewform?usp=publish-editor"
+    "registrationLink": "https://docs.google.com/forms/d/e/1FAIpQLSd0dcLSGxCCtNoWj4v9O5owFI6Ak9ovNnbBQE5vEBRUZ7lcXg/viewform?usp=publish-editor",
+    "coordinators": [
+      {
+        "name": "9535635046",
+        "phone": "Prof Cynthia C",
+        "email": "",
+        "role": "Coordinator"
+      }
+    ]
   },
   {
     "slug": "powerwiz",
@@ -1249,16 +1477,20 @@ export const EVENTS_DATA: EventDetail[] = [
     ],
     "faqs": [],
     "prizePool": "22K",
-    "date": "15 Sept 2026",
+    "date": "46280",
     "fee": "₹400 per team",
-    "teamSize": "2026-02-04 00:00:00",
-    "format": "Live Event",
-    "coordinator": {
-      "name": "Dr. Arun Chithrabhanu",
-      "email": "8939673940"
-    },
+    "teamSize": "46057",
+    "format": "Team",
     "image": "/images/events/technicalworkshop.jpg",
-    "registrationLink": "https://docs.google.com/forms/d/e/1FAIpQLSe8JnGaSXJkqRMYFgxCfrhG9dFa3vrzFKdFGlhEDCutz9qCsQ/viewform?usp=publish-editor"
+    "registrationLink": "https://docs.google.com/forms/d/e/1FAIpQLSe8JnGaSXJkqRMYFgxCfrhG9dFa3vrzFKdFGlhEDCutz9qCsQ/viewform?usp=publish-editor",
+    "coordinators": [
+      {
+        "name": "Dr. Arun Chithrabhanu",
+        "phone": "8939673940",
+        "email": "",
+        "role": "Coordinator"
+      }
+    ]
   },
   {
     "slug": "prompt-arcade",
@@ -1291,16 +1523,20 @@ export const EVENTS_DATA: EventDetail[] = [
     ],
     "faqs": [],
     "prizePool": "22K",
-    "date": "15 Sept 2026",
-    "fee": "₹500 per team",
-    "teamSize": "2026-02-04 00:00:00",
-    "format": "Live Event",
-    "coordinator": {
-      "name": "Dr. Sherin Paul",
-      "email": "8281300742"
-    },
+    "date": "15 Sept",
+    "fee": "₹400 per team",
+    "teamSize": "46057",
+    "format": "Team",
     "image": "/images/events/coderelay.jpg",
-    "registrationLink": "https://docs.google.com/forms/d/e/1FAIpQLSc9toMXil4kWeIWtWRI5MOKAeCceO1Nsr7N4F0CU4mlrfuevw/viewform?usp=publish-editor"
+    "registrationLink": "https://docs.google.com/forms/d/e/1FAIpQLSc9toMXil4kWeIWtWRI5MOKAeCceO1Nsr7N4F0CU4mlrfuevw/viewform?usp=publish-editor",
+    "coordinators": [
+      {
+        "name": "Dr. Sherin Paul",
+        "phone": "8281300742",
+        "email": "",
+        "role": "Coordinator"
+      }
+    ]
   },
   {
     "slug": "quiz-whizz",
@@ -1326,12 +1562,16 @@ export const EVENTS_DATA: EventDetail[] = [
     "fee": "₹400",
     "teamSize": "2-3 Members",
     "format": "Live Event",
-    "coordinator": {
-      "name": "Quiz Desk & Management",
-      "email": "Email: quizwhizz.events@christuniversity.in"
-    },
-    "image": "/images/events/finance.jpg",
-    "registrationLink": "https://docs.google.com/forms/d/e/1FAIpQLSfJIH5GkgFVNkV5vPX5LdX6OdVfOzjBsSmYZ-0osJgbPkZWRQ/viewform?usp=publish-editor"
+    "image": "/images/events/qizz-whizz.jpg",
+    "registrationLink": "https://docs.google.com/forms/d/e/1FAIpQLSfJIH5GkgFVNkV5vPX5LdX6OdVfOzjBsSmYZ-0osJgbPkZWRQ/viewform?usp=publish-editor",
+    "coordinators": [
+      {
+        "name": "Quiz Desk & Management",
+        "phone": "Email: quizwhizz.events@christuniversity.in",
+        "email": "",
+        "role": "Coordinator"
+      }
+    ]
   },
   {
     "slug": "rc-robo-soccer",
@@ -1383,16 +1623,32 @@ export const EVENTS_DATA: EventDetail[] = [
     ],
     "faqs": [],
     "prizePool": "22K",
-    "date": "15 Sept 2026",
+    "date": "15,16",
     "fee": "₹800 per team",
     "teamSize": "4–6",
-    "format": "Live Event",
-    "coordinator": {
-      "name": "Dr. Yogeesha C, Dr Divya G S",
-      "email": "9964143702"
-    },
+    "format": "Team",
     "image": "/images/events/robosoccer.jpg",
-    "registrationLink": "https://docs.google.com/forms/d/e/1FAIpQLSdLYwfe13hDr1b6tDnn4GfYS0FG_3oOyvpV4FCCwIH16VctBw/viewform?usp=publish-editor"
+    "registrationLink": "https://docs.google.com/forms/d/e/1FAIpQLSdLYwfe13hDr1b6tDnn4GfYS0FG_3oOyvpV4FCCwIH16VctBw/viewform?usp=publish-editor",
+    "coordinators": [
+      {
+        "name": "Dr Ivan Sunit Rout",
+        "phone": "8457880745",
+        "email": "ivan.rout@christuniversity.in",
+        "role": "Faculty Coordinator"
+      },
+      {
+        "name": "Thomas Vivian Mathew",
+        "phone": "8304965447",
+        "email": "thomas.vivian@btech.christuniversity.in",
+        "role": "Student Coordinator"
+      },
+      {
+        "name": "Kiranya Sriramulu",
+        "phone": "6362460040",
+        "email": "kiranya.sriramulu@btech.christuniversity.in",
+        "role": "Student Coordinator"
+      }
+    ]
   },
   {
     "slug": "revival-outlook",
@@ -1419,16 +1675,20 @@ export const EVENTS_DATA: EventDetail[] = [
     ],
     "faqs": [],
     "prizePool": "22K",
-    "date": "15 Sept 2026",
+    "date": "16",
     "fee": "₹600 per team",
     "teamSize": "8–15",
-    "format": "Live Event",
-    "coordinator": {
-      "name": "Prof.  Albert Joseph Hefferan",
-      "email": "8248348086"
-    },
+    "format": "Team",
     "image": "/images/events/reviwaloutlook.jpg",
-    "registrationLink": "https://docs.google.com/forms/d/e/1FAIpQLScAPAmq7yUYafaPLPLIch7bu7Z-lTSNChL2Zx-caF6jf_cCQg/viewform?usp=publish-editor"
+    "registrationLink": "https://docs.google.com/forms/d/e/1FAIpQLScAPAmq7yUYafaPLPLIch7bu7Z-lTSNChL2Zx-caF6jf_cCQg/viewform?usp=publish-editor",
+    "coordinators": [
+      {
+        "name": "Prof.  Albert Joseph Hefferan",
+        "phone": "8248348086",
+        "email": "",
+        "role": "Coordinator"
+      }
+    ]
   },
   {
     "slug": "seismogami",
@@ -1454,16 +1714,20 @@ export const EVENTS_DATA: EventDetail[] = [
     ],
     "faqs": [],
     "prizePool": "22K",
-    "date": "15 Sept 2026",
+    "date": "46280",
     "fee": "₹500 per team",
     "teamSize": "2–4",
-    "format": "Live Event",
-    "coordinator": {
-      "name": "Dr. Aniket Bhalekar",
-      "email": "9985004656"
-    },
+    "format": "Team",
     "image": "/images/events/archicraft.jpg",
-    "registrationLink": "https://docs.google.com/forms/d/e/1FAIpQLSctvSCNm7wuM8HHOhJwBEMyZv_WkovefNjITufjEMFGT4v7SQ/viewform?usp=publish-editor"
+    "registrationLink": "https://docs.google.com/forms/d/e/1FAIpQLSctvSCNm7wuM8HHOhJwBEMyZv_WkovefNjITufjEMFGT4v7SQ/viewform?usp=publish-editor",
+    "coordinators": [
+      {
+        "name": "Dr. Aniket Bhalekar",
+        "phone": "9985004656",
+        "email": "",
+        "role": "Coordinator"
+      }
+    ]
   },
   {
     "slug": "shipwreck",
@@ -1471,7 +1735,7 @@ export const EVENTS_DATA: EventDetail[] = [
     "tagline": "The Final Float",
     "category": "Arts & Humanities",
     "department": "Psychology",
-    "overview": "A storm has struck, and only one lifeboat remains. On board are some of the most influential figures of all time, including freedom fighters and mythological heroes, iconic movie characters and cartoon characters, controversial voices, and internet influencers. Each believes they are the one the world needs. But only one can float.In this event, participants step into the shoes of legendary figures and, in character, defend why they deserve to survive. Through monologues, heated crossfire, and satire-filled exchanges, characters face off in a battle of wit, logic, and charisma, with only the sharpest, most convincing personas making it to the lifeboat.",
+    "overview": "A storm has struck, and only one lifeboat remains. On board are some of the most influential figures of all time, including freedom fighters and mythological heroes, iconic movie characters and cartoon characters, controversial voices, and internet influencers. Each believes they are the one the world needs. But only one can float.\nIn this event, participants step into the shoes of legendary figures and, in character, defend why they deserve to survive. Through monologues, heated crossfire, and satire-filled exchanges, characters face off in a battle of wit, logic, and charisma, with only the sharpest, most convincing personas making it to the lifeboat.",
     "stages": [
       {
         "title": "Event Structure",
@@ -1494,16 +1758,20 @@ export const EVENTS_DATA: EventDetail[] = [
     ],
     "faqs": [],
     "prizePool": "15K",
-    "date": "15 Sept 2026",
+    "date": "15,16",
     "fee": "₹200 per person",
     "teamSize": "Individual",
-    "format": "Live Event",
-    "coordinator": {
-      "name": "Dr. Archika Johari",
-      "email": "94739 76071"
-    },
+    "format": "Solo",
     "image": "/images/events/shipwreck.png",
-    "registrationLink": "https://docs.google.com/forms/d/e/1FAIpQLSe5vw6_Fm6RaVzkPzulKS3pOLT_xEj82bxxpdq1B-cjjbX0MQ/viewform?usp=publish-editor"
+    "registrationLink": "https://docs.google.com/forms/d/e/1FAIpQLSe5vw6_Fm6RaVzkPzulKS3pOLT_xEj82bxxpdq1B-cjjbX0MQ/viewform?usp=publish-editor",
+    "coordinators": [
+      {
+        "name": "Dr. Archika Johari",
+        "phone": "94739 76071",
+        "email": "",
+        "role": "Coordinator"
+      }
+    ]
   },
   {
     "slug": "squid-game",
@@ -1532,16 +1800,20 @@ export const EVENTS_DATA: EventDetail[] = [
     ],
     "faqs": [],
     "prizePool": "22K",
-    "date": "15 Sept 2026",
+    "date": "15-16",
     "fee": "₹600 per team",
     "teamSize": "6",
-    "format": "Live Event",
-    "coordinator": {
-      "name": "Dr. Rithvik Shankar",
-      "email": "81380 11592"
-    },
+    "format": "Team",
     "image": "/images/events/squid-game.png",
-    "registrationLink": "https://docs.google.com/forms/d/e/1FAIpQLSf0qLbIm5R-xURhCXfHlrNMP0e3qqh2lxrYnUQy2xAhkayrlg/viewform?usp=publish-editor"
+    "registrationLink": "https://docs.google.com/forms/d/e/1FAIpQLSf0qLbIm5R-xURhCXfHlrNMP0e3qqh2lxrYnUQy2xAhkayrlg/viewform?usp=publish-editor",
+    "coordinators": [
+      {
+        "name": "Dr. Rithvik Shankar",
+        "phone": "81380 11592",
+        "email": "",
+        "role": "Coordinator"
+      }
+    ]
   },
   {
     "slug": "startup-showdown",
@@ -1572,16 +1844,20 @@ export const EVENTS_DATA: EventDetail[] = [
     ],
     "faqs": [],
     "prizePool": "22K",
-    "date": "15 Sept 2026",
+    "date": "15,16",
     "fee": "₹500 per team",
-    "teamSize": "2–3 members",
-    "format": "Live Event",
-    "coordinator": {
-      "name": "Prof.  Ravindra Babu",
-      "email": "9880525788"
-    },
+    "teamSize": "2 members",
+    "format": "Team",
     "image": "/images/events/startup-showdown.png",
-    "registrationLink": "https://docs.google.com/forms/d/e/1FAIpQLSezVxg3D4xEwsmTCmxjXaKa3UDZmCV1w71KaDUM4oqbklhzHA/viewform?usp=publish-editor"
+    "registrationLink": "https://docs.google.com/forms/d/e/1FAIpQLSezVxg3D4xEwsmTCmxjXaKa3UDZmCV1w71KaDUM4oqbklhzHA/viewform?usp=publish-editor",
+    "coordinators": [
+      {
+        "name": "Prof.  Ravindra Babu",
+        "phone": "9880525788",
+        "email": "",
+        "role": "Coordinator"
+      }
+    ]
   },
   {
     "slug": "strategic-finance",
@@ -1589,7 +1865,7 @@ export const EVENTS_DATA: EventDetail[] = [
     "tagline": "A battle of financial minds where strategy is the weapon, risk is the game, and every decision shapes the outcome",
     "category": "Management",
     "department": "BBA",
-    "overview": "The event is structured around two connected halves that mirror the Strategic Finance vertical. One-half centers on competition, decision-making, and problem-solving, representing Corporate Strategy. The other centers on growth, value creation, and money management, representing Wealth Management.This structure gives the event a clear identity and ensures both domains receive equal focus throughout the competition. It also makes it easy to organize individual rounds under one of the two halves, so every task ties back into a single, consistent story for the event.",
+    "overview": "The event is structured around two connected halves that mirror the Strategic Finance vertical. One-half centers on competition, decision-making, and problem-solving, representing Corporate Strategy. The other centers on growth, value creation, and money management, representing Wealth Management.\nThis structure gives the event a clear identity and ensures both domains receive equal focus throughout the competition. It also makes it easy to organize individual rounds under one of the two halves, so every task ties back into a single, consistent story for the event.",
     "stages": [
       {
         "title": "Event Structure",
@@ -1610,13 +1886,17 @@ export const EVENTS_DATA: EventDetail[] = [
     "date": "15 Sept 2026",
     "fee": "₹500 per team",
     "teamSize": "2",
-    "format": "Live Event",
-    "coordinator": {
-      "name": "Dr. Muthu Lakshmi P.",
-      "email": "9003687190"
-    },
+    "format": "Team",
     "image": "/images/events/strategic-finance.png",
-    "registrationLink": "https://docs.google.com/forms/d/e/1FAIpQLSfYNE1V1OxtogkQ6HU1Hj4v9kCi2v_OyWlp9lRNKF3Cu9fWuw/viewform?usp=publish-editor"
+    "registrationLink": "https://docs.google.com/forms/d/e/1FAIpQLSfYNE1V1OxtogkQ6HU1Hj4v9kCi2v_OyWlp9lRNKF3Cu9fWuw/viewform?usp=publish-editor",
+    "coordinators": [
+      {
+        "name": "Dr. Muthu Lakshmi P.",
+        "phone": "9003687190",
+        "email": "",
+        "role": "Coordinator"
+      }
+    ]
   },
   {
     "slug": "strikex",
@@ -1648,16 +1928,20 @@ export const EVENTS_DATA: EventDetail[] = [
     ],
     "faqs": [],
     "prizePool": "15K",
-    "date": "15 Sept 2026",
+    "date": "16 Sept",
     "fee": "₹200 per person",
     "teamSize": "1",
-    "format": "Live Event",
-    "coordinator": {
-      "name": "Dr. Sherin Paul",
-      "email": "8281300742"
-    },
+    "format": "Solo",
     "image": "/images/events/strikex.png",
-    "registrationLink": "https://docs.google.com/forms/d/e/1FAIpQLSfqcmfUY0RycwgKDs6ieUBJ9V4ZcwJb7tbKZJCGHkMNH8gxfw/viewform?usp=publish-editor"
+    "registrationLink": "https://docs.google.com/forms/d/e/1FAIpQLSfqcmfUY0RycwgKDs6ieUBJ9V4ZcwJb7tbKZJCGHkMNH8gxfw/viewform?usp=publish-editor",
+    "coordinators": [
+      {
+        "name": "Dr. Sherin Paul",
+        "phone": "8281300742",
+        "email": "",
+        "role": "Coordinator"
+      }
+    ]
   },
   {
     "slug": "sustain-x",
@@ -1688,16 +1972,20 @@ export const EVENTS_DATA: EventDetail[] = [
     ],
     "faqs": [],
     "prizePool": "22K",
-    "date": "15 Sept 2026",
-    "fee": "₹500 per team",
+    "date": "16 Sept",
+    "fee": "₹400 per team",
     "teamSize": "2–4",
-    "format": "Live Event",
-    "coordinator": {
-      "name": "Dr. Bejoy B. J.",
-      "email": "9385446508"
-    },
+    "format": "Team",
     "image": "/images/events/smartcity.jpg",
-    "registrationLink": "https://docs.google.com/forms/d/e/1FAIpQLSejeMwRkTbci9NphLCRNS9ChSH_NzCLlDg_kvJ2j5_0FVuPaw/viewform?usp=publish-editor"
+    "registrationLink": "https://docs.google.com/forms/d/e/1FAIpQLSejeMwRkTbci9NphLCRNS9ChSH_NzCLlDg_kvJ2j5_0FVuPaw/viewform?usp=publish-editor",
+    "coordinators": [
+      {
+        "name": "Dr. Bejoy B. J.",
+        "phone": "9385446508",
+        "email": "",
+        "role": "Coordinator"
+      }
+    ]
   },
   {
     "slug": "switch-and-scene",
@@ -1728,16 +2016,20 @@ export const EVENTS_DATA: EventDetail[] = [
     ],
     "faqs": [],
     "prizePool": "22K",
-    "date": "15 Sept 2026",
+    "date": "15",
     "fee": "₹400 per team",
     "teamSize": "2",
-    "format": "Live Event",
-    "coordinator": {
-      "name": "Dr. Shilpa B M",
-      "email": "86673 80187"
-    },
+    "format": "Team",
     "image": "/images/events/switchandscene.jpg",
-    "registrationLink": "https://docs.google.com/forms/d/e/1FAIpQLSdn4iA4RVexnpafMPaDPHRdbHl3DQwjPg4SNibj-HJFqlTDAA/viewform?usp=publish-editor"
+    "registrationLink": "https://docs.google.com/forms/d/e/1FAIpQLSdn4iA4RVexnpafMPaDPHRdbHl3DQwjPg4SNibj-HJFqlTDAA/viewform?usp=publish-editor",
+    "coordinators": [
+      {
+        "name": "Dr. Shilpa B M",
+        "phone": "86673 80187",
+        "email": "",
+        "role": "Coordinator"
+      }
+    ]
   },
   {
     "slug": "the-last-turn",
@@ -1745,7 +2037,7 @@ export const EVENTS_DATA: EventDetail[] = [
     "tagline": "Navigate a horror-themed maze, face a randomly assigned obstruction, solve puzzles along the way, and find your way to the exit before time runs out.",
     "category": "Coding & Tech",
     "department": "Artificial Intelligence & Data Science (AIDS)",
-    "overview": "Maze Runner is an immersive, time-based physical maze competition designed to test how participants navigate uncertainty, solve challenges and adapt under pressure. Rather than being a conventional haunted house or escape room, the event combines maze navigation, short puzzles and competitive time-based progression in a controlled, themed environment. Before entering the maze, each participant spins the Obstruction Wheel, which assigns a restriction, neutral outcome or limited advantage for their run. Participants then navigate multiple maze sections, make route decisions, reach checkpoints, solve short challenges and manage their assigned condition before completing the final route to the exit. The event tests observation, problem-solving, decision-making, adaptability, time management and composure under pressure while providing a high-energy and immersive competitive experience. Its unpredictable mechanics and themed environment ensure that each run is different, encouraging participants to think quickly, adapt their strategy and reach the finish as efficiently as possible.",
+    "overview": "The Last Turn is an immersive, time-based physical maze competition designed to test how participants navigate uncertainty, solve challenges and adapt under pressure. Rather than being a conventional haunted house or escape room, the event combines maze navigation, short puzzles and competitive time-based progression in a controlled, themed environment. \n\nBefore entering the maze, each participant spins the Obstruction Wheel, which assigns a restriction, neutral outcome or limited advantage for their run. Participants then navigate multiple maze sections, make route decisions, reach checkpoints, solve short challenges and manage their assigned condition before completing the final route to the exit. \n\nThe event tests observation, problem-solving, decision-making, adaptability, time management and composure under pressure while providing a high-energy and immersive competitive experience. Its unpredictable mechanics and themed environment ensure that each run is different, encouraging participants to think quickly, adapt their strategy and reach the finish as efficiently as possible.",
     "stages": [
       {
         "title": "Event Structure",
@@ -1839,16 +2131,20 @@ export const EVENTS_DATA: EventDetail[] = [
     ],
     "faqs": [],
     "prizePool": "15K",
-    "date": "15 Sept 2026",
+    "date": "46280",
     "fee": "₹200 per person",
     "teamSize": "Individual",
-    "format": "Live Event",
-    "coordinator": {
-      "name": "9345464915",
-      "email": "Dr Amos Bortiew"
-    },
+    "format": "Solo",
     "image": "/images/events/the-last-turn.png",
-    "registrationLink": "https://docs.google.com/forms/d/e/1FAIpQLScGH0od4oPhe2WVsNyYLJOjGd2XcMIBtoPJdHIGnRDb9XrhZg/viewform?usp=publish-editor"
+    "registrationLink": "https://docs.google.com/forms/d/e/1FAIpQLScGH0od4oPhe2WVsNyYLJOjGd2XcMIBtoPJdHIGnRDb9XrhZg/viewform?usp=publish-editor",
+    "coordinators": [
+      {
+        "name": "9345464915",
+        "phone": "Dr Amos Bortiew",
+        "email": "",
+        "role": "Coordinator"
+      }
+    ]
   },
   {
     "slug": "trace",
@@ -1856,7 +2152,7 @@ export const EVENTS_DATA: EventDetail[] = [
     "tagline": "Dig Through Digital Evidence, Trace Every Technical Indicator, Connect the Attack Chain, and Reveal What Really Happened.",
     "category": "Coding & Tech",
     "department": "Artificial Intelligence & Data Science (AIDS)",
-    "overview": "TRACE (Track → Retrieve → Analyze → Correlate → Examine) challenges you to answer one question: Can you uncover a cyber incident from the digital traces it leaves behind? Built around the tagline “Every Move Leaves a Trace,” TRACE places participants in the role of cyber investigators, turning raw technical data into an evidence-backed story.Teams investigate three independent cybersecurity cases using system logs, packet captures, file hashes, metadata and network records. With forensic and analysis tools at their disposal, participants extract indicators, identify anomalies, connect evidence and reconstruct how each incident unfolded.  Teams can choose to investigate one, two or all three cases, creating their own strategy.TRACE offers a hands-on introduction to digital forensics, network analysis, log analysis and incident reconstruction while testing technical reasoning, problem-solving and evidence correlation. The challenge is to move beyond simply finding information - to prove what happened, how it happened and why the evidence supports it.",
+    "overview": "TRACE (Track → Retrieve → Analyze → Correlate → Examine) challenges you to answer one question: Can you uncover a cyber incident from the digital traces it leaves behind? Built around the tagline “Every Move Leaves a Trace,” TRACE places participants in the role of cyber investigators, turning raw technical data into an evidence-backed story.\n\nTeams investigate three independent cybersecurity cases using system logs, packet captures, file hashes, metadata and network records. With forensic and analysis tools at their disposal, participants extract indicators, identify anomalies, connect evidence and reconstruct how each incident unfolded.  Teams can choose to investigate one, two or all three cases, creating their own strategy.\n\nTRACE offers a hands-on introduction to digital forensics, network analysis, log analysis and incident reconstruction while testing technical reasoning, problem-solving and evidence correlation. The challenge is to move beyond simply finding information - to prove what happened, how it happened and why the evidence supports it.",
     "stages": [
       {
         "title": "Event Structure",
@@ -1927,16 +2223,32 @@ export const EVENTS_DATA: EventDetail[] = [
     ],
     "faqs": [],
     "prizePool": "22K",
-    "date": "15 Sept 2026",
+    "date": "46280",
     "fee": "₹400 per team",
-    "teamSize": "2026-03-04 00:00:00",
-    "format": "Live Event",
-    "coordinator": {
-      "name": "6364419705",
-      "email": "Dr Binson V A"
-    },
+    "teamSize": "46085",
+    "format": "Team",
     "image": "/images/events/enigma.jpg",
-    "registrationLink": "https://docs.google.com/forms/d/e/1FAIpQLScKNw3cW_uLO0BEw4Cd8gLsaDWHwVkZbrGeppICT0srA6N4qA/viewform?usp=publish-editor"
+    "registrationLink": "https://docs.google.com/forms/d/e/1FAIpQLScKNw3cW_uLO0BEw4Cd8gLsaDWHwVkZbrGeppICT0srA6N4qA/viewform?usp=publish-editor",
+    "coordinators": [
+      {
+        "name": "Dr Ambily Balaram",
+        "phone": "9496218879",
+        "email": "ambily.balaram@christuniversity.in",
+        "role": "Faculty Coordinator"
+      },
+      {
+        "name": "Aveepsa Hatua",
+        "phone": "6290965482",
+        "email": "aveepsa.hatua@btech.christuniversity.in",
+        "role": "Student Coordinator"
+      },
+      {
+        "name": "Adharsh Jolly",
+        "phone": "9431703182",
+        "email": "adharsh.jolly@btech.christuniversity.in",
+        "role": "Student Coordinator"
+      }
+    ]
   },
   {
     "slug": "utopian-land",
@@ -1962,16 +2274,288 @@ export const EVENTS_DATA: EventDetail[] = [
       "Disqualification: Any form of cheating, plagiarism, misconduct, impersonation, unauthorized assistance, or violation of event rules may lead to immediate disqualification. Any entry found to contain prompt-generated assets, AI-manipulated art, or fraudulent proof of work will be immediately disqualified."
     ],
     "faqs": [],
-    "prizePool": "22K",
-    "date": "15 Sept 2026",
-    "fee": "₹500 per team",
+    "prizePool": "15K",
+    "date": "15",
+    "fee": "₹200 per person",
     "teamSize": "30(Individual)",
-    "format": "Live Event",
-    "coordinator": {
-      "name": "Prof.  Aleena Mariya Silvester",
-      "email": "8714491574"
-    },
+    "format": "Solo",
     "image": "/images/events/utopian-land.png",
-    "registrationLink": "https://docs.google.com/forms/d/e/1FAIpQLScAbvcMO2zxxLCQZ-G1X6nMSGpPRvvu9cIhHswFSurOSxKq3w/viewform?usp=publish-editor"
+    "registrationLink": "https://docs.google.com/forms/d/e/1FAIpQLScAbvcMO2zxxLCQZ-G1X6nMSGpPRvvu9cIhHswFSurOSxKq3w/viewform?usp=publish-editor",
+    "coordinators": [
+      {
+        "name": "Prof.  Aleena Mariya Silvester",
+        "phone": "8714491574",
+        "email": "",
+        "role": "Coordinator"
+      }
+    ]
+  },
+  {
+    "slug": "ai-film-fest",
+    "title": "AI Film Fest",
+    "tagline": "Shape the Wave.",
+    "category": "General Fest Events",
+    "department": "Office of International Affairs (OIA)",
+    "overview": "AI Film Fest is a creative and engaging filmmaking competition organized by the Office of International Affairs (OIA), CHRIST (Deemed to be University), Kengeri Campus, as part of MAGNOVITE 2026. The event brings together students from universities and colleges across the world to explore the possibilities of Artificial Intelligence in filmmaking, storytelling, visual communication, and creative expression. The competition is open to Grade 11, Grade 12, and undergraduate (UG) students from institutions outside India. Participants may compete individually or in teams of up to three members, creating a short film based on a theme or creative challenge announced by the organizers, with AI creatively incorporated into stages such as scriptwriting, image and video generation, voiceovers, music, animation, editing, and visual effects.",
+    "stages": [],
+    "rules": [
+      "Details coming soon."
+    ],
+    "faqs": [],
+    "prizePool": "USD 225",
+    "date": "15,16",
+    "fee": "USD 5 per participant",
+    "teamSize": "1-3 members",
+    "format": "Individual / Team",
+    "image": "/images/events/ai-film-fest.jpg",
+    "registrationLink": "https://docs.google.com/forms/d/e/1FAIpQLSfJYqcdPrz567wroA9RiS5MI2UgK5Rxj-CblSAYAdp5tj_5qA/viewform?usp=publish-editor",
+    "coordinators": [
+      {
+        "name": "Magnovite Support",
+        "phone": "support@magnovite.com",
+        "email": "",
+        "role": "Coordinator"
+      }
+    ]
+  },
+  {
+    "slug": "battle-of-bands",
+    "title": "Battle of Bands",
+    "tagline": "Shape the Wave.",
+    "category": "Cultural",
+    "department": "Culturals",
+    "overview": "Rock the stage at our 'Battle of the Bands' event! Calling all music enthusiasts to showcase their talent and compete for the title. Bring your best beats, electrifying solos, and a whole lot of energy. It's a showdown of sound you won't want to miss.\nNumber of Rounds/Event Structure:\nOne single round",
+    "stages": [],
+    "rules": [
+      "Details coming soon."
+    ],
+    "faqs": [],
+    "prizePool": "22k",
+    "date": "15 sept",
+    "fee": "₹750 per team",
+    "teamSize": "4-10 members",
+    "format": "Team",
+    "image": "/images/events/battle-of-bands.jpg",
+    "registrationLink": "https://docs.google.com/forms/d/e/1FAIpQLSfUQ00GlUmXqTn3TmXHpeANjnf7kaXveqe2DzzeGCWa-VDXQQ/viewform?usp=publish-editor",
+    "coordinators": [
+      {
+        "name": "Roshan Yohann Anand",
+        "phone": "98860 67257",
+        "email": "roshan.yohann@christuniversity.in",
+        "role": "Faculty Coordinator"
+      },
+      {
+        "name": "Vijay Prithvi",
+        "phone": "9944542810",
+        "email": "vijay.prithvi@christuniversity.in",
+        "role": "Student Coordinator"
+      },
+      {
+        "name": "Devananda Baburaj",
+        "phone": "70250 60661",
+        "email": "deva.nanda@btech.christuniversity.in",
+        "role": "Student Coordinator"
+      }
+    ]
+  },
+  {
+    "slug": "acapella-and-group-singing",
+    "title": "Acapella and Group Singing",
+    "tagline": "Shape the Wave.",
+    "category": "Cultural",
+    "department": "Culturals",
+    "overview": "Experience the magic of pure vocal harmony! Acapella brings together voices that blend melody, rhythm, and emotion. Let the power of music take center stage!\nNumber of Rounds/Event Structure:\nOne single round.",
+    "stages": [],
+    "rules": [
+      "Details coming soon."
+    ],
+    "faqs": [],
+    "prizePool": "22k",
+    "date": "15 sept",
+    "fee": "₹750 per team",
+    "teamSize": "3-11 members",
+    "format": "Team",
+    "image": "/images/events/acapella.jpg",
+    "registrationLink": "https://docs.google.com/forms/d/e/1FAIpQLSeTlyj8b53IVxM_2wJt2Ja5wQccfd0x8Dwz0bmf-FjycQmZXA/viewform?usp=publish-editor",
+    "coordinators": [
+      {
+        "name": "Roshan Yohann Anand",
+        "phone": "98860 67257",
+        "email": "roshan.yohann@christuniversity.in",
+        "role": "Faculty Coordinator"
+      },
+      {
+        "name": "Vijay Prithvi",
+        "phone": "9944542810",
+        "email": "vijay.prithvi@christuniversity.in",
+        "role": "Student Coordinator"
+      },
+      {
+        "name": "Devananda Baburaj",
+        "phone": "70250 60661",
+        "email": "deva.nanda@btech.christuniversity.in",
+        "role": "Student Coordinator"
+      }
+    ]
+  },
+  {
+    "slug": "theme-dance",
+    "title": "Theme Dance",
+    "tagline": "Shape the Wave.",
+    "category": "Cultural",
+    "department": "Culturals",
+    "overview": "Use beautiful dancing to show a main story or idea. Present this concept artistically by mixing different kinds of dance. It is a graceful performance that uses various dance styles to express a theme.\nNumber of Rounds/Event Structure:\nOne single round.",
+    "stages": [],
+    "rules": [
+      "Details coming soon."
+    ],
+    "faqs": [],
+    "prizePool": "22k",
+    "date": "15 sept",
+    "fee": "₹750 per team",
+    "teamSize": "46215",
+    "format": "Team",
+    "image": "/images/events/theme-dance.jpg",
+    "registrationLink": "https://docs.google.com/forms/d/e/1FAIpQLSfqQXkJjpuWwP3irlVuBBLIYOLl11goItLt6ywLIuLSxYwiUA/viewform?usp=publish-editor",
+    "coordinators": [
+      {
+        "name": "Roshan Yohann Anand",
+        "phone": "98860 67257",
+        "email": "roshan.yohann@christuniversity.in",
+        "role": "Faculty Coordinator"
+      },
+      {
+        "name": "Vijay Prithvi",
+        "phone": "9944542810",
+        "email": "vijay.prithvi@christuniversity.in",
+        "role": "Student Coordinator"
+      },
+      {
+        "name": "Devananda Baburaj",
+        "phone": "70250 60661",
+        "email": "deva.nanda@btech.christuniversity.in",
+        "role": "Student Coordinator"
+      }
+    ]
+  },
+  {
+    "slug": "non-theme-dance",
+    "title": "Non Theme Dance",
+    "tagline": "Shape the Wave.",
+    "category": "Cultural",
+    "department": "Culturals",
+    "overview": "A burst of rhythm, color, and creativity! Non-Theme Group Dance lets performers showcase diverse styles and moves without the limits of a set theme. It's all about energy, expression, and setting the stage on fire with pure dance passion!\nNumber of Rounds/Event Structure:\nOne single round.",
+    "stages": [],
+    "rules": [
+      "Details coming soon."
+    ],
+    "faqs": [],
+    "prizePool": "22k",
+    "date": "15 sept",
+    "fee": "₹750",
+    "teamSize": "46188",
+    "format": "Team",
+    "image": "/images/events/non-theme-dance.jpg",
+    "registrationLink": "https://docs.google.com/forms/d/e/1FAIpQLSdnHB6BkxT4UI5zxr0SBggfxZJrCZ00n0amBQ3gh40PpS-GrA/viewform?usp=publish-editor",
+    "coordinators": [
+      {
+        "name": "Justin George",
+        "phone": "70125 19144",
+        "email": "justin.george@christuniversity.in",
+        "role": "Faculty Coordinator"
+      },
+      {
+        "name": "Vijay Prithvi",
+        "phone": "9944542810",
+        "email": "vijay.prithvi@christuniversity.in",
+        "role": "Student Coordinator"
+      },
+      {
+        "name": "Devananda Baburaj",
+        "phone": "70250 60661",
+        "email": "deva.nanda@btech.christuniversity.in",
+        "role": "Student Coordinator"
+      }
+    ]
+  },
+  {
+    "slug": "street-dance-battle",
+    "title": "Street Dance Battle",
+    "tagline": "Shape the Wave.",
+    "category": "Cultural",
+    "department": "Culturals",
+    "overview": "The sound of the beat brought to life! Street Dance Battle blends raw talent with spontaneous skill, challenging individual dancers in high-stakes duels. It's dance in its most raw and competitive form, unfiltered, improvised, and full of fire!\nNumber of Rounds/Event Structure:\n3 rounds.",
+    "stages": [],
+    "rules": [
+      "Details coming soon."
+    ],
+    "faqs": [],
+    "prizePool": "15k",
+    "date": "16 sept",
+    "fee": "₹300",
+    "teamSize": "Solo",
+    "format": "Solo",
+    "image": "/images/events/street-dance.jpg",
+    "registrationLink": "https://docs.google.com/forms/d/e/1FAIpQLSeY8IWTm03d8sVNZf5S4fpA8EzkK2dpkQRrc69zZJf7ARnMiQ/viewform?usp=publish-editor",
+    "coordinators": [
+      {
+        "name": "Justin George",
+        "phone": "70125 19144",
+        "email": "justin.george@christuniversity.in",
+        "role": "Faculty Coordinator"
+      },
+      {
+        "name": "Vijay Prithvi",
+        "phone": "9944542810",
+        "email": "vijay.prithvi@christuniversity.in",
+        "role": "Student Coordinator"
+      },
+      {
+        "name": "Devananda Baburaj",
+        "phone": "70250 60661",
+        "email": "deva.nanda@btech.christuniversity.in",
+        "role": "Student Coordinator"
+      }
+    ]
+  },
+  {
+    "slug": "street-play",
+    "title": "Street Play",
+    "tagline": "Shape the Wave.",
+    "category": "Cultural",
+    "department": "Culturals",
+    "overview": "The voice of the streets brought to life! Street Play blends powerful performances with social messages, engaging the audience through drama, dialogue, and emotion. It's theatre in its most raw and impactful form-thought-provoking and full of life!\nNumber of Rounds/Event Structure:\nOne single round.",
+    "stages": [],
+    "rules": [
+      "Details coming soon."
+    ],
+    "faqs": [],
+    "prizePool": "22k",
+    "date": "16 sept",
+    "fee": "₹750",
+    "teamSize": "20 maximum",
+    "format": "Team",
+    "image": "/images/events/street-play.jpg",
+    "registrationLink": "https://docs.google.com/forms/d/e/1FAIpQLScef6E1kTvU0wJSdILZo8SrWh0Jzl91679a9EveJB8nq-Eohg/viewform?usp=publish-editor",
+    "coordinators": [
+      {
+        "name": "Justin George",
+        "phone": "70125 19144",
+        "email": "justin.george@christuniversity.in",
+        "role": "Faculty Coordinator"
+      },
+      {
+        "name": "Vijay Prithvi",
+        "phone": "9944542810",
+        "email": "vijay.prithvi@christuniversity.in",
+        "role": "Student Coordinator"
+      },
+      {
+        "name": "Devananda Baburaj",
+        "phone": "70250 60661",
+        "email": "deva.nanda@btech.christuniversity.in",
+        "role": "Student Coordinator"
+      }
+    ]
   }
 ];
