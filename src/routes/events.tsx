@@ -13,6 +13,7 @@ import {
   CheckCircle2,
   ChevronDown,
   Sparkles,
+  Phone,
 } from "lucide-react";
 import { SiteHeader } from "@/components/SiteHeader";
 import { EVENTS_DATA, EventDetail } from "@/data/eventsData";
@@ -314,17 +315,17 @@ export function EventsPage() {
                   <div className="mt-4 rounded-xl border border-white/8 bg-white/[0.025] p-4">
                     <div className="font-semibold text-white">{currentEvent.coordinator.name}</div>
                     <a
-                      href={`mailto:${currentEvent.coordinator.email}`}
+                      href={`tel:${currentEvent.coordinator.email.replace(/\\s+/g, '')}`}
                       className="mt-1 flex items-center gap-2 text-xs text-indigo-300 transition-colors hover:text-indigo-200"
                     >
-                      <Mail className="size-3.5" /> {currentEvent.coordinator.email}
+                      <Phone className="size-3.5" /> {currentEvent.coordinator.email}
                     </a>
                   </div>
                 </div>
 
                 {/* Single Primary Register Button */}
                 <a
-                  href="https://christuniversity.in"
+                  href={currentEvent.registrationLink || "https://christuniversity.in"}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="inline-flex w-full items-center justify-center gap-2 rounded-full bg-gradient-to-r from-indigo-600 via-indigo-500 to-violet-600 py-4 text-base font-semibold text-white shadow-lg shadow-indigo-600/30 transition-all hover:scale-[1.02] hover:shadow-indigo-600/50"
