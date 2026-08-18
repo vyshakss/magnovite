@@ -19,9 +19,8 @@ import { EVENTS_DATA, EventDetail } from "@/data/eventsData";
 
 export const Route = createFileRoute("/events")({
   validateSearch: (search: Record<string, unknown>): { event?: string } => {
-    return {
-      event: (search.event as string) || undefined,
-    };
+    const event = search["event"];
+    return typeof event === "string" && event ? { event } : {};
   },
   component: EventsPage,
 });

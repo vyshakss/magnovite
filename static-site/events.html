@@ -1,0 +1,374 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Events & Competitions — MAGNOVITE 2026</title>
+    <meta
+      name="description"
+      content="Explore 34+ National Battlegrounds across Coding, Robotics, Management, Design, and Performing Arts."
+    />
+    <link rel="canonical" href="events.html" />
+    <meta property="og:title" content="Events & Competitions — MAGNOVITE 2026" />
+    <meta
+      property="og:description"
+      content="Explore 34+ National Battlegrounds across Coding, Robotics, Management, Design, and Performing Arts."
+    />
+    <meta property="og:type" content="website" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <link rel="icon" href="favicon.ico" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700&family=DM+Sans:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/styles.css" />
+    <link rel="stylesheet" href="css/events.css" />
+  </head>
+  <body class="page-solid">
+    <div class="ambient"></div>
+    <div id="site-header"></div>
+
+    <div class="page-top" style="padding-bottom: 5rem">
+      <div id="events-root"></div>
+    </div>
+
+    <footer
+      style="
+        border-top: 1px solid rgba(255, 255, 255, 0.08);
+        padding: 3rem 1.5rem;
+        text-align: center;
+        font-size: 0.7rem;
+        letter-spacing: 0.2em;
+        text-transform: uppercase;
+        color: rgba(255, 255, 255, 0.4);
+      "
+    >
+      MAGNOVITE 2026 · CHRIST UNIVERSITY KENGERI CAMPUS
+    </footer>
+
+    <div id="site-footer"></div>
+
+    <script type="module">
+      import { mountChrome } from "./js/chrome.js";
+      import { EVENTS_DATA } from "./js/events-data.js";
+
+      mountChrome({ solidHeader: true });
+
+      const ICONS = {
+        arrowLeft:
+          '<svg class="icon" viewBox="0 0 24 24"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>',
+        arrowUpRight: '<svg class="icon" viewBox="0 0 24 24"><path d="M7 17 17 7M9 7h8v8"/></svg>',
+        search:
+          '<svg class="icon" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>',
+        trophy:
+          '<svg class="icon" viewBox="0 0 24 24"><path d="M8 21h8M12 17v4M7 4h10v4a5 5 0 0 1-10 0V4Z"/><path d="M7 5H4a1 1 0 0 0-1 1 4 4 0 0 0 4 4M17 5h3a1 1 0 0 1 1 1 4 4 0 0 1-4 4"/></svg>',
+        calendar:
+          '<svg class="icon" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg>',
+        users:
+          '<svg class="icon" viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></svg>',
+        rupee:
+          '<svg class="icon" viewBox="0 0 24 24"><path d="M6 3h12M6 8h12M6 13l8.5 8M6 13h3a4 4 0 0 0 0-8"/></svg>',
+        layers:
+          '<svg class="icon" viewBox="0 0 24 24"><path d="m12 2 10 6-10 6L2 8l10-6Z"/><path d="m2 16 10 6 10-6M2 12l10 6 10-6"/></svg>',
+        mail: '<svg class="icon" viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 6-10 7L2 6"/></svg>',
+        check:
+          '<svg class="icon" viewBox="0 0 24 24"><path d="M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20Z"/><path d="m9 12 2 2 4-4"/></svg>',
+        sparkles:
+          '<svg class="icon" viewBox="0 0 24 24"><path d="m12 3-1.5 4.5L6 9l4.5 1.5L12 15l1.5-4.5L18 9l-4.5-1.5L12 3Z"/></svg>',
+      };
+
+      const root = document.getElementById("events-root");
+      const FALLBACK_IMAGE = "images/shaanrahman.jpg";
+
+      const params = new URLSearchParams(location.search);
+      let selectedSlug = params.get("event") || null;
+      let searchQuery = "";
+      let selectedCategory = "All";
+      let selectedDepartment = "All";
+
+      const categories = ["All", ...Array.from(new Set(EVENTS_DATA.map((e) => e.category)))];
+      const departments = ["All", ...Array.from(new Set(EVENTS_DATA.map((e) => e.department)))];
+
+      function esc(s) {
+        return String(s)
+          .replace(/&/g, "&amp;")
+          .replace(/</g, "&lt;")
+          .replace(/>/g, "&gt;")
+          .replace(/"/g, "&quot;");
+      }
+
+      function filteredEvents() {
+        const q = searchQuery.toLowerCase().trim();
+        return EVENTS_DATA.filter((event) => {
+          const matchCat = selectedCategory === "All" || event.category === selectedCategory;
+          const matchDept = selectedDepartment === "All" || event.department === selectedDepartment;
+          const matchQ =
+            !q ||
+            event.title.toLowerCase().includes(q) ||
+            event.tagline.toLowerCase().includes(q) ||
+            event.overview.toLowerCase().includes(q) ||
+            event.department.toLowerCase().includes(q);
+          return matchCat && matchDept && matchQ;
+        });
+      }
+
+      function setSelectedSlug(slug) {
+        selectedSlug = slug;
+        const url = new URL(location.href);
+        if (slug) url.searchParams.set("event", slug);
+        else url.searchParams.delete("event");
+        history.replaceState(null, "", url.pathname + url.search);
+        window.scrollTo({ top: 0, behavior: "instant" });
+        render();
+      }
+
+      function renderDetail(currentEvent) {
+        root.innerHTML = `
+          <div class="container container-lg">
+            <div class="breadcrumb-row">
+              <button class="glass-pill" id="back-btn" style="display:inline-flex;align-items:center;gap:.5rem;padding:.5rem 1.25rem;font-weight:500;">
+                ${ICONS.arrowLeft} Back to All Events
+              </button>
+              <span class="glass-pill" style="border-color:rgba(99,102,241,.3);background:rgba(30,27,75,.4);padding:.4rem 1rem;font-size:.7rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:#a5b4fc;">
+                ${esc(currentEvent.category)} • ${esc(currentEvent.department)}
+              </span>
+            </div>
+
+            <div style="margin-bottom:2rem;">
+              <h1 class="h1">${esc(currentEvent.title)}</h1>
+              <p class="lead" style="color:#a5b4fc;margin-top:.5rem;">${esc(currentEvent.tagline)}</p>
+            </div>
+
+            <div class="event-detail-hero">
+              <img src="${esc(currentEvent.image)}" alt="${esc(currentEvent.title)}" onerror="this.onerror=null;this.src='${FALLBACK_IMAGE}';" />
+            </div>
+
+            <div class="event-detail-layout">
+              <div class="event-detail-left">
+                <div class="glass-panel">
+                  <h2 class="h3">Event Overview</h2>
+                  <p class="muted mt-3" style="line-height:1.7;">${esc(currentEvent.overview)}</p>
+                </div>
+
+                <div class="glass-panel">
+                  <h3 class="h3">Event Structure &amp; Stages</h3>
+                  <div class="stack mt-4" style="gap:1rem;">
+                    ${currentEvent.stages
+                      .map(
+                        (st) => `
+                      <div class="stage-card">
+                        <strong style="display:block;font-size:1rem;font-weight:600;color:#a5b4fc;">${esc(st.title)}</strong>
+                        <p class="muted" style="margin-top:.35rem;font-size:.875rem;line-height:1.6;">${esc(st.desc)}</p>
+                      </div>`,
+                      )
+                      .join("")}
+                  </div>
+                </div>
+
+                <div class="glass-panel">
+                  <h3 class="h3">Rules &amp; Guidelines</h3>
+                  <ul class="rules-list">
+                    ${currentEvent.rules
+                      .map((rule) => `<li>${ICONS.check}<span>${esc(rule)}</span></li>`)
+                      .join("")}
+                  </ul>
+                </div>
+
+                ${
+                  currentEvent.faqs.length > 0
+                    ? `
+                <div class="glass-panel">
+                  <h3 class="h3">Frequently Asked Questions</h3>
+                  <div class="stack mt-4" style="gap:1rem;">
+                    ${currentEvent.faqs
+                      .map(
+                        (faq) => `
+                      <div class="faq-card">
+                        <strong style="display:block;font-size:.875rem;font-weight:600;color:white;">Q: ${esc(faq.q)}</strong>
+                        <p style="margin-top:.5rem;font-size:.875rem;line-height:1.6;color:#c7d2fe;">A: ${esc(faq.a)}</p>
+                      </div>`,
+                      )
+                      .join("")}
+                  </div>
+                </div>`
+                    : ""
+                }
+              </div>
+
+              <div class="event-detail-right">
+                <div class="prize-card">
+                  <span class="eyebrow" style="color:#a5b4fc;">Total Prize Pool</span>
+                  <div class="h1" style="margin-top:.5rem;font-size:2.5rem;">${esc(currentEvent.prizePool)}</div>
+                </div>
+
+                <div class="glass-panel metrics-card">
+                  <div>
+                    <span class="eyebrow" style="display:block;">Date</span>
+                    <span class="metric-value">${ICONS.calendar} ${esc(currentEvent.date)}</span>
+                  </div>
+                  <div>
+                    <span class="eyebrow" style="display:block;">Registration Fee</span>
+                    <span class="metric-value">${ICONS.rupee} ${esc(currentEvent.fee)}</span>
+                  </div>
+                  <div>
+                    <span class="eyebrow" style="display:block;">Team Size</span>
+                    <span class="metric-value">${ICONS.users} ${esc(currentEvent.teamSize)}</span>
+                  </div>
+                  <div>
+                    <span class="eyebrow" style="display:block;">Format / Arena</span>
+                    <span class="metric-value">${ICONS.layers} ${esc(currentEvent.format)}</span>
+                  </div>
+                </div>
+
+                <div class="glass-panel">
+                  <h4 style="font-size:.8rem;font-weight:600;letter-spacing:.05em;text-transform:uppercase;">Event Coordinators</h4>
+                  <div class="coordinator-card-inner">
+                    <div style="font-weight:600;color:white;">${esc(currentEvent.coordinator.name)}</div>
+                    <a href="mailto:${esc(currentEvent.coordinator.email)}" class="coordinator-email">
+                      ${ICONS.mail} ${esc(currentEvent.coordinator.email)}
+                    </a>
+                  </div>
+                </div>
+
+                <a href="https://christuniversity.in" target="_blank" rel="noopener noreferrer" class="register-btn">
+                  <span>Register Now</span> ${ICONS.arrowUpRight}
+                </a>
+              </div>
+            </div>
+          </div>
+        `;
+
+        document.getElementById("back-btn").addEventListener("click", () => setSelectedSlug(null));
+      }
+
+      function renderListing() {
+        const events = filteredEvents();
+        root.innerHTML = `
+          <div class="container container-lg">
+            <div style="max-width:48rem;margin:0 auto;text-align:center;">
+              <span class="events-hero-badge">${ICONS.sparkles} 34+ National Arenas</span>
+              <h1 class="h1 mt-3">Flagship Competitions</h1>
+              <p class="lead mt-3">
+                Discover national battlegrounds spanning Coding, AI, Robotics, Strategic Management,
+                Digital Design, and Stage Arts at CHRIST University Kengeri Campus.
+              </p>
+
+              <div class="events-stats">
+                ${[
+                  ["34+", "Arenas"],
+                  ["₹5L+", "Prize Pool"],
+                  ["SEP 15-16", "Fest Dates"],
+                  ["16th", "Edition"],
+                ]
+                  .map(
+                    ([val, label]) => `
+                  <div class="glass-pill" style="padding:.75rem 1.5rem;text-align:center;">
+                    <div class="h3" style="font-size:1.1rem;">${val}</div>
+                    <div class="tiny" style="font-size:.6rem;font-weight:600;letter-spacing:.15em;text-transform:uppercase;color:#a5b4fc;">${label}</div>
+                  </div>`,
+                  )
+                  .join("")}
+              </div>
+            </div>
+
+            <div class="glass-panel" style="max-width:60rem;margin:3rem auto 0;">
+              <div class="events-filter-grid">
+                <div class="events-search-wrap">
+                  ${ICONS.search}
+                  <input type="text" id="search-input" placeholder="Search by title, domain, or keyword..." value="${esc(searchQuery)}" />
+                </div>
+                <select id="category-select" class="events-select">
+                  ${categories
+                    .map(
+                      (cat) =>
+                        `<option value="${esc(cat)}" ${cat === selectedCategory ? "selected" : ""}>${cat === "All" ? "All Categories" : esc(cat)}</option>`,
+                    )
+                    .join("")}
+                </select>
+                <select id="department-select" class="events-select">
+                  ${departments
+                    .map(
+                      (dep) =>
+                        `<option value="${esc(dep)}" ${dep === selectedDepartment ? "selected" : ""}>${dep === "All" ? "All Departments" : esc(dep)}</option>`,
+                    )
+                    .join("")}
+                </select>
+              </div>
+            </div>
+
+            <div class="events-grid">
+              ${events
+                .map(
+                  (evt) => `
+                <div class="event-card" data-slug="${esc(evt.slug)}">
+                  <div class="event-card-media">
+                    <img src="${esc(evt.image)}" alt="${esc(evt.title)}" loading="lazy" onerror="this.onerror=null;this.src='${FALLBACK_IMAGE}';" />
+                    <span class="glass-pill event-card-cat">${esc(evt.category)}</span>
+                  </div>
+                  <div class="event-card-body">
+                    <span class="event-card-dept">${esc(evt.department)}</span>
+                    <h3 class="h3 mt-2">${esc(evt.title)}</h3>
+                    <p class="muted mt-2" style="font-size:.875rem;line-height:1.6;">${esc(evt.tagline)}</p>
+                    <div class="event-card-foot">
+                      <div class="event-card-prize">${ICONS.trophy} <span>${esc(evt.prizePool)}</span></div>
+                      <span class="event-card-explore">Explore Event ${ICONS.arrowUpRight}</span>
+                    </div>
+                  </div>
+                </div>`,
+                )
+                .join("")}
+            </div>
+
+            ${
+              events.length === 0
+                ? `
+              <div class="glass-panel" style="max-width:28rem;margin:3rem auto 0;padding:2.5rem;text-align:center;">
+                <p style="font-size:1.1rem;font-weight:600;color:white;">No matching events found</p>
+                <p class="muted mt-2" style="font-size:.875rem;">Try adjusting your keyword search or category filters.</p>
+                <button class="glass-pill mt-4" id="reset-filters" style="padding:.6rem 1.5rem;font-size:.7rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;">Reset Filters</button>
+              </div>`
+                : ""
+            }
+          </div>
+        `;
+
+        document.getElementById("search-input").addEventListener("input", (e) => {
+          searchQuery = e.target.value;
+          render();
+          document.getElementById("search-input").focus();
+          const val = document.getElementById("search-input").value;
+          document.getElementById("search-input").setSelectionRange(val.length, val.length);
+        });
+        document.getElementById("category-select").addEventListener("change", (e) => {
+          selectedCategory = e.target.value;
+          render();
+        });
+        document.getElementById("department-select").addEventListener("change", (e) => {
+          selectedDepartment = e.target.value;
+          render();
+        });
+        document.getElementById("reset-filters")?.addEventListener("click", () => {
+          searchQuery = "";
+          selectedCategory = "All";
+          selectedDepartment = "All";
+          render();
+        });
+        root.querySelectorAll(".event-card").forEach((card) => {
+          card.addEventListener("click", () => setSelectedSlug(card.dataset.slug));
+        });
+      }
+
+      function render() {
+        const currentEvent = selectedSlug
+          ? EVENTS_DATA.find((e) => e.slug === selectedSlug) || EVENTS_DATA[0]
+          : null;
+        if (currentEvent) renderDetail(currentEvent);
+        else renderListing();
+      }
+
+      render();
+    </script>
+  </body>
+</html>

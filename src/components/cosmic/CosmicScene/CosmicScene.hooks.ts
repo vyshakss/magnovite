@@ -213,7 +213,7 @@ export function useCosmicScene(hostRef: React.RefObject<HTMLDivElement | null>) 
     tex.minFilter = THREE.LinearMipmapLinearFilter;
     tex.magFilter = THREE.LinearFilter;
 
-    const uniforms: Record<string, THREE.IUniform> = {
+    const uniforms = {
       uTime: { value: 0 },
       uP: { value: 0 },
       uTravel: { value: 0 },
@@ -238,7 +238,7 @@ export function useCosmicScene(hostRef: React.RefObject<HTMLDivElement | null>) 
     scene.add(new THREE.Points(geo, mat));
 
     // ---- central glow + shockwave -----------------------------------------
-    const glowU: Record<string, THREE.IUniform> = {
+    const glowU = {
       uIntensity: { value: 0 },
       uCore: { value: 1 },
     };
@@ -257,7 +257,7 @@ export function useCosmicScene(hostRef: React.RefObject<HTMLDivElement | null>) 
     glow.position.z = -24;
     scene.add(glow);
 
-    const ringU: Record<string, THREE.IUniform> = {
+    const ringU = {
       uProgress: { value: 0 },
       uIntensity: { value: 0 },
     };

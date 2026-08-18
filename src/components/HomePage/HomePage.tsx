@@ -231,7 +231,7 @@ export function HomePage() {
               </h2>
             </div>
             <Link
-              to="/images/gallery"
+              to="/gallery"
               className="glass-pill hidden items-center gap-2 px-4 py-2 text-xs font-semibold uppercase tracking-wider sm:inline-flex"
             >
               View Full Gallery <ArrowUpRight className="size-3.5" />
