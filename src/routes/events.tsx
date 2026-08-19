@@ -198,7 +198,7 @@ export function EventsPage() {
             {/* Breadcrumb Navigation Bar */}
             <div className="mb-6 flex flex-wrap items-center justify-between gap-4">
               <button
-                onClick={() => setSelectedSlug(null)}
+                onClick={() => navigate({ search: (prev) => ({ ...prev, event: undefined }) })}
                 className="glass-pill inline-flex items-center gap-2 px-5 py-2 text-sm font-medium text-white/90 transition-all hover:bg-white/10 hover:text-white"
               >
                 <ArrowLeft className="size-4" /> Back to All Events
@@ -473,7 +473,7 @@ export function EventsPage() {
               {filteredEvents.map((evt) => (
                 <div
                   key={evt.slug}
-                  onClick={() => setSelectedSlug(evt.slug)}
+                  onClick={() => navigate({ search: (prev) => ({ ...prev, event: evt.slug }) })}
                   className="group relative flex cursor-pointer flex-col overflow-hidden rounded-2xl border border-white/8 bg-white/[0.025] transition-all duration-300 hover:-translate-y-1 hover:border-indigo-500/40 hover:bg-white/[0.05] hover:shadow-xl hover:shadow-indigo-500/10"
                 >
                   <div className="relative aspect-[16/10] w-full overflow-hidden bg-black/40">

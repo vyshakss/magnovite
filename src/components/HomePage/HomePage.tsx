@@ -105,7 +105,7 @@ export function HomePage() {
           </div>
 
           <div>
-            <p className="eyebrow">Main Stage Showcase - Live Concert</p>
+            <p className="eyebrow">Live Concert</p>
             <h2 className="mt-3 text-2xl font-semibold sm:text-3xl">
               Welcoming Shaan Rahman to Magnovite 2026
             </h2>
