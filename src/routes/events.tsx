@@ -19,9 +19,11 @@ import { SiteHeader } from "@/components/SiteHeader";
 import { EVENTS_DATA, EventDetail } from "@/data/eventsData";
 
 export const Route = createFileRoute("/events")({
-  validateSearch: (search: Record<string, unknown>): { event?: string } => {
-    const event = search["event"];
-    return typeof event === "string" && event ? { event } : {};
+  validateSearch: (search: Record<string, unknown>): { event?: string; category?: string; department?: string } => {
+    const event = typeof search["event"] === "string" ? search["event"] : undefined;
+    const category = typeof search["category"] === "string" ? search["category"] : undefined;
+    const department = typeof search["department"] === "string" ? search["department"] : undefined;
+    return { event, category, department };
   },
   component: EventsPage,
 });
@@ -99,8 +101,45 @@ export function EventsPage() {
   const searchParams = useSearch({ from: "/events" });
   const [selectedSlug, setSelectedSlug] = useState<string | null>(searchParams.event || null);
   const [searchQuery, setSearchQuery] = useState("");
-  const [selectedCategory, setSelectedCategory] = useState("All");
-  const [selectedDepartment, setSelectedDepartment] = useState("All");
+  const [selectedCategory, setSelectedCategory] = useState(searchParams.category || "All");
+  const [selectedDepartment, setSelectedDepartment] = useState(searchParams.department || "All");
+  const navigate = Route.useNavigate();
+
+  useEffect(() => {
+    if (searchParams.category) {
+      setSelectedCategory(searchParams.category);
+    } else {
+      setSelectedCategory("All");
+    }
+  }, [searchParams.category]);
+
+  useEffect(() => {
+    if (searchParams.department) {
+      setSelectedDepartment(searchParams.department);
+    } else {
+      setSelectedDepartment("All");
+    }
+  }, [searchParams.department]);
+
+  useEffect(() => {
+    if (searchParams.event) {
+      setSelectedSlug(searchParams.event);
+    } else {
+      setSelectedSlug(null);
+    }
+  }, [searchParams.event]);
+
+  const handleCategoryChange = (val: string) => {
+    setSelectedCategory(val);
+    setSelectedDepartment("All"); // Reset department when category changes
+    navigate({ search: (prev) => ({ ...prev, category: val === "All" ? undefined : val, department: undefined }) });
+  };
+
+  const handleDepartmentChange = (val: string) => {
+    setSelectedDepartment(val);
+    setSelectedCategory("All"); // Reset category when department changes
+    navigate({ search: (prev) => ({ ...prev, department: val === "All" ? undefined : val, category: undefined }) });
+  };
 
   const categories = useMemo(() => {
     return ["All", ...Array.from(new Set(EVENTS_DATA.map((e) => e.category)))];
@@ -364,7 +403,7 @@ export function EventsPage() {
             {/* Header Hero Banner */}
             <div className="mx-auto max-w-4xl text-center">
               <div className="inline-flex items-center gap-2 rounded-full border border-indigo-500/30 bg-indigo-500/10 px-4 py-1.5 text-xs font-semibold tracking-wider text-indigo-300 uppercase">
-                <Sparkles className="size-3.5" /> 34+ National Arenas
+                <Sparkles className="size-3.5" /> 50 National Arenas
               </div>
               <h1 className="font-display mt-5 text-4xl font-bold tracking-tight text-white sm:text-6xl">
                 Flagship Competitions
@@ -377,8 +416,8 @@ export function EventsPage() {
               {/* Stats Bar */}
               <div className="mt-8 flex flex-wrap justify-center gap-4 sm:gap-6">
                 {[
-                  ["34+", "Arenas"],
-                  ["₹5L+", "Prize Pool"],
+                  ["50", "Arenas"],
+                  ["₹11L", "Prize Pool"],
                   ["SEP 15-16", "Fest Dates"],
                   ["16th", "Edition"],
                 ].map(([val, label]) => (
@@ -410,7 +449,7 @@ export function EventsPage() {
                 {/* Category Dropdown */}
                 <CustomSelect
                   value={selectedCategory}
-                  onChange={setSelectedCategory}
+                  onChange={handleCategoryChange}
                   options={categories}
                   placeholder="All Categories"
                 />
@@ -418,7 +457,7 @@ export function EventsPage() {
                 {/* Department Dropdown */}
                 <CustomSelect
                   value={selectedDepartment}
-                  onChange={setSelectedDepartment}
+                  onChange={handleDepartmentChange}
                   options={departments}
                   placeholder="All Departments"
                 />

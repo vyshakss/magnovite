@@ -174,12 +174,12 @@ export function SiteHeader({ isFixed = false }: SiteHeaderProps) {
               <div className="glass-panel p-6">
                 <div className="flex items-center justify-between gap-2 border-b border-white/8 pb-4">
                   <div className="min-w-0">
-                    <span className="eyebrow text-indigo-400 truncate block">34+ COMPETITIONS</span>
+                    <span className="eyebrow text-indigo-400 truncate block">50 COMPETITIONS</span>
                     <h3 className="font-display text-lg font-bold text-white truncate">Event Domains</h3>
                   </div>
                   <div className="flex shrink-0 gap-2">
                     <span className="glass-pill whitespace-nowrap px-3 py-1 text-[0.65rem] font-bold text-indigo-300">
-                      ₹5L+ PRIZES
+                      ₹11L PRIZES
                     </span>
                   </div>
                 </div>

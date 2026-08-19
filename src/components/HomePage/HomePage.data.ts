@@ -3,9 +3,9 @@ import { ArrowUpRight, Code2, Cpu, Gamepad2, Music4, Play, Star, IndianRupee } f
 export const META = {
   title: "MAGNOVITE 2026 — A Cinematic Cosmic Unveiling",
   description:
-    "MAGNOVITE 2026, the 16th edition flagship fest of CHRIST (Deemed to be University), Kengeri Campus. 34+ national battlegrounds, ₹3L+ prizes and a live concert by Shaan Rahman.",
+    "MAGNOVITE 2026, the 16th edition flagship fest of CHRIST (Deemed to be University), Kengeri Campus. 50 national battlegrounds, ₹11L prizes and a live concert by Shaan Rahman.",
   ogDescription:
-    "A star explodes, the butterflies rise, the dust becomes a universe. Explore 34+ events, ₹3L+ prizes and the Shaan Rahman main stage.",
+    "A star explodes, the butterflies rise, the dust becomes a universe. Explore 50 events, ₹11L prizes and the Shaan Rahman main stage.",
 };
 
 export const HERO = {
@@ -19,37 +19,43 @@ export const CATEGORIES = [
     icon: Code2,
     title: "Coding & AI",
     items: "Code Relay · Reverse Coding · CTF Enigma · AI Sprints",
+    targetCategory: "Coding & Tech",
   },
   {
     icon: Cpu,
     title: "Robotics & Tech",
     items: "Robo Soccer · Drone Obstacle · RC Racing · Byte & Board",
+    targetCategory: "Engineering",
   },
   {
     icon: IndianRupee,
     title: "Management & Pitch",
     items: "Best Manager · Spark Tank · Finance Pitch · Case Craft",
+    targetCategory: "Management",
   },
   {
     icon: Music4,
     title: "Music & Vocal",
     items: "Battle of the Bands · Acapella Showdown · Live Rhythms",
+    targetCategory: "Cultural",
   },
   {
     icon: Star,
     title: "Dance & Theater",
     items: "Street Dance Battle · Theme Dance · Nukkad Natak Play",
+    targetCategory: "Cultural",
   },
   {
     icon: Gamepad2,
     title: "Gaming & Design",
     items: "Argo Royale · Escape Room · CAD Design · Short Film",
+    targetCategory: "Design",
   },
 ];
 
 export const STATS: [string, string][] = [
-  ["34+", "Events"],
-  ["₹3L+", "Prizes"],
+  ["50", "Events"],
+  ["₹11L", "Prizes"],
 ];
 
 export const GALLERY = [

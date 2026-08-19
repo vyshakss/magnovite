@@ -1,4 +1,4 @@
-import { ArrowUpRight, Play } from "lucide-react";
+import { ArrowUpRight, Play, ChevronDown } from "lucide-react";
 import { Link } from "@tanstack/react-router";
 import { CosmicScene } from "@/components/cosmic/CosmicScene";
 import { SiteHeader } from "@/components/SiteHeader";
@@ -40,12 +40,12 @@ export function HomePage() {
 
           <Countdown />
 
-          <Link
-            to="/events"
+          <button
+            onClick={() => document.getElementById('about')?.scrollIntoView({ behavior: 'smooth' })}
             className="glass-pill mt-2 inline-flex items-center gap-2 px-7 py-3.5 text-sm font-medium transition-all hover:scale-105"
           >
-            Explore Events <ArrowUpRight className="size-4" />
-          </Link>
+            Scroll for more details <ChevronDown className="size-4 animate-bounce" />
+          </button>
         </div>
       </section>
 
@@ -61,7 +61,7 @@ export function HomePage() {
             </p>
             <div className="mt-7 flex flex-wrap items-center justify-between gap-4">
               <div className="flex flex-wrap gap-2.5">
-                {["16th Edition", "Kengeri Campus", "34+ Events"].map((t) => (
+                {["16th Edition", "Kengeri Campus", "50 Events"].map((t) => (
                   <span key={t} className="glass-pill px-4 py-2 text-xs tracking-wide">
                     {t}
                   </span>
@@ -147,10 +147,11 @@ export function HomePage() {
         <div className="glass-panel mx-auto max-w-5xl p-6 sm:p-8">
           <div className="flex flex-wrap items-end justify-between gap-5">
             <div>
-              <p className="eyebrow text-accent">Flagship Competitions &amp; Challenges</p>
-              <h2 className="mt-2 text-3xl font-semibold sm:text-4xl">
-                34+ National Battlegrounds
-              </h2>
+              <p className="eyebrow text-indigo-300">Flagship Competitions &amp; Challenges</p>
+              <Link to="/events" className="group mt-2 flex items-center gap-3 text-3xl font-semibold transition-colors hover:text-indigo-300 sm:text-4xl">
+                50 National Battlegrounds
+                <ArrowUpRight className="size-6 opacity-0 transition-all group-hover:-translate-y-1 group-hover:translate-x-1 group-hover:opacity-100 sm:size-8" />
+              </Link>
             </div>
             <div className="flex gap-2.5">
               {stats.map(([v, l]) => (
@@ -165,31 +166,27 @@ export function HomePage() {
           </div>
 
           <div className="mt-8 grid gap-3.5 sm:grid-cols-2 lg:grid-cols-3">
-            {categories.map(({ icon: Icon, title, items }) => (
-              <div
+            {categories.map(({ icon: Icon, title, items, targetCategory }) => (
+              <Link
                 key={title}
-                className="rounded-2xl border border-white/8 bg-white/[0.025] p-4.5 transition-colors hover:border-white/15 hover:bg-white/[0.05]"
+                to="/events"
+                search={{ category: targetCategory }}
+                className="group rounded-2xl border border-white/8 bg-white/[0.025] p-4.5 transition-colors hover:border-white/15 hover:bg-white/[0.05]"
               >
-                <span className="grid size-9 place-items-center rounded-xl border border-white/10 bg-white/5">
-                  <Icon className="size-4" />
+                <span className="grid size-9 place-items-center rounded-xl border border-white/10 bg-white/5 transition-colors group-hover:bg-indigo-500/20 group-hover:border-indigo-500/30">
+                  <Icon className="size-4 group-hover:text-indigo-400" />
                 </span>
-                <h3 className="mt-4 text-base font-semibold">{title}</h3>
+                <h3 className="mt-4 text-base font-semibold group-hover:text-indigo-300 transition-colors">{title}</h3>
                 <p className="mt-1.5 text-xs leading-relaxed text-muted-foreground">{items}</p>
-              </div>
+              </Link>
             ))}
           </div>
 
-          <div className="mt-8 flex flex-wrap items-center justify-between gap-5 border-t border-white/8 pt-6">
+          <div className="mt-8 border-t border-white/8 pt-6">
             <p className="max-w-md text-xs text-muted-foreground">
               Technical, Cultural &amp; Management flagship events hosted across CHRIST University
               Kengeri Campus.
             </p>
-            <Link
-              to="/events"
-              className="inline-flex items-center gap-2 rounded-full bg-white px-5 py-3 text-xs font-semibold text-black transition-transform hover:scale-[1.02]"
-            >
-              Explore All 34+ Events <ArrowUpRight className="size-4" />
-            </Link>
           </div>
         </div>
       </section>

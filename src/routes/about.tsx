@@ -108,9 +108,9 @@ export function AboutPage() {
           <div className="mt-10 flex flex-wrap justify-center gap-4 sm:gap-6">
             {[
               ["15,000+", "Footfall"],
-              ["50+", "Events"],
+              ["50", "Events"],
               ["120+", "Colleges"],
-              ["₹5L+", "Prize Pool"],
+              ["₹11L", "Prize Pool"],
             ].map(([val, label]) => (
               <div key={label} className="glass-pill px-6 py-3 text-center">
                 <div className="font-display text-xl font-bold text-white">{val}</div>
