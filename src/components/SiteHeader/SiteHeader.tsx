@@ -3,12 +3,6 @@ import {
   Menu,
   X,
   ArrowUpRight,
-  Code,
-  Bot,
-  Briefcase,
-  Music,
-  Theater,
-  Gamepad2,
   MapPin,
 } from "lucide-react";
 import { useState, useEffect } from "react";
@@ -134,8 +128,8 @@ export function SiteHeader({ isFixed = false }: SiteHeaderProps) {
               </button>
             </div>
 
-            {/* 3-Column Mega Menu Content */}
-            <div className="mt-8 grid gap-8 lg:grid-cols-[1.1fr_1.4fr_1.1fr]">
+            {/* 2-Column Mega Menu Content */}
+            <div className="mt-8 grid gap-8 lg:grid-cols-[1.2fr_1fr]">
               {/* LEFT COLUMN: Numbered Nav Links */}
               <div className="space-y-3">
                 <span className="text-[0.65rem] font-bold tracking-[0.25em] text-indigo-400 uppercase">
@@ -168,50 +162,6 @@ export function SiteHeader({ isFixed = false }: SiteHeaderProps) {
                     );
                   })}
                 </nav>
-              </div>
-
-              {/* MIDDLE COLUMN: 6 Arenas Showcase */}
-              <div className="glass-panel p-6">
-                <div className="flex items-center justify-between gap-2 border-b border-white/8 pb-4">
-                  <div className="min-w-0">
-                    <span className="eyebrow text-indigo-400 truncate block">50 COMPETITIONS</span>
-                    <h3 className="font-display text-lg font-bold text-white truncate">Event Domains</h3>
-                  </div>
-                  <div className="flex shrink-0 gap-2">
-                    <span className="glass-pill whitespace-nowrap px-3 py-1 text-[0.65rem] font-bold text-indigo-300">
-                      ₹11L PRIZES
-                    </span>
-                  </div>
-                </div>
-
-                <div className="mt-4 grid grid-cols-2 gap-3">
-                  {[
-                    { icon: Code, title: "Coding & AI", sub: "Hackathons & Sprints" },
-                    { icon: Bot, title: "Robotics & Tech", sub: "Robo Wars & Drones" },
-                    { icon: Briefcase, title: "Management", sub: "Startups & Finance" },
-                    { icon: Music, title: "Music & Vocal", sub: "Bands & Acapella" },
-                    { icon: Theater, title: "Dance & Stage", sub: "Street Battles & Improv" },
-                    { icon: Gamepad2, title: "Gaming & Design", sub: "Esports & Concept Art" },
-                  ].map((cat, i) => (
-                    <Link
-                      key={i}
-                      to="/events"
-                      onClick={() => setOpen(false)}
-                      className="group flex flex-col justify-between rounded-xl border border-white/6 bg-black/30 p-3.5 transition-all hover:border-indigo-500/40 hover:bg-white/[0.04]"
-                    >
-                      <div className="flex items-center justify-between">
-                        <cat.icon className="size-4 text-indigo-400" />
-                        <ArrowUpRight className="size-3.5 opacity-0 group-hover:opacity-100 transition-opacity" />
-                      </div>
-                      <div className="mt-3">
-                        <span className="block text-xs font-bold text-white group-hover:text-indigo-300">
-                          {cat.title}
-                        </span>
-                        <span className="block text-[0.65rem] text-white/50">{cat.sub}</span>
-                      </div>
-                    </Link>
-                  ))}
-                </div>
               </div>
 
               {/* RIGHT COLUMN: Fest Countdown & Campus Info */}
