@@ -33,8 +33,8 @@ export function HomePage() {
               className="h-12 w-auto opacity-90 sm:h-16"
               style={{ filter: 'drop-shadow(0 0 10px rgba(255,255,255,0.15))' }}
             />
-            <h1 className="font-display text-5xl font-bold tracking-widest text-white sm:text-7xl" style={{ textShadow: '0 0 30px rgba(0,0,0,0.8)' }}>
-              MAGN<span className="relative inline-block">O<svg className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-4 h-4 sm:w-6 sm:h-6" viewBox="0 0 24 24" fill="white" xmlns="http://www.w3.org/2000/svg" style={{ filter: 'drop-shadow(0 0 4px rgba(255,255,255,0.8))' }}><path d="M12 0C12 11 13 12 24 12C13 12 12 13 12 24C12 13 11 12 0 12C11 12 12 11 12 0Z" /></svg></span>VITE
+            <h1 className="font-display text-[11.5vw] font-bold tracking-widest text-white sm:text-7xl" style={{ textShadow: '0 0 30px rgba(0,0,0,0.8)' }}>
+              MAGN<span className="relative inline-block">O<svg className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-[3vw] h-[3vw] sm:w-6 sm:h-6" viewBox="0 0 24 24" fill="white" xmlns="http://www.w3.org/2000/svg" style={{ filter: 'drop-shadow(0 0 4px rgba(255,255,255,0.8))' }}><path d="M12 0C12 11 13 12 24 12C13 12 12 13 12 24C12 13 11 12 0 12C11 12 12 11 12 0Z" /></svg></span>VITE
             </h1>
           </div>
 
@@ -184,8 +184,7 @@ export function HomePage() {
 
           <div className="mt-8 border-t border-white/8 pt-6">
             <p className="max-w-md text-xs text-muted-foreground">
-              Technical, Cultural &amp; Management flagship events hosted across CHRIST University
-              Kengeri Campus.
+              Technical, Cultural &amp; Management flagship events hosted across <span className="whitespace-nowrap">CHRIST University Kengeri Campus</span>.
             </p>
           </div>
         </div>
@@ -276,13 +275,7 @@ export function HomePage() {
         />
         </div>
 
-        <div
-          className="footer-columns"
-          style={{
-          gridTemplateColumns: "1fr 1fr",
-          gap: "4rem",
-          }}
-        >
+        <div className="footer-columns">
 
         <div className="footer-col">
           <p

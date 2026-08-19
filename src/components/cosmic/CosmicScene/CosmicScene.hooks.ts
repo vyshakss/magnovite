@@ -46,6 +46,8 @@ function smootherStep(t: number): number {
   return t * t * t * (t * (t * 6 - 15) + 10);
 }
 
+let globalHasPlayedExplosion = false;
+
 export function useCosmicScene(hostRef: React.RefObject<HTMLDivElement | null>) {
   const mountRef = useRef<boolean>(false);
 
@@ -306,10 +308,10 @@ export function useCosmicScene(hostRef: React.RefObject<HTMLDivElement | null>) 
     const currentCamTarget = new THREE.Vector3(0, 0, 0);
 
     let ambientSpin = 0;
-    let currentSmoothRawIndex = 0;
+    let currentSmoothRawIndex = globalHasPlayedExplosion ? 2.0 : 0;
     let targetScrollIndex = 2.0;
-    let autoProgress = 0;
-    let autoSequenceComplete = false;
+    let autoProgress = globalHasPlayedExplosion ? 2.0 : 0;
+    let autoSequenceComplete = globalHasPlayedExplosion;
 
     let lastFrameTime = performance.now();
     let animId = 0;
@@ -441,7 +443,10 @@ export function useCosmicScene(hostRef: React.RefObject<HTMLDivElement | null>) 
 
         if (autoProgress >= 2.0) {
           autoProgress = 2.0;
-          autoSequenceComplete = true;
+          if (!autoSequenceComplete) {
+            autoSequenceComplete = true;
+            globalHasPlayedExplosion = true;
+          }
           // Synchronize target with current scroll when startup finishes
           onScroll();
         }

@@ -238,48 +238,52 @@ export function EventsPage() {
                 {/* Overview Card */}
                 <div className="glass-panel p-7 sm:p-9">
                   <h2 className="font-display text-xl font-semibold text-white">Event Overview</h2>
-                  <p className="mt-4 text-base leading-relaxed text-white/80">
+                  <p className="mt-4 text-base leading-relaxed text-white/80 whitespace-pre-wrap">
                     {currentEvent.overview}
                   </p>
                 </div>
 
                 {/* Structure & Stages */}
-                <div className="glass-panel p-7 sm:p-9">
-                  <h3 className="font-display text-xl font-semibold text-white">
-                    Event Structure &amp; Stages
-                  </h3>
-                  <div className="mt-6 space-y-4">
-                    {currentEvent.stages.map((st, i) => (
-                      <div
-                        key={i}
-                        className="rounded-xl border border-white/8 bg-black/40 p-5 transition-colors hover:border-white/15"
-                      >
-                        <strong className="block text-base font-semibold text-indigo-300">
-                          {st.title}
-                        </strong>
-                        <p className="mt-1.5 text-sm leading-relaxed text-white/70">{st.desc}</p>
-                      </div>
-                    ))}
+                {currentEvent.stages?.length > 0 && !currentEvent.stages.every(st => st.desc.includes("Details will be announced soon")) && (
+                  <div className="glass-panel p-7 sm:p-9">
+                    <h3 className="font-display text-xl font-semibold text-white">
+                      Event Structure &amp; Stages
+                    </h3>
+                    <div className="mt-6 space-y-4">
+                      {currentEvent.stages.map((st, i) => (
+                        <div
+                          key={i}
+                          className="rounded-xl border border-white/8 bg-black/40 p-5 transition-colors hover:border-white/15"
+                        >
+                          <strong className="block text-base font-semibold text-indigo-300">
+                            {st.title}
+                          </strong>
+                          <p className="mt-1.5 text-sm leading-relaxed text-white/70 whitespace-pre-wrap">{st.desc}</p>
+                        </div>
+                      ))}
+                    </div>
                   </div>
-                </div>
+                )}
 
                 {/* Rules & Guidelines */}
-                <div className="glass-panel p-7 sm:p-9">
-                  <h3 className="font-display text-xl font-semibold text-white">
-                    Rules &amp; Guidelines
-                  </h3>
-                  <ul className="mt-5 space-y-3">
-                    {currentEvent.rules.map((rule, idx) => (
-                      <li
-                        key={idx}
-                        className="flex items-start gap-3 text-sm leading-relaxed text-white/80"
-                      >
-                        <CheckCircle2 className="mt-0.5 size-4 shrink-0 text-indigo-400" />
-                        <span>{rule}</span>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
+                {currentEvent.rules?.length > 0 && !currentEvent.rules.every(r => r.includes("Details will be announced soon")) && (
+                  <div className="glass-panel p-7 sm:p-9">
+                    <h3 className="font-display text-xl font-semibold text-white">
+                      Rules &amp; Guidelines
+                    </h3>
+                    <ul className="mt-5 space-y-3">
+                      {currentEvent.rules.map((rule, idx) => (
+                        <li
+                          key={idx}
+                          className="flex items-start gap-3 text-sm leading-relaxed text-white/80"
+                        >
+                          <CheckCircle2 className="mt-0.5 size-4 shrink-0 text-indigo-400" />
+                          <span>{rule}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                )}
 
                 {/* FAQ */}
                 {currentEvent.faqs.length > 0 && (

@@ -33,21 +33,21 @@ export const EVENTS_DATA: EventDetail[] = [
       }
     ],
     "rules": [
-      "A team may have a maximum of 2 members",
-      "Participation is limited to 60 participants; seats are allotted strictly on a first-come, first-served basis.",
-      "Attendance for the full learning session is mandatory; only participants who complete it qualify for the competition.",
-      "Each team will be provided with a system and licensed ANSYS (HFSS) software access; teams must use only the system allotted to them.",
-      "The competition problem statement, along with the target performance metrics, will be revealed only at the start of the competition; no prior hints will be shared.",
-      "All design and simulation work must be carried out during the competition using ANSYS HFSS; external design files, pre-made models or pre-built projects are strictly not allowed.",
-      "Use of the internet, mobile phones, external storage devices or any inter-team communication is not permitted during the competition unless expressly allowed by the coordinators.",
-      "Teams must save and submit their design files and simulation results in the specified format before the announced deadline; late submissions will not be evaluated.",
-      "Designs are judged on simulation accuracy (gain, return loss, bandwidth), design approach and documentation, and time of completion, as per the Judging Criteria.",
-      "Any form of malpractice, plagiarism or tampering with another team's work will lead to immediate disqualification.",
-      "Participants must handle all lab equipment and systems with care; any intentional damage will be the participant's responsibility.",
-      "The judges' decisions on evaluation and results are final and binding.",
-      "Certificates will be awarded to all participants; winners will receive prizes as listed under Winners & Prizes.",
-      "Volunteers and faculty will be present throughout to assist with technical or procedural queries.",
-      "The organizers reserve the right to modify the schedule or rules if necessary; any changes will be communicated to participants in advance."
+      "1. A team may have a maximum of 2 members",
+      "2. Participation is limited to 60 participants; seats are allotted strictly on a first-come, first-served basis.",
+      "3. Attendance for the full learning session is mandatory; only participants who complete it qualify for the competition.",
+      "4. Each team will be provided with a system and licensed ANSYS (HFSS) software access; teams must use only the system allotted to them.",
+      "5. The competition problem statement, along with the target performance metrics, will be revealed only at the start of the competition; no prior hints will be shared.",
+      "6. All design and simulation work must be carried out during the competition using ANSYS HFSS; external design files, pre-made models or pre-built projects are strictly not allowed.",
+      "7. Use of the internet, mobile phones, external storage devices or any inter-team communication is not permitted during the competition unless expressly allowed by the coordinators.",
+      "8. Teams must save and submit their design files and simulation results in the specified format before the announced deadline; late submissions will not be evaluated.",
+      "9. Designs are judged on simulation accuracy (gain, return loss, bandwidth), design approach and documentation, and time of completion, as per the Judging Criteria.",
+      "10. Any form of malpractice, plagiarism or tampering with another team's work will lead to immediate disqualification.",
+      "11. Participants must handle all lab equipment and systems with care; any intentional damage will be the participant's responsibility.",
+      "12. The judges' decisions on evaluation and results are final and binding.",
+      "13. Certificates will be awarded to all participants; winners will receive prizes as listed under Winners & Prizes.",
+      "14. Volunteers and faculty will be present throughout to assist with technical or procedural queries.",
+      "15. The organizers reserve the right to modify the schedule or rules if necessary; any changes will be communicated to participants in advance."
     ],
     "faqs": [],
     "prizePool": "22K",
@@ -59,10 +59,22 @@ export const EVENTS_DATA: EventDetail[] = [
     "registrationLink": "https://forms.gle/srhDJHDLEG9JLUmN6",
     "coordinators": [
       {
+        "name": "John Victor Jose",
+        "phone": "9986383984",
+        "email": "",
+        "role": "Student POC"
+      },
+      {
+        "name": "Tanusharvesh",
+        "phone": "94437 45725",
+        "email": "",
+        "role": "Student POC"
+      },
+      {
         "name": "Dr. Shashi Kumar D",
         "phone": "9916947645",
         "email": "",
-        "role": "Coordinator"
+        "role": "Faculty POC"
       }
     ]
   },
@@ -100,22 +112,22 @@ export const EVENTS_DATA: EventDetail[] = [
     "registrationLink": "https://docs.google.com/forms/d/e/1FAIpQLScDjJnENvIJJNrBV6VUGO5jGaKd_Qmy4_jc9kMBnBsZw-FCWw/viewform?usp=publish-editor",
     "coordinators": [
       {
-        "name": "Dr Niranjan SJ",
-        "phone": "9164779971",
-        "email": "niranjana.s@christuniversity.in",
-        "role": "Faculty Coordinator"
+        "name": "Arush Verma",
+        "phone": "7892796764",
+        "email": "",
+        "role": "Student POC"
       },
       {
-        "name": "Ivin Sabu",
-        "phone": "7400232877",
-        "email": "ivin.sabu@btech.christuniversity.in",
-        "role": "Student Coordinator"
+        "name": "Ruben Sebastian",
+        "phone": "8139036883",
+        "email": "",
+        "role": "Student POC"
       },
       {
-        "name": "Avyay L S",
-        "phone": "9940010731",
-        "email": "avyay.ls@btech.christuniversity.in",
-        "role": "Student Coordinator"
+        "name": "Dr. Ravikumar R",
+        "phone": "9964167735",
+        "email": "",
+        "role": "Faculty POC"
       }
     ]
   },
@@ -151,10 +163,22 @@ export const EVENTS_DATA: EventDetail[] = [
     "registrationLink": "https://docs.google.com/forms/d/e/1FAIpQLSdtmwLIO4NbikAp0BqHjKqGKSsicjB_DrDYRvNfQW6gVzpt_Q/viewform?usp=dialog",
     "coordinators": [
       {
-        "name": "Dr. Tejas H.K.",
+        "name": "Deeba Dharshan",
+        "phone": "9360624127",
+        "email": "",
+        "role": "Student POC"
+      },
+      {
+        "name": "Tharanaa",
+        "phone": "8072139271",
+        "email": "",
+        "role": "Student POC"
+      },
+      {
+        "name": "Dr Thejas HK",
         "phone": "9686798951",
         "email": "",
-        "role": "Coordinator"
+        "role": "Faculty POC"
       }
     ]
   },
@@ -168,7 +192,7 @@ export const EVENTS_DATA: EventDetail[] = [
     "stages": [
       {
         "title": "Event Structure",
-        "desc": "Round 1 – Rhetoric Blitz (15 Minutes)\nTeams receive an impromptu topic and have 2 minutes to prepare, followed by 3 minutes to present. Topics may include science, literature, ethics, technology, or contemporary issues.\nRound 2 – Literary Face-Off (20 Minutes)\nTeams are assigned famous literary or historical characters (e.g., Shakespeare, Sherlock Holmes, Cleopatra, Chanakya, Marie Curie). Participants defend or humorously \"roast\" opposing characters using evidence, wit, and rhetorical techniques.\nRound 3 – Counter-History Debate (20 Minutes)\nTeams debate alternate-history scenarios such as:\nWhat if electricity had never been discovered? \nWhat if AI existed during the Renaissance? \nWhat if Newton and Einstein debated today? \nJudges evaluate creativity, logic, and persuasive ability\nGrand Finale – The Bard's Gambit (10 Minutes)\nFinalists receive a surprise topic and engage in a rapid-fire debate where rebuttals, audience interaction, and persuasive speaking determine the champion."
+        "desc": "Round 1 – Rhetoric Blitz (15 Minutes)\nTeams receive an impromptu topic and have 2 minutes to prepare, followed by 3 minutes to present. Topics may include science, literature, ethics, technology, or contemporary issues.\nRound 2 – Literary Face-Off (20 Minutes)\nTeams are assigned famous literary or historical characters (e.g., Shakespeare, Sherlock Holmes, Cleopatra, Chanakya, Marie Curie). Participants defend or humorously \"roast\" opposing characters using evidence, wit, and rhetorical techniques.\nRound 3 – Counter-History Debate (20 Minutes)\nTeams debate alternate-history scenarios such as:\nWhat if electricity had never been discovered?\nWhat if AI existed during the Renaissance?\nWhat if Newton and Einstein debated today?\nJudges evaluate creativity, logic, and persuasive ability\nGrand Finale – The Bard's Gambit (10 Minutes)\nFinalists receive a surprise topic and engage in a rapid-fire debate where rebuttals, audience interaction, and persuasive speaking determine the champion."
       }
     ],
     "rules": [
@@ -193,22 +217,22 @@ export const EVENTS_DATA: EventDetail[] = [
     "registrationLink": "https://docs.google.com/forms/d/e/1FAIpQLSc65v6inFjiO8l4TDoU8rXNRjPNZLLi07flASttEsurC5m6cw/viewform?usp=publish-editor",
     "coordinators": [
       {
-        "name": "Dr. Jopaul Mathew",
-        "phone": "8138011592",
-        "email": "jopaul.mathew@christuniversity.in",
-        "role": "Faculty Coordinator"
+        "name": "Blessing Roshan",
+        "phone": "7810008415",
+        "email": "",
+        "role": "Student POC"
       },
       {
-        "name": "Catherine",
-        "phone": "99677 83363",
-        "email": "Catherine.susan@btech.christuniversity.in",
-        "role": "Student Coordinator"
+        "name": "G Nagul",
+        "phone": "9788820820",
+        "email": "",
+        "role": "Student POC"
       },
       {
-        "name": "Rithvik Sunil",
-        "phone": "7306599726",
-        "email": "Rithvik.sunil@btech.christuniversity.in",
-        "role": "Student Coordinator"
+        "name": "Dr. Rithwik Sankar",
+        "phone": "8547343870",
+        "email": "",
+        "role": "Faculty POC"
       }
     ]
   },
@@ -218,7 +242,7 @@ export const EVENTS_DATA: EventDetail[] = [
     "tagline": "A creative clay modelling challenge where participants transform ideas into unique three-dimensional forms through imagination, skill, and craftsmanship.",
     "category": "Design",
     "department": "School of Architecture",
-    "overview": "Battle Clay is a creative and engaging clay modelling competition that brings together imagination, creativity, and hands-on skills. Participants are challenged to transform their ideas into meaningful three-dimensional forms using clay as the primary medium. The event encourages experimentation, innovative thinking, and artistic expression while developing patience, precision, and craftsmanship. With a limited time to create, participants must think creatively and work efficiently to bring their concepts to life. Battle Clay provides an exciting platform for students to explore form, texture, and structure while competing with others. It celebrates creativity, encourages collaboration, and turns simple ideas into tangible creations.",
+    "overview": "About the Event:\n\nBattle Clay is a creative and engaging clay modelling competition that brings together imagination, creativity, and hands-on skills. Participants are challenged to transform their ideas into meaningful three-dimensional forms using clay as the primary medium. The event encourages experimentation, innovative thinking, and artistic expression while developing patience, precision, and craftsmanship. With a limited time to create, participants must think creatively and work efficiently to bring their concepts to life. Battle Clay provides an exciting platform for students to explore form, texture, and structure while competing with others. It celebrates creativity, encourages collaboration, and turns simple ideas into tangible creations.",
     "stages": [
       {
         "title": "Event Structure",
@@ -250,22 +274,22 @@ export const EVENTS_DATA: EventDetail[] = [
     "registrationLink": "https://docs.google.com/forms/d/e/1FAIpQLSdSSZfUhj2o_hCcC_cPubUpa4sdlFEwOeORZ0LOX_FI0LnuAw/viewform?usp=publish-editor",
     "coordinators": [
       {
-        "name": "Prof. Betty Bharathi Sharath",
-        "phone": "9900129124",
-        "email": "betty.bharathi@christuniversity.in",
-        "role": "Faculty Coordinator"
+        "name": "MothilalRam U",
+        "phone": "9342869367",
+        "email": "",
+        "role": "Student POC"
       },
       {
-        "name": "Kuprala Sanjeev Hemanth",
-        "phone": "7416352580",
-        "email": "kuparala.sanjeev@christuniversity.in",
-        "role": "Student Coordinator"
+        "name": "Mariya John",
+        "phone": "8848025263",
+        "email": "",
+        "role": "Student POC"
       },
       {
-        "name": "Prarthana Sarkar",
-        "phone": "8017062443",
-        "email": "prarthana.sarkar@arch.christuniversity.in",
-        "role": "Student Coordinator"
+        "name": "Prof.  Rashmi S",
+        "phone": "9986406742",
+        "email": "",
+        "role": "Faculty POC"
       }
     ]
   },
@@ -312,22 +336,22 @@ export const EVENTS_DATA: EventDetail[] = [
     "registrationLink": "https://docs.google.com/forms/d/e/1FAIpQLSdfz88LDlhAE4q3kVLOvc-AVIDYMzIm3PGhS2VAL7jeWI5lDQ/viewform?usp=publish-editor",
     "coordinators": [
       {
-        "name": "Dr Vinay TV",
-        "phone": "9582580854",
-        "email": "vinay.tv@christuniversity.in",
-        "role": "Faculty Coordinator"
+        "name": "Samuel Philip",
+        "phone": "8299811658",
+        "email": "",
+        "role": "Student POC"
       },
       {
-        "name": "Anuja Theres",
-        "phone": "9188038095",
-        "email": "anuja.theres@mba.christuniversity.in",
-        "role": "Student Coordinator"
+        "name": "Lisa Shibu George",
+        "phone": "8434673061",
+        "email": "",
+        "role": "Student POC"
       },
       {
-        "name": "Shaik Mohammad Rizwan",
-        "phone": "9676257621",
-        "email": "shaik.Mohammad@mba.christuniversity.in",
-        "role": "Student Coordinator"
+        "name": "Dr. Prathima V G",
+        "phone": "9845458055",
+        "email": "",
+        "role": "Faculty POC"
       }
     ]
   },
@@ -337,7 +361,7 @@ export const EVENTS_DATA: EventDetail[] = [
     "tagline": "Know the Game, Master the Challenge, Lead the Way",
     "category": "Management",
     "department": "BBA",
-    "overview": "Best Manager is a flagship management event designed to test participants on their ability to think, strategise, communicate, lead, and make effective decisions under pressure. The event simulates real-world managerial situations, challenging participants to step into the shoes of a manager and navigate diverse business scenarios.\nThe competition encompasses multiple facets of management, including Human Resources, Marketing, Finance, Operations, Strategy, Leadership, Communication, and Decision-Making. Through a series of engaging rounds, participants will be tested on their analytical thinking, creativity, problem-solving abilities, managerial aptitude, and ability to adapt to dynamic situations.\nRather than evaluating participants on a single skill set, Best Manager takes a 360° approach to management, assessing how effectively an individual can balance people, resources, strategy, and business objectives. The event ultimately seeks to identify the participant who demonstrates the versatility, confidence, leadership, and managerial acumen required to become the complete manager.",
+    "overview": "Best Manager is a flagship management event designed to test participants on their ability to think, strategise, communicate, lead, and make effective decisions under pressure. The event simulates real-world managerial situations, challenging participants to step into the shoes of a manager and navigate diverse business scenarios.\n\nThe competition encompasses multiple facets of management, including Human Resources, Marketing, Finance, Operations, Strategy, Leadership, Communication, and Decision-Making. Through a series of engaging rounds, participants will be tested on their analytical thinking, creativity, problem-solving abilities, managerial aptitude, and ability to adapt to dynamic situations.\n\nRather than evaluating participants on a single skill set, Best Manager takes a 360° approach to management, assessing how effectively an individual can balance people, resources, strategy, and business objectives. The event ultimately seeks to identify the participant who demonstrates the versatility, confidence, leadership, and managerial acumen required to become the complete manager.",
     "stages": [
       {
         "title": "Event Structure",
@@ -365,22 +389,22 @@ export const EVENTS_DATA: EventDetail[] = [
     "registrationLink": "https://docs.google.com/forms/d/e/1FAIpQLSdrfAVuAfJqZhYe_QCt5fLvfjORFlrm9Q1Ah_PbSj5m4Fyosw/viewform?usp=publish-editor",
     "coordinators": [
       {
-        "name": "Dr. Arun RJ",
-        "phone": "9620043436",
+        "name": "Reuben John Paul",
+        "phone": "8848041322",
         "email": "",
-        "role": "Faculty Coordinator"
+        "role": "Student POC"
       },
       {
-        "name": "Nipun Agarwal",
-        "phone": "83026 66351",
+        "name": "Ananya Suresh",
+        "phone": "8086530146",
         "email": "",
-        "role": "Student Coordinator"
+        "role": "Student POC"
       },
       {
-        "name": "Pragya",
-        "phone": "70110 28993",
+        "name": "Dr Charunayan Kamath",
+        "phone": "9585587443",
         "email": "",
-        "role": "Student Coordinator"
+        "role": "Faculty POC"
       }
     ]
   },
@@ -390,7 +414,7 @@ export const EVENTS_DATA: EventDetail[] = [
     "tagline": "The code is flawed. The clock is ticking.Bring the logic to life.",
     "category": "Engineering",
     "department": "Electronics and Communication Engineering (ECE)",
-    "overview": "BitForge is a high-energy, multi-round digital logic and hardware engineering challenge designed to bridge the gap between theoretical concept and practical execution. The event tests number system conversions, logic gate optimization, cryptographic problem-solving, and live hardware prototyping.\nStarting with a fast-paced cryptographic and riddle-based paper sprint, teams must decode a chain of interlinked puzzles — hexadecimal riddles, direction-finding clues, and a logic gate maze — before moving on to a three-stage classical cryptography round covering Caesar, Vigenère, and Playfair ciphers. Finalist teams then bring abstract paper logic to life by manually wiring physical Digital IC Trainer Kits under a ticking clock, before the grand finale tests their ability to design and optimize a circuit against a live fluctuating cost market. The event has a low barrier to entry but a high skill ceiling, making it challenging for engineering students while remaining intuitive and playable.",
+    "overview": "BitForge is a high-energy, multi-round digital logic and hardware engineering challenge designed to bridge the gap between theoretical concept and practical execution. The event tests number system conversions, logic gate optimization, cryptographic problem-solving, and live hardware prototyping.\n\nStarting with a fast-paced cryptographic and riddle-based paper sprint, teams must decode a chain of interlinked puzzles — hexadecimal riddles, direction-finding clues, and a logic gate maze — before moving on to a three-stage classical cryptography round covering Caesar, Vigenère, and Playfair ciphers. Finalist teams then bring abstract paper logic to life by manually wiring physical Digital IC Trainer Kits under a ticking clock, before the grand finale tests their ability to design and optimize a circuit against a live fluctuating cost market. The event has a low barrier to entry but a high skill ceiling, making it challenging for engineering students while remaining intuitive and playable.",
     "stages": [
       {
         "title": "Event Structure",
@@ -424,10 +448,22 @@ export const EVENTS_DATA: EventDetail[] = [
     "registrationLink": "https://forms.gle/nv6z4T6bDnmH7XGa7",
     "coordinators": [
       {
+        "name": "Lourdes Xavier",
+        "phone": "80957 65526",
+        "email": "",
+        "role": "Student POC"
+      },
+      {
+        "name": "Sravan N",
+        "phone": "6385781722",
+        "email": "",
+        "role": "Student POC"
+      },
+      {
         "name": "Dr. Praghash K",
         "phone": "95856 35381",
         "email": "",
-        "role": "Coordinator"
+        "role": "Faculty POC"
       }
     ]
   },
@@ -441,38 +477,23 @@ export const EVENTS_DATA: EventDetail[] = [
     "stages": [
       {
         "title": "Event Structure",
-        "desc": "Knockout-based tournament \n1 vs 1 robot battles \nOne robot per team will participate in a match. \nThe winner advances to the next round. \nThe final surviving team will be declared the ROBO WAR 2026 Champion. \nIn case of a draw, a tie-breaker round will be conducted."
+        "desc": "Knockout-based tournament\n1 vs 1 robot battles\nOne robot per team will participate in a match.\nThe winner advances to the next round.\nThe final surviving team will be declared the ROBO WAR 2026 Champion.\nIn case of a draw, a tie-breaker round will be conducted."
       }
     ],
     "rules": [
-      "Robot Specifications",
-      "Maximum Dimensions: ______",
-      "Maximum Weight: ______",
-      "Maximum Operating Voltage: ______",
-      "Robots must be remotely controlled.",
-      "Robots must pass technical inspection before the competition.",
-      "All components must be securely mounted.",
-      "Robots must have appropriate protective measures around moving components.",
-      "Only approved power sources are permitted.",
-      "Each team must bring its own controller, batteries, charger, and required equipment.",
-      "Weapons & Mechanisms",
-      "Participants may use approved combat mechanisms such as:",
-      "Spinning mechanisms",
-      "Hammer mechanisms",
-      "Flipper mechanisms",
       "Ram/pushing mechanisms",
       "Other mechanisms approved by the organizers",
-      " Both robots must be positioned in their designated starting zones.",
-      " The match begins only after the referee gives the start signal.",
-      " Teams must control their robots only from the designated control area.",
-      " A robot is considered defeated if it:",
+      "Both robots must be positioned in their designated starting zones.",
+      "The match begins only after the referee gives the start signal.",
+      "Teams must control their robots only from the designated control area.",
+      "A robot is considered defeated if it:",
       "Becomes immobilized.",
       "Is unable to continue the match.",
       "Is knocked out of the designated arena.",
       "Is declared defeated by the referee.",
-      " Deliberate attacks on the arena structure are prohibited.",
-      " Teams must stop their robot immediately when instructed by the referee.",
-      " The referee's decision will be final and binding."
+      "Deliberate attacks on the arena structure are prohibited.",
+      "Teams must stop their robot immediately when instructed by the referee.",
+      "The referee's decision will be final and binding."
     ],
     "faqs": [],
     "prizePool": "22K",
@@ -484,10 +505,22 @@ export const EVENTS_DATA: EventDetail[] = [
     "registrationLink": "https://docs.google.com/forms/d/e/1FAIpQLSdG1KnrDU70YdjZb-FWfhAQMert_tDCCI6w-ubPNGmoKcViHQ/viewform?usp=publish-editor",
     "coordinators": [
       {
-        "name": "Dr. Jangam Sasidhar, Dr. Umesh V",
+        "name": "Mayank Ramesh",
+        "phone": "78998 74479",
+        "email": "",
+        "role": "Student POC"
+      },
+      {
+        "name": "Nathaniel Ronald Hoskeri",
+        "phone": "81973 18205",
+        "email": "",
+        "role": "Student POC"
+      },
+      {
+        "name": "Dr. Umesh V",
         "phone": "9164368155",
         "email": "",
-        "role": "Coordinator"
+        "role": "Faculty POC"
       }
     ]
   },
@@ -501,7 +534,7 @@ export const EVENTS_DATA: EventDetail[] = [
     "stages": [
       {
         "title": "Event Structure",
-        "desc": "Phase 1 – Theme Reveal (10 Minutes)\nEach team receives one randomly assigned theme from:\nMathematics\nExamples:\nInfinity, Fractals, Geometry, Fibonacci, Mathematical Genius \nPhysics\nExamples:\nSpace-Time, Quantum World, Black Hole, Light, Newton's Universe \nChemistry\nExamples:\nPeriodic Table, Fire & Ice, Chemical Bonds, Radioactivity, Molecular Art \nEnglish\nExamples:\nShakespeare, Alice in Wonderland, Poetry, Fantasy, Gothic Literature \nPhase 2 – Face Painting (60 Minutes)\nTeams create a complete face artwork based on the assigned theme.\nParticipants may extend the artwork slightly onto the neck or hands if desired.\n\nPhase 3 – Presentation (2 Minutes per Team)\nTeams explain:\nTheme interpretation \nArtistic concept \nSymbolism \nCreative process"
+        "desc": "Phase 1 – Theme Reveal (10 Minutes)\nEach team receives one randomly assigned theme from:\nMathematics\nExamples:\nInfinity, Fractals, Geometry, Fibonacci, Mathematical Genius\nPhysics\nExamples:\nSpace-Time, Quantum World, Black Hole, Light, Newton's Universe\nChemistry\nExamples:\nPeriodic Table, Fire & Ice, Chemical Bonds, Radioactivity, Molecular Art\nEnglish\nExamples:\nShakespeare, Alice in Wonderland, Poetry, Fantasy, Gothic Literature\nPhase 2 – Face Painting (60 Minutes)\nTeams create a complete face artwork based on the assigned theme.\nParticipants may extend the artwork slightly onto the neck or hands if desired.\nPhase 3 – Presentation (2 Minutes per Team)\nTeams explain:\nTheme interpretation\nArtistic concept\nSymbolism\nCreative process"
       }
     ],
     "rules": [
@@ -527,10 +560,22 @@ export const EVENTS_DATA: EventDetail[] = [
     "registrationLink": "https://docs.google.com/forms/d/e/1FAIpQLScSxLCHw9YroO7c_9zxrEnmoLx8h8GCL3brhen7T5h65t6ukw/viewform?usp=header",
     "coordinators": [
       {
-        "name": "Dr. Aparna Sridharan",
+        "name": "Aishwarya R",
+        "phone": "7795685267",
+        "email": "",
+        "role": "Student POC"
+      },
+      {
+        "name": "Machak Bachani",
+        "phone": "8964805033",
+        "email": "",
+        "role": "Student POC"
+      },
+      {
+        "name": "Dr Aparna Sreedharan",
         "phone": "7598430592",
         "email": "",
-        "role": "Coordinator"
+        "role": "Faculty POC"
       }
     ]
   },
@@ -540,7 +585,7 @@ export const EVENTS_DATA: EventDetail[] = [
     "tagline": "An immersive industry case challenge where teams analyse, strategise, adapt to the unexpected, and convince stakeholders that their solution can survive.",
     "category": "General Fest Events",
     "department": "IIIC",
-    "overview": "This event is designed to enable student teams to apply strategic and technical reasoning to a live, real-world industry case, thereby bridging academic theory with the pace and complexity of actual critical problem-solving. \n Participating teams are presented with an unseen industry case on the day of the event and are required to analyse it and formulate a viable solution, submitted as a strategic pitch deck of up to three slides. Every team then draws a random twist, an unforeseen disruption to their case, and must revise their solution's future prospects accordingly, presenting and defending it as a hand-made poster, created using art supplies provided by the organising committee, before a panel acting as skeptical investors. Results are announced at a valedictory ceremony the following day.",
+    "overview": "This event is designed to enable student teams to apply strategic and technical reasoning to a live, real-world industry case, thereby bridging academic theory with the pace and complexity of actual critical problem-solving.\n\nParticipating teams are presented with an unseen industry case on the day of the event and are required to analyse it and formulate a viable solution, submitted as a strategic pitch deck of up to three slides. Every team then draws a random twist, an unforeseen disruption to their case, and must revise their solution's future prospects accordingly, presenting and defending it as a hand-made poster, created using art supplies provided by the organising committee, before a panel acting as skeptical investors. Results are announced at a valedictory ceremony the following day.",
     "stages": [
       {
         "title": "Event Structure",
@@ -571,22 +616,22 @@ export const EVENTS_DATA: EventDetail[] = [
     "registrationLink": "https://forms.gle/y3jVJjrsipLa3a2NA",
     "coordinators": [
       {
-        "name": "Dr. Joseph Rodrigues",
-        "phone": "94205 94564",
-        "email": "joseph.rodrigues@christuniversity.in",
-        "role": "Faculty Coordinator"
+        "name": "Annmarie Vinish",
+        "phone": "89213 23033",
+        "email": "",
+        "role": "Student POC"
       },
       {
         "name": "Rebecca Lenin Koshy",
         "phone": "63561 17125",
-        "email": "rebecca.lenin@btech.christuniversity.in",
-        "role": "Student Coordinator"
+        "email": "",
+        "role": "Student POC"
       },
       {
-        "name": "Annmarie Vinish",
-        "phone": "89213 23033",
-        "email": "annmarie.vinish@btech.christuniversity.in",
-        "role": "Student Coordinator"
+        "name": "Dr. Joseph Rodrigues",
+        "phone": "94205 94564",
+        "email": "",
+        "role": "Faculty POC"
       }
     ]
   },
@@ -658,22 +703,22 @@ export const EVENTS_DATA: EventDetail[] = [
     "registrationLink": "https://docs.google.com/forms/d/e/1FAIpQLSdWG_widE2nn2jJpioIKVj5bhCcgSdvK6N1jNh72KsO_KoccA/viewform?usp=publish-editor",
     "coordinators": [
       {
-        "name": "Dr Bejoy BJ",
-        "phone": "8281300742",
-        "email": "bejoy.bj@christuniversity.in",
-        "role": "Faculty Coordinator"
+        "name": "Dinesh Babu",
+        "phone": "8300196030",
+        "email": "",
+        "role": "Student POC"
       },
       {
-        "name": "Mathew Thomas",
-        "phone": "9036510075",
-        "email": "thomas.mathew@btech.christuniversity.in",
-        "role": "Student Coordinator"
+        "name": "Ridhi M Chabbria",
+        "phone": "9444693407",
+        "email": "",
+        "role": "Student POC"
       },
       {
-        "name": "Sneha Rohith",
-        "phone": "9008102224",
-        "email": "sneha.rohith@btech.christuniversity.in",
-        "role": "Student Coordinator"
+        "name": "Dr. Sherin Paul",
+        "phone": "9385446508",
+        "email": "",
+        "role": "Faculty POC"
       }
     ]
   },
@@ -683,7 +728,7 @@ export const EVENTS_DATA: EventDetail[] = [
     "tagline": "Where Diplomacy Meets the Knife, and Every Decision Has a Price",
     "category": "Management",
     "department": "BBA",
-    "overview": "Corporate Crossfire simulates real-world corporate situations where participants must\nnavigate conflicting perspectives, stakeholder interests, ethical dilemmas, and unexpected challenges. The event moves beyond conventional debates by placing participants in\ndynamic situations that demand strategic thinking, informed decision-making, adaptability, and the ability to respond effectively under pressure.",
+    "overview": "Corporate Crossfire simulates real-world corporate situations where participants must\n\nnavigate conflicting perspectives, stakeholder interests, ethical dilemmas, and unexpected challenges. The event moves beyond conventional debates by placing participants in\n\ndynamic situations that demand strategic thinking, informed decision-making, adaptability, and the ability to respond effectively under pressure.",
     "stages": [
       {
         "title": "Event Structure",
@@ -717,10 +762,22 @@ export const EVENTS_DATA: EventDetail[] = [
     "registrationLink": "https://docs.google.com/forms/d/e/1FAIpQLSfVnyfr_0qqV59Lc_3wcYvEERUVjx8MlOBmznqyzNnRSB3A8g/viewform?usp=publish-editor",
     "coordinators": [
       {
+        "name": "Manasi Padmnabh Bhake",
+        "phone": "9730619566",
+        "email": "",
+        "role": "Student POC"
+      },
+      {
+        "name": "Rishabh Agrawal",
+        "phone": "8809953158",
+        "email": "",
+        "role": "Student POC"
+      },
+      {
         "name": "Dr. Shilpa Rajagopal",
         "phone": "8301057146",
         "email": "",
-        "role": "Coordinator"
+        "role": "Faculty POC"
       }
     ]
   },
@@ -730,7 +787,7 @@ export const EVENTS_DATA: EventDetail[] = [
     "tagline": "A high-speed RC drag racing challenge where teams race their custom-built vehicles over a straight track, competing for the fastest finish.",
     "category": "Engineering",
     "department": "Automotive Engineering",
-    "overview": "RC Drag Race is a high-speed remote-controlled vehicle competition where participants compete to cover a 50-metre straight-line track in the shortest possible time.\nThe event gives participants freedom to design, build, modify and optimize their own RC vehicles while applying concepts of acceleration, traction, power transmission, gearing, vehicle dynamics and control.\nThe competition follows an Open Build approach, with only essential dimensional, weight, drivetrain, battery and safety restrictions. Participants can experiment with different motors, gearing, tyres, chassis configurations and other engineering solutions.\nThe event aims to promote hands-on engineering, innovation, practical problem-solving and competitive spirit among students from different institutions.",
+    "overview": "RC Drag Race is a high-speed remote-controlled vehicle competition where participants compete to cover a 35-metre straight-line track in the shortest possible time.\n\nThe event gives participants freedom to design, build, modify and optimize their own RC vehicles while applying concepts of acceleration, traction, power transmission, gearing, vehicle dynamics and control.\n\nThe competition follows an Open Build approach, with only essential dimensional, weight, drivetrain, battery and safety restrictions. Participants can experiment with different motors, gearing, tyres, chassis configurations and other engineering solutions.\n\nThe event aims to promote hands-on engineering, innovation, practical problem-solving and competitive spirit among students from different institutions.",
     "stages": [
       {
         "title": "Event Structure",
@@ -778,10 +835,22 @@ export const EVENTS_DATA: EventDetail[] = [
     "registrationLink": "https://docs.google.com/forms/d/e/1FAIpQLScdhvBav78141DyPQpEmsSDP6kFpGdKKuHaqFFVYZLB7j6FfA/viewform?usp=dialog",
     "coordinators": [
       {
+        "name": "Albin Laiju",
+        "phone": "9108156940",
+        "email": "",
+        "role": "Student POC"
+      },
+      {
+        "name": "Swapnabit Das",
+        "phone": "7029449122",
+        "email": "",
+        "role": "Student POC"
+      },
+      {
         "name": "Dr. Hadiya Pritesh",
         "phone": "9591668787",
         "email": "",
-        "role": "Coordinator"
+        "role": "Faculty POC"
       }
     ]
   },
@@ -795,7 +864,7 @@ export const EVENTS_DATA: EventDetail[] = [
     "stages": [
       {
         "title": "Event Structure",
-        "desc": "Qualification Round\nEach team gets two timed attempt to complete the maze. The best time out of 2 will be chosen\nTeams must pass through all designated checkpoints in the correct order. \nTouching an obstacle results in a time penalty. \nFailure to pass through a checkpoint may result in a penalty or disqualification of the run. \nFinal Round\nThe fastest qualifying teams proceed to the final. \nFinalists receive two timed attempts. \nThe best valid time will be considered for the final ranking. \nThe participant with the fastest clean/penalty-adjusted time wins."
+        "desc": "Qualification Round\nEach team gets two timed attempt to complete the maze. The best time out of 2 will be chosen\nTeams must pass through all designated checkpoints in the correct order.\nTouching an obstacle results in a time penalty.\nFailure to pass through a checkpoint may result in a penalty or disqualification of the run.\nFinal Round\nThe fastest qualifying teams proceed to the final.\nFinalists receive two timed attempts.\nThe best valid time will be considered for the final ranking.\nThe participant with the fastest clean/penalty-adjusted time wins."
       }
     ],
     "rules": [
@@ -850,10 +919,22 @@ export const EVENTS_DATA: EventDetail[] = [
     "registrationLink": "https://docs.google.com/forms/d/e/1FAIpQLSdum7ERDW35nOUZ20XmsqnTXiWki_2LjVSbUfy4zuK8HHQL7A/viewform?usp=publish-editor",
     "coordinators": [
       {
-        "name": "Dr. Amruta Rout, Dr Sajna P Panigrahi",
+        "name": "Nithish Krishna",
+        "phone": "80565 21119",
+        "email": "",
+        "role": "Student POC"
+      },
+      {
+        "name": "Prateekesha Mariappan",
+        "phone": "87627 66267",
+        "email": "",
+        "role": "Student POC"
+      },
+      {
+        "name": "Dr. Amruta Rout",
         "phone": "7008561379",
         "email": "",
-        "role": "Coordinator"
+        "role": "Faculty POC"
       }
     ]
   },
@@ -889,10 +970,22 @@ export const EVENTS_DATA: EventDetail[] = [
     "registrationLink": "https://docs.google.com/forms/d/e/1FAIpQLSfQnvaYdFwdmgv1PIodCkED6_W0MqHiBxDAAvIhLqGmVIFAdA/viewform?usp=dialog",
     "coordinators": [
       {
-        "name": "Dr. Arpan Pradhan",
+        "name": "Deeba Dharshan",
+        "phone": "9360624127",
+        "email": "",
+        "role": "Student POC"
+      },
+      {
+        "name": "Kishor",
+        "phone": "9944381104",
+        "email": "",
+        "role": "Student POC"
+      },
+      {
+        "name": "Dr Arpan Pradhan)",
         "phone": "9439291900",
         "email": "",
-        "role": "Coordinator"
+        "role": "Faculty POC"
       }
     ]
   },
@@ -930,10 +1023,22 @@ export const EVENTS_DATA: EventDetail[] = [
     "registrationLink": "https://docs.google.com/forms/d/e/1FAIpQLSfqc9fnzO9Jtc_vdqONaA-gGS5yvyyPS05yBYVUWnU7C_-dow/viewform?usp=publish-editor",
     "coordinators": [
       {
+        "name": "Dakshan S",
+        "phone": "7639032960",
+        "email": "",
+        "role": "Student POC"
+      },
+      {
+        "name": "Dharshini",
+        "phone": "8904220419",
+        "email": "",
+        "role": "Student POC"
+      },
+      {
         "name": "Prof.Rashmi Pai",
         "phone": "9481943788",
         "email": "",
-        "role": "Coordinator"
+        "role": "Faculty POC"
       }
     ]
   },
@@ -951,26 +1056,26 @@ export const EVENTS_DATA: EventDetail[] = [
       }
     ],
     "rules": [
-      "Each team shall consist of 2-4 participants.",
-      "All participants must complete registration and report before the specified event start time.",
-      "Teams must participate in all rounds for which they qualify. Progression to subsequent rounds will be based on the scores and selection criteria announced by the organizers.",
-      "Every team will receive an application-specific EV problem statement. Problem statements may differ between teams, but the technical constraints applicable to the hardware platform shall be fixed by the organizers.",
-      "Teams must design their solution within all dimensional, electrical, mechanical, software and safety constraints specified in the problem statement. (Laptop mandatory with internet connectivity)",
-      "During Round 1, teams must implement their ADAS feature using the simulation environment and resources permitted by the organizers.",
-      "Teams must submit or demonstrate the required simulation files, control logic and technical explanation within the allotted time.",
-      "During Round 2, teams must present and defend a complete EV concept covering the mechanical, electrical, control, software, ADAS and application aspects of the vehicle.",
-      "Teams must be able to justify their design decisions and respond to technical questions from the judging panel.",
-      "Only qualified finalist teams will receive access to the physical hardware platform for Round 3.",
-      "During Round 3, teams must use only the hardware, components and resources provided or explicitly permitted by the organizers.",
-      "Unauthorized external motors, controllers, batteries, major drivetrain components or pre-built vehicle systems are not permitted unless explicitly approved by the organizers.",
-      "All construction, programming, testing and debugging must be completed within the allotted time for the respective round.",
-      "Teams must not tamper with, damage, modify or interfere with equipment assigned to another team.",
-      "Teams must not receive assistance from participants, faculty or external persons who are not officially authorized by the organizers.",
-      "Participants must not disclose problem statements, simulation scenarios, design information or final-round challenge details to teams that have not yet attempted the relevant round.",
-      "All electrical connections, batteries, tools and fabrication equipment must be operated safely and only as instructed by the organizers.",
-      "Any unsafe operation, intentional damage, unauthorized material, malpractice or violation of event instructions may result in penalty or disqualification.",
-      "Judges may inspect the team's calculations, simulation files, design files, code, electrical connections, prototype and working procedure whenever required.",
-      "The final prototype/system must demonstrate the required core functionality during the designated evaluation period."
+      "1.        Each team shall consist of 2-4 participants.",
+      "2.        All participants must complete registration and report before the specified event start time.",
+      "3.        Teams must participate in all rounds for which they qualify. Progression to subsequent rounds will be based on the scores and selection criteria announced by the organizers.",
+      "4.        Every team will receive an application-specific EV problem statement. Problem statements may differ between teams, but the technical constraints applicable to the hardware platform shall be fixed by the organizers.",
+      "5.        Teams must design their solution within all dimensional, electrical, mechanical, software and safety constraints specified in the problem statement. (Laptop mandatory with internet connectivity)",
+      "6.        During Round 1, teams must implement their ADAS feature using the simulation environment and resources permitted by the organizers.",
+      "7.        Teams must submit or demonstrate the required simulation files, control logic and technical explanation within the allotted time.",
+      "8.        During Round 2, teams must present and defend a complete EV concept covering the mechanical, electrical, control, software, ADAS and application aspects of the vehicle.",
+      "9.        Teams must be able to justify their design decisions and respond to technical questions from the judging panel.",
+      "10.        Only qualified finalist teams will receive access to the physical hardware platform for Round 3.",
+      "11.        During Round 3, teams must use only the hardware, components and resources provided or explicitly permitted by the organizers.",
+      "12.        Unauthorized external motors, controllers, batteries, major drivetrain components or pre-built vehicle systems are not permitted unless explicitly approved by the organizers.",
+      "13.        All construction, programming, testing and debugging must be completed within the allotted time for the respective round.",
+      "14.        Teams must not tamper with, damage, modify or interfere with equipment assigned to another team.",
+      "15.        Teams must not receive assistance from participants, faculty or external persons who are not officially authorized by the organizers.",
+      "16.        Participants must not disclose problem statements, simulation scenarios, design information or final-round challenge details to teams that have not yet attempted the relevant round.",
+      "17.        All electrical connections, batteries, tools and fabrication equipment must be operated safely and only as instructed by the organizers.",
+      "18.        Any unsafe operation, intentional damage, unauthorized material, malpractice or violation of event instructions may result in penalty or disqualification.",
+      "19.        Judges may inspect the team's calculations, simulation files, design files, code, electrical connections, prototype and working procedure whenever required.",
+      "20.        The final prototype/system must demonstrate the required core functionality during the designated evaluation period."
     ],
     "faqs": [],
     "prizePool": "22K",
@@ -982,10 +1087,22 @@ export const EVENTS_DATA: EventDetail[] = [
     "registrationLink": "https://docs.google.com/forms/d/e/1FAIpQLSeRQ002Hr-N0oWkKxA0q30BwI2oz3VWwJWbSUV9A2sn8JWkgg/viewform?usp=publish-editor",
     "coordinators": [
       {
+        "name": "Gayini. D",
+        "phone": "9150412925",
+        "email": "",
+        "role": "Student POC"
+      },
+      {
+        "name": "C.S Anuj",
+        "phone": "9629107588",
+        "email": "",
+        "role": "Student POC"
+      },
+      {
         "name": "Dr. Venkataswamy. R",
         "phone": "7829222446",
         "email": "",
-        "role": "Coordinator"
+        "role": "Faculty POC"
       }
     ]
   },
@@ -1008,10 +1125,7 @@ export const EVENTS_DATA: EventDetail[] = [
       "Every team must consist of exactly 4 participants. Teams with fewer or more members will not be permitted to compete.",
       "All team members must be present for the entire duration of their assigned event slot, from reporting to final result announcement.",
       "B. Gameplay",
-      "The event consists of five sequential stages: Media Vault, Cipher Vault, Prompt the AI, Pattern Breaker/Logic Forge, and Final Override.",
-      "Each stage carries a specific time allocation, and the overall event is timed from the start of Phase 1 to the successful submission of the Final Override stage.",
       "Teams must complete each stage strictly in the given sequence and cannot skip ahead or attempt stages out of order.",
-      "All fragment answers and the final override code must be submitted only through the official event platform in the specified format.",
       "C. Resources",
       "Each participant is expected to bring a personal laptop in working condition, following the BYOD (Bring Your Own Device) format.",
       "Campus Wi-Fi will be the primary mode of connectivity; personal hotspot may be used only as a backup, with any associated costs borne by the participant.",
@@ -1032,8 +1146,7 @@ export const EVENTS_DATA: EventDetail[] = [
       "Organisers reserve the right to intervene, pause, or adjust any stage if required due to technical, safety, or fairness concerns affecting the overall event.",
       "G. Judging & Disputes",
       "Judges may request a team to explain their reasoning or approach for any submitted answer, particularly in stages involving logic, decoding, or AI prompting.",
-      "Tie-Breakers",
-      "If two or more teams record identical or near-identical completion times, the judging criteria table (accuracy, logical approach, and technical adaptability) will be used to determine final ranking.",
+      "Tie-Breakers If two or more teams record identical or near-identical completion times, the judging criteria table (accuracy, logical approach, and technical adaptability) will be used to determine final ranking.",
       "Final Decision",
       "All decisions made by the organising committee and judging panel regarding scoring, penalties, disqualification, or ranking are final and binding, and no further appeals will be entertained."
     ],
@@ -1047,10 +1160,22 @@ export const EVENTS_DATA: EventDetail[] = [
     "registrationLink": "https://docs.google.com/forms/d/e/1FAIpQLScmen14FqKNeoE4R1bkg0ndTnTaNQCSdLJfS3MkVFfnjNTqrQ/viewform?usp=publish-editor",
     "coordinators": [
       {
-        "name": "8148364568",
-        "phone": "Prof Wims Magdalene Mary",
+        "name": "Anushka Pravakar",
+        "phone": "8971754070",
         "email": "",
-        "role": "Coordinator"
+        "role": "Student POC"
+      },
+      {
+        "name": "Kevin Samuel",
+        "phone": "8148364568",
+        "email": "",
+        "role": "Student POC"
+      },
+      {
+        "name": "Prof Wims Magdalene Mary",
+        "phone": "8760480810",
+        "email": "",
+        "role": "Faculty POC"
       }
     ]
   },
@@ -1064,7 +1189,7 @@ export const EVENTS_DATA: EventDetail[] = [
     "stages": [
       {
         "title": "Event Structure",
-        "desc": "Frames Unboxed is a two-day event, with no separate rounds.        \nDay 1:\nThe teams will receive an introductory briefing on the competition's rules and regulations, after which the event theme will be revealed. Thereafter, the teams can spread around campus to shoot their respective films. The teams can stay back on campus until 9:00 PM.\nDay 2:\nThe teams must submit their films on the Google Drive Link provided to them. All submissions must be done by 9:30 AM. The judge will then score the films based on the given judging criteria. \nNote: Since the submission is online, the participants are not required to be physically present on the second day."
+        "desc": "Frames Unboxed is a two-day event, with no separate rounds.\nDay 1:\nThe teams will receive an introductory briefing on the competition's rules and regulations, after which the event theme will be revealed. Thereafter, the teams can spread around campus to shoot their respective films. The teams can stay back on campus until 9:00 PM.\nDay 2:\nThe teams must submit their films on the Google Drive Link provided to them. All submissions must be done by 9:30 AM. The judge will then score the films based on the given judging criteria.\nNote: Since the submission is online, the participants are not required to be physically present on the second day."
       }
     ],
     "rules": [
@@ -1093,10 +1218,22 @@ export const EVENTS_DATA: EventDetail[] = [
     "registrationLink": "https://docs.google.com/forms/d/e/1FAIpQLSeWJIyY35YtRBq94i4MW2pHHwSEHjdCa7-AvgAJ0Nh9osbzKw/viewform?usp=dialog",
     "coordinators": [
       {
-        "name": "Dr. Varsha Singh",
+        "name": "Shourya Bhatia",
+        "phone": "95606 88098",
+        "email": "",
+        "role": "Student POC"
+      },
+      {
+        "name": "Vishnu Vardhan",
+        "phone": "95855 15202",
+        "email": "",
+        "role": "Student POC"
+      },
+      {
+        "name": "Dr. Shilpa B M",
         "phone": "99729 39466",
         "email": "",
-        "role": "Coordinator"
+        "role": "Faculty POC"
       }
     ]
   },
@@ -1110,26 +1247,26 @@ export const EVENTS_DATA: EventDetail[] = [
     "stages": [
       {
         "title": "Event Structure",
-        "desc": "ROUND 1 – GRID DESIGN & SIMULATION\nAll participating teams receive the same grid scenario and technical data. The scenario may include multiple generation sources, transmission/distribution lines, transformers and different classes of loads such as hospitals, water supply, residential demand, industry and EV charging. Teams must construct the grid model using an approved power-system simulation platform and achieve a valid base operating condition. They must check generation-demand balance, bus voltages, line loading and critical-load supply. Teams submit their model and required simulation results within the allotted time.\n\nROUND 2 – GRID CRISIS\nTeams begin with their validated base grid and are then subjected to a sequence of controlled contingencies. Possible events include a reduction in solar generation, loss of a transmission line, generator outage, increase in demand or restrictions on critical-load shedding. Teams receive a limited time for each contingency and must modify their grid operation or control strategy to maintain secure supply. Their response may involve generation redispatch, rerouting of power, controlled load shedding or other technically justified actions. Each scenario is evaluated using measurable system performance parameters."
+        "desc": "ROUND 1 – GRID DESIGN & SIMULATION\nAll participating teams receive the same grid scenario and technical data. The scenario may include multiple generation sources, transmission/distribution lines, transformers and different classes of loads such as hospitals, water supply, residential demand, industry and EV charging. Teams must construct the grid model using an approved power-system simulation platform and achieve a valid base operating condition. They must check generation-demand balance, bus voltages, line loading and critical-load supply. Teams submit their model and required simulation results within the allotted time.\nROUND 2 – GRID CRISIS\nTeams begin with their validated base grid and are then subjected to a sequence of controlled contingencies. Possible events include a reduction in solar generation, loss of a transmission line, generator outage, increase in demand or restrictions on critical-load shedding. Teams receive a limited time for each contingency and must modify their grid operation or control strategy to maintain secure supply. Their response may involve generation redispatch, rerouting of power, controlled load shedding or other technically justified actions. Each scenario is evaluated using measurable system performance parameters."
       }
     ],
     "rules": [
-      "Each team shall consist of 2-4 participants.",
-      "All teams must work on the common grid scenario and technical data provided by the organizers.",
-      "Teams must complete each round within the time limit specified by the organizers.",
-      "Teams may use any simulation platform approved by the organizers; no particular software platform is mandatory. (Laptop mandatory with internet connectivity)",
-      "Teams must use the system ratings, generation limits, load values, line ratings, transformer ratings and other parameters provided in the problem statement.",
-      "Teams must submit their grid model and required results in the format specified by the organizers.",
-      "Round 1 qualification and scoring will be based on the performance of the base grid according to the announced judging criteria.",
-      "In Round 2, teams must respond to each contingency within the allotted response time.",
-      "Contingencies will be selected and administered by the organizers. Teams will not be informed of the next contingency in advance.",
-      "Teams must not alter the problem statement, system ratings or predefined constraints unless explicitly instructed by the organizers.",
-      "Any generation redispatch, load shedding, network reconfiguration or control action must remain within the permitted operating limits.",
-      "Critical loads identified by the organizers must be maintained unless the particular contingency explicitly permits otherwise.",
-      "Teams must not use unauthorized external assistance, pre-built models or information not permitted by the organizers.",
-      "Teams must be prepared to explain their operating decisions and justify how their response maintains or restores grid security.",
-      "Any malpractice, unauthorized modification of the model or violation of event rules may result in penalty or disqualification.",
-      "Judges' decisions regarding scoring, qualification and final rankings shall be final."
+      "1. Each team shall consist of 2-4 participants.",
+      "2. All teams must work on the common grid scenario and technical data provided by the organizers.",
+      "3. Teams must complete each round within the time limit specified by the organizers.",
+      "4. Teams may use any simulation platform approved by the organizers; no particular software platform is mandatory. (Laptop mandatory with internet connectivity)",
+      "5. Teams must use the system ratings, generation limits, load values, line ratings, transformer ratings and other parameters provided in the problem statement.",
+      "6. Teams must submit their grid model and required results in the format specified by the organizers.",
+      "7. Round 1 qualification and scoring will be based on the performance of the base grid according to the announced judging criteria.",
+      "8. In Round 2, teams must respond to each contingency within the allotted response time.",
+      "9. Contingencies will be selected and administered by the organizers. Teams will not be informed of the next contingency in advance.",
+      "10. Teams must not alter the problem statement, system ratings or predefined constraints unless explicitly instructed by the organizers.",
+      "11. Any generation redispatch, load shedding, network reconfiguration or control action must remain within the permitted operating limits.",
+      "12. Critical loads identified by the organizers must be maintained unless the particular contingency explicitly permits otherwise.",
+      "13. Teams must not use unauthorized external assistance, pre-built models or information not permitted by the organizers.",
+      "14. Teams must be prepared to explain their operating decisions and justify how their response maintains or restores grid security.",
+      "15. Any malpractice, unauthorized modification of the model or violation of event rules may result in penalty or disqualification.",
+      "16. Judges' decisions regarding scoring, qualification and final rankings shall be final."
     ],
     "faqs": [],
     "prizePool": "22K",
@@ -1141,22 +1278,22 @@ export const EVENTS_DATA: EventDetail[] = [
     "registrationLink": "https://docs.google.com/forms/d/e/1FAIpQLSfDCFRLBkoWWKhFL7QwU0B7cd-Pv2bNO-3c_QlTQlfGd7MUbA/viewform?usp=publish-editor",
     "coordinators": [
       {
-        "name": "Dr. Arun Chithrabhanu",
-        "phone": "8939673940",
-        "email": "arun.chithrabhanu@christuniversity.in",
-        "role": "Faculty Coordinator"
+        "name": "Aishwarya Vijayakumar",
+        "phone": "9994039368",
+        "email": "",
+        "role": "Student POC"
       },
       {
-        "name": "Gayini D",
-        "phone": "9150412925",
-        "email": "gayini.d@btech.christuniversity.in",
-        "role": "Student Coordinator"
+        "name": "Akshaya",
+        "phone": "8610466674",
+        "email": "",
+        "role": "Student POC"
       },
       {
-        "name": "Anan Mathew",
-        "phone": "83040838815",
-        "email": "anan.mathew@btech.christuniversity.in",
-        "role": "Student Coordinator"
+        "name": "Dr. Varaprasad Janamala",
+        "phone": "9620446677",
+        "email": "",
+        "role": "Faculty POC"
       }
     ]
   },
@@ -1170,7 +1307,7 @@ export const EVENTS_DATA: EventDetail[] = [
     "stages": [
       {
         "title": "Event Structure",
-        "desc": "Day 1\nRound 1: Preliminary Round\nThe preliminary round will consist of quizzes, including visual and auditory assessments related to crime, murder, and thriller. The questions will be given, and the teams must answer simultaneously on the provided paper. Each round will be timed, and the teams with the highest score will be promoted to the next round.\n\nRound 2: Clue Collection Round\n \nCertain clues and evidence related to the murder will be scattered around a designated area. The top teams with the most number of clues collected will move to the next round. Points will be awarded based on the number of clues collected and a creative description if provided with the clue mentioned. A description of the clue will provide extra points. Each round will be timed and the teams with the highest score will be promoted to the next round.\n\nDay 2\nRound 3: Murder Mystery Round\nRound 3 is divided into 2 rounds, i.e., Interrogation Round and Theory Presentation. The final round is based on the premise of a killer on the loose. To find the killer, the teams will be provided with a set number of suspects along with the case details and timeline of the murder. \nThey will have to interrogate these suspects (general information about suspects and victims will be provided beforehand) and make criminal profiles.\nAt the end, each team will have to devise a theory describing who they think the actual killer is. The teams will be provided with the suspects' previous case histories and records.\nOnce they are well-versed in how the victim/s died and the suspect/s involved, the task for the teams will be to interrogate each of the suspects and profile them based on their case histories. \nThe time given for interrogating each of the suspects will be two to three minutes, and each team is required to interrogate a total of five suspects (subject to change).\nVolunteers will be assigned to each room to keep track of time and observe if appropriate behavior towards suspects is followed, and to ensure that there are no malpractices. \nOnce the interrogation is complete, the teams are required to discuss among themselves, profile the suspects, and come up with a theory that should indict the suspect who is most likely to be the serial killer.\nThe theory should include the points and reasons the team believes are valid for framing a suspect as the killer. \nThe theory needs to be presented to a panel of judges, who can cross-question the teams based on their theories, and the most convincing theories win the event.\n\nCreating a criminal profile: \nYour criminal profile should contain the following details -\nName of the offender \nCrime type (What was the crime? How was this crime committed? Did the killer try to cover his or her tracks and, if so, how?) \nVictimology (Common backgrounds and characteristics of victims) \nComposure of the offender \nThe Wants (What is it about this victim that attracted the killer?) \nMotivation (What motive or fantasy drove the killer to harm the victim in a particular manner?)\n\nImportant: There is no predetermined killer chosen by the event hosts, and it solely depends on the team’s creativity to come up with the most convincing theory based on a particular suspect (s), their profiling style, and how they deal with judges and their rebuttals."
+        "desc": "Day 1\nRound 1: Preliminary Round\nThe preliminary round will consist of quizzes, including visual and auditory assessments related to crime, murder, and thriller. The questions will be given, and the teams must answer simultaneously on the provided paper. Each round will be timed, and the teams with the highest score will be promoted to the next round.\nRound 2: Clue Collection Round\nCertain clues and evidence related to the murder will be scattered around a designated area. The top teams with the most number of clues collected will move to the next round. Points will be awarded based on the number of clues collected and a creative description if provided with the clue mentioned. A description of the clue will provide extra points. Each round will be timed and the teams with the highest score will be promoted to the next round.\nDay 2\nRound 3: Murder Mystery Round\nRound 3 is divided into 2 rounds, i.e., Interrogation Round and Theory Presentation. The final round is based on the premise of a killer on the loose. To find the killer, the teams will be provided with a set number of suspects along with the case details and timeline of the murder.\nThey will have to interrogate these suspects (general information about suspects and victims will be provided beforehand) and make criminal profiles.\nAt the end, each team will have to devise a theory describing who they think the actual killer is. The teams will be provided with the suspects' previous case histories and records.\nOnce they are well-versed in how the victim/s died and the suspect/s involved, the task for the teams will be to interrogate each of the suspects and profile them based on their case histories.\nThe time given for interrogating each of the suspects will be two to three minutes, and each team is required to interrogate a total of five suspects (subject to change).\nVolunteers will be assigned to each room to keep track of time and observe if appropriate behavior towards suspects is followed, and to ensure that there are no malpractices.\nOnce the interrogation is complete, the teams are required to discuss among themselves, profile the suspects, and come up with a theory that should indict the suspect who is most likely to be the serial killer.\nThe theory should include the points and reasons the team believes are valid for framing a suspect as the killer.\nThe theory needs to be presented to a panel of judges, who can cross-question the teams based on their theories, and the most convincing theories win the event.\nCreating a criminal profile:\nYour criminal profile should contain the following details -\nName of the offender\nCrime type (What was the crime? How was this crime committed? Did the killer try to cover his or her tracks and, if so, how?)\nVictimology (Common backgrounds and characteristics of victims)\nComposure of the offender\nThe Wants (What is it about this victim that attracted the killer?)\nMotivation (What motive or fantasy drove the killer to harm the victim in a particular manner?)\nImportant: There is no predetermined killer chosen by the event hosts, and it solely depends on the team’s creativity to come up with the most convincing theory based on a particular suspect (s), their profiling style, and how they deal with judges and their rebuttals."
       }
     ],
     "rules": [
@@ -1196,22 +1333,22 @@ export const EVENTS_DATA: EventDetail[] = [
     "registrationLink": "https://docs.google.com/forms/d/e/1FAIpQLScBPv8Ick77YirDfr1rE4xQR5ki3PXkwtgGlksBhTLTILG_yA/viewform?usp=dialog",
     "coordinators": [
       {
-        "name": "Dr. Bhanu BS",
-        "phone": "9591062948",
-        "email": "bhanu.bs@christuniversity.in",
-        "role": "Faculty Coordinator"
+        "name": "Maanya Bhatia",
+        "phone": "73048 53140",
+        "email": "",
+        "role": "Student POC"
       },
       {
-        "name": "anjali khatri",
-        "phone": "9398950867",
-        "email": "anjali.khatri@psyh.christuniversity.in",
-        "role": "Student Coordinator"
+        "name": "Rifat Khan",
+        "phone": "77550 99853",
+        "email": "",
+        "role": "Student POC"
       },
       {
-        "name": "Navya grover",
-        "phone": "8368487271",
-        "email": "navya.grover@psyh.christuniversity.in",
-        "role": "Student Coordinator"
+        "name": "Dr.Ganesh Kumar J",
+        "phone": "95004 90815",
+        "email": "",
+        "role": "Faculty POC"
       }
     ]
   },
@@ -1225,7 +1362,7 @@ export const EVENTS_DATA: EventDetail[] = [
     "stages": [
       {
         "title": "Event Structure",
-        "desc": "Stage1- The infinity hunt(50 mins with 5 checkpoints , top 6 teams advance ) \nStage2: The infinity escape (50 mins, 5 level parallel rooms in 3 batches )\nFinal bonus round to declare winners"
+        "desc": "Stage1- The infinity hunt(50 mins with 5 checkpoints , top 6 teams advance )\nStage2: The infinity escape (50 mins, 5 level parallel rooms in 3 batches )\nFinal bonus round to declare winners"
       }
     ],
     "rules": [
@@ -1241,22 +1378,22 @@ export const EVENTS_DATA: EventDetail[] = [
     "registrationLink": "https://forms.gle/nNKk1G8uEybNkM8e6",
     "coordinators": [
       {
-        "name": "Dr. Syam Chandran K",
-        "phone": "9496348771",
-        "email": "syam.chandran@christuniversity.in",
-        "role": "Faculty Coordinator"
+        "name": "Melvin S Jacob",
+        "phone": "9380257221",
+        "email": "",
+        "role": "Student POC"
       },
       {
-        "name": "Kingsley",
-        "phone": "8754182808",
-        "email": "kingsley.judewin@btech.christuniversity.in",
-        "role": "Student Coordinator"
+        "name": "Merrick Dias",
+        "phone": "9022469808",
+        "email": "",
+        "role": "Student POC"
       },
       {
-        "name": "Surasmitha",
-        "phone": "8078 156 512",
-        "email": "surasmita.parida@btech.christuniversity.n",
-        "role": "Student Coordinator"
+        "name": "Dr. Ambily Babu",
+        "phone": "9632581800",
+        "email": "",
+        "role": "Faculty POC"
       }
     ]
   },
@@ -1295,10 +1432,22 @@ export const EVENTS_DATA: EventDetail[] = [
     "registrationLink": "https://docs.google.com/forms/d/e/1FAIpQLSfwh6ZfnFcvlcHh-X0BeN8Ecx_9Q1RPpDpOEaGRCfljrfjLuA/viewform?usp=publish-editor",
     "coordinators": [
       {
-        "name": "Dr. Ramya J.B.",
+        "name": "Aadithya Hegde",
+        "phone": "9962997772",
+        "email": "",
+        "role": "Student POC"
+      },
+      {
+        "name": "Jahnavi Khedia",
+        "phone": "7501798111",
+        "email": "",
+        "role": "Student POC"
+      },
+      {
+        "name": "Dr.Ramya JB",
         "phone": "9894799610",
         "email": "",
-        "role": "Coordinator"
+        "role": "Faculty POC"
       }
     ]
   },
@@ -1308,11 +1457,11 @@ export const EVENTS_DATA: EventDetail[] = [
     "tagline": "Race your RC vehicle through challenging off road obstacles, where speed, skill, and precision decide the winner.",
     "category": "Engineering",
     "department": "Automotive Engineering",
-    "overview": "MUD RUN – RC Off-Road Challenge is an adrenaline-fuelled off-road racing experience that puts precision, control, and driving skill to the ultimate test. Participants will take on a specially engineered off-road arena featuring mud pits, rock gardens, ramps, uneven terrain, bridges, tight turns, and challenging technical sections, with every obstacle demanding a different approach. The objective is simple: conquer the terrain and complete the course in the shortest possible time. But speed alone won't be enough—every turn, climb, jump, and obstacle will test the driver's concentration, control, and ability to master their machine. Penalties for collisions and missed sections will ensure that precision is just as important as pace. Designed to bring the excitement of off-road motorsport to the college arena. The event aims to ignite an interest in automobiles and motorsport while encouraging teamwork, confidence, strategic thinking, and skilled vehicle handling, turning every lap into a battle between speed, skill, and terrain.",
+    "overview": "MUD RUN – RC Off-Road Challenge is an adrenaline-fuelled off-road racing experience that puts precision, control, and driving skill to the ultimate test.\n\nParticipants will take on a specially engineered off-road arena featuring mud pits, rock gardens, ramps, uneven terrain, bridges, tight turns, and challenging technical sections, with every obstacle demanding a different approach.\n\nThe objective is simple: conquer the terrain and complete the course in the shortest possible time. But speed alone won't be enough—every turn, climb, jump, and obstacle will test the driver's concentration, control, and ability to master their machine. Penalties for collisions and missed sections will ensure that precision is just as important as pace.\n\nDesigned to bring the excitement of off-road motorsport to the college arena, MUD RUN promises an immersive and highly competitive experience for both\n\nparticipants and spectators. The event aims to ignite an interest in automobiles and motorsport while encouraging teamwork, confidence, strategic thinking, and skilled vehicle handling—turning every lap into a battle between speed, skill, and terrain.",
     "stages": [
       {
         "title": "Event Structure",
-        "desc": "Trial Lap\nEach team will be given 1 trial lap on the track.\nThis lap will not be officially timed but will help participants familiarize themselves with the terrain and obstacles.\n\n2. Qualifying Rounds.\nEach team will attempt 3 timed laps (1 lap = 1 round).\nThe best lap time out of the 3 rounds will be considered for qualification into the finals.\n\n3. Finals\nThe top teams (based on participation) will qualify for the finals.\n\nEach finalist will attempt 2 timed laps in the finals.\nThe best lap time in the finals will decide the winner.\nIn case of a tie, an additional tie-breaker lap will be conducted."
+        "desc": "Trial Lap\nEach team will be given 1 trial lap on the track.\nThis lap will not be officially timed but will help participants familiarize themselves with the terrain and obstacles.\n2. Qualifying Rounds.\nEach team will attempt 3 timed laps (1 lap = 1 round).\nThe best lap time out of the 3 rounds will be considered for qualification into the finals.\n3. Finals\nThe top teams (based on participation) will qualify for the finals.\nEach finalist will attempt 2 timed laps in the finals.\nThe best lap time in the finals will decide the winner.\nIn case of a tie, an additional tie-breaker lap will be conducted."
       }
     ],
     "rules": [
@@ -1349,10 +1498,22 @@ export const EVENTS_DATA: EventDetail[] = [
     "registrationLink": "https://docs.google.com/forms/d/e/1FAIpQLSfZV6QoABzAvXT4SAjjS9D8h4rTHO9fv9fVDbQ2xhL7l-sfnQ/viewform?usp=publish-editor",
     "coordinators": [
       {
+        "name": "Shane Christopher",
+        "phone": "9620047083",
+        "email": "",
+        "role": "Student POC"
+      },
+      {
+        "name": "Jaswanth B.",
+        "phone": "9901310444",
+        "email": "",
+        "role": "Student POC"
+      },
+      {
         "name": "Dr. Aneesh Jose",
         "phone": "9535339545",
         "email": "",
-        "role": "Coordinator"
+        "role": "Faculty POC"
       }
     ]
   },
@@ -1362,7 +1523,7 @@ export const EVENTS_DATA: EventDetail[] = [
     "tagline": "A team-based AI challenge where participants study a complex target image, recreate it through a communication-free generation relay, and compete to achieve the highest visual similarity to the original.",
     "category": "Coding & Tech",
     "department": "Artificial Intelligence & Data Science (AIDS)",
-    "overview": "Pixel Whisper is a creative, team-based AI image recreation challenge in which participants compete to reproduce a bizarre and visually complex target image using an organizer-provided image-generation platform. The event combines observation, memory, creativity, and teamwork in a structured relay format that prevents direct collaboration during the generation process.\nAt the beginning of each match, both competing teams are shown the same target image and are given a short discussion period to analyze its composition, objects, colours, and unusual visual details. Once the relay begins, team members take turns generating their interpretations without communicating with one another. Each participant may either refine the previous image or create a completely new interpretation before passing only the final generated image to the next teammate.\nThe event is designed to test visual observation, strategic thinking, adaptability, time management, and creative interpretation under communication constraints. It provides an engaging and entertaining competitive experience while encouraging participants to think critically about visual details and collaborative decision-making in an AI-assisted creative environment.",
+    "overview": "Pixel Whisper is a creative, team-based AI image recreation challenge in which participants compete to reproduce a bizarre and visually complex target image using an organizer-provided image-generation platform. The event combines observation, memory, creativity, and teamwork in a structured relay format that prevents direct collaboration during the generation process.\n\nAt the beginning of each match, both competing teams are shown the same target image and are given a short discussion period to analyze its composition, objects, colours, and unusual visual details. Once the relay begins, team members take turns generating their interpretations without communicating with one another. Each participant may either refine the previous image or create a completely new interpretation before passing only the final generated image to the next teammate.\n\nThe event is designed to test visual observation, strategic thinking, adaptability, time management, and creative interpretation under communication constraints. It provides an engaging and entertaining competitive experience while encouraging participants to think critically about visual details and collaborative decision-making in an AI-assisted creative environment.",
     "stages": [
       {
         "title": "Event Structure",
@@ -1380,10 +1541,7 @@ export const EVENTS_DATA: EventDetail[] = [
       "Two teams compete against each other in each match.",
       "Both teams receive the same target image.",
       "The event follows a discussion → silent relay → judging structure.",
-      "Target observation and discussion: 5 minutes",
-      "Each participant relay turn: 5 minutes (unless modified by a bonus-round penalty)",
-      "Bonus rounds: 2 minutes",
-      "Winning teams advance through the knockout bracket until the final round.",
+      "Target observation and discussion: 5 minutes Each participant relay turn: 5 minutes (unless modified by a bonus-round penalty) Bonus rounds: 2 minutes Winning teams advance through the knockout bracket until the final round.",
       "Multiple generations are permitted within the allotted time.",
       "Only the last successfully generated image will be accepted.",
       "Unsubmitted or unfinished prompts will be discarded when time expires.",
@@ -1399,10 +1557,7 @@ export const EVENTS_DATA: EventDetail[] = [
       "Assistance from spectators, friends, faculty members, or other participants is prohibited.",
       "The following are considered malpractice:",
       "Verbal communication during relay turns",
-      "Gestures, signals, or screen sharing",
-      "Leaving written or visual clues for teammates",
-      "Circumventing bonus-round restrictions",
-      "Using hidden notes or external prompt sources",
+      "Gestures, signals, or screen sharing Leaving written or visual clues for teammates Circumventing bonus-round restrictions Using hidden notes or external prompt sources",
       "E. Conduct",
       "Participants must follow all instructions issued by coordinators, volunteers, and judges.",
       "Maintain respectful and professional behaviour toward other participants and event staff.",
@@ -1415,11 +1570,8 @@ export const EVENTS_DATA: EventDetail[] = [
       "Organizers reserve the right to pause, restart, reschedule, or modify a match if technical or operational circumstances make normal continuation impossible.",
       "G. Judging & Disputes",
       "Judges are responsible for evaluating all final submissions according to the published criteria.",
-      "Tie-Breakers",
-      "Ties will be resolved using the following order:",
-      "Higher Similarity to the Target Image score",
-      "Higher Accuracy of Key Elements score",
-      "Sudden-death mini recreation challenge, if required",
+      "Tie-Breakers Ties will be resolved using the following order:",
+      "Higher Similarity to the Target Image score Higher Accuracy of Key Elements score Sudden-death mini recreation challenge, if required",
       "Final Decision",
       "All judging decisions are final and binding.",
       "No appeals regarding artistic evaluation or scoring interpretation will be entertained after the results are announced."
@@ -1434,10 +1586,22 @@ export const EVENTS_DATA: EventDetail[] = [
     "registrationLink": "https://docs.google.com/forms/d/e/1FAIpQLSd0dcLSGxCCtNoWj4v9O5owFI6Ak9ovNnbBQE5vEBRUZ7lcXg/viewform?usp=publish-editor",
     "coordinators": [
       {
-        "name": "9535635046",
-        "phone": "Prof Cynthia C",
+        "name": "Rachel Febin",
+        "phone": "8310202676",
         "email": "",
-        "role": "Coordinator"
+        "role": "Student POC"
+      },
+      {
+        "name": "Samuel Biju",
+        "phone": "9535635046",
+        "email": "",
+        "role": "Student POC"
+      },
+      {
+        "name": "Prof Cynthia C",
+        "phone": "9952246458",
+        "email": "",
+        "role": "Faculty POC"
       }
     ]
   },
@@ -1451,29 +1615,29 @@ export const EVENTS_DATA: EventDetail[] = [
     "stages": [
       {
         "title": "Event Structure",
-        "desc": "Round 1 – Design & Simulate\n1.        All participating teams will receive a common power-electronics problem statement with defined electrical requirements and hardware constraints. \n2.        Teams will analyse the requirements and design a suitable power-electronic converter within the allotted time. \n3.        Teams must perform the necessary design calculations and component selection based on the hardware constraints provided by the organizers. \n4.        Teams will develop and validate their design using an approved simulation platform. \n5.        The simulated design must demonstrate compliance with the specified requirements, including parameters such as input voltage, output voltage, power rating and other performance requirements given in the problem statement. \n6.        Teams must submit their circuit design, calculations and simulation results before the Round 1 deadline. \n7.        Teams will be evaluated primarily on technical correctness, specification compliance and simulated performance, with completion time used as a tie-breaker where necessary. \n8.        The top five teams will qualify for the hardware round. \nRound 2 – Build & Test\n1.        The shortlisted teams will receive the hardware components and laboratory equipment specified by the organizers. \n2.        The components will be subject to the quantity, rating and availability constraints provided during Round 1. \n3.        Teams must construct the converter based on the design developed during the Design & Simulate round. \n4.        Teams may troubleshoot and optimize their implementation within the allotted time while remaining within the permitted hardware constraints. \n5.        Each completed prototype will undergo a standardized testing procedure under the same conditions for all teams. \n6.        Performance will be evaluated using measurable parameters such as output voltage regulation, efficiency, load performance, stability and overall hardware implementation. \n7.        The teams with the highest-performing prototypes will be awarded 1st, 2nd and 3rd places."
+        "desc": "Round 1 – Design & Simulate\n1.        All participating teams will receive a common power-electronics problem statement with defined electrical requirements and hardware constraints.\n2.        Teams will analyse the requirements and design a suitable power-electronic converter within the allotted time.\n3.        Teams must perform the necessary design calculations and component selection based on the hardware constraints provided by the organizers.\n4.        Teams will develop and validate their design using an approved simulation platform.\n5.        The simulated design must demonstrate compliance with the specified requirements, including parameters such as input voltage, output voltage, power rating and other performance requirements given in the problem statement.\n6.        Teams must submit their circuit design, calculations and simulation results before the Round 1 deadline.\n7.        Teams will be evaluated primarily on technical correctness, specification compliance and simulated performance, with completion time used as a tie-breaker where necessary.\n8.        The top five teams will qualify for the hardware round.\nRound 2 – Build & Test\n1.        The shortlisted teams will receive the hardware components and laboratory equipment specified by the organizers.\n2.        The components will be subject to the quantity, rating and availability constraints provided during Round 1.\n3.        Teams must construct the converter based on the design developed during the Design & Simulate round.\n4.        Teams may troubleshoot and optimize their implementation within the allotted time while remaining within the permitted hardware constraints.\n5.        Each completed prototype will undergo a standardized testing procedure under the same conditions for all teams.\n6.        Performance will be evaluated using measurable parameters such as output voltage regulation, efficiency, load performance, stability and overall hardware implementation.\n7.        The teams with the highest-performing prototypes will be awarded 1st, 2nd and 3rd places."
       }
     ],
     "rules": [
-      "Each team shall consist of 2-4 participants.",
-      "All teams must work on the common power-electronics problem statement provided by the organizers.",
-      "Round 1 must be completed within the time limit specified by the organizers.",
-      "Teams may use any approved simulation platform; no particular software platform is mandatory.  (Laptop mandatory with internet connectivity)",
-      "Teams must submit their circuit design, calculations and simulation results in the format specified by the organizers.",
-      "Round 1 qualification will be based primarily on technical correctness, specification compliance and simulated performance. Completion time may be used as a tie-breaker.",
-      "Only the top five teams from Round 1 will qualify for Round 2, unless otherwise announced by the organizers.",
-      "The hardware components provided for Round 2 will be subject to predefined quantity, rating and component-availability constraints. Teams must consider these constraints while developing their design and simulation in Round 1.",
-      "Component selection, major design decisions and required calculations must be completed during Round 1 based on the hardware constraints provided by the organizers. Teams must ensure that their simulated design can be implemented using the available hardware.",
-      "In Round 2, teams shall use only the hardware components and laboratory equipment provided or approved by the organizers.",
-      "Components may not be borrowed, exchanged or taken from another team.",
-      "Teams must follow all electrical and laboratory safety instructions while constructing and testing their prototypes.",
-      "Teams must not intentionally damage, misuse or modify laboratory equipment beyond the permitted construction requirements.",
-      "All hardware construction, testing, troubleshooting and optimization must be completed within the allotted time.",
-      "The final prototype will be tested under standardized conditions specified by the organizers.",
-      "External assistance, unauthorized components, pre-built converter modules or pre-built solutions are not permitted unless explicitly approved by the organizers.",
-      "Teams must be prepared to explain their design choices, calculations, simulation results and hardware implementation to the judges.",
-      "Any unsafe operation, malpractice or violation of the event rules may result in penalty or disqualification.",
-      "Judges' decisions regarding qualification, performance scores and final rankings shall be final."
+      "1.        Each team shall consist of 2-4 participants.",
+      "2.        All teams must work on the common power-electronics problem statement provided by the organizers.",
+      "3.        Round 1 must be completed within the time limit specified by the organizers.",
+      "4.        Teams may use any approved simulation platform; no particular software platform is mandatory.  (Laptop mandatory with internet connectivity)",
+      "5.        Teams must submit their circuit design, calculations and simulation results in the format specified by the organizers.",
+      "6.        Round 1 qualification will be based primarily on technical correctness, specification compliance and simulated performance. Completion time may be used as a tie-breaker.",
+      "7.        Only the top five teams from Round 1 will qualify for Round 2, unless otherwise announced by the organizers.",
+      "8.        The hardware components provided for Round 2 will be subject to predefined quantity, rating and component-availability constraints. Teams must consider these constraints while developing their design and simulation in Round 1.",
+      "9.        Component selection, major design decisions and required calculations must be completed during Round 1 based on the hardware constraints provided by the organizers. Teams must ensure that their simulated design can be implemented using the available hardware.",
+      "10.        In Round 2, teams shall use only the hardware components and laboratory equipment provided or approved by the organizers.",
+      "11.        Components may not be borrowed, exchanged or taken from another team.",
+      "12.        Teams must follow all electrical and laboratory safety instructions while constructing and testing their prototypes.",
+      "13.        Teams must not intentionally damage, misuse or modify laboratory equipment beyond the permitted construction requirements.",
+      "14.        All hardware construction, testing, troubleshooting and optimization must be completed within the allotted time.",
+      "15.        The final prototype will be tested under standardized conditions specified by the organizers.",
+      "16.        External assistance, unauthorized components, pre-built converter modules or pre-built solutions are not permitted unless explicitly approved by the organizers.",
+      "17.        Teams must be prepared to explain their design choices, calculations, simulation results and hardware implementation to the judges.",
+      "18.        Any unsafe operation, malpractice or violation of the event rules may result in penalty or disqualification.",
+      "19.        Judges' decisions regarding qualification, performance scores and final rankings shall be final."
     ],
     "faqs": [],
     "prizePool": "22K",
@@ -1485,10 +1649,22 @@ export const EVENTS_DATA: EventDetail[] = [
     "registrationLink": "https://docs.google.com/forms/d/e/1FAIpQLSe8JnGaSXJkqRMYFgxCfrhG9dFa3vrzFKdFGlhEDCutz9qCsQ/viewform?usp=publish-editor",
     "coordinators": [
       {
+        "name": "Anan Mathew",
+        "phone": "8304083815",
+        "email": "",
+        "role": "Student POC"
+      },
+      {
+        "name": "Likith Kumar B.M",
+        "phone": "+91 77605 20879",
+        "email": "",
+        "role": "Student POC"
+      },
+      {
         "name": "Dr. Arun Chithrabhanu",
         "phone": "8939673940",
         "email": "",
-        "role": "Coordinator"
+        "role": "Faculty POC"
       }
     ]
   },
@@ -1531,10 +1707,22 @@ export const EVENTS_DATA: EventDetail[] = [
     "registrationLink": "https://docs.google.com/forms/d/e/1FAIpQLSc9toMXil4kWeIWtWRI5MOKAeCceO1Nsr7N4F0CU4mlrfuevw/viewform?usp=publish-editor",
     "coordinators": [
       {
-        "name": "Dr. Sherin Paul",
+        "name": "Joes Francis Sebastian",
+        "phone": "8951982062",
+        "email": "",
+        "role": "Student POC"
+      },
+      {
+        "name": "Debayan Ghose",
+        "phone": "8867727460",
+        "email": "",
+        "role": "Student POC"
+      },
+      {
+        "name": "Dr. Bejoy BJ",
         "phone": "8281300742",
         "email": "",
-        "role": "Coordinator"
+        "role": "Faculty POC"
       }
     ]
   },
@@ -1566,10 +1754,22 @@ export const EVENTS_DATA: EventDetail[] = [
     "registrationLink": "https://docs.google.com/forms/d/e/1FAIpQLSfJIH5GkgFVNkV5vPX5LdX6OdVfOzjBsSmYZ-0osJgbPkZWRQ/viewform?usp=publish-editor",
     "coordinators": [
       {
-        "name": "Quiz Desk & Management",
-        "phone": "Email: quizwhizz.events@christuniversity.in",
+        "name": "Aakash K",
+        "phone": "9940475493",
         "email": "",
-        "role": "Coordinator"
+        "role": "Student POC"
+      },
+      {
+        "name": "Rahul Neelakantan S",
+        "phone": "7306628193",
+        "email": "",
+        "role": "Student POC"
+      },
+      {
+        "name": "Prof. Keerthana A R",
+        "phone": "7406949055",
+        "email": "",
+        "role": "Faculty POC"
       }
     ]
   },
@@ -1631,22 +1831,22 @@ export const EVENTS_DATA: EventDetail[] = [
     "registrationLink": "https://docs.google.com/forms/d/e/1FAIpQLSdLYwfe13hDr1b6tDnn4GfYS0FG_3oOyvpV4FCCwIH16VctBw/viewform?usp=publish-editor",
     "coordinators": [
       {
-        "name": "Dr Ivan Sunit Rout",
-        "phone": "8457880745",
-        "email": "ivan.rout@christuniversity.in",
-        "role": "Faculty Coordinator"
+        "name": "Anuj Anand E. K.",
+        "phone": "81119 70594",
+        "email": "",
+        "role": "Student POC"
       },
       {
-        "name": "Thomas Vivian Mathew",
-        "phone": "8304965447",
-        "email": "thomas.vivian@btech.christuniversity.in",
-        "role": "Student Coordinator"
+        "name": "Siona Melissa D'Souza",
+        "phone": "81058 44847",
+        "email": "",
+        "role": "Student POC"
       },
       {
-        "name": "Kiranya Sriramulu",
-        "phone": "6362460040",
-        "email": "kiranya.sriramulu@btech.christuniversity.in",
-        "role": "Student Coordinator"
+        "name": "Dr. Yogeesha C",
+        "phone": "9964143702",
+        "email": "",
+        "role": "Faculty POC"
       }
     ]
   },
@@ -1683,10 +1883,22 @@ export const EVENTS_DATA: EventDetail[] = [
     "registrationLink": "https://docs.google.com/forms/d/e/1FAIpQLScAPAmq7yUYafaPLPLIch7bu7Z-lTSNChL2Zx-caF6jf_cCQg/viewform?usp=publish-editor",
     "coordinators": [
       {
+        "name": "Vibha Shetty",
+        "phone": "6362976342",
+        "email": "",
+        "role": "Student POC"
+      },
+      {
+        "name": "Aadhira T",
+        "phone": "9980600266",
+        "email": "",
+        "role": "Student POC"
+      },
+      {
         "name": "Prof.  Albert Joseph Hefferan",
         "phone": "8248348086",
         "email": "",
-        "role": "Coordinator"
+        "role": "Faculty POC"
       }
     ]
   },
@@ -1722,10 +1934,22 @@ export const EVENTS_DATA: EventDetail[] = [
     "registrationLink": "https://docs.google.com/forms/d/e/1FAIpQLSctvSCNm7wuM8HHOhJwBEMyZv_WkovefNjITufjEMFGT4v7SQ/viewform?usp=publish-editor",
     "coordinators": [
       {
-        "name": "Dr. Aniket Bhalekar",
+        "name": "Saud Khan",
+        "phone": "9019039788",
+        "email": "",
+        "role": "Student POC"
+      },
+      {
+        "name": "Sandeep R",
+        "phone": "9791628559",
+        "email": "",
+        "role": "Student POC"
+      },
+      {
+        "name": "Dr Aniket",
         "phone": "9985004656",
         "email": "",
-        "role": "Coordinator"
+        "role": "Faculty POC"
       }
     ]
   },
@@ -1735,11 +1959,11 @@ export const EVENTS_DATA: EventDetail[] = [
     "tagline": "The Final Float",
     "category": "Arts & Humanities",
     "department": "Psychology",
-    "overview": "A storm has struck, and only one lifeboat remains. On board are some of the most influential figures of all time, including freedom fighters and mythological heroes, iconic movie characters and cartoon characters, controversial voices, and internet influencers. Each believes they are the one the world needs. But only one can float.\nIn this event, participants step into the shoes of legendary figures and, in character, defend why they deserve to survive. Through monologues, heated crossfire, and satire-filled exchanges, characters face off in a battle of wit, logic, and charisma, with only the sharpest, most convincing personas making it to the lifeboat.",
+    "overview": "A storm has struck, and only one lifeboat remains. On board are some of the most influential figures of all time, including freedom fighters and mythological heroes, iconic movie characters and cartoon characters, controversial voices, and internet influencers. Each believes they are the one the world needs. But only one can float.\n\nIn this event, participants step into the shoes of legendary figures and, in character, defend why they deserve to survive. Through monologues, heated crossfire, and satire-filled exchanges, characters face off in a battle of wit, logic, and charisma, with only the sharpest, most convincing personas making it to the lifeboat.",
     "stages": [
       {
         "title": "Event Structure",
-        "desc": "Round 1: Why I Must Live (DAY 1)\n Participants deliver a solo opening monologue in character (2 mins), building a case for why they are essential to the world and must survive over anyone else, focusing on their skills, abilities, knowledge, and the character's legacy. All monologues begin with a common starting line to set the shared stakes.\nExample: \"The sea doesn't care who you are. But I intend to make it care about me.\" \nRound 2: One Word (DAY 1)\n Each character distills their entire survival case into a single word to be drawn at random, then defends it in 1 minute flat. The round tests how sharply a participant understands their own character under time pressure.\nExample: Bob the Builder → \"Rebuild\": \"Everything after this storm needs rebuilding, and that's the one thing I'm built for.\"\nRound 3: Sink THEM (DAY 1)\n Participants directly confront one another, calling out specific characters (one or more) by name and dismantling their survival arguments in real time (3 mins). The goal is to publicly weaken others' credibility while reinforcing your own relevance.\nExample: \"SpongeBob, your positivity doesn't fix a broken engine.\"\nRound 4: BACKSTAB (Crisis) (DAY 1)\n A dire crisis strikes the ship; evidence suggests the crash was planned. The captain hands participants a crisis to manage, implicating specific characters (e.g., engine schematics or weapons found in someone's possession), forcing accusations and defenses. (2 mins)\nExample: \"A weapons cache was discovered below deck; someone's been preparing for a fight no one else knew was coming. \nRound 5: Put it on Paper (DAY 2 )\n Each character will have to submit a written case and present it to the judge for survival, based on everything that unfolded during the debate (3 mins). All drafts are then reviewed, flaws are exposed, and the draft with the fewest mistakes, at the captain's discretion, wins the lifeboat."
+        "desc": "Round 1: Why I Must Live (DAY 1)\nParticipants deliver a solo opening monologue in character (2 mins), building a case for why they are essential to the world and must survive over anyone else, focusing on their skills, abilities, knowledge, and the character's legacy. All monologues begin with a common starting line to set the shared stakes.\nExample: \"The sea doesn't care who you are. But I intend to make it care about me.\"\nRound 2: One Word (DAY 1)\nEach character distills their entire survival case into a single word to be drawn at random, then defends it in 1 minute flat. The round tests how sharply a participant understands their own character under time pressure.\nExample: Bob the Builder → \"Rebuild\": \"Everything after this storm needs rebuilding, and that's the one thing I'm built for.\"\nRound 3: Sink THEM (DAY 1)\nParticipants directly confront one another, calling out specific characters (one or more) by name and dismantling their survival arguments in real time (3 mins). The goal is to publicly weaken others' credibility while reinforcing your own relevance.\nExample: \"SpongeBob, your positivity doesn't fix a broken engine.\"\nRound 4: BACKSTAB (Crisis) (DAY 1)\nA dire crisis strikes the ship; evidence suggests the crash was planned. The captain hands participants a crisis to manage, implicating specific characters (e.g., engine schematics or weapons found in someone's possession), forcing accusations and defenses. (2 mins)\nExample: \"A weapons cache was discovered below deck; someone's been preparing for a fight no one else knew was coming.\nRound 5: Put it on Paper (DAY 2 )\nEach character will have to submit a written case and present it to the judge for survival, based on everything that unfolded during the debate (3 mins). All drafts are then reviewed, flaws are exposed, and the draft with the fewest mistakes, at the captain's discretion, wins the lifeboat."
       }
     ],
     "rules": [
@@ -1766,10 +1990,22 @@ export const EVENTS_DATA: EventDetail[] = [
     "registrationLink": "https://docs.google.com/forms/d/e/1FAIpQLSe5vw6_Fm6RaVzkPzulKS3pOLT_xEj82bxxpdq1B-cjjbX0MQ/viewform?usp=publish-editor",
     "coordinators": [
       {
-        "name": "Dr. Archika Johari",
+        "name": "Andrea Joseph",
+        "phone": "88677 28278",
+        "email": "",
+        "role": "Student POC"
+      },
+      {
+        "name": "Divisha R",
+        "phone": "93155 20712",
+        "email": "",
+        "role": "Student POC"
+      },
+      {
+        "name": "Dr. Varsha Singh",
         "phone": "94739 76071",
         "email": "",
-        "role": "Coordinator"
+        "role": "Faculty POC"
       }
     ]
   },
@@ -1783,7 +2019,7 @@ export const EVENTS_DATA: EventDetail[] = [
     "stages": [
       {
         "title": "Event Structure",
-        "desc": "Round 1 – Red Light, Green Light (15 Minutes)\nTeams compete one member at a time. \nParticipants must reach the finish line without moving during \"Red Light.\" \nMotion sensors or event marshals detect movement. \nTime penalties apply for violations. \nRound 2 – Dalgona Challenge (15 Minutes)\nTeams carefully extract a predefined shape from a candy or substitute material. \nBreaking the shape results in elimination or penalty points. \nThe fastest successful teams advance. \nRound 3 – Memory Bridge (20 Minutes)\nTeams cross a path of numbered or colored tiles after observing a sequence. \nCorrect memory, communication, and coordination are essential. \nWrong choices incur penalties or require restarting. \nRound 4 – Strategic Tug-of-War (15 Minutes)\nTeams compete in knockout matches. \nVictory depends on teamwork, balance, timing, and coordinated effort rather than brute strength alone. \nGrand Finale if required – Squad Survival (15 Minutes)\nFinalists face a mixed challenge combining puzzles, speed, and teamwork. \nThe highest-scoring or last remaining team wins the championship."
+        "desc": "Round 1 – Red Light, Green Light (15 Minutes)\nTeams compete one member at a time.\nParticipants must reach the finish line without moving during \"Red Light.\"\nMotion sensors or event marshals detect movement.\nTime penalties apply for violations.\nRound 2 – Dalgona Challenge (15 Minutes)\nTeams carefully extract a predefined shape from a candy or substitute material.\nBreaking the shape results in elimination or penalty points.\nThe fastest successful teams advance.\nRound 3 – Memory Bridge (20 Minutes)\nTeams cross a path of numbered or colored tiles after observing a sequence.\nCorrect memory, communication, and coordination are essential.\nWrong choices incur penalties or require restarting.\nRound 4 – Strategic Tug-of-War (15 Minutes)\nTeams compete in knockout matches.\nVictory depends on teamwork, balance, timing, and coordinated effort rather than brute strength alone.\nGrand Finale if required – Squad Survival (15 Minutes)\nFinalists face a mixed challenge combining puzzles, speed, and teamwork.\nThe highest-scoring or last remaining team wins the championship."
       }
     ],
     "rules": [
@@ -1808,10 +2044,22 @@ export const EVENTS_DATA: EventDetail[] = [
     "registrationLink": "https://docs.google.com/forms/d/e/1FAIpQLSf0qLbIm5R-xURhCXfHlrNMP0e3qqh2lxrYnUQy2xAhkayrlg/viewform?usp=publish-editor",
     "coordinators": [
       {
-        "name": "Dr. Rithvik Shankar",
+        "name": "Rithvik Sunil",
+        "phone": "7306599726",
+        "email": "",
+        "role": "Student POC"
+      },
+      {
+        "name": "Catherine",
+        "phone": "99677 83363",
+        "email": "",
+        "role": "Student POC"
+      },
+      {
+        "name": "Dr Jopaul Mathew",
         "phone": "81380 11592",
         "email": "",
-        "role": "Coordinator"
+        "role": "Faculty POC"
       }
     ]
   },
@@ -1829,18 +2077,18 @@ export const EVENTS_DATA: EventDetail[] = [
       }
     ],
     "rules": [
-      "Each team must consist of 2–3 members.",
-      "Participants must belong to the same participating institution, subject to fest regulations.",
-      "The startup developed in Round 1 will continue throughout the subsequent rounds.",
-      "Participants must adhere to the time limits specified for each round.",
-      "The virtual currency used in the Executive Auction has no real monetary value.",
-      "Teams cannot transfer virtual funds between teams during the auction.",
-      "The Excel round will be conducted using the tools and resources specified by the organisers.",
-      "Overnight-round submissions must follow the prescribed format and deadline.",
-      "Teams must be prepared to present and defend their decisions before the judges.",
-      "Plagiarism, unauthorised assistance or misconduct may result in disqualification.",
-      "The organisers reserve the right to modify the round structure where operationally necessary.",
-      "The decision of the judges and organising committee will be final."
+      "1. Each team must consist of 2–3 members.",
+      "2. Participants must belong to the same participating institution, subject to fest regulations.",
+      "3. The startup developed in Round 1 will continue throughout the subsequent rounds.",
+      "4. Participants must adhere to the time limits specified for each round.",
+      "5. The virtual currency used in the Executive Auction has no real monetary value.",
+      "6. Teams cannot transfer virtual funds between teams during the auction.",
+      "7. The Excel round will be conducted using the tools and resources specified by the organisers.",
+      "8. Overnight-round submissions must follow the prescribed format and deadline.",
+      "9. Teams must be prepared to present and defend their decisions before the judges.",
+      "10. Plagiarism, unauthorised assistance or misconduct may result in disqualification.",
+      "11. The organisers reserve the right to modify the round structure where operationally necessary.",
+      "12. The decision of the judges and organising committee will be final."
     ],
     "faqs": [],
     "prizePool": "22K",
@@ -1852,10 +2100,22 @@ export const EVENTS_DATA: EventDetail[] = [
     "registrationLink": "https://docs.google.com/forms/d/e/1FAIpQLSezVxg3D4xEwsmTCmxjXaKa3UDZmCV1w71KaDUM4oqbklhzHA/viewform?usp=publish-editor",
     "coordinators": [
       {
-        "name": "Prof.  Ravindra Babu",
+        "name": "K I Nihala Enoon",
+        "phone": "7907386107",
+        "email": "",
+        "role": "Student POC"
+      },
+      {
+        "name": "Aradhana M",
+        "phone": "9902662782",
+        "email": "",
+        "role": "Student POC"
+      },
+      {
+        "name": "Dr. Ravindra Babu S",
         "phone": "9880525788",
         "email": "",
-        "role": "Coordinator"
+        "role": "Faculty POC"
       }
     ]
   },
@@ -1865,7 +2125,7 @@ export const EVENTS_DATA: EventDetail[] = [
     "tagline": "A battle of financial minds where strategy is the weapon, risk is the game, and every decision shapes the outcome",
     "category": "Management",
     "department": "BBA",
-    "overview": "The event is structured around two connected halves that mirror the Strategic Finance vertical. One-half centers on competition, decision-making, and problem-solving, representing Corporate Strategy. The other centers on growth, value creation, and money management, representing Wealth Management.\nThis structure gives the event a clear identity and ensures both domains receive equal focus throughout the competition. It also makes it easy to organize individual rounds under one of the two halves, so every task ties back into a single, consistent story for the event.",
+    "overview": "The event is structured around two connected halves that mirror the Strategic Finance vertical. One-half centers on competition, decision-making, and problem-solving, representing Corporate Strategy. The other centers on growth, value creation, and money management, representing Wealth Management.\n\nThis structure gives the event a clear identity and ensures both domains receive equal focus throughout the competition. It also makes it easy to organize individual rounds under one of the two halves, so every task ties back into a single, consistent story for the event.",
     "stages": [
       {
         "title": "Event Structure",
@@ -1891,10 +2151,22 @@ export const EVENTS_DATA: EventDetail[] = [
     "registrationLink": "https://docs.google.com/forms/d/e/1FAIpQLSfYNE1V1OxtogkQ6HU1Hj4v9kCi2v_OyWlp9lRNKF3Cu9fWuw/viewform?usp=publish-editor",
     "coordinators": [
       {
-        "name": "Dr. Muthu Lakshmi P.",
+        "name": "Jash Parekh",
+        "phone": "9321007501",
+        "email": "",
+        "role": "Student POC"
+      },
+      {
+        "name": "Mohak Bansal",
+        "phone": "6399911920",
+        "email": "",
+        "role": "Student POC"
+      },
+      {
+        "name": "Dr. Muthulakshmi P",
         "phone": "9003687190",
         "email": "",
-        "role": "Coordinator"
+        "role": "Faculty POC"
       }
     ]
   },
@@ -1908,7 +2180,7 @@ export const EVENTS_DATA: EventDetail[] = [
     "stages": [
       {
         "title": "Event Structure",
-        "desc": "The tournament will be conducted through a structured competitive format for each selected game.\n      \n        All registered participants will compete in one-on-one matches, with winners advancing to the next round.\n      \n        Qualified participants will compete in successive knockout matches, with winners progressing towards the finals.\n      \n        The final two participants will compete in the Grand Final, with the winner crowned the StrikeX Champion."
+        "desc": "The tournament will be conducted through a structured competitive format for each selected game.\nStage 1 – Qualifiers:\nAll registered participants will compete in one-on-one matches, with winners advancing to the next round.\nStage 2 – Knockouts:\nQualified participants will compete in successive knockout matches, with winners progressing towards the finals.\nStage 3 – Grand Finals:\nThe final two participants will compete in the Grand Final, with the winner crowned the StrikeX Champion."
       }
     ],
     "rules": [
@@ -1936,10 +2208,22 @@ export const EVENTS_DATA: EventDetail[] = [
     "registrationLink": "https://docs.google.com/forms/d/e/1FAIpQLSfqcmfUY0RycwgKDs6ieUBJ9V4ZcwJb7tbKZJCGHkMNH8gxfw/viewform?usp=publish-editor",
     "coordinators": [
       {
-        "name": "Dr. Sherin Paul",
+        "name": "Vora Chanchal",
+        "phone": "8160556005",
+        "email": "",
+        "role": "Student POC"
+      },
+      {
+        "name": "Suraj Adhikari",
+        "phone": "6361038223",
+        "email": "",
+        "role": "Student POC"
+      },
+      {
+        "name": "Dr. Bejoy BJ",
         "phone": "8281300742",
         "email": "",
-        "role": "Coordinator"
+        "role": "Faculty POC"
       }
     ]
   },
@@ -1980,10 +2264,22 @@ export const EVENTS_DATA: EventDetail[] = [
     "registrationLink": "https://docs.google.com/forms/d/e/1FAIpQLSejeMwRkTbci9NphLCRNS9ChSH_NzCLlDg_kvJ2j5_0FVuPaw/viewform?usp=publish-editor",
     "coordinators": [
       {
-        "name": "Dr. Bejoy B. J.",
+        "name": "Joshua Thomas",
+        "phone": "9880310075",
+        "email": "",
+        "role": "Student POC"
+      },
+      {
+        "name": "Anna Theresa",
+        "phone": "8867084473",
+        "email": "",
+        "role": "Student POC"
+      },
+      {
+        "name": "Dr. Sherin Paul",
         "phone": "9385446508",
         "email": "",
-        "role": "Coordinator"
+        "role": "Faculty POC"
       }
     ]
   },
@@ -2024,10 +2320,22 @@ export const EVENTS_DATA: EventDetail[] = [
     "registrationLink": "https://docs.google.com/forms/d/e/1FAIpQLSdn4iA4RVexnpafMPaDPHRdbHl3DQwjPg4SNibj-HJFqlTDAA/viewform?usp=publish-editor",
     "coordinators": [
       {
-        "name": "Dr. Shilpa B M",
+        "name": "Pearl John",
+        "phone": "73030 69827",
+        "email": "",
+        "role": "Student POC"
+      },
+      {
+        "name": "Milan Deepak",
+        "phone": "80754 56898",
+        "email": "",
+        "role": "Student POC"
+      },
+      {
+        "name": "Dr. Archika  Johari",
         "phone": "86673 80187",
         "email": "",
-        "role": "Coordinator"
+        "role": "Faculty POC"
       }
     ]
   },
@@ -2037,7 +2345,7 @@ export const EVENTS_DATA: EventDetail[] = [
     "tagline": "Navigate a horror-themed maze, face a randomly assigned obstruction, solve puzzles along the way, and find your way to the exit before time runs out.",
     "category": "Coding & Tech",
     "department": "Artificial Intelligence & Data Science (AIDS)",
-    "overview": "The Last Turn is an immersive, time-based physical maze competition designed to test how participants navigate uncertainty, solve challenges and adapt under pressure. Rather than being a conventional haunted house or escape room, the event combines maze navigation, short puzzles and competitive time-based progression in a controlled, themed environment. \n\nBefore entering the maze, each participant spins the Obstruction Wheel, which assigns a restriction, neutral outcome or limited advantage for their run. Participants then navigate multiple maze sections, make route decisions, reach checkpoints, solve short challenges and manage their assigned condition before completing the final route to the exit. \n\nThe event tests observation, problem-solving, decision-making, adaptability, time management and composure under pressure while providing a high-energy and immersive competitive experience. Its unpredictable mechanics and themed environment ensure that each run is different, encouraging participants to think quickly, adapt their strategy and reach the finish as efficiently as possible.",
+    "overview": "Maze Runner is an immersive, time-based physical maze competition designed to test how participants navigate uncertainty, solve challenges and adapt under pressure. Rather than being a conventional haunted house or escape room, the event combines maze navigation, short puzzles and competitive time-based progression in a controlled, themed environment.\n\nBefore entering the maze, each participant spins the Obstruction Wheel, which assigns a restriction, neutral outcome or limited advantage for their run. Participants then navigate multiple maze sections, make route decisions, reach checkpoints, solve short challenges and manage their assigned condition before completing the final route to the exit.\n\nThe event tests observation, problem-solving, decision-making, adaptability, time management and composure under pressure while providing a high-energy and immersive competitive experience. Its unpredictable mechanics and themed environment ensure that each run is different, encouraging participants to think quickly, adapt their strategy and reach the finish as efficiently as possible.",
     "stages": [
       {
         "title": "Event Structure",
@@ -2047,87 +2355,46 @@ export const EVENTS_DATA: EventDetail[] = [
     "rules": [
       "A. Participation",
       "The event is open to students from all academic disciplines.",
-      "Maze Runner is an individual competitive event; participants compete",
-      "individually.",
-      "Participants must complete the mandatory safety briefing before entering",
-      "the maze.",
-      "Participants must report to their assigned slot on time and follow the",
-      "instructions provided by the organisers.",
+      "Maze Runner is an individual competitive event; participants compete individually.",
+      "Participants must complete the mandatory safety briefing before entering the maze.",
+      "Participants must report to their assigned slot on time and follow the instructions provided by the organisers.",
       "B. Gameplay",
       "Each participant receives one timed attempt through the maze.",
-      "Before entering the maze, each participant must spin the Obstruction",
-      "Wheel and follow the assigned restriction, neutral outcome or advantage",
-      "for that run.",
-      "Participants must remain within the designated maze boundaries and",
-      "follow the permitted routes and instructions.",
-      "Participants must navigate the maze, reach designated checkpoints and",
-      "complete the puzzles placed at selected sections.",
-      "Participants must comply with the assigned obstruction throughout the",
-      "relevant section of the run.",
-      "Participants may use the designated Hint Token system at applicable",
-      "checkpoints, subject to the associated time cost.",
-      "The official completion time is recorded when the participant crosses the",
-      "final marker.",
-      "The event may be conducted as a leaderboard-based competition or as a",
-      "multi-stage competition, depending on venue capacity and registration",
-      "volume.",
+      "Before entering the maze, each participant must spin the Obstruction Wheel and follow the assigned restriction, neutral outcome or advantage for that run.",
+      "Participants must remain within the designated maze boundaries and follow the permitted routes and instructions.",
+      "Participants must navigate the maze, reach designated checkpoints and complete the puzzles placed at selected sections.",
+      "Participants must comply with the assigned obstruction throughout the relevant section of the run.",
+      "Participants may use the designated Hint Token system at applicable checkpoints, subject to the associated time cost.",
+      "The official completion time is recorded when the participant crosses the final marker.",
+      "The event may be conducted as a leaderboard-based competition or as a multi-stage competition, depending on venue capacity and registration volume.",
       "C. Resources",
-      "Participants are not required to use personal digital devices as part of the",
-      "maze gameplay.",
-      "Internet access and AI tools are not part of the event mechanics and",
-      "therefore are not required for participation.",
-      "Participants may use only the materials and information provided within",
-      "the maze and by the organisers for solving the integrated challenges.",
-      "Participants must not bring or use unauthorised external materials to",
-      "obtain an unfair advantage.",
+      "Participants are not required to use personal digital devices as part of the maze gameplay.",
+      "Internet access and AI tools are not part of the event mechanics and therefore are not required for participation.",
+      "Participants may use only the materials and information provided within the maze and by the organisers for solving the integrated challenges.",
+      "Participants must not bring or use unauthorised external materials to obtain an unfair advantage.",
       "D. Fair Play",
-      "Participants must complete their runs independently and may not receive",
-      "assistance from spectators, other participants or unauthorised personnel.",
-      "Participants must not share puzzle solutions, route information or other",
-      "event-specific assistance with participants whose attempts are yet to take",
-      "place.",
-      "Participants must not bypass the designated route, obstruction conditions,",
-      "checkpoints or timing procedures.",
-      "Moving, damaging or tampering with maze structures, props or",
-      "equipment is prohibited.",
-      "Any deliberate attempt to gain an unfair advantage or manipulate the",
-      "event mechanics may result in disqualification.",
+      "Participants must complete their runs independently and may not receive assistance from spectators, other participants or unauthorised personnel.",
+      "Participants must not share puzzle solutions, route information or other event-specific assistance with participants whose attempts are yet to take place.",
+      "Participants must not bypass the designated route, obstruction conditions, checkpoints or timing procedures.",
+      "Moving, damaging or tampering with maze structures, props or equipment is prohibited.",
+      "Any deliberate attempt to gain an unfair advantage or manipulate the event mechanics may result in disqualification.",
       "E. Conduct",
-      "Participants must follow all instructions given by the organisers,",
-      "coordinators, volunteers and safety personnel.",
-      "Participants must maintain appropriate discipline and respectful",
-      "behaviour throughout the event.",
-      "Participants must not intentionally disturb, obstruct or interfere with",
-      "another participant's run.",
-      "Participants must comply with all venue-specific safety and conduct",
-      "requirements.",
-      "Participants must not touch, move or tamper with event props, structures",
-      "or equipment unless explicitly instructed.",
+      "Participants must follow all instructions given by the organisers, coordinators, volunteers and safety personnel.",
+      "Participants must maintain appropriate discipline and respectful behaviour throughout the event.",
+      "Participants must not intentionally disturb, obstruct or interfere with another participant's run.",
+      "Participants must comply with all venue-specific safety and conduct requirements.",
+      "Participants must not touch, move or tamper with event props, structures or equipment unless explicitly instructed.",
       "F. Technical / Operational Issues",
-      "As Maze Runner is primarily a physical event, personal device failure or",
-      "network failure does not normally affect gameplay.",
-      "Any issue involving maze structures, timing equipment, lighting, sound,",
-      "props or other organiser-provided systems must be reported to the event",
-      "coordinator immediately.",
-      "Organisers may pause, terminate, restart or modify a run if a technical,",
-      "safety or operational issue materially affects the fairness or safety of the",
-      "event.",
-      "Any decision regarding time adjustments or alternative arrangements",
-      "following an organiser-side issue will be made by the event coordinators.",
+      "As Maze Runner is primarily a physical event, personal device failure or network failure does not normally affect gameplay.",
+      "Any issue involving maze structures, timing equipment, lighting, sound, props or other organiser-provided systems must be reported to the event coordinator immediately.",
+      "Organisers may pause, terminate, restart or modify a run if a technical, safety or operational issue materially affects the fairness or safety of the event.",
+      "Any decision regarding time adjustments or alternative arrangements following an organiser-side issue will be made by the event coordinators.",
       "G. Judging & Disputes",
-      "Participants are ranked primarily on their adjusted completion time, with",
-      "the announced scoring system also considering puzzle completion, hint",
-      "usage and obstruction management.",
-      "If conducted as a multi-stage competition, participants who meet the",
-      "announced qualification criteria will progress to subsequent rounds.",
-      "Judges and event coordinators have the authority to verify timings,",
-      "evaluate performance and make decisions regarding rule violations.",
-      "The uploaded Maze Runner proposal does not currently specify a formal",
-      "tie-breaker mechanism. The organisers should finalize and announce the",
-      "tie-breaker procedure before the event.",
-      "All decisions of the judging panel and event organisers regarding scoring,",
-      "penalties, qualification, disqualification and final ranking shall be final",
-      "and binding."
+      "Participants are ranked primarily on their adjusted completion time, with the announced scoring system also considering puzzle completion, hint usage and obstruction management.",
+      "If conducted as a multi-stage competition, participants who meet the announced qualification criteria will progress to subsequent rounds.",
+      "Judges and event coordinators have the authority to verify timings, evaluate performance and make decisions regarding rule violations.",
+      "The uploaded Maze Runner proposal does not currently specify a formal tie-breaker mechanism. The organisers should finalize and announce the tie-breaker procedure before the event.",
+      "All decisions of the judging panel and event organisers regarding scoring, penalties, qualification, disqualification and final ranking shall be final and binding."
     ],
     "faqs": [],
     "prizePool": "15K",
@@ -2139,10 +2406,22 @@ export const EVENTS_DATA: EventDetail[] = [
     "registrationLink": "https://docs.google.com/forms/d/e/1FAIpQLScGH0od4oPhe2WVsNyYLJOjGd2XcMIBtoPJdHIGnRDb9XrhZg/viewform?usp=publish-editor",
     "coordinators": [
       {
-        "name": "9345464915",
-        "phone": "Dr Amos Bortiew",
+        "name": "Viswakowsik K",
+        "phone": "9944762559",
         "email": "",
-        "role": "Coordinator"
+        "role": "Student POC"
+      },
+      {
+        "name": "Mervin A",
+        "phone": "9345464915",
+        "email": "",
+        "role": "Student POC"
+      },
+      {
+        "name": "Dr Amos Bortiew",
+        "phone": "7086606498",
+        "email": "",
+        "role": "Faculty POC"
       }
     ]
   },
@@ -2167,7 +2446,6 @@ export const EVENTS_DATA: EventDetail[] = [
       "Participants must carry a laptop with a charger for technical analysis and investigation.",
       "Teams must report to the venue before the commencement of the event briefing.",
       "B. Gameplay",
-      "TRACE consists of three independent cybersecurity investigation cases.",
       "Case 1, Case 2 and Case 3 will be released at 10:00 AM, 11:00 AM and 12:00 PM, respectively.",
       "Teams may choose to investigate one, two or all three cases and may divide their time among the cases according to their strategy.",
       "Each case will contain a brief, technical objective and a package of raw technical artifacts such as logs, packet captures, metadata, hashes, network records or other relevant files.",
@@ -2209,12 +2487,7 @@ export const EVENTS_DATA: EventDetail[] = [
       "Any decision regarding technical disruptions, extensions or operational adjustments will be made by the event organisers.",
       "G. Judging & Disputes",
       "Teams will be evaluated based on:",
-      "Accuracy of Indicators Extracted - 25 Marks",
-      "Correct Use of Technical Tools / Methodology - 25 Marks",
-      "Reasoning Behind the Identified Indicators - 20 Marks",
-      "Correlation of Indicators & Reconstruction of Final Report - 20 Marks",
-      "Quality of Live Technical Walkthrough & Q&A - 10 Marks",
-      "The number of cases attempted alone will not determine the winner; the technical accuracy, depth of reasoning and quality of correlation will be considered.",
+      "Accuracy of Indicators Extracted - 25 Marks Correct Use of Technical Tools / Methodology - 25 Marks Reasoning Behind the Identified Indicators - 20 Marks Correlation of Indicators & Reconstruction of Final Report - 20 Marks Quality of Live Technical Walkthrough & Q&A - 10 Marks The number of cases attempted alone will not determine the winner; the technical accuracy, depth of reasoning and quality of correlation will be considered.",
       "Judges have the authority to ask teams to justify their methodology, tools, extracted indicators and conclusions.",
       "In case of a tie, the team with the higher score in Correlation of Findings & Reconstruction of the Incident Flow will rank higher.",
       "If the tie persists, the team with the higher score in Reasoning Behind the Findings will rank higher.",
@@ -2231,22 +2504,22 @@ export const EVENTS_DATA: EventDetail[] = [
     "registrationLink": "https://docs.google.com/forms/d/e/1FAIpQLScKNw3cW_uLO0BEw4Cd8gLsaDWHwVkZbrGeppICT0srA6N4qA/viewform?usp=publish-editor",
     "coordinators": [
       {
-        "name": "Dr Ambily Balaram",
-        "phone": "9496218879",
-        "email": "ambily.balaram@christuniversity.in",
-        "role": "Faculty Coordinator"
+        "name": "Joel Jacob Roji",
+        "phone": "7012032686",
+        "email": "",
+        "role": "Student POC"
       },
       {
-        "name": "Aveepsa Hatua",
-        "phone": "6290965482",
-        "email": "aveepsa.hatua@btech.christuniversity.in",
-        "role": "Student Coordinator"
+        "name": "Darren Samuel Dcruz",
+        "phone": "6364419705",
+        "email": "",
+        "role": "Student POC"
       },
       {
-        "name": "Adharsh Jolly",
-        "phone": "9431703182",
-        "email": "adharsh.jolly@btech.christuniversity.in",
-        "role": "Student Coordinator"
+        "name": "Dr Binson V A",
+        "phone": "9526738829",
+        "email": "",
+        "role": "Faculty POC"
       }
     ]
   },
@@ -2283,23 +2556,53 @@ export const EVENTS_DATA: EventDetail[] = [
     "registrationLink": "https://docs.google.com/forms/d/e/1FAIpQLScAbvcMO2zxxLCQZ-G1X6nMSGpPRvvu9cIhHswFSurOSxKq3w/viewform?usp=publish-editor",
     "coordinators": [
       {
-        "name": "Prof.  Aleena Mariya Silvester",
+        "name": "Jaden Ross Rebello",
+        "phone": "8080248809",
+        "email": "",
+        "role": "Student POC"
+      },
+      {
+        "name": "Aleena Elizabeth Mary",
+        "phone": "(+971)50820199",
+        "email": "",
+        "role": "Student POC"
+      },
+      {
+        "name": "Prof. Aleena Mariya Silvester",
         "phone": "8714491574",
         "email": "",
-        "role": "Coordinator"
+        "role": "Faculty POC"
       }
     ]
   },
   {
     "slug": "ai-film-fest",
     "title": "AI Film Fest",
-    "tagline": "Shape the Wave.",
+    "tagline": "Where AI Meets Global Creativity",
     "category": "General Fest Events",
     "department": "Office of International Affairs (OIA)",
-    "overview": "AI Film Fest is a creative and engaging filmmaking competition organized by the Office of International Affairs (OIA), CHRIST (Deemed to be University), Kengeri Campus, as part of MAGNOVITE 2026. The event brings together students from universities and colleges across the world to explore the possibilities of Artificial Intelligence in filmmaking, storytelling, visual communication, and creative expression. The competition is open to Grade 11, Grade 12, and undergraduate (UG) students from institutions outside India. Participants may compete individually or in teams of up to three members, creating a short film based on a theme or creative challenge announced by the organizers, with AI creatively incorporated into stages such as scriptwriting, image and video generation, voiceovers, music, animation, editing, and visual effects.",
-    "stages": [],
+    "overview": "AI Film Fest is a creative and engaging filmmaking competition organized by the Office of International Affairs (OIA), CHRIST (Deemed to be University), Kengeri Campus, as part of MAGNOVITE 2026. The event brings together students from universities and colleges across the world to explore the possibilities of Artificial Intelligence in filmmaking, storytelling, visual communication, and creative expression. The competition is open to Grade 11, Grade 12, and undergraduate (UG) students from institutions outside India. Participants will have an opportunity to showcase their creativity, storytelling abilities, technological skills, and cultural perspectives through AI-powered filmmaking. Participants may compete individually or in teams of up to three members, with all members of a team belonging to the same university or college. Participants will create a short film based on a theme or creative challenge announced by the organizers. Artificial Intelligence may be creatively incorporated into various stages of production, including scriptwriting, image and video generation, voiceovers, music, animation, editing, visual effects, and other permitted aspects of filmmaking. The event aims to encourage global creativity, cultural expression, innovation, responsible use of emerging technologies, and cross-cultural exchange, while providing students from diverse international backgrounds with a platform to connect and share their unique perspectives through visual storytelling.",
+    "stages": [
+      {
+        "title": "Event Structure",
+        "desc": "Registration & Team Formation: Participants register individually or form teams of up to three members. Registered participants will receive the official event guidelines and other necessary information.\nTheme / Challenge Reveal: The official film theme or creative challenge will be announced by the organizers. Participants will then develop their story and film concept based on the announced theme.\nStory & Script Development: Participants develop their storyline, characters, dialogue, screenplay, and overall creative concept. AI tools may be used to support scriptwriting, brainstorming, research, and other creative development activities.\nAI Film Production: Participants create their films using AI and other permitted creative tools. AI may be used for generating visuals, videos, voiceovers, music, animation, visual effects, and other aspects of film production.\nEditing & Post-Production: Participants edit and integrate their generated and original content, adding transitions, subtitles, sound effects, music, visual effects, and other elements required to complete the film.\nFilm & Documentation Submission: Participants must submit the final film along with the required Film & AI Usage Report, team details, credits, AI Usage Statement, and any other documents specified by the organizers before the submission deadline.\nJudging: Submitted films will be evaluated according to the published judging criteria, including storytelling, creativity and originality, effective use of AI, visual and technical quality, direction and editing, sound design, and overall impact.\nAwards & Recognition: The top three entries will be awarded 1st, 2nd, and 3rd prizes. All registered participants will receive Certificates of Participation, while the winners will additionally receive Certificates of Recognition.\nClosing: The event will conclude with an official closing note and acknowledgement of all participating students and teams."
+      }
+    ],
     "rules": [
-      "Details coming soon."
+      "Team Size: Participants may compete individually or in teams of 1-3 members.",
+      "Film Duration: The final film must have a maximum duration of 5 minutes, including credits.",
+      "Originality: All films must be original and created specifically for the event. Plagiarism, copying, or substantial reuse of another team's work will result in disqualification.",
+      "AI Usage: Artificial Intelligence must play a meaningful and significant role in the creation of the film. Participants may use AI for scripts, visuals, video, voiceovers, music, animation, editing, visual effects, and other permitted creative processes.",
+      "Theme: The submitted film must be based on and appropriately respond to the theme / challenge announced by the organizers.",
+      "Copyright & Intellectual Property: Participants must use only original, licensed, royalty-free, AI-generated, or otherwise legally permitted content. Unauthorized use of copyrighted material is strictly prohibited.",
+      "Content Standards: Films must be suitable for a college audience. Offensive, discriminatory, hateful, sexually explicit, defamatory, or otherwise inappropriate content is prohibited.",
+      "Submission: Films must be submitted in the format specified by the organizers and before the announced deadline. Late submissions may attract penalties or may be rejected at the discretion of the organizers.",
+      "AI Disclosure: Each team must submit a brief AI Usage Statement / AI Usage Report clearly identifying the AI tools used and explaining their purpose in the filmmaking process.",
+      "Fair Play: Participants must not interfere with, copy, manipulate, sabotage, or otherwise unfairly influence another team's work or submission.",
+      "Equipment & Resources: Participants are responsible for their own devices, software, internet connectivity, accounts/subscriptions, and backup of their work unless otherwise specified by the organizers.",
+      "Judging: Films will be evaluated based on storytelling, creativity, originality, effective AI usage, visual and technical quality, direction, editing, sound design, and overall impact, as per the published judging criteria.",
+      "Disqualification: Violation of major event rules, plagiarism, copyright infringement, inappropriate content, fraudulent submissions, or unfair practices may result in immediate disqualification.",
+      "Final Decision: The decision of the judging panel shall be final and binding. The organizers reserve the right to interpret and enforce the rules to ensure fairness and maintain the integrity of the competition."
     ],
     "faqs": [],
     "prizePool": "USD 225",
@@ -2311,10 +2614,22 @@ export const EVENTS_DATA: EventDetail[] = [
     "registrationLink": "https://docs.google.com/forms/d/e/1FAIpQLSfJYqcdPrz567wroA9RiS5MI2UgK5Rxj-CblSAYAdp5tj_5qA/viewform?usp=publish-editor",
     "coordinators": [
       {
-        "name": "Magnovite Support",
-        "phone": "support@magnovite.com",
+        "name": "Noel K Roy",
+        "phone": "91104 00683",
         "email": "",
-        "role": "Coordinator"
+        "role": "Student POC"
+      },
+      {
+        "name": "Adhithya Krishna C S",
+        "phone": "81398 26765",
+        "email": "",
+        "role": "Student POC"
+      },
+      {
+        "name": "Dr. Vinay Jha Pillai",
+        "phone": "+91 91640 76123",
+        "email": "",
+        "role": "Faculty POC"
       }
     ]
   },
