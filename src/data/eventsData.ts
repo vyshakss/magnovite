@@ -18,7 +18,7 @@ export interface EventDetail {
   registrationLink?: string;
 }
 
-export const EVENTS_DATA: EventDetail[] = [
+const RAW_EVENTS_DATA: EventDetail[] = [
   {
     "slug": "antrix",
     "title": "Antrix",
@@ -2874,3 +2874,5 @@ export const EVENTS_DATA: EventDetail[] = [
     ]
   }
 ];
+
+export const EVENTS_DATA = RAW_EVENTS_DATA.sort((a, b) => a.title.localeCompare(b.title));
