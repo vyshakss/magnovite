@@ -111,24 +111,13 @@ export function HomePage() {
             </h2>
             <div className="mt-5 space-y-4 text-[0.92rem] leading-relaxed text-white/75">
               <p>
-                Get ready to experience the magic of one of the most celebrated music composers and
-                singers in the industry today! Shaan Rahman is the creative force behind some of
-                South India's biggest hits, known for effortlessly blending massive dance tracks
-                with deep, soulful melodies.
+                Experience the magic of a true musical powerhouse! Shaan Rahman, alongside his phenomenal live band and vocal crew, is set to deliver an electrifying performance that transcends language and borders.
               </p>
               <p>
-                He has quite literally shaped the soundtrack of a generation — from the timeless
-                romance of <em>Thattathin Marayathu</em> and <em>Jacobinte Swargarajyam</em> to the
-                high-energy beats of <em>Godha</em>. Whether you are getting hyped to global dance
-                anthem <strong className="text-white">"Jimikki Kammal"</strong> or singing your
-                heart out to <strong className="text-white">"Aaro Nenjil"</strong> and{" "}
-                <strong className="text-white">"Manikya Malaraya Poovi"</strong>, his versatile
-                discography has something for every single mood.
+                While celebrated for iconic Malayalam soundtracks like <em>Thattathin Marayathu</em> and <em>Minnal Murali</em>, Shaan’s discography reaches deep into Tamil, Telugu, and Kannada cinema. From the global dance anthem <strong className="text-white">"Jimikki Kammal"</strong> and the viral <strong className="text-white">"Manikya Malaraya Poovi"</strong>, to cross-industry hits like the Telugu track <strong className="text-white">"Naa Oopire"</strong>, the Tamil release <strong className="text-white">"En Uyire"</strong>, and his recent multi-lingual project <em>Bha Bha Ba</em>, the setlist offers something for everyone.
               </p>
               <p>
-                His infectious energy and incredible vocal talent make his live shows an absolute
-                must-see. Bring your friends, warm up those vocal cords, and get ready to groove to
-                his chart-topping hits live on the main stage!
+                With his brilliant co-singers by his side, this live showcase is an absolute must-see. Get ready to groove to a spectacular symphony of pan-regional chart-toppers!
               </p>
             </div>
             <div className="mt-6 flex flex-wrap gap-2.5">
