@@ -34,7 +34,7 @@ export function HomePage() {
               style={{ filter: 'drop-shadow(0 0 10px rgba(255,255,255,0.15))' }}
             />
             <h1 className="font-display text-[11.5vw] font-bold tracking-widest text-white sm:text-7xl" style={{ textShadow: '0 0 30px rgba(0,0,0,0.8)' }}>
-              MAGN<span className="relative inline-block">O<svg className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-[3vw] h-[3vw] sm:w-6 sm:h-6" viewBox="0 0 24 24" fill="white" xmlns="http://www.w3.org/2000/svg" style={{ filter: 'drop-shadow(0 0 4px rgba(255,255,255,0.8))' }}><path d="M12 0C12 11 13 12 24 12C13 12 12 13 12 24C12 13 11 12 0 12C11 12 12 11 12 0Z" /></svg></span>VITE
+              MAGN<span className="relative inline-block tracking-normal mr-[0.1em]">O<svg className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-[3vw] h-[3vw] sm:w-6 sm:h-6" viewBox="0 0 24 24" fill="white" xmlns="http://www.w3.org/2000/svg" style={{ filter: 'drop-shadow(0 0 4px rgba(255,255,255,0.8))' }}><path d="M12 0C12 11 13 12 24 12C13 12 12 13 12 24C12 13 11 12 0 12C11 12 12 11 12 0Z" /></svg></span>VITE
             </h1>
           </div>
 
@@ -102,13 +102,10 @@ export function HomePage() {
               loading="lazy"
               className="h-full w-full object-cover"
             />
-            <span className="glass-pill absolute top-4 left-4 px-3.5 py-1.5 text-[0.65rem] tracking-[0.22em] uppercase">
-              Live Concert · Sep 16
-            </span>
           </div>
 
           <div>
-            <p className="eyebrow">Main Stage Showcase</p>
+            <p className="eyebrow">Main Stage Showcase - Live Concert</p>
             <h2 className="mt-3 text-2xl font-semibold sm:text-3xl">
               Welcoming Shaan Rahman to Magnovite 2026
             </h2>
