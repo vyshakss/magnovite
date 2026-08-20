@@ -1,5 +1,5 @@
 export const ASSETS = {
-  butterfly: "/logos/magnovite.png",
+  logo: "/logos/magnovite.png",
 };
 
 export const DEFAULT_SETTINGS = {

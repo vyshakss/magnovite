@@ -12,39 +12,70 @@ export function HomePage() {
     <div id="top" className="relative bg-black">
       <CosmicScene />
 
-      <div
-        aria-hidden
-        className="pointer-events-none fixed inset-0 z-30 bg-white transition-opacity duration-100"
-        style={{ opacity: "calc(var(--flash) * 0.92)" }}
-      />
-
       <SiteHeader />
 
       {/* Hero Section */}
       <section className="relative z-10 flex h-screen flex-col items-center justify-center px-6 pointer-events-none">
-        <div 
-          className="flex flex-col items-center gap-8 text-center mt-[5vh] pointer-events-auto"
-          style={{ opacity: "var(--ui-fade, 0)" }}
+        {/* Legibility scrim. The galactic core glow sits directly behind this
+            text and both are white, so the title, countdown and logo lose
+            contrast against it. Tied to --ui-fade so it only appears as the
+            copy does — the star stays unobscured for the whole intro. */}
+        <div
+          aria-hidden
+          className="pointer-events-none absolute inset-0 z-0"
+          style={{
+            background:
+              "radial-gradient(ellipse 62% 46% at 50% 47%, rgba(0,0,0,0.74) 0%, rgba(0,0,0,0.5) 42%, rgba(0,0,0,0.18) 66%, transparent 80%)",
+            opacity: "var(--ui-fade, 0)",
+          }}
+        />
+
+        <div
+          className="relative z-10 flex flex-col items-center gap-8 text-center pointer-events-auto"
+          style={{ 
+            opacity: "var(--ui-fade, 0)",
+            transform: "translateY(calc((1 - var(--ui-fade, 0)) * 20px))",
+            transition: "transform 0.8s cubic-bezier(0.16, 1, 0.3, 1)"
+          }}
         >
-          <div className="flex flex-col items-center gap-5">
+          <div className="flex flex-col items-center gap-3 sm:gap-4 px-2 w-full max-w-full">
+            <p 
+              className="text-[0.5rem] sm:text-[0.6rem] tracking-[0.3em] sm:tracking-[0.5em] text-white/50 uppercase font-medium text-center"
+              style={{ textShadow: '0 2px 12px rgba(0,0,0,0.9)' }}
+            >
+              Christ University · Kengeri Campus
+            </p>
+
             <img
               src="/logos/magnovite-butterfly.png"
               alt="Magnovite Logo"
-              className="h-12 w-auto opacity-90 sm:h-16"
-              style={{ filter: 'drop-shadow(0 0 10px rgba(255,255,255,0.15))' }}
+              className="h-8 w-auto opacity-80 sm:h-14 mt-1 mb-1 sm:mt-0 sm:mb-0"
+              style={{ filter: 'drop-shadow(0 0 16px rgba(255,255,255,0.1))' }}
             />
-            <h1 className="font-display text-[11.5vw] font-bold tracking-widest text-white sm:text-7xl" style={{ textShadow: '0 0 30px rgba(0,0,0,0.8)' }}>
-              MAGN<span className="relative inline-block tracking-normal mr-[0.1em]">O<svg className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-[3vw] h-[3vw] sm:w-6 sm:h-6" viewBox="0 0 24 24" fill="white" xmlns="http://www.w3.org/2000/svg" style={{ filter: 'drop-shadow(0 0 4px rgba(255,255,255,0.8))' }}><path d="M12 0C12 11 13 12 24 12C13 12 12 13 12 24C12 13 11 12 0 12C11 12 12 11 12 0Z" /></svg></span>VITE
+
+            <h1 
+              className="font-display text-[11vw] sm:text-8xl font-bold tracking-[0.1em] sm:tracking-[0.15em] text-white whitespace-nowrap"
+              style={{ textShadow: '0 0 60px rgba(0,0,0,0.9), 0 0 120px rgba(0,0,0,0.5)' }}
+            >
+              MAGN<span className="relative inline-block tracking-normal mr-[0.08em] sm:mr-[0.12em]">O<svg className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-[3.5vw] h-[3.5vw] sm:w-7 sm:h-7" viewBox="0 0 24 24" fill="white" xmlns="http://www.w3.org/2000/svg" style={{ filter: 'drop-shadow(0 0 6px rgba(255,255,255,0.9))' }}><path d="M12 0C12 11 13 12 24 12C13 12 12 13 12 24C12 13 11 12 0 12C11 12 12 11 12 0Z" /></svg></span>VITE
             </h1>
+
+            <p 
+              className="text-[0.6rem] sm:text-[0.75rem] tracking-[0.2em] sm:tracking-[0.35em] text-white/70 uppercase font-medium text-center max-w-full px-2 whitespace-nowrap"
+              style={{ textShadow: '0 0 20px rgba(0,0,0,1), 0 0 40px rgba(0,0,0,1), 0 2px 8px rgba(0,0,0,0.9)' }}
+            >
+              The 16th Edition · Annual Flagship Fest
+            </p>
           </div>
 
           <Countdown />
 
           <button
             onClick={() => document.getElementById('about')?.scrollIntoView({ behavior: 'smooth' })}
-            className="glass-pill mt-2 inline-flex items-center gap-2 px-7 py-3.5 text-sm font-medium transition-all hover:scale-105"
+            className="glass-pill mt-4 inline-flex items-center gap-2 px-7 py-3.5 text-xs font-medium tracking-wider uppercase transition-all hover:scale-105 hover:border-white/20"
+            style={{ textShadow: '0 2px 8px rgba(0,0,0,0.6)' }}
           >
-            Scroll for more details <ChevronDown className="size-4 animate-bounce" />
+            Explore <ChevronDown className="size-3.5 animate-bounce" />
           </button>
         </div>
       </section>

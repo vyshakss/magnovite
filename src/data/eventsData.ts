@@ -51,7 +51,7 @@ const RAW_EVENTS_DATA: EventDetail[] = [
     ],
     "faqs": [],
     "prizePool": "22K",
-    "date": "46280",
+    "date": "15 Sept 2026",
     "fee": "₹400 per team",
     "teamSize": "2",
     "format": "Team",
@@ -112,21 +112,21 @@ const RAW_EVENTS_DATA: EventDetail[] = [
     "registrationLink": "https://docs.google.com/forms/d/e/1FAIpQLScDjJnENvIJJNrBV6VUGO5jGaKd_Qmy4_jc9kMBnBsZw-FCWw/viewform?usp=publish-editor",
     "coordinators": [
       {
-        "name": "Arush Verma",
+        "name": "Aarush Verma",
         "phone": "7892796764",
-        "email": "",
+        "email": "aarush.verma@btech.christuniversity.in",
         "role": "Student POC"
       },
       {
-        "name": "Ruben Sebastian",
+        "name": "Reuben Sebastian",
         "phone": "8139036883",
-        "email": "",
+        "email": "reuben.sebastian@btech.christuniversity.in",
         "role": "Student POC"
       },
       {
         "name": "Dr. Ravikumar R",
         "phone": "9964167735",
-        "email": "",
+        "email": "r.ravikumar@christuniversity.in",
         "role": "Faculty POC"
       }
     ]
@@ -158,26 +158,26 @@ const RAW_EVENTS_DATA: EventDetail[] = [
     "date": "15 Sept 2026",
     "fee": "₹500 per team",
     "teamSize": "2",
-    "format": "Live Event",
+    "format": "Team",
     "image": "/images/events/arkicraft.png",
     "registrationLink": "https://docs.google.com/forms/d/e/1FAIpQLSdtmwLIO4NbikAp0BqHjKqGKSsicjB_DrDYRvNfQW6gVzpt_Q/viewform?usp=dialog",
     "coordinators": [
       {
-        "name": "Deeba Dharshan",
+        "name": "Deeba Dharshan S",
         "phone": "9360624127",
-        "email": "",
+        "email": "deebadharshan.s@btech.christuniversity.in",
         "role": "Student POC"
       },
       {
-        "name": "Tharanaa",
+        "name": "Tharanaa SJ",
         "phone": "8072139271",
-        "email": "",
+        "email": "tharanaa.s@btech.christuniversity.in",
         "role": "Student POC"
       },
       {
         "name": "Dr Thejas HK",
         "phone": "9686798951",
-        "email": "",
+        "email": "thejas.hk@christuniversity.in",
         "role": "Faculty POC"
       }
     ]
@@ -440,7 +440,7 @@ const RAW_EVENTS_DATA: EventDetail[] = [
     ],
     "faqs": [],
     "prizePool": "22K",
-    "date": "46281",
+    "date": "16 Sept 2026",
     "fee": "₹400 per team",
     "teamSize": "3",
     "format": "Team",
@@ -506,20 +506,26 @@ const RAW_EVENTS_DATA: EventDetail[] = [
     "coordinators": [
       {
         "name": "Mayank Ramesh",
-        "phone": "78998 74479",
-        "email": "",
+        "phone": "7899874479",
+        "email": "mayank.ramesh@btech.christuniversity.in",
         "role": "Student POC"
       },
       {
         "name": "Nathaniel Ronald Hoskeri",
-        "phone": "81973 18205",
-        "email": "",
+        "phone": "8197318205",
+        "email": "nathaniel.ronald@btech.christuniversity.in",
         "role": "Student POC"
       },
       {
         "name": "Dr. Umesh V",
         "phone": "9164368155",
-        "email": "",
+        "email": "umesh.v@christuniversity.in",
+        "role": "Faculty POC"
+      },
+      {
+        "name": "Dr Jangam Sasidhar",
+        "phone": "8884639888",
+        "email": "sasidhar.jangam@christuniversity.in",
         "role": "Faculty POC"
       }
     ]
@@ -555,26 +561,26 @@ const RAW_EVENTS_DATA: EventDetail[] = [
     "date": "15 Sept 2026",
     "fee": "₹400 per team",
     "teamSize": "2",
-    "format": "Live Event",
+    "format": "Team",
     "image": "/images/events/canvas-of-minds.png",
     "registrationLink": "https://docs.google.com/forms/d/e/1FAIpQLScSxLCHw9YroO7c_9zxrEnmoLx8h8GCL3brhen7T5h65t6ukw/viewform?usp=header",
     "coordinators": [
       {
         "name": "Aishwarya R",
         "phone": "7795685267",
-        "email": "",
+        "email": "aiswarya.r@btech.christuniversity.in",
         "role": "Student POC"
       },
       {
-        "name": "Machak Bachani",
+        "name": "Mahak Bachani",
         "phone": "8964805033",
-        "email": "",
+        "email": "mahak.bachani@btech.christuniversity.in",
         "role": "Student POC"
       },
       {
         "name": "Dr Aparna Sreedharan",
         "phone": "7598430592",
-        "email": "",
+        "email": "sreedharan@christuniversity.in",
         "role": "Faculty POC"
       }
     ]
@@ -608,7 +614,7 @@ const RAW_EVENTS_DATA: EventDetail[] = [
     ],
     "faqs": [],
     "prizePool": "22K",
-    "date": "46280",
+    "date": "15 Sept 2026",
     "fee": "₹500 per team",
     "teamSize": "2-4 members",
     "format": "Team",
@@ -616,21 +622,21 @@ const RAW_EVENTS_DATA: EventDetail[] = [
     "registrationLink": "https://forms.gle/y3jVJjrsipLa3a2NA",
     "coordinators": [
       {
-        "name": "Annmarie Vinish",
-        "phone": "89213 23033",
-        "email": "",
+        "name": "Rebecca Lenin Koshy",
+        "phone": "6356117125",
+        "email": "rebecca.lenin@btech.christuniversity.in",
         "role": "Student POC"
       },
       {
-        "name": "Rebecca Lenin Koshy",
-        "phone": "63561 17125",
-        "email": "",
+        "name": "Annmarie Vinish",
+        "phone": "8921323033",
+        "email": "annmarie.vinish@btech.christuniversity.in",
         "role": "Student POC"
       },
       {
         "name": "Dr. Joseph Rodrigues",
-        "phone": "94205 94564",
-        "email": "",
+        "phone": "9420594564",
+        "email": "joseph.rodrigues@christuniversity.in",
         "role": "Faculty POC"
       }
     ]
@@ -649,19 +655,31 @@ const RAW_EVENTS_DATA: EventDetail[] = [
       "Silence and sportsmanship must be maintained in the playing arena at all times."
     ],
     "faqs": [],
-    "prizePool": "₹10,000",
+    "prizePool": "15K",
     "date": "15 Sept 2026",
     "fee": "₹200",
     "teamSize": "Individual",
-    "format": "Live Event",
+    "format": "Solo",
     "image": "/images/events/chess-grandmaster.png",
     "registrationLink": "https://docs.google.com/forms/d/e/1FAIpQLScl5_s9O-V-DrnAg70WvLdN1F4oYGvJ4rWSPReLK9ZUIRvb4A/viewform?usp=publish-editor",
     "coordinators": [
       {
-        "name": "Chess Desk",
-        "phone": "Email: chess.events@christuniversity.in",
-        "email": "",
-        "role": "Coordinator"
+        "name": "Shelomi",
+        "phone": "8657486564",
+        "email": "shelomi.dsouza@btech.christuniversity.in",
+        "role": "Student POC"
+      },
+      {
+        "name": "Thomas Mathew Sajeev",
+        "phone": "9747482072",
+        "email": "thomas.mathewsajeev@btech.christuniversity.in",
+        "role": "Student POC"
+      },
+      {
+        "name": "Dr.Raghu MS",
+        "phone": "9844626569",
+        "email": "raghu.ms@christuniversity.in",
+        "role": "Faculty POC"
       }
     ]
   },
@@ -920,20 +938,26 @@ const RAW_EVENTS_DATA: EventDetail[] = [
     "coordinators": [
       {
         "name": "Nithish Krishna",
-        "phone": "80565 21119",
-        "email": "",
+        "phone": "8056521119",
+        "email": "nithish.krishna@btech.christuniversity.in",
         "role": "Student POC"
       },
       {
         "name": "Prateekesha Mariappan",
-        "phone": "87627 66267",
-        "email": "",
+        "phone": "8762766267",
+        "email": "prateksha.mariappan@btech.christuniversity.in",
         "role": "Student POC"
       },
       {
         "name": "Dr. Amruta Rout",
         "phone": "7008561379",
-        "email": "",
+        "email": "amruta.rout@christuniversity.in",
+        "role": "Faculty POC"
+      },
+      {
+        "name": "Dr Sajna Parimita Panigrahi",
+        "phone": "8123567185",
+        "email": "sajna.panigrahi@christuniversity.in",
         "role": "Faculty POC"
       }
     ]
@@ -962,7 +986,7 @@ const RAW_EVENTS_DATA: EventDetail[] = [
     ],
     "faqs": [],
     "prizePool": "22K",
-    "date": "46280",
+    "date": "15 Sept 2026",
     "fee": "₹500 per team",
     "teamSize": "2–4",
     "format": "Team",
@@ -970,21 +994,21 @@ const RAW_EVENTS_DATA: EventDetail[] = [
     "registrationLink": "https://docs.google.com/forms/d/e/1FAIpQLSfQnvaYdFwdmgv1PIodCkED6_W0MqHiBxDAAvIhLqGmVIFAdA/viewform?usp=dialog",
     "coordinators": [
       {
-        "name": "Deeba Dharshan",
+        "name": "Deeba Dharshan S",
         "phone": "9360624127",
-        "email": "",
+        "email": "deebadharshan.s@btech.christuniversity.in",
         "role": "Student POC"
       },
       {
-        "name": "Kishor",
-        "phone": "9944381104",
-        "email": "",
+        "name": "Jiss James",
+        "phone": "8848924982",
+        "email": "jiss.james@btech.christuniversity.in",
         "role": "Student POC"
       },
       {
-        "name": "Dr Arpan Pradhan)",
+        "name": "Dr Arpan Pradhan",
         "phone": "9439291900",
-        "email": "",
+        "email": "arpan.pradhan@christuniversity.in",
         "role": "Faculty POC"
       }
     ]
@@ -1025,19 +1049,19 @@ const RAW_EVENTS_DATA: EventDetail[] = [
       {
         "name": "Dakshan S",
         "phone": "7639032960",
-        "email": "",
+        "email": "Dakshan.s@arch.christuniversity.in",
         "role": "Student POC"
       },
       {
         "name": "Dharshini",
         "phone": "8904220419",
-        "email": "",
+        "email": "darshini.r@arch.christuniversity.in",
         "role": "Student POC"
       },
       {
-        "name": "Prof.Rashmi Pai",
-        "phone": "9481943788",
-        "email": "",
+        "name": "Prof. Apeksha S J",
+        "phone": "9972971559",
+        "email": "apeksha.sj@christuniversity.in",
         "role": "Faculty POC"
       }
     ]
@@ -1079,29 +1103,29 @@ const RAW_EVENTS_DATA: EventDetail[] = [
     ],
     "faqs": [],
     "prizePool": "22K",
-    "date": "46280",
+    "date": "15 Sept 2026",
     "fee": "₹400 per team",
-    "teamSize": "46057",
+    "teamSize": "2–4",
     "format": "Team",
     "image": "/images/events/evmotion26.png",
     "registrationLink": "https://docs.google.com/forms/d/e/1FAIpQLSeRQ002Hr-N0oWkKxA0q30BwI2oz3VWwJWbSUV9A2sn8JWkgg/viewform?usp=publish-editor",
     "coordinators": [
       {
-        "name": "Gayini. D",
-        "phone": "9150412925",
-        "email": "",
+        "name": "Suryan E",
+        "phone": "9364011311",
+        "email": "suryan.e@btech.christuniversity.in",
         "role": "Student POC"
       },
       {
         "name": "C.S Anuj",
         "phone": "9629107588",
-        "email": "",
+        "email": "anuj.cs@btech.christuniversity.in",
         "role": "Student POC"
       },
       {
         "name": "Dr. Venkataswamy. R",
         "phone": "7829222446",
-        "email": "",
+        "email": "venkataswamy.r@christuniversity.in",
         "role": "Faculty POC"
       }
     ]
@@ -1152,29 +1176,29 @@ const RAW_EVENTS_DATA: EventDetail[] = [
     ],
     "faqs": [],
     "prizePool": "22K",
-    "date": "46281",
+    "date": "16 Sept 2026",
     "fee": "₹400 per team",
-    "teamSize": "46085",
+    "teamSize": "3–4",
     "format": "Team",
     "image": "/images/events/finaloverride.png",
     "registrationLink": "https://docs.google.com/forms/d/e/1FAIpQLScmen14FqKNeoE4R1bkg0ndTnTaNQCSdLJfS3MkVFfnjNTqrQ/viewform?usp=publish-editor",
     "coordinators": [
       {
-        "name": "Anushka Pravakar",
-        "phone": "8971754070",
-        "email": "",
+        "name": "Viswakowsik K",
+        "phone": "9944762559",
+        "email": "viswakowsik.k@btech.christuniversity.in",
         "role": "Student POC"
       },
       {
-        "name": "Kevin Samuel",
-        "phone": "8148364568",
-        "email": "",
+        "name": "Mervin A",
+        "phone": "9345464915",
+        "email": "mervin.a@btech.christuniversity.in",
         "role": "Student POC"
       },
       {
-        "name": "Prof Wims Magdalene Mary",
-        "phone": "8760480810",
-        "email": "",
+        "name": "Dr Amos Bortiew",
+        "phone": "7086606498",
+        "email": "amos.bortiew@christuniversity.in",
         "role": "Faculty POC"
       }
     ]
@@ -1218,21 +1242,21 @@ const RAW_EVENTS_DATA: EventDetail[] = [
     "registrationLink": "https://docs.google.com/forms/d/e/1FAIpQLSeWJIyY35YtRBq94i4MW2pHHwSEHjdCa7-AvgAJ0Nh9osbzKw/viewform?usp=dialog",
     "coordinators": [
       {
-        "name": "Shourya Bhatia",
-        "phone": "95606 88098",
-        "email": "",
+        "name": "Andrea Joseph",
+        "phone": "8867728278",
+        "email": "andrea.joseph@psyh.christuniversity.in",
         "role": "Student POC"
       },
       {
-        "name": "Vishnu Vardhan",
-        "phone": "95855 15202",
-        "email": "",
+        "name": "Divisha R",
+        "phone": "9315520712",
+        "email": "divisha.r@psyh.christuniversity.in",
         "role": "Student POC"
       },
       {
-        "name": "Dr. Shilpa B M",
-        "phone": "99729 39466",
-        "email": "",
+        "name": "Dr. Varsha Singh",
+        "phone": "9473976071",
+        "email": "varsha.singh@christuniversity.in",
         "role": "Faculty POC"
       }
     ]
@@ -1270,9 +1294,9 @@ const RAW_EVENTS_DATA: EventDetail[] = [
     ],
     "faqs": [],
     "prizePool": "22K",
-    "date": "46281",
+    "date": "16 Sept 2026",
     "fee": "₹400 per team",
-    "teamSize": "46057",
+    "teamSize": "2–4",
     "format": "Team",
     "image": "/images/events/grid.jpg",
     "registrationLink": "https://docs.google.com/forms/d/e/1FAIpQLSfDCFRLBkoWWKhFL7QwU0B7cd-Pv2bNO-3c_QlTQlfGd7MUbA/viewform?usp=publish-editor",
@@ -1280,19 +1304,19 @@ const RAW_EVENTS_DATA: EventDetail[] = [
       {
         "name": "Aishwarya Vijayakumar",
         "phone": "9994039368",
-        "email": "",
+        "email": "aishwarya.vijayakumar@btech.christuniversity.in",
         "role": "Student POC"
       },
       {
         "name": "Akshaya",
         "phone": "8610466674",
-        "email": "",
+        "email": "akshaya.gk@btech.christuniversity.in",
         "role": "Student POC"
       },
       {
-        "name": "Dr. Varaprasad Janamala",
-        "phone": "9620446677",
-        "email": "",
+        "name": "Dr. Srihari Gude",
+        "phone": "7013324555",
+        "email": "srihari.gude@christunivesity.in",
         "role": "Faculty POC"
       }
     ]
@@ -1373,7 +1397,7 @@ const RAW_EVENTS_DATA: EventDetail[] = [
     ],
     "faqs": [],
     "prizePool": "22K",
-    "date": "46280",
+    "date": "15 Sept 2026",
     "fee": "₹450 per team",
     "teamSize": "4",
     "format": "Team",
@@ -1495,7 +1519,7 @@ const RAW_EVENTS_DATA: EventDetail[] = [
     "prizePool": "22k",
     "date": "15,16",
     "fee": "₹800 per team",
-    "teamSize": "46058",
+    "teamSize": "2–5",
     "format": "Team",
     "image": "/images/events/mud-run.png",
     "registrationLink": "https://docs.google.com/forms/d/e/1FAIpQLSfZV6QoABzAvXT4SAjjS9D8h4rTHO9fv9fVDbQ2xhL7l-sfnQ/viewform?usp=publish-editor",
@@ -1503,19 +1527,19 @@ const RAW_EVENTS_DATA: EventDetail[] = [
       {
         "name": "Shane Christopher",
         "phone": "9620047083",
-        "email": "",
+        "email": "shane.christopher@btech.christuniversity.in",
         "role": "Student POC"
       },
       {
-        "name": "Jaswanth B.",
+        "name": "Jaswanth B",
         "phone": "9901310444",
-        "email": "",
+        "email": "jaswanth.b@btech.christuniversity.in",
         "role": "Student POC"
       },
       {
         "name": "Dr. Aneesh Jose",
-        "phone": "9535339545",
-        "email": "",
+        "phone": "9986429290",
+        "email": "aneesh.jose@christuniversity.in",
         "role": "Faculty POC"
       }
     ]
@@ -1581,7 +1605,7 @@ const RAW_EVENTS_DATA: EventDetail[] = [
     ],
     "faqs": [],
     "prizePool": "22K",
-    "date": "46281",
+    "date": "16 Sept 2026",
     "fee": "₹400 per team",
     "teamSize": "3",
     "format": "Team",
@@ -1644,29 +1668,29 @@ const RAW_EVENTS_DATA: EventDetail[] = [
     ],
     "faqs": [],
     "prizePool": "22K",
-    "date": "46280",
+    "date": "15 Sept 2026",
     "fee": "₹400 per team",
-    "teamSize": "46057",
+    "teamSize": "2–4",
     "format": "Team",
     "image": "/images/events/technicalworkshop.jpg",
     "registrationLink": "https://docs.google.com/forms/d/e/1FAIpQLSe8JnGaSXJkqRMYFgxCfrhG9dFa3vrzFKdFGlhEDCutz9qCsQ/viewform?usp=publish-editor",
     "coordinators": [
       {
-        "name": "Anan Mathew",
-        "phone": "8304083815",
-        "email": "",
+        "name": "Jeni Riya Lobo",
+        "phone": "9886147389",
+        "email": "jeni.riya@btech.christuniversity.in",
         "role": "Student POC"
       },
       {
         "name": "Likith Kumar B.M",
-        "phone": "+91 77605 20879",
-        "email": "",
+        "phone": "7760520879",
+        "email": "likith.kumar@btech.christuniversity.in",
         "role": "Student POC"
       },
       {
         "name": "Dr. Arun Chithrabhanu",
         "phone": "8939673940",
-        "email": "",
+        "email": "arun.chithrabhanu@christuniversity.in",
         "role": "Faculty POC"
       }
     ]
@@ -1704,27 +1728,27 @@ const RAW_EVENTS_DATA: EventDetail[] = [
     "prizePool": "22K",
     "date": "15 Sept",
     "fee": "₹400 per team",
-    "teamSize": "46057",
+    "teamSize": "2–4",
     "format": "Team",
     "image": "/images/events/coderelay.jpg",
     "registrationLink": "https://docs.google.com/forms/d/e/1FAIpQLSc9toMXil4kWeIWtWRI5MOKAeCceO1Nsr7N4F0CU4mlrfuevw/viewform?usp=publish-editor",
     "coordinators": [
       {
-        "name": "Joes Francis Sebastian",
-        "phone": "8951982062",
-        "email": "",
+        "name": "Joshua Thomas",
+        "phone": "9880310075",
+        "email": "joshua.thomas@btech.christuniversity.in",
         "role": "Student POC"
       },
       {
-        "name": "Debayan Ghose",
-        "phone": "8867727460",
-        "email": "",
+        "name": "Anna Theresa",
+        "phone": "8867084473",
+        "email": "anna.theresa@btech.christuniversity.in",
         "role": "Student POC"
       },
       {
         "name": "Dr. Bejoy BJ",
         "phone": "8281300742",
-        "email": "",
+        "email": "bejoy.bj@christuniversity.in",
         "role": "Faculty POC"
       }
     ]
@@ -1748,11 +1772,11 @@ const RAW_EVENTS_DATA: EventDetail[] = [
       "Decisions of the quizmasters and event judges are final and binding across all rounds."
     ],
     "faqs": [],
-    "prizePool": "₹20,000",
+    "prizePool": "22K",
     "date": "15-16 Sept 2026",
-    "fee": "₹400",
-    "teamSize": "2-3 Members",
-    "format": "Live Event",
+    "fee": "₹500 per team",
+    "teamSize": "2 members",
+    "format": "Team",
     "image": "/images/events/qizz-whizz.jpg",
     "registrationLink": "https://docs.google.com/forms/d/e/1FAIpQLSfJIH5GkgFVNkV5vPX5LdX6OdVfOzjBsSmYZ-0osJgbPkZWRQ/viewform?usp=publish-editor",
     "coordinators": [
@@ -1835,20 +1859,26 @@ const RAW_EVENTS_DATA: EventDetail[] = [
     "coordinators": [
       {
         "name": "Anuj Anand E. K.",
-        "phone": "81119 70594",
-        "email": "",
+        "phone": "8111970594",
+        "email": "anuj.anand@btech.christuniversity.in",
         "role": "Student POC"
       },
       {
         "name": "Siona Melissa D'Souza",
-        "phone": "81058 44847",
-        "email": "",
+        "phone": "8105844847",
+        "email": "siona.melissa@btech.christuniversity.in",
         "role": "Student POC"
       },
       {
         "name": "Dr. Yogeesha C",
         "phone": "9964143702",
-        "email": "",
+        "email": "yogeesha.c@christuniversity.in",
+        "role": "Faculty POC"
+      },
+      {
+        "name": "Dr Divya G S",
+        "phone": "9611392675",
+        "email": "divya.gs@christuniversity.in",
         "role": "Faculty POC"
       }
     ]
@@ -1929,7 +1959,7 @@ const RAW_EVENTS_DATA: EventDetail[] = [
     ],
     "faqs": [],
     "prizePool": "22K",
-    "date": "46280",
+    "date": "15 Sept 2026",
     "fee": "₹500 per team",
     "teamSize": "2–4",
     "format": "Team",
@@ -1938,20 +1968,20 @@ const RAW_EVENTS_DATA: EventDetail[] = [
     "coordinators": [
       {
         "name": "Saud Khan",
-        "phone": "9019039788",
-        "email": "",
+        "phone": "7019039788",
+        "email": "saud.khan@btech.christuniversity.in",
         "role": "Student POC"
       },
       {
         "name": "Sandeep R",
         "phone": "9791628559",
-        "email": "",
+        "email": "sandeep.r@btech.christuniversity.in",
         "role": "Student POC"
       },
       {
         "name": "Dr Aniket",
         "phone": "9985004656",
-        "email": "",
+        "email": "aniket.nitin@christuniversity.in",
         "role": "Faculty POC"
       }
     ]
@@ -1993,21 +2023,21 @@ const RAW_EVENTS_DATA: EventDetail[] = [
     "registrationLink": "https://docs.google.com/forms/d/e/1FAIpQLSe5vw6_Fm6RaVzkPzulKS3pOLT_xEj82bxxpdq1B-cjjbX0MQ/viewform?usp=publish-editor",
     "coordinators": [
       {
-        "name": "Andrea Joseph",
-        "phone": "88677 28278",
-        "email": "",
+        "name": "Pearl John",
+        "phone": "7303069827",
+        "email": "pearl.john@psyh.christuniversity.in",
         "role": "Student POC"
       },
       {
-        "name": "Divisha R",
-        "phone": "93155 20712",
-        "email": "",
+        "name": "Milan Deepak",
+        "phone": "8075456898",
+        "email": "milan.deepak@psyh.christuniversity.in",
         "role": "Student POC"
       },
       {
-        "name": "Dr. Varsha Singh",
-        "phone": "94739 76071",
-        "email": "",
+        "name": "Dr. Archika  Johari",
+        "phone": "8667380187",
+        "email": "archika.johari@christunversity.in",
         "role": "Faculty POC"
       }
     ]
@@ -2267,21 +2297,21 @@ const RAW_EVENTS_DATA: EventDetail[] = [
     "registrationLink": "https://docs.google.com/forms/d/e/1FAIpQLSejeMwRkTbci9NphLCRNS9ChSH_NzCLlDg_kvJ2j5_0FVuPaw/viewform?usp=publish-editor",
     "coordinators": [
       {
-        "name": "Joshua Thomas",
-        "phone": "9880310075",
-        "email": "",
+        "name": "Joe Francis Sebastian",
+        "phone": "8951982062",
+        "email": "joe.francis@btech.christuniversity.in",
         "role": "Student POC"
       },
       {
-        "name": "Anna Theresa",
-        "phone": "8867084473",
-        "email": "",
+        "name": "Debayan Ghose",
+        "phone": "8867727460",
+        "email": "debayan.ghose@btech.christuniversity.in",
         "role": "Student POC"
       },
       {
         "name": "Dr. Sherin Paul",
         "phone": "9385446508",
-        "email": "",
+        "email": "shein98@gmail.com",
         "role": "Faculty POC"
       }
     ]
@@ -2323,21 +2353,21 @@ const RAW_EVENTS_DATA: EventDetail[] = [
     "registrationLink": "https://docs.google.com/forms/d/e/1FAIpQLSdn4iA4RVexnpafMPaDPHRdbHl3DQwjPg4SNibj-HJFqlTDAA/viewform?usp=publish-editor",
     "coordinators": [
       {
-        "name": "Pearl John",
-        "phone": "73030 69827",
-        "email": "",
+        "name": "Shourya Bhatia",
+        "phone": "9560688098",
+        "email": "shourya.bhatia@psyh.christuniversity.in",
         "role": "Student POC"
       },
       {
-        "name": "Milan Deepak",
-        "phone": "80754 56898",
-        "email": "",
+        "name": "Vishnu Vardhan",
+        "phone": "9585515202",
+        "email": "vishnu.vardhan@psyh.christuniversity.in",
         "role": "Student POC"
       },
       {
-        "name": "Dr. Archika  Johari",
-        "phone": "86673 80187",
-        "email": "",
+        "name": "Dr. Shilpa B M",
+        "phone": "9972939466",
+        "email": "shilpa.borehalli@christuniversity.in",
         "role": "Faculty POC"
       }
     ]
@@ -2401,7 +2431,7 @@ const RAW_EVENTS_DATA: EventDetail[] = [
     ],
     "faqs": [],
     "prizePool": "15K",
-    "date": "46280",
+    "date": "15 Sept 2026",
     "fee": "₹200 per person",
     "teamSize": "Individual",
     "format": "Solo",
@@ -2409,21 +2439,21 @@ const RAW_EVENTS_DATA: EventDetail[] = [
     "registrationLink": "https://docs.google.com/forms/d/e/1FAIpQLScGH0od4oPhe2WVsNyYLJOjGd2XcMIBtoPJdHIGnRDb9XrhZg/viewform?usp=publish-editor",
     "coordinators": [
       {
-        "name": "Viswakowsik K",
-        "phone": "9944762559",
-        "email": "",
+        "name": "Anushka Pravakar",
+        "phone": "8971754070",
+        "email": "anushka.pravakar@btech.christuniversity.in",
         "role": "Student POC"
       },
       {
-        "name": "Mervin A",
-        "phone": "9345464915",
-        "email": "",
+        "name": "Kevin Samuel R",
+        "phone": "8148364568",
+        "email": "kevin.samuel@btech.christuniversity.in",
         "role": "Student POC"
       },
       {
-        "name": "Dr Amos Bortiew",
-        "phone": "7086606498",
-        "email": "",
+        "name": "Prof. Wims Magdalene Mary",
+        "phone": "8760480810",
+        "email": "vimsy.87@gmail.com",
         "role": "Faculty POC"
       }
     ]
@@ -2499,9 +2529,9 @@ const RAW_EVENTS_DATA: EventDetail[] = [
     ],
     "faqs": [],
     "prizePool": "22K",
-    "date": "46280",
+    "date": "15 Sept 2026",
     "fee": "₹400 per team",
-    "teamSize": "46085",
+    "teamSize": "3–4",
     "format": "Team",
     "image": "/images/events/enigma.jpg",
     "registrationLink": "https://docs.google.com/forms/d/e/1FAIpQLScKNw3cW_uLO0BEw4Cd8gLsaDWHwVkZbrGeppICT0srA6N4qA/viewform?usp=publish-editor",
@@ -2614,24 +2644,30 @@ const RAW_EVENTS_DATA: EventDetail[] = [
     "teamSize": "1-3 members",
     "format": "Individual / Team",
     "image": "/images/events/ai-film-fest.jpg",
-    "registrationLink": "https://docs.google.com/forms/d/e/1FAIpQLSfJYqcdPrz567wroA9RiS5MI2UgK5Rxj-CblSAYAdp5tj_5qA/viewform?usp=publish-editor",
+    "registrationLink": "https://forms.gle/yydVnKFD1v2UCzY67",
     "coordinators": [
       {
         "name": "Noel K Roy",
-        "phone": "91104 00683",
-        "email": "",
+        "phone": "9110400683",
+        "email": "noel.kolanchery@btech.christuniversity.in",
         "role": "Student POC"
       },
       {
         "name": "Adhithya Krishna C S",
-        "phone": "81398 26765",
-        "email": "",
+        "phone": "8139826765",
+        "email": "adhithya.krishna@btech.christuniversity.in",
         "role": "Student POC"
       },
       {
         "name": "Dr. Vinay Jha Pillai",
-        "phone": "+91 91640 76123",
-        "email": "",
+        "phone": "9164076123",
+        "email": "vinay.pillai@christuniversity.in",
+        "role": "Faculty POC"
+      },
+      {
+        "name": "Mr. Geou Akshil",
+        "phone": "8861315195",
+        "email": "geou.akshil@christuniversity.in",
         "role": "Faculty POC"
       }
     ]
@@ -2654,7 +2690,7 @@ const RAW_EVENTS_DATA: EventDetail[] = [
       "4 vocalist mics + 2 SM58 mics will be provided for vocals or instruments based on the team's requirement.",
       "Member limit: 4 - 10 participants.",
       "Time limit: 7 + 3 minutes; exceeding the time limit will NOT lead to point reduction but all lines will be muted at the 10 minute mark."
-],
+    ],
     "faqs": [],
     "prizePool": "22k",
     "date": "15 sept",
@@ -2662,25 +2698,25 @@ const RAW_EVENTS_DATA: EventDetail[] = [
     "teamSize": "4-10 members",
     "format": "Team",
     "image": "/images/events/battle-of-bands.jpg",
-    "registrationLink": "https://docs.google.com/forms/d/e/1FAIpQLSfUQ00GlUmXqTn3TmXHpeANjnf7kaXveqe2DzzeGCWa-VDXQQ/viewform?usp=publish-editor",
+    "registrationLink": "https://forms.gle/WejYBf3Cni3QaNqm7",
     "coordinators": [
       {
-        "name": "Roshan Yohann Anand",
-        "phone": "98860 67257",
-        "email": "roshan.yohann@christuniversity.in",
-        "role": "Faculty Coordinator"
+        "name": "Adithyan C R",
+        "phone": "6282548054",
+        "email": "adithyan.cr@btech.christuniversity.in",
+        "role": "Student POC"
       },
       {
-        "name": "Vijay Prithvi",
-        "phone": "9944542810",
-        "email": "vijay.prithvi@christuniversity.in",
-        "role": "Student Coordinator"
+        "name": "Reuben Josey",
+        "phone": "7619544446",
+        "email": "reuben.josey@btech.christuniversity.in",
+        "role": "Student POC"
       },
       {
-        "name": "Devananda Baburaj",
-        "phone": "70250 60661",
-        "email": "deva.nanda@btech.christuniversity.in",
-        "role": "Student Coordinator"
+        "name": "Prof. Shruti Jalapur",
+        "phone": "9036417989",
+        "email": "shruti.jalapur@btech.christuniversity.in",
+        "role": "Faculty POC"
       }
     ]
   },
@@ -2703,33 +2739,33 @@ const RAW_EVENTS_DATA: EventDetail[] = [
       "11 mics and 2 DI Boxes will be provided.",
       "Member limit: 4 - 11 participants.",
       "Time limit: 7 + 3 minutes; exceeding the time limit will NOT lead to point reduction but all lines will be muted at the 10 minute mark."
-],
+    ],
     "faqs": [],
     "prizePool": "22k",
     "date": "15 sept",
     "fee": "₹750 per team",
-    "teamSize": "4-11 members",
+    "teamSize": "3-11 members",
     "format": "Team",
     "image": "/images/events/acapella.jpg",
-    "registrationLink": "https://docs.google.com/forms/d/e/1FAIpQLSeTlyj8b53IVxM_2wJt2Ja5wQccfd0x8Dwz0bmf-FjycQmZXA/viewform?usp=publish-editor",
+    "registrationLink": "https://forms.gle/PkraEryzWEApYSvT6",
     "coordinators": [
       {
-        "name": "Roshan Yohann Anand",
-        "phone": "98860 67257",
-        "email": "roshan.yohann@christuniversity.in",
-        "role": "Faculty Coordinator"
+        "name": "Joy Samson A",
+        "phone": "9380720592",
+        "email": "joy.samson@btech.Christuniversity.in",
+        "role": "Student POC"
       },
       {
-        "name": "Vijay Prithvi",
-        "phone": "9944542810",
-        "email": "vijay.prithvi@christuniversity.in",
-        "role": "Student Coordinator"
+        "name": "Harsh K",
+        "phone": "8595879627",
+        "email": "harsh.k@btech.christuniversity.in",
+        "role": "Student POC"
       },
       {
-        "name": "Devananda Baburaj",
-        "phone": "70250 60661",
-        "email": "deva.nanda@btech.christuniversity.in",
-        "role": "Student Coordinator"
+        "name": "Dr. Arul Prabakaran",
+        "phone": "9442394623",
+        "email": "arulprabakaran.s@christuniversity.in",
+        "role": "Faculty POC"
       }
     ]
   },
@@ -2752,7 +2788,7 @@ const RAW_EVENTS_DATA: EventDetail[] = [
       "Team Number Limit: 7-15.",
       "Time Limit: 7 + 2 minutes. (Entry to Exit Stage, Including setup)",
       "Exceeding the time limit will result in point reduction."
-],
+    ],
     "faqs": [],
     "prizePool": "22k",
     "date": "15 sept",
@@ -2760,25 +2796,25 @@ const RAW_EVENTS_DATA: EventDetail[] = [
     "teamSize": "7-15 members",
     "format": "Team",
     "image": "/images/events/theme-dance.jpg",
-    "registrationLink": "https://docs.google.com/forms/d/e/1FAIpQLSfqQXkJjpuWwP3irlVuBBLIYOLl11goItLt6ywLIuLSxYwiUA/viewform?usp=publish-editor",
+    "registrationLink": "https://forms.gle/WXcmyEkzchRZLxms5",
     "coordinators": [
       {
-        "name": "Roshan Yohann Anand",
-        "phone": "98860 67257",
-        "email": "roshan.yohann@christuniversity.in",
-        "role": "Faculty Coordinator"
+        "name": "Shashwat Buragohain",
+        "phone": "7099062182",
+        "email": "shashwat.buragohain@btech.christuniversity.in",
+        "role": "Student POC"
       },
       {
-        "name": "Vijay Prithvi",
-        "phone": "9944542810",
-        "email": "vijay.prithvi@christuniversity.in",
-        "role": "Student Coordinator"
+        "name": "Kavya Lakshmy",
+        "phone": "8281289659",
+        "email": "kavya.lakshmy@psyh.christuniversity.in",
+        "role": "Student POC"
       },
       {
-        "name": "Devananda Baburaj",
-        "phone": "70250 60661",
-        "email": "deva.nanda@btech.christuniversity.in",
-        "role": "Student Coordinator"
+        "name": "Dr. Jopaul",
+        "phone": "8138011592",
+        "email": "jopaul.mathew@christuniversity.in",
+        "role": "Faculty POC"
       }
     ]
   },
@@ -2799,7 +2835,7 @@ const RAW_EVENTS_DATA: EventDetail[] = [
       "All genres of music are encouraged. (western contemporary, Indian folk, Indian classical, Bollywood, hip-hop, etc.)",
       "Team Number Limit: 7-15.",
       "Time Limit: 6 + 1 minutes on stage."
-],
+    ],
     "faqs": [],
     "prizePool": "22k",
     "date": "15 sept",
@@ -2807,25 +2843,25 @@ const RAW_EVENTS_DATA: EventDetail[] = [
     "teamSize": "7-15 members",
     "format": "Team",
     "image": "/images/events/non-theme-dance.jpg",
-    "registrationLink": "https://docs.google.com/forms/d/e/1FAIpQLSdnHB6BkxT4UI5zxr0SBggfxZJrCZ00n0amBQ3gh40PpS-GrA/viewform?usp=publish-editor",
+    "registrationLink": "https://forms.gle/fqt9MKF6mRjpHrbc8",
     "coordinators": [
       {
-        "name": "Justin George",
-        "phone": "70125 19144",
-        "email": "justin.george@christuniversity.in",
-        "role": "Faculty Coordinator"
+        "name": "Gokul Saikrishnan",
+        "phone": "9884321622",
+        "email": "gokul.saikrishnan@btech.christuniversity.in",
+        "role": "Student POC"
       },
       {
-        "name": "Vijay Prithvi",
-        "phone": "9944542810",
-        "email": "vijay.prithvi@christuniversity.in",
-        "role": "Student Coordinator"
+        "name": "Jessica John Osta",
+        "phone": "9674172230",
+        "email": "jessica.john@btech.christuniversity.in",
+        "role": "Student POC"
       },
       {
-        "name": "Devananda Baburaj",
-        "phone": "70250 60661",
-        "email": "deva.nanda@btech.christuniversity.in",
-        "role": "Student Coordinator"
+        "name": "Dr. Jyothi Mandala",
+        "phone": "9985108923",
+        "email": "jyothi.mandala@christuniversity.in",
+        "role": "Faculty POC"
       }
     ]
   },
@@ -2838,10 +2874,10 @@ const RAW_EVENTS_DATA: EventDetail[] = [
     "overview": "The sound of the beat brought to life! Street Dance Battle blends raw talent with spontaneous skill, challenging individual dancers in high-stakes duels. It's dance in its most raw and competitive form, unfiltered, improvised, and full of fire!",
     "stages": [
       {
-            "title": "Event Structure",
-            "desc": "3 rounds."
+        "title": "Event Structure",
+        "desc": "3 rounds."
       }
-],
+    ],
     "rules": [
       "Multiple entries are allowed.",
       "Time limit: 45 seconds per round.",
@@ -2850,7 +2886,7 @@ const RAW_EVENTS_DATA: EventDetail[] = [
       "Vulgarity in costumes is strictly prohibited.",
       "Any form of vulgarity will lead to immediate disqualification.",
       "Uniqueness & originality should be there."
-],
+    ],
     "faqs": [],
     "prizePool": "15k",
     "date": "16 sept",
@@ -2858,25 +2894,25 @@ const RAW_EVENTS_DATA: EventDetail[] = [
     "teamSize": "Solo",
     "format": "Solo",
     "image": "/images/events/street-dance.jpg",
-    "registrationLink": "https://docs.google.com/forms/d/e/1FAIpQLSeY8IWTm03d8sVNZf5S4fpA8EzkK2dpkQRrc69zZJf7ARnMiQ/viewform?usp=publish-editor",
+    "registrationLink": "https://forms.gle/bRUzwjUyfZD8AhYMA",
     "coordinators": [
       {
-        "name": "Justin George",
-        "phone": "70125 19144",
-        "email": "justin.george@christuniversity.in",
-        "role": "Faculty Coordinator"
+        "name": "Sreeshma",
+        "phone": "6363403151",
+        "email": "sreeshma.b@btech.christuniversity.in",
+        "role": "Student POC"
       },
       {
-        "name": "Vijay Prithvi",
-        "phone": "9944542810",
-        "email": "vijay.prithvi@christuniversity.in",
-        "role": "Student Coordinator"
+        "name": "Disha Jaiswal",
+        "phone": "9717791775",
+        "email": "disha.jaiswal@psyh.christuniversity.in",
+        "role": "Student POC"
       },
       {
-        "name": "Devananda Baburaj",
-        "phone": "70250 60661",
-        "email": "deva.nanda@btech.christuniversity.in",
-        "role": "Student Coordinator"
+        "name": "Dr. Santhrupth B C",
+        "phone": "9591866572",
+        "email": "santhrupth.bc@christuniversity.in",
+        "role": "Faculty POC"
       }
     ]
   },
@@ -2896,33 +2932,33 @@ const RAW_EVENTS_DATA: EventDetail[] = [
       "No Government related slogans or political agendas/religious agendas, political parties or individual attacks will be tolerated.",
       "Usage of loud-speakers or electronic instruments is discouraged.",
       "Explicit language/Gestures/Costumes or writings will lead to immediate disqualification."
-],
+    ],
     "faqs": [],
     "prizePool": "22k",
     "date": "16 sept",
     "fee": "₹750",
-    "teamSize": "Maximum 25 members",
+    "teamSize": "Maximum 20 members",
     "format": "Team",
     "image": "/images/events/street-play.jpg",
-    "registrationLink": "https://docs.google.com/forms/d/e/1FAIpQLScef6E1kTvU0wJSdILZo8SrWh0Jzl91679a9EveJB8nq-Eohg/viewform?usp=publish-editor",
+    "registrationLink": "https://forms.gle/UUsv3MNZUJekGiN27",
     "coordinators": [
       {
-        "name": "Justin George",
-        "phone": "70125 19144",
-        "email": "justin.george@christuniversity.in",
-        "role": "Faculty Coordinator"
+        "name": "Amruth Bhaskar",
+        "phone": "8590922885",
+        "email": "Amruth.bhaskar@btech.christuniversity.in",
+        "role": "Student POC"
       },
       {
-        "name": "Vijay Prithvi",
-        "phone": "9944542810",
-        "email": "vijay.prithvi@christuniversity.in",
-        "role": "Student Coordinator"
+        "name": "Blessing Roshan",
+        "phone": "7810008415",
+        "email": "blessing.roshan@btech.christuniversity.in",
+        "role": "Student POC"
       },
       {
-        "name": "Devananda Baburaj",
-        "phone": "70250 60661",
-        "email": "deva.nanda@btech.christuniversity.in",
-        "role": "Student Coordinator"
+        "name": "Prof. Vipin Wilson",
+        "phone": "9048071659",
+        "email": "vipin.wilson@christuniversity.in",
+        "role": "Faculty POC"
       }
     ]
   }

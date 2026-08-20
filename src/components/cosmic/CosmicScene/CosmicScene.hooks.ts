@@ -1,11 +1,11 @@
 import { useEffect, useRef } from 'react';
 import * as THREE from 'three';
-import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader.js';
 import { EffectComposer } from 'three/examples/jsm/postprocessing/EffectComposer.js';
 import { RenderPass } from 'three/examples/jsm/postprocessing/RenderPass.js';
 import { UnrealBloomPass } from 'three/examples/jsm/postprocessing/UnrealBloomPass.js';
-import { GLOW_VERT, GLOW_FRAG, RING_FRAG } from "../shaders";
+import { GLOW_VERT, GLOW_FRAG } from '../shaders';
 
+/* ─── Star sprite texture ────────────────────────────────────────────── */
 function createStarSprite(): THREE.Texture {
   const size = 64;
   const canvas = document.createElement('canvas');
@@ -13,318 +13,403 @@ function createStarSprite(): THREE.Texture {
   canvas.height = size;
   const ctx = canvas.getContext('2d')!;
   const half = size / 2;
-
-  ctx.beginPath();
-  ctx.arc(half, half, half - 1, 0, Math.PI * 2);
-  ctx.fillStyle = '#ffffff';
-  ctx.fill();
-
+  const grad = ctx.createRadialGradient(half, half, 0, half, half, half);
+  grad.addColorStop(0, 'rgba(255,255,255,1)');
+  grad.addColorStop(0.15, 'rgba(255,255,255,0.85)');
+  grad.addColorStop(0.4, 'rgba(255,255,255,0.25)');
+  grad.addColorStop(1, 'rgba(255,255,255,0)');
+  ctx.fillStyle = grad;
+  ctx.fillRect(0, 0, size, size);
   return new THREE.CanvasTexture(canvas);
 }
 
-const sections = [
-  // 0: HERO - Wide orbital start
-  { angle: 0, radius: 6.5, height: 1.2 },
-  // 1: INTRODUCING - Sweep inward
-  { angle: Math.PI * 1.0, radius: 4.2, height: 0.5 },
-  // 2: MAGNOVITE - Zooms close into galaxy core
-  { angle: Math.PI * 1.8, radius: 2.2, height: 0.15 },
-  // 3: VIDEO - Scroll-controlled steps start here
-  { angle: Math.PI * 2.5, radius: 2.6, height: -0.2 },
-  // 4: CHRIS
-  { angle: Math.PI * 3.2, radius: 2.8, height: 0.4 },
-  // 5: SPEAKER
-  { angle: Math.PI * 3.9, radius: 2.5, height: 0.6 },
-  // 6: EXITED
-  { angle: Math.PI * 4.6, radius: 2.3, height: -0.3 },
-  // 7: COUNTDOWN
-  { angle: Math.PI * 5.2, radius: 2.0, height: 0.1 }
-];
-
-function smootherStep(t: number): number {
-  t = Math.max(0, Math.min(1, t));
-  return t * t * t * (t * (t * 6 - 15) + 10);
+/* ─── Galaxy params ──────────────────────────────────────────────────── */
+interface GalaxyParams {
+  armParticles: number;
+  coreParticles: number;
+  bgStars: number;
+  arms: number;
+  armSpread: number;
+  radius: number;
+  coreRadius: number;
+  thickness: number;
+  tiltAngle: number;
 }
 
-let globalHasPlayedExplosion = false;
+const DESKTOP_PARAMS: GalaxyParams = {
+  armParticles: 65000,
+  coreParticles: 55000,
+  bgStars: 50000,
+  arms: 2,
+  armSpread: 0.75,
+  radius: 8.0,
+  coreRadius: 1.0,
+  thickness: 0.22,
+  tiltAngle: (15 * Math.PI) / 180,
+};
+
+const MOBILE_PARAMS: GalaxyParams = {
+  armParticles: 25000,
+  coreParticles: 25000,
+  bgStars: 20000,
+  arms: 2,
+  armSpread: 0.75,
+  radius: 8.0,
+  coreRadius: 1.0,
+  thickness: 0.22,
+  tiltAngle: (15 * Math.PI) / 180,
+};
+
+/* ─── Generate galaxy geometry with scatter attributes ───────────────── */
+function generateGalaxy(p: GalaxyParams) {
+  const total = p.armParticles + p.coreParticles + p.bgStars;
+  const positions = new Float32Array(total * 3);
+  const colors = new Float32Array(total * 3);
+  // Scatter direction — random unit vector for explosion
+  const dirs = new Float32Array(total * 3);
+  // Random values per particle for staggering/variation
+  const rands = new Float32Array(total * 4);
+
+  let idx = 0;
+
+  function gauss() {
+    let u = 0, v = 0;
+    while (u === 0) u = Math.random();
+    while (v === 0) v = Math.random();
+    return Math.sqrt(-2.0 * Math.log(u)) * Math.cos(2.0 * Math.PI * v);
+  }
+
+  // lumScale exists because the brightness curve below floors out at 0.3, which
+  // is too bright to pack particles densely under additive blending — the core
+  // would accumulate into a solid white blob. It lets a dense population be
+  // dimmed per-particle so overlap blends into haze instead of blowing out.
+  function addParticle(x: number, y: number, z: number, brightness: number, lumScale = 1.0) {
+    positions[idx * 3] = x;
+    positions[idx * 3 + 1] = y;
+    positions[idx * 3 + 2] = z;
+
+    // Monochrome color based on brightness
+    const lum = (0.3 + brightness * 0.7) * lumScale;
+    colors[idx * 3] = lum;
+    colors[idx * 3 + 1] = lum;
+    colors[idx * 3 + 2] = lum;
+
+    // Random scatter direction (unit sphere)
+    const u = Math.random() * 2 - 1;
+    const th = Math.random() * Math.PI * 2;
+    const sq = Math.sqrt(1 - u * u);
+    const jitter = 0.6 + Math.random() * 0.8;
+    dirs[idx * 3] = sq * Math.cos(th) * jitter;
+    dirs[idx * 3 + 1] = sq * Math.sin(th) * (0.5 + Math.random() * 0.7);
+    dirs[idx * 3 + 2] = u * jitter;
+
+    // Random values for staggering
+    rands[idx * 4] = Math.random();
+    rands[idx * 4 + 1] = Math.random();
+    rands[idx * 4 + 2] = Math.random();
+    rands[idx * 4 + 3] = Math.random();
+
+    idx++;
+  }
+
+  // ── Spiral arm particles ──
+  for (let i = 0; i < p.armParticles; i++) {
+    const armIdx = i % p.arms;
+    const armAngle = (armIdx / p.arms) * Math.PI * 2;
+    const r = Math.pow(Math.random(), 0.65) * p.radius;
+    const spiralAngle = armAngle + Math.log(1 + r * 2.5) * 1.8;
+    const spread = gauss() * p.armSpread * (0.15 + r / p.radius * 0.85);
+    const angle = spiralAngle + spread;
+
+    const x = Math.cos(angle) * r;
+    const y = gauss() * p.thickness * (0.3 + 0.7 * (r / p.radius));
+    const z = Math.sin(angle) * r;
+
+    const distNorm = r / p.radius;
+    const brightness = Math.max(0.05, 1.0 - distNorm * 0.8 + Math.random() * 0.15);
+    addParticle(x, y, z, brightness);
+  }
+
+  // ── Core/bulge particles ──
+  // Dense and dim: roughly 3x the population at ~1/3 the per-particle
+  // luminance, which holds total core brightness about where it was while
+  // closing the gaps that made the bulge read as separate dots.
+  const CORE_LUM_SCALE = 0.32;
+  for (let i = 0; i < p.coreParticles; i++) {
+    // Slight outward bias vs a raw |gauss()|, which piles almost everything at
+    // r≈0 where the glow billboard already covers it. Pushing particles into
+    // the surrounding halo is what actually fills the visible gaps.
+    const r = Math.pow(Math.abs(gauss()), 0.85) * p.coreRadius * 0.5;
+    const theta = Math.random() * Math.PI * 2;
+    const phi = Math.acos(2 * Math.random() - 1);
+
+    const x = r * Math.sin(phi) * Math.cos(theta);
+    const y = r * Math.cos(phi) * 0.35;
+    const z = r * Math.sin(phi) * Math.sin(theta);
+
+    const brightness = 0.4 + Math.random() * 0.3;
+    addParticle(x, y, z, brightness, CORE_LUM_SCALE);
+  }
+
+  // ── Background stars ──
+  for (let i = 0; i < p.bgStars; i++) {
+    const r = i < p.bgStars * 0.4
+      ? 4 + Math.random() * 8
+      : 12 + Math.random() * 43;
+    const theta = Math.random() * Math.PI * 2;
+    const phi = Math.acos(2 * Math.random() - 1);
+
+    const x = r * Math.sin(phi) * Math.cos(theta);
+    const y = r * Math.sin(phi) * Math.sin(theta);
+    const z = r * Math.cos(phi);
+
+    const brightness = 0.03 + Math.random() * 0.18;
+    addParticle(x, y, z, brightness);
+  }
+
+  const geometry = new THREE.BufferGeometry();
+  geometry.setAttribute('position', new THREE.BufferAttribute(positions, 3));
+  geometry.setAttribute('color', new THREE.BufferAttribute(colors, 3));
+  geometry.setAttribute('aDir', new THREE.BufferAttribute(dirs, 3));
+  geometry.setAttribute('aRand', new THREE.BufferAttribute(rands, 4));
+
+  return geometry;
+}
+
+/* ─── Track whether intro has played this session ────────────────────── */
+let globalHasPlayedIntro = false;
+
+/* ─── Main hook ──────────────────────────────────────────────────────── */
 
 export function useCosmicScene(hostRef: React.RefObject<HTMLDivElement | null>) {
-  const mountRef = useRef<boolean>(false);
+  const sceneRef = useRef<{ cleanup: () => void } | null>(null);
 
   useEffect(() => {
     const host = hostRef.current;
-    if (!host || mountRef.current) return;
-    mountRef.current = true;
+    if (!host) return;
 
-    const scene = new THREE.Scene();
-    scene.background = new THREE.Color(0x040404);
-    scene.fog = new THREE.FogExp2(0x060606, 0.0075);
+    if (sceneRef.current) {
+      sceneRef.current.cleanup();
+      sceneRef.current = null;
+    }
 
-    const camera = new THREE.PerspectiveCamera(
-      55,
-      window.innerWidth / window.innerHeight,
-      0.1,
-      1000
-    );
-
+    /* ── Renderer setup ── */
     const checkMobile = () => window.innerWidth <= 768 || ('ontouchstart' in window && window.innerWidth <= 1024);
     let isMobileDevice = checkMobile();
+    const params = isMobileDevice ? MOBILE_PARAMS : DESKTOP_PARAMS;
+
+    const scene = new THREE.Scene();
+    scene.background = new THREE.Color(0x000000);
+
+    const camera = new THREE.PerspectiveCamera(55, window.innerWidth / window.innerHeight, 0.1, 500);
 
     const renderer = new THREE.WebGLRenderer({
       antialias: !isMobileDevice,
       alpha: false,
-      powerPreference: 'high-performance'
+      powerPreference: 'high-performance',
     });
     renderer.setSize(window.innerWidth, window.innerHeight);
     renderer.setPixelRatio(isMobileDevice ? 1.0 : Math.min(window.devicePixelRatio, 2));
     renderer.outputColorSpace = THREE.SRGBColorSpace;
     renderer.toneMapping = THREE.ACESFilmicToneMapping;
-    renderer.toneMappingExposure = 0.65;
-
+    renderer.toneMappingExposure = 0.9;
     host.appendChild(renderer.domElement);
 
+    /* ── Post-processing ── */
     const composer = new EffectComposer(renderer);
-    const renderPass = new RenderPass(scene, camera);
-    composer.addPass(renderPass);
-
+    composer.addPass(new RenderPass(scene, camera));
     const bloomPass = new UnrealBloomPass(
       new THREE.Vector2(window.innerWidth, window.innerHeight),
-      0.14,
-      0.35,
-      0.85
+      0.3, 0.5, 0.82
     );
-    if (!isMobileDevice) {
-      composer.addPass(bloomPass);
-    }
+    if (!isMobileDevice) composer.addPass(bloomPass);
 
-    const ambientLight = new THREE.AmbientLight(0xffffff, 0.22);
-    scene.add(ambientLight);
-
+    /* ── Galaxy particles ── */
     const starSprite = createStarSprite();
-    let baseStarSize = 0.012;
-    let activePointsMat: THREE.PointsMaterial | null = null;
-    let activeAmbientGlowMat: THREE.PointsMaterial | null = null;
+    const galaxyGeometry = generateGalaxy(params);
 
-    let progressUniform = { value: 0.0 };
-    let timeUniform = { value: 0.0 };
+    // Uniforms injected into PointsMaterial via onBeforeCompile
+    const uProgress = { value: globalHasPlayedIntro ? 1.0 : 0.0 };
+    const uTime = { value: 0.0 };
 
-    const glowU = {
-      uIntensity: { value: 0 },
-      uCore: { value: 1 },
-    };
-    const glow = new THREE.Mesh(
-      new THREE.PlaneGeometry(1, 1),
-      new THREE.ShaderMaterial({
-        uniforms: glowU,
-        vertexShader: GLOW_VERT,
-        fragmentShader: GLOW_FRAG,
-        transparent: true,
-        depthWrite: false,
-        depthTest: false,
-        blending: THREE.AdditiveBlending,
-      })
-    );
-    glow.position.set(0, 0, 0);
-    scene.add(glow);
-
-    const ringU = {
-      uProgress: { value: 0 },
-      uIntensity: { value: 0 },
-    };
-    const ring = new THREE.Mesh(
-      new THREE.PlaneGeometry(1, 1),
-      new THREE.ShaderMaterial({
-        uniforms: ringU,
-        vertexShader: GLOW_VERT,
-        fragmentShader: RING_FRAG,
-        transparent: true,
-        depthWrite: false,
-        depthTest: false,
-        blending: THREE.AdditiveBlending,
-      })
-    );
-    ring.position.set(0, 0, 0);
-    scene.add(ring);
-
-    let isModelLoaded = false;
-    const gltfLoader = new GLTFLoader();
-    gltfLoader.load('/models/hero.glb', (gltf) => {
-      const heroModel = gltf.scene;
-
-      const box = new THREE.Box3().setFromObject(heroModel);
-      const worldCenter = box.getCenter(new THREE.Vector3());
-      heroModel.position.sub(worldCenter);
-
-      const sphere = box.getBoundingSphere(new THREE.Sphere());
-      const clusterRadius = sphere.radius;
-      baseStarSize = Math.max(clusterRadius * 0.0018, 0.012);
-
-      heroModel.traverse((child) => {
-        if (child instanceof THREE.Points) {
-          const posAttr = child.geometry.attributes.position;
-          const colorAttr = child.geometry.attributes.color;
-
-          if (posAttr && colorAttr) {
-            const count = posAttr.count;
-            const tempColor = new THREE.Color();
-            const hsl = { h: 0, s: 0, l: 0 };
-            
-            const dirs = new Float32Array(count * 3);
-            const rands = new Float32Array(count * 4);
-
-            for (let i = 0; i < count; i++) {
-              const x = posAttr.getX(i);
-              const y = posAttr.getY(i);
-              const z = posAttr.getZ(i);
-              const dist = Math.sqrt(x * x + y * y + z * z);
-              
-              const u = Math.random() * 2 - 1;
-              const th = Math.random() * Math.PI * 2;
-              const sq = Math.sqrt(1 - u * u);
-              const jitter = 0.55 + Math.random() * 0.75;
-              dirs[i * 3] = sq * Math.cos(th) * jitter;
-              dirs[i * 3 + 1] = sq * Math.sin(th) * (0.65 + Math.random() * 0.7);
-              dirs[i * 3 + 2] = u * jitter;
-
-              rands[i * 4] = Math.random();
-              rands[i * 4 + 1] = Math.random();
-              rands[i * 4 + 2] = Math.random();
-              rands[i * 4 + 3] = Math.random();
-
-              tempColor.setRGB(colorAttr.getX(i), colorAttr.getY(i), colorAttr.getZ(i));
-              tempColor.getHSL(hsl);
-              hsl.s = Math.min(hsl.s * 1.1, 1.0);
-              tempColor.setHSL(hsl.h, hsl.s, hsl.l);
-
-              if (dist > 12) {
-                const fade = Math.max(1.0 - (dist - 12) / 12.0, 0.12);
-                tempColor.r *= fade;
-                tempColor.g *= fade;
-                tempColor.b *= fade;
-              }
-
-              colorAttr.setXYZ(i, tempColor.r, tempColor.g, tempColor.b);
-            }
-            colorAttr.needsUpdate = true;
-            child.geometry.setAttribute('aDir', new THREE.BufferAttribute(dirs, 3));
-            child.geometry.setAttribute('aRand', new THREE.BufferAttribute(rands, 4));
-          }
-
-          const mat = child.material as THREE.PointsMaterial;
-          activePointsMat = mat;
-
-          mat.color = new THREE.Color(0xffffff);
-          mat.vertexColors = true;
-          mat.map = starSprite;
-          mat.size = baseStarSize;
-          mat.sizeAttenuation = true;
-          mat.transparent = true;
-          mat.depthWrite = false;
-          mat.blending = THREE.AdditiveBlending;
-          mat.opacity = 0.85;
-          mat.needsUpdate = true;
-          
-          child.geometry.computeBoundingSphere();
-          const localCenter = child.geometry.boundingSphere!.center;
-
-          mat.onBeforeCompile = (shader) => {
-            shader.uniforms.uP = progressUniform;
-            shader.uniforms.uTime = timeUniform;
-            shader.uniforms.uCenter = { value: localCenter };
-            shader.vertexShader = `
-              attribute vec3 aDir;
-              attribute vec4 aRand;
-              uniform float uP;
-              uniform float uTime;
-              uniform vec3 uCenter;
-              ${shader.vertexShader}
-            `.replace(
-              `#include <begin_vertex>`,
-              `
-              vec3 transformed = vec3(position);
-              
-              float p = uP;
-              
-              // 1. DENSE PULSAR CORE
-              float pulse = 0.5 + 0.5 * sin(uTime * 2.6 + aRand.w * 6.2831);
-              float tension = smoothstep(0.05, 0.20, p);
-              float coreRadius = 0.10 * (0.25 + aRand.y) * (1.0 + 0.35 * pulse + 1.6 * tension);
-              
-              // 2. STELLAR EXPLOSION
-              float e1 = pow(smoothstep(0.20, 0.40, p), 0.55);
-              float e2 = pow(smoothstep(0.40, 0.60, p), 0.65);
-              float explosionRadius = coreRadius
-                + e1 * (2.5 + 8.0 * aRand.x)
-                + e2 * (16.0 + 55.0 * aRand.z);
-                
-              // The GLTF model is scaled down by ~0.01 internally.
-              // To keep particles densely visible on screen without flying too far out,
-              // we scale the local explosion radius by ~12x.
-              explosionRadius *= 12.0;
-                
-              vec3 explPos = uCenter + aDir * explosionRadius;
-              
-              // Organic drift while scattered
-              float flap = sin(uTime * 14.0 + aRand.w * 18.0);
-              float flutterFactor = 0.75 * e2 + 0.25 * e1;
-              explPos += flutterFactor * vec3(
-                sin(uTime * 1.8 + aRand.w * 12.0) * 8.0 + flap * 2.0,
-                cos(uTime * 1.5 + aRand.x * 11.0) * 8.0 + flap * 2.0,
-                sin(uTime * 1.2 + aRand.y * 9.0) * 6.0
-              ) * 4.0;
-              
-              // 3. MORPH INTO GALAXY (starts later, so particles hang in the air scattered)
-              float morph = smoothstep(0.75, 1.0, p);
-              float morphStagger = clamp((morph - (aRand.x * 0.2)) * 1.2, 0.0, 1.0);
-              
-              transformed = mix(explPos, position, smoothstep(0.0, 1.0, morphStagger));
-              `
-            ).replace(
-              `#include <fog_vertex>`,
-              `
-              #include <fog_vertex>
-              
-              // Hide particles completely during the initial pulsing core phase (p < 0.2)
-              // so they don't form a glitchy aliased ball.
-              float visibility = smoothstep(0.15, 0.25, p);
-              
-              // Slightly scale up particles during the blast and scatter phase
-              // so they are highly visible as they fly inward.
-              float blastScale = mix(3.0, 1.0, smoothstep(0.85, 1.0, p));
-              gl_PointSize *= blastScale * visibility;
-              `
-            );
-          };
-
-          // Removed ambientGlowPoints to ensure crisp, distinct particles
-        }
-      });
-
-      scene.add(heroModel);
-      isModelLoaded = true; // Wait for model before starting sequence
+    const galaxyMaterial = new THREE.PointsMaterial({
+      size: 0.025,
+      sizeAttenuation: true,
+      map: starSprite,
+      vertexColors: true,
+      transparent: true,
+      depthWrite: false,
+      blending: THREE.AdditiveBlending,
+      opacity: 0.75,
     });
 
-    const currentCamPos = new THREE.Vector3();
-    const currentCamTarget = new THREE.Vector3(0, 0, 0);
+    // Inject custom vertex shader for the explosion → scatter → formation animation
+    galaxyMaterial.onBeforeCompile = (shader) => {
+      shader.uniforms.uP = uProgress;
+      shader.uniforms.uTime = uTime;
 
-    let ambientSpin = 0;
-    let currentSmoothRawIndex = globalHasPlayedExplosion ? 2.0 : 0;
-    let targetScrollIndex = 2.0;
-    let autoProgress = globalHasPlayedExplosion ? 2.0 : 0;
-    let autoSequenceComplete = globalHasPlayedExplosion;
+      // Declare attributes and uniforms
+      shader.vertexShader = `
+        attribute vec3 aDir;
+        attribute vec4 aRand;
+        uniform float uP;
+        uniform float uTime;
+        ${shader.vertexShader}
+      `;
 
+      // Replace vertex transform
+      shader.vertexShader = shader.vertexShader.replace(
+        `#include <begin_vertex>`,
+        `
+        vec3 transformed = vec3(position);
+        float p = uP;
+
+        // ─── BEAT 1: CHARGING SINGULARITY (p 0.00 → 0.18) ───
+        // A tight seed that breathes, then implodes just before it blows.
+        float pulse = 0.5 + 0.5 * sin(uTime * 5.0 + aRand.w * 6.2831);
+        float implode = 1.0 - 0.6 * smoothstep(0.09, 0.18, p);
+        float coreRadius = 0.17 * (0.20 + aRand.y) * (0.78 + 0.40 * pulse) * implode;
+
+        // ─── BEAT 2/3: DETONATION → EXPANSION (p 0.18 → 0.62) ───
+        // Per-particle ignition delay gives the shockwave a thickness instead
+        // of every particle leaving on the exact same frame.
+        float delay = aRand.x * 0.05;
+        float tb = clamp((p - 0.18 - delay) / 0.44, 0.0, 1.0);
+
+        // Ballistic burst: near-instant launch, then drag bleeds off the speed.
+        float burst = 1.0 - exp(-4.5 * tb);
+
+        // Wide velocity spread — a fast leading shell that clears the frame
+        // plus slow stragglers that keep the screen populated behind it.
+        float speedVar = 0.18 + 1.30 * pow(aRand.z, 1.5);
+        float explosionRadius = coreRadius + burst * speedVar * 15.0;
+
+        vec3 scatteredPos = aDir * explosionRadius;
+
+        // Turbulence: held to ~10% of the blast radius so the debris curls
+        // without losing the outward direction that reads as an explosion.
+        float turb = burst * (0.6 + 0.8 * aRand.y);
+        scatteredPos += turb * vec3(
+          sin(uTime * 0.90 + aRand.w * 20.0),
+          cos(uTime * 0.75 + aRand.x * 17.0),
+          sin(uTime * 0.60 + aRand.y * 23.0)
+        ) * 1.8;
+
+        // ─── BEAT 4: ACCRETION INTO THE GALAXY (p 0.62 → 1.00) ───
+        // Staggered by target radius: the core knits together first, the arms
+        // sweep in behind it, and the background field settles in last.
+        float tm = clamp((p - 0.62) / 0.38, 0.0, 1.0);
+        float stagger = clamp(length(position) / 12.0, 0.0, 1.0);
+        float m = clamp((tm - stagger * 0.38) / 0.62, 0.0, 1.0);
+        m = m * m * (3.0 - 2.0 * m);
+
+        vec3 infall = mix(scatteredPos, position, m);
+
+        // Swirl the in-fall around the galactic axis so particles spiral home
+        // instead of sliding along a straight line. Decays to zero on arrival.
+        float swirl = (1.0 - m) * 2.4 * (0.55 + 0.55 * aRand.z);
+        float cs = cos(swirl);
+        float sn = sin(swirl);
+        transformed = vec3(
+          infall.x * cs - infall.z * sn,
+          infall.y,
+          infall.x * sn + infall.z * cs
+        );
+        `
+      );
+
+      // Ignition flash + thermal falloff
+      shader.vertexShader = shader.vertexShader.replace(
+        `#include <color_vertex>`,
+        `
+        #include <color_vertex>
+
+        // A short white-out at the instant of detonation.
+        float ignite = exp(-26.0 * abs(uP - 0.20));
+        // Debris cools as it flies, then brightens back as the galaxy knits together.
+        float cool = mix(1.0, 0.72, smoothstep(0.20, 0.42, uP))
+          + 0.28 * smoothstep(0.62, 0.95, uP);
+        vColor *= cool * (1.0 + 3.2 * ignite);
+        `
+      );
+
+      // Adjust point size based on phase
+      shader.vertexShader = shader.vertexShader.replace(
+        `#include <fog_vertex>`,
+        `
+        #include <fog_vertex>
+
+        // During the charge, show only a sparse subset of the seed so 130k
+        // stacked sprites read as one dense glowing point instead of a
+        // blown-out white disc. Everything ignites at detonation.
+        float seedMask = step(aRand.y, 0.15);
+        float ignited = smoothstep(0.17, 0.23, p);
+        float visibility = max(seedMask * smoothstep(0.0, 0.06, p), ignited);
+
+        // Sprites flare at the blast and cool back to their resting size.
+        float flare = exp(-16.0 * abs(p - 0.21));
+        float sizeBoost = 1.0 + 2.4 * (1.0 - smoothstep(0.20, 0.80, p)) + 3.0 * flare;
+        gl_PointSize *= sizeBoost * visibility;
+        `
+      );
+    };
+
+    const galaxyPoints = new THREE.Points(galaxyGeometry, galaxyMaterial);
+    galaxyPoints.rotation.x = params.tiltAngle;
+    galaxyPoints.position.y = -0.8; // Shift galaxy down to sit behind countdown, clearing the text
+    scene.add(galaxyPoints);
+
+    /* ── Core glow ──────────────────────────────────────────────────────
+       Point sprites always resolve into individual dots at the centre, no
+       matter how many are stacked. A continuous additive billboard is what
+       reads as a star, so the particles become the haze around it rather
+       than the light source itself. */
+    const glowUniforms = {
+      uIntensity: { value: 0.0 },
+      uCore: { value: 1.0 },
+      uSpike: { value: 0.0 },
+    };
+    const glowMaterial = new THREE.ShaderMaterial({
+      vertexShader: GLOW_VERT,
+      fragmentShader: GLOW_FRAG,
+      uniforms: glowUniforms,
+      transparent: true,
+      depthWrite: false,
+      depthTest: false,
+      blending: THREE.AdditiveBlending,
+    });
+    const glowGeometry = new THREE.PlaneGeometry(1, 1);
+    const glowMesh = new THREE.Mesh(glowGeometry, glowMaterial);
+    glowMesh.position.copy(galaxyPoints.position);
+    glowMesh.renderOrder = 2;
+    scene.add(glowMesh);
+
+    /* ── Camera ── */
+    const cameraDistance = 8.5;
+    const cameraHeight = 0.3;
+    camera.position.set(0, cameraHeight, cameraDistance);
+    camera.lookAt(0, -0.4, 0); // Look slightly down to keep it centered nicely
+
+    /* ── Animation state ── */
+    let autoProgress = globalHasPlayedIntro ? 1.0 : 0.0;
+    let introComplete = globalHasPlayedIntro;
     let lastFrameTime = performance.now();
     let animId = 0;
-    
     let lastUiFade = '';
     const root = document.documentElement;
+    let targetSpinAngle = 0;
+    let currentSpinAngle = 0;
+    let ambientRotation = 0;
+    let mouseX = 0;
+    let mouseY = 0;
+    let disposed = false;
 
+    /* ── FOV helper ── */
     function updateCameraFov() {
       const aspect = window.innerWidth / window.innerHeight;
       camera.aspect = aspect;
       camera.near = 0.1;
-      camera.far = 1000;
-  
+      camera.far = 500;
       if (aspect < 1.4) {
         const refFovRad = (55 * Math.PI) / 180;
         const refAspect = 1.4;
@@ -336,9 +421,9 @@ export function useCosmicScene(hostRef: React.RefObject<HTMLDivElement | null>) 
       }
       camera.updateProjectionMatrix();
     }
-
     updateCameraFov();
 
+    /* ── Events ── */
     const onResize = () => {
       isMobileDevice = checkMobile();
       updateCameraFov();
@@ -349,19 +434,14 @@ export function useCosmicScene(hostRef: React.RefObject<HTMLDivElement | null>) 
     window.addEventListener('resize', onResize);
 
     const onScroll = () => {
-      if (!autoSequenceComplete) return;
-
+      if (!introComplete) return;
       const scrollY = window.scrollY;
       const maxScroll = Math.max(document.documentElement.scrollHeight - window.innerHeight, 1);
       const scrollFrac = Math.min(Math.max(scrollY / maxScroll, 0), 1);
-
-      // Map scroll progress from section 2.0 to 7.0
-      targetScrollIndex = 2.0 + scrollFrac * 5.0;
+      targetSpinAngle = scrollFrac * Math.PI * 6;
     };
     window.addEventListener('scroll', onScroll, { passive: true });
 
-    let mouseX = 0;
-    let mouseY = 0;
     const onMouseMove = (e: MouseEvent) => {
       if (isMobileDevice) return;
       mouseX = (e.clientX / window.innerWidth - 0.5) * 2;
@@ -369,141 +449,143 @@ export function useCosmicScene(hostRef: React.RefObject<HTMLDivElement | null>) 
     };
     window.addEventListener('mousemove', onMouseMove, { passive: true });
 
+    /* ─── Smoothstep helper ─── */
+    function smoothstep(a: number, b: number, x: number) {
+      const t = Math.min(1, Math.max(0, (x - a) / (b - a)));
+      return t * t * (3 - 2 * t);
+    }
+    function bump(x: number, a: number, b: number) {
+      const t = Math.min(1, Math.max(0, (x - a) / (b - a)));
+      return Math.sin(t * Math.PI) ** 2 * (t > 0 && t < 1 ? 1 : 0);
+    }
+    function lerp(a: number, b: number, t: number) {
+      return a + (b - a) * t;
+    }
+
+    /* ─── Intro pacing ───────────────────────────────────────────────────
+       Progress advances at different rates per beat so the sequence has
+       rhythm: a slow charge, a held breath, a snap detonation, a drifting
+       expansion, and a long dramatic accretion. */
+    function introSpeed(x: number) {
+      if (x < 0.14) return 0.20;  // charge
+      if (x < 0.18) return 0.09;  // anticipation — the inhale before the bang
+      if (x < 0.34) return 0.62;  // detonation
+      if (x < 0.62) return 0.30;  // expansion
+      return lerp(0.22, 0.12, (x - 0.62) / 0.38); // accretion, decelerating
+    }
+
+    /* The core glow has three overlapping lifetimes: the star seed that
+       carries the charge, the flash that consumes it at detonation, and the
+       galactic core that reassembles at the end. Summing them means each
+       hands off to the next without any explicit phase branching. */
+    function glowState(x: number, t: number) {
+      const breath = 0.5 + 0.5 * Math.sin(t * 0.7);
+
+      const seed = 1.0 - smoothstep(0.16, 0.26, x);
+      // Narrow window: a wide bump reads as a long white wash that hides the
+      // debris entirely rather than as a detonation.
+      const flash = bump(x, 0.17, 0.32);
+      const galaxy = smoothstep(0.66, 1.0, x);
+
+      // The quad carries the spikes, so it stays wider than the bright core.
+      const seedScale = lerp(0.7, 1.6, smoothstep(0.0, 0.16, x));
+
+      return {
+        // Resting core is kept deliberately modest: it sits directly behind the
+        // white hero copy, so a hotter or wider bulge costs text legibility.
+        scale: seedScale * seed + 3.6 * flash + (2.5 + 0.12 * breath) * galaxy,
+        intensity:
+          0.95 * smoothstep(0.0, 0.08, x) * seed +
+          1.6 * flash +
+          (0.62 + 0.06 * breath) * galaxy,
+        // A star has spikes; a galactic bulge does not.
+        spike: seed * 0.9 + flash * 0.5,
+      };
+    }
+
+    /* Camera pulls tight on the seed, is shoved back by the blast, then
+       settles into the resting frame as the galaxy forms. */
+    function introCameraDistance(x: number) {
+      const shoved = lerp(5.6, 10.0, smoothstep(0.17, 0.36, x));
+      return lerp(shoved, cameraDistance, smoothstep(0.5, 1.0, x));
+    }
+
+    /* ── Render loop ── */
     function renderFrame() {
+      if (disposed) return;
       const now = performance.now();
-      const deltaSeconds = Math.min((now - lastFrameTime) / 1000, 0.1); // Cap to prevent massive jumps when model parses
+      const dt = Math.min((now - lastFrameTime) / 1000, 0.1);
       lastFrameTime = now;
 
-      ambientSpin += deltaSeconds * 0.12;
-      timeUniform.value += deltaSeconds;
+      uTime.value += dt;
 
-      // Update the progress uniform based on autoProgress
-      // autoProgress goes 0 -> 2 over ~6 seconds.
-      // We want uP to go 0 -> 1 over the first 4 seconds.
-      let p = Math.min(1.0, autoProgress * 0.75);
-      progressUniform.value = p;
+      // ── Auto-progress: 0 → 1 over ~4.7 seconds ──
+      if (!introComplete) {
+        autoProgress = Math.min(1.0, autoProgress + dt * introSpeed(autoProgress));
+        uProgress.value = autoProgress;
 
-      // Update glow and ring based on uP (progress)
-      function bump(x: number, a: number, b: number) {
-        const t = Math.min(1, Math.max(0, (x - a) / (b - a)));
-        return Math.sin(t * Math.PI) ** 2 * (t > 0 && t < 1 ? 1 : 0);
-      }
-      function smoothstep(a: number, b: number, x: number) {
-        const t = Math.min(1, Math.max(0, (x - a) / (b - a)));
-        return t * t * (3 - 2 * t);
+        if (autoProgress >= 1.0) {
+          introComplete = true;
+          globalHasPlayedIntro = true;
+          onScroll(); // sync scroll position
+        }
       }
 
-      const pulse = 0.5 + 0.5 * Math.sin(timeUniform.value * 2.6);
-      const preBlast = 1 - smoothstep(0.28, 0.36, p);
-      const blast1 = bump(p, 0.3, 0.42);
-      const blast2 = bump(p, 0.56, 0.68);
+      const p = uProgress.value;
 
-      glowU.uIntensity.value =
-        preBlast * (0.45 + 0.6 * pulse + 1.8 * smoothstep(0.05, 0.3, p)) +
-        bump(p, 0.32, 0.4) * 3.0 +
-        bump(p, 0.58, 0.66) * 1.8;
-      glowU.uCore.value = preBlast * 1.4 + blast1 * 2.2 + blast2 * 1.2;
+      // ── Detonation flash: bloom and exposure spike with the blast ──
+      if (!introComplete) {
+        const flash = bump(p, 0.15, 0.36);
+        bloomPass.strength = 0.3 + 1.9 * flash;
+        renderer.toneMappingExposure = 0.9 + 0.5 * bump(p, 0.15, 0.32);
+      }
 
-      // Dim the central glow during wordmark reveal (p=0.4 to 0.6)
-      const revealDim = 1 - bump(p, 0.38, 0.56) * 0.7;
-      glowU.uIntensity.value *= revealDim;
-      glowU.uCore.value *= revealDim;
-
-      // Keep scale appropriate for our closer camera (e.g. 5 to 40 instead of 12 to 102)
-      const glowScale = 3 + 12 * smoothstep(0.1, 0.34, p) + 30 * blast1;
-      glow.scale.setScalar(glowScale);
-
-      const ringP = Math.max(smoothstep(0.3, 0.56, p), smoothstep(0.56, 0.84, p));
-      ringU.uProgress.value = ringP;
-      ringU.uIntensity.value = (blast1 * 2.2 + blast2 * 1.6) * (1 - smoothstep(0.9, 1.0, p));
-      ring.scale.setScalar(15 + 80 * ringP);
-
-      const fade = 1 - smoothstep(0.82, 0.98, p);
-      glow.visible = glowU.uIntensity.value * fade > 0.002;
-      glowU.uIntensity.value *= fade;
-
-      // Fade in the UI (MAGNOVITE text, countdown) after the explosion peaks
-      const uiFade = smoothstep(0.65, 0.95, p).toFixed(4);
+      // ── UI fade: show after galaxy is mostly formed ──
+      const uiFade = smoothstep(0.78, 0.97, p).toFixed(4);
       if (uiFade !== lastUiFade) {
-          root.style.setProperty('--ui-fade', uiFade);
-          lastUiFade = uiFade;
+        root.style.setProperty('--ui-fade', uiFade);
+        lastUiFade = uiFade;
       }
 
-      if (!autoSequenceComplete && isModelLoaded) {
-        let stepSpeed = 0.167;
+      // ── Scroll-driven spin (only after intro) ──
+      if (introComplete) {
+        const spinDiff = targetSpinAngle - currentSpinAngle;
+        currentSpinAngle += spinDiff * Math.min(dt * 4.0, 1.0);
+      }
+      ambientRotation += dt * 0.08;
 
-        if (autoProgress > 0.5 && autoProgress <= 1.25) {
-          stepSpeed = 0.35;
-        } else if (autoProgress > 1.25) {
-          const decelFactor = 1.0 - ((autoProgress - 1.25) / 0.75);
-          stepSpeed = 0.12 + (0.23 * Math.max(decelFactor, 0));
-        }
+      galaxyPoints.rotation.x = params.tiltAngle;
+      galaxyPoints.rotation.y = currentSpinAngle + ambientRotation;
 
-        autoProgress += deltaSeconds * stepSpeed;
+      // ── Core glow: size and brightness follow the phase ──
+      const glow = glowState(p, uTime.value);
+      glowMesh.scale.set(glow.scale, glow.scale, 1);
+      glowUniforms.uIntensity.value = glow.intensity;
+      glowUniforms.uSpike.value = glow.spike;
 
-        if (autoProgress >= 2.0) {
-          autoProgress = 2.0;
-          if (!autoSequenceComplete) {
-            autoSequenceComplete = true;
-            globalHasPlayedExplosion = true;
-          }
-          // Synchronize target with current scroll when startup finishes
-          onScroll();
-        }
-        currentSmoothRawIndex = autoProgress;
-      } else {
-        const diff = targetScrollIndex - currentSmoothRawIndex;
-        currentSmoothRawIndex += diff * Math.min(deltaSeconds * 6.0, 1.0);
+      // ── Camera with parallax, intro dolly and blast shake ──
+      const px = isMobileDevice ? 0 : mouseX * 0.15;
+      const py = isMobileDevice ? 0 : -mouseY * 0.12;
+
+      let dolly = cameraDistance;
+      let shakeX = 0;
+      let shakeY = 0;
+      if (!introComplete) {
+        dolly = introCameraDistance(p);
+        // Sharp jolt on detonation, damped out within a few tenths of progress.
+        const jolt = p < 0.18 ? 0 : 0.22 * Math.exp(-16.0 * (p - 0.18));
+        shakeX = Math.sin(uTime.value * 47.0) * jolt;
+        shakeY = Math.cos(uTime.value * 39.0) * jolt;
       }
 
-      const totalSections = sections.length - 1;
-      const safeRawIndex = Math.max(0, Math.min(currentSmoothRawIndex, totalSections));
+      camera.position.set(px + shakeX, cameraHeight + py + shakeY, dolly);
+      camera.lookAt(0, -0.4, 0);
 
-      const fromIdx = Math.floor(safeRawIndex);
-      const toIdx = Math.min(fromIdx + 1, totalSections);
-      const stepFrac = safeRawIndex - fromIdx;
+      // Billboard the glow after the camera has settled this frame, otherwise
+      // it inherits last frame's orientation and lags during the blast shake.
+      glowMesh.quaternion.copy(camera.quaternion);
 
-      const from = sections[fromIdx];
-      const to = sections[toIdx];
-
-      const t = smootherStep(stepFrac);
-
-      const baseAngle = from.angle + (to.angle - from.angle) * t;
-      const currentRadius = from.radius + (to.radius - from.radius) * t;
-      const currentHeight = from.height + (to.height - from.height) * t;
-
-      const totalAngle = baseAngle + ambientSpin;
-
-      currentCamPos.set(
-        Math.sin(totalAngle) * currentRadius,
-        currentHeight,
-        Math.cos(totalAngle) * currentRadius
-      );
-      currentCamTarget.set(0, 0, 0);
-
-      if (activePointsMat) {
-        const scrollFrac = Math.min(safeRawIndex / totalSections, 1);
-        const cp = Math.max((scrollFrac - 0.5) / 0.5, 0);
-        const sz = 1.0 - cp * 0.45;
-        const op = 1.0 - cp * 0.35;
-        activePointsMat.size = baseStarSize * sz * 0.35; // Significantly reduce size to match the old tiny butterfly particles
-        activePointsMat.opacity = 1.0 * op; // Make fully opaque for maximum clarity
-      }
-
-      const interactiveCamPos = currentCamPos.clone();
-      if (!isMobileDevice) {
-        interactiveCamPos.x += mouseX * 0.006;
-        interactiveCamPos.y += -mouseY * 0.006;
-      }
-
-      camera.position.copy(interactiveCamPos);
-      camera.lookAt(currentCamTarget);
-
-      // Make the glow and ring always perfectly face the camera (billboarding)
-      // This MUST happen after camera.lookAt so there is no 1-frame lag jitter
-      glow.quaternion.copy(camera.quaternion);
-      ring.quaternion.copy(camera.quaternion);
-
+      // ── Render ──
       if (isMobileDevice) {
         renderer.render(scene, camera);
       } else {
@@ -515,13 +597,26 @@ export function useCosmicScene(hostRef: React.RefObject<HTMLDivElement | null>) 
 
     renderFrame();
 
-    return () => {
+    /* ── Cleanup ── */
+    const cleanup = () => {
+      disposed = true;
       cancelAnimationFrame(animId);
       window.removeEventListener('resize', onResize);
       window.removeEventListener('scroll', onScroll);
       window.removeEventListener('mousemove', onMouseMove);
       renderer.dispose();
-      host.removeChild(renderer.domElement);
+      galaxyGeometry.dispose();
+      galaxyMaterial.dispose();
+      glowGeometry.dispose();
+      glowMaterial.dispose();
+
+      starSprite.dispose();
+      if (host.contains(renderer.domElement)) {
+        host.removeChild(renderer.domElement);
+      }
     };
+
+    sceneRef.current = { cleanup };
+    return cleanup;
   }, [hostRef]);
 }
