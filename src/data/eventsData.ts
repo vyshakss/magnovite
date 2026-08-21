@@ -55,7 +55,7 @@ const RAW_EVENTS_DATA: EventDetail[] = [
     "fee": "₹400 per team",
     "teamSize": "2",
     "format": "Team",
-    "image": "/images/events/antrix.png",
+    "image": "/images/events/antrix.webp",
     "registrationLink": "https://forms.gle/srhDJHDLEG9JLUmN6",
     "coordinators": [
       {
@@ -108,7 +108,7 @@ const RAW_EVENTS_DATA: EventDetail[] = [
     "fee": "₹700 per team",
     "teamSize": "2–5",
     "format": "Team",
-    "image": "/images/events/apex-strategy.png",
+    "image": "/images/events/apex-strategy.webp",
     "registrationLink": "https://docs.google.com/forms/d/e/1FAIpQLScDjJnENvIJJNrBV6VUGO5jGaKd_Qmy4_jc9kMBnBsZw-FCWw/viewform?usp=publish-editor",
     "coordinators": [
       {
@@ -159,7 +159,7 @@ const RAW_EVENTS_DATA: EventDetail[] = [
     "fee": "₹500 per team",
     "teamSize": "2",
     "format": "Team",
-    "image": "/images/events/arkicraft.png",
+    "image": "/images/events/arkicraft.webp",
     "registrationLink": "https://docs.google.com/forms/d/e/1FAIpQLSdtmwLIO4NbikAp0BqHjKqGKSsicjB_DrDYRvNfQW6gVzpt_Q/viewform?usp=dialog",
     "coordinators": [
       {
@@ -213,7 +213,7 @@ const RAW_EVENTS_DATA: EventDetail[] = [
     "fee": "₹400 per team",
     "teamSize": "2",
     "format": "Team",
-    "image": "/images/events/bards-gambit.png",
+    "image": "/images/events/bards-gambit.webp",
     "registrationLink": "https://docs.google.com/forms/d/e/1FAIpQLSc65v6inFjiO8l4TDoU8rXNRjPNZLLi07flASttEsurC5m6cw/viewform?usp=publish-editor",
     "coordinators": [
       {
@@ -270,7 +270,7 @@ const RAW_EVENTS_DATA: EventDetail[] = [
     "fee": "₹500 per team",
     "teamSize": "2–3",
     "format": "Team",
-    "image": "/images/events/battle-clay.png",
+    "image": "/images/events/battle-clay.webp",
     "registrationLink": "https://docs.google.com/forms/d/e/1FAIpQLSdSSZfUhj2o_hCcC_cPubUpa4sdlFEwOeORZ0LOX_FI0LnuAw/viewform?usp=publish-editor",
     "coordinators": [
       {
@@ -332,7 +332,7 @@ const RAW_EVENTS_DATA: EventDetail[] = [
     "fee": "₹900 per team",
     "teamSize": "3 members",
     "format": "Team",
-    "image": "/images/events/best-management-team.png",
+    "image": "/images/events/best-management-team.webp",
     "registrationLink": "https://docs.google.com/forms/d/e/1FAIpQLSdfz88LDlhAE4q3kVLOvc-AVIDYMzIm3PGhS2VAL7jeWI5lDQ/viewform?usp=publish-editor",
     "coordinators": [
       {
@@ -444,7 +444,7 @@ const RAW_EVENTS_DATA: EventDetail[] = [
     "fee": "₹400 per team",
     "teamSize": "3",
     "format": "Team",
-    "image": "/images/events/bitforge.png",
+    "image": "/images/events/bitforge.webp",
     "registrationLink": "https://forms.gle/nv6z4T6bDnmH7XGa7",
     "coordinators": [
       {
@@ -501,7 +501,7 @@ const RAW_EVENTS_DATA: EventDetail[] = [
     "fee": "₹800 per team",
     "teamSize": "4–6",
     "format": "Team",
-    "image": "/images/events/bot-wars.png",
+    "image": "/images/events/bot-wars.webp",
     "registrationLink": "https://docs.google.com/forms/d/e/1FAIpQLSdG1KnrDU70YdjZb-FWfhAQMert_tDCCI6w-ubPNGmoKcViHQ/viewform?usp=publish-editor",
     "coordinators": [
       {
@@ -562,7 +562,7 @@ const RAW_EVENTS_DATA: EventDetail[] = [
     "fee": "₹400 per team",
     "teamSize": "2",
     "format": "Team",
-    "image": "/images/events/canvas-of-minds.png",
+    "image": "/images/events/canvas-of-minds.webp",
     "registrationLink": "https://docs.google.com/forms/d/e/1FAIpQLScSxLCHw9YroO7c_9zxrEnmoLx8h8GCL3brhen7T5h65t6ukw/viewform?usp=header",
     "coordinators": [
       {
@@ -660,7 +660,7 @@ const RAW_EVENTS_DATA: EventDetail[] = [
     "fee": "₹200",
     "teamSize": "Individual",
     "format": "Solo",
-    "image": "/images/events/chess-grandmaster.png",
+    "image": "/images/events/chess-grandmaster.webp",
     "registrationLink": "https://docs.google.com/forms/d/e/1FAIpQLScl5_s9O-V-DrnAg70WvLdN1F4oYGvJ4rWSPReLK9ZUIRvb4A/viewform?usp=publish-editor",
     "coordinators": [
       {
@@ -717,7 +717,7 @@ const RAW_EVENTS_DATA: EventDetail[] = [
     "fee": "₹400 per team",
     "teamSize": "2–4",
     "format": "Team",
-    "image": "/images/events/cipher-quest.png",
+    "image": "/images/events/cipher-quest.webp",
     "registrationLink": "https://docs.google.com/forms/d/e/1FAIpQLSdWG_widE2nn2jJpioIKVj5bhCcgSdvK6N1jNh72KsO_KoccA/viewform?usp=publish-editor",
     "coordinators": [
       {
@@ -849,7 +849,7 @@ const RAW_EVENTS_DATA: EventDetail[] = [
     "fee": "₹800 per team",
     "teamSize": "2–4",
     "format": "Team",
-    "image": "/images/events/drag-race-xtreme.png",
+    "image": "/images/events/drag-race-xtreme.webp",
     "registrationLink": "https://docs.google.com/forms/d/e/1FAIpQLScdhvBav78141DyPQpEmsSDP6kFpGdKKuHaqFFVYZLB7j6FfA/viewform?usp=dialog",
     "coordinators": [
       {
@@ -1043,7 +1043,7 @@ const RAW_EVENTS_DATA: EventDetail[] = [
     "fee": "₹200 per person",
     "teamSize": "Individual",
     "format": "Solo",
-    "image": "/images/events/etherea.png",
+    "image": "/images/events/etherea.webp",
     "registrationLink": "https://docs.google.com/forms/d/e/1FAIpQLSfqc9fnzO9Jtc_vdqONaA-gGS5yvyyPS05yBYVUWnU7C_-dow/viewform?usp=publish-editor",
     "coordinators": [
       {
@@ -1107,7 +1107,7 @@ const RAW_EVENTS_DATA: EventDetail[] = [
     "fee": "₹400 per team",
     "teamSize": "2–4",
     "format": "Team",
-    "image": "/images/events/evmotion26.png",
+    "image": "/images/events/evmotion26.webp",
     "registrationLink": "https://docs.google.com/forms/d/e/1FAIpQLSeRQ002Hr-N0oWkKxA0q30BwI2oz3VWwJWbSUV9A2sn8JWkgg/viewform?usp=publish-editor",
     "coordinators": [
       {
@@ -1180,7 +1180,7 @@ const RAW_EVENTS_DATA: EventDetail[] = [
     "fee": "₹400 per team",
     "teamSize": "3–4",
     "format": "Team",
-    "image": "/images/events/finaloverride.png",
+    "image": "/images/events/finaloverride.webp",
     "registrationLink": "https://docs.google.com/forms/d/e/1FAIpQLScmen14FqKNeoE4R1bkg0ndTnTaNQCSdLJfS3MkVFfnjNTqrQ/viewform?usp=publish-editor",
     "coordinators": [
       {
@@ -1401,7 +1401,7 @@ const RAW_EVENTS_DATA: EventDetail[] = [
     "fee": "₹450 per team",
     "teamSize": "4",
     "format": "Team",
-    "image": "/images/events/infinity-code-red.png",
+    "image": "/images/events/infinity-code-red.webp",
     "registrationLink": "https://forms.gle/nNKk1G8uEybNkM8e6",
     "coordinators": [
       {
@@ -1521,7 +1521,7 @@ const RAW_EVENTS_DATA: EventDetail[] = [
     "fee": "₹800 per team",
     "teamSize": "2–5",
     "format": "Team",
-    "image": "/images/events/mud-run.png",
+    "image": "/images/events/mud-run.webp",
     "registrationLink": "https://docs.google.com/forms/d/e/1FAIpQLSfZV6QoABzAvXT4SAjjS9D8h4rTHO9fv9fVDbQ2xhL7l-sfnQ/viewform?usp=publish-editor",
     "coordinators": [
       {
@@ -1609,7 +1609,7 @@ const RAW_EVENTS_DATA: EventDetail[] = [
     "fee": "₹400 per team",
     "teamSize": "3",
     "format": "Team",
-    "image": "/images/events/pixel-whisper.png",
+    "image": "/images/events/pixel-whisper.webp",
     "registrationLink": "https://docs.google.com/forms/d/e/1FAIpQLSd0dcLSGxCCtNoWj4v9O5owFI6Ak9ovNnbBQE5vEBRUZ7lcXg/viewform?usp=publish-editor",
     "coordinators": [
       {
@@ -1777,7 +1777,7 @@ const RAW_EVENTS_DATA: EventDetail[] = [
     "fee": "₹500 per team",
     "teamSize": "2 members",
     "format": "Team",
-    "image": "/images/events/qizz-whizz.jpg",
+    "image": "/images/events/qizz-whizz.webp",
     "registrationLink": "https://docs.google.com/forms/d/e/1FAIpQLSfJIH5GkgFVNkV5vPX5LdX6OdVfOzjBsSmYZ-0osJgbPkZWRQ/viewform?usp=publish-editor",
     "coordinators": [
       {
@@ -2019,7 +2019,7 @@ const RAW_EVENTS_DATA: EventDetail[] = [
     "fee": "₹200 per person",
     "teamSize": "Individual",
     "format": "Solo",
-    "image": "/images/events/shipwreck.png",
+    "image": "/images/events/shipwreck.webp",
     "registrationLink": "https://docs.google.com/forms/d/e/1FAIpQLSe5vw6_Fm6RaVzkPzulKS3pOLT_xEj82bxxpdq1B-cjjbX0MQ/viewform?usp=publish-editor",
     "coordinators": [
       {
@@ -2073,7 +2073,7 @@ const RAW_EVENTS_DATA: EventDetail[] = [
     "fee": "₹600 per team",
     "teamSize": "6",
     "format": "Team",
-    "image": "/images/events/squid-game.png",
+    "image": "/images/events/squid-game.webp",
     "registrationLink": "https://docs.google.com/forms/d/e/1FAIpQLSf0qLbIm5R-xURhCXfHlrNMP0e3qqh2lxrYnUQy2xAhkayrlg/viewform?usp=publish-editor",
     "coordinators": [
       {
@@ -2129,7 +2129,7 @@ const RAW_EVENTS_DATA: EventDetail[] = [
     "fee": "₹500 per team",
     "teamSize": "2 members",
     "format": "Team",
-    "image": "/images/events/startup-showdown.png",
+    "image": "/images/events/startup-showdown.webp",
     "registrationLink": "https://docs.google.com/forms/d/e/1FAIpQLSezVxg3D4xEwsmTCmxjXaKa3UDZmCV1w71KaDUM4oqbklhzHA/viewform?usp=publish-editor",
     "coordinators": [
       {
@@ -2180,7 +2180,7 @@ const RAW_EVENTS_DATA: EventDetail[] = [
     "fee": "₹500 per team",
     "teamSize": "2",
     "format": "Team",
-    "image": "/images/events/strategic-finance.png",
+    "image": "/images/events/strategic-finance.webp",
     "registrationLink": "https://docs.google.com/forms/d/e/1FAIpQLSfYNE1V1OxtogkQ6HU1Hj4v9kCi2v_OyWlp9lRNKF3Cu9fWuw/viewform?usp=publish-editor",
     "coordinators": [
       {
@@ -2237,7 +2237,7 @@ const RAW_EVENTS_DATA: EventDetail[] = [
     "fee": "₹200 per person",
     "teamSize": "1",
     "format": "Solo",
-    "image": "/images/events/strikex.png",
+    "image": "/images/events/strikex.webp",
     "registrationLink": "https://docs.google.com/forms/d/e/1FAIpQLSfqcmfUY0RycwgKDs6ieUBJ9V4ZcwJb7tbKZJCGHkMNH8gxfw/viewform?usp=publish-editor",
     "coordinators": [
       {
@@ -2435,7 +2435,7 @@ const RAW_EVENTS_DATA: EventDetail[] = [
     "fee": "₹200 per person",
     "teamSize": "Individual",
     "format": "Solo",
-    "image": "/images/events/the-last-turn.png",
+    "image": "/images/events/the-last-turn.webp",
     "registrationLink": "https://docs.google.com/forms/d/e/1FAIpQLScGH0od4oPhe2WVsNyYLJOjGd2XcMIBtoPJdHIGnRDb9XrhZg/viewform?usp=publish-editor",
     "coordinators": [
       {
@@ -2585,7 +2585,7 @@ const RAW_EVENTS_DATA: EventDetail[] = [
     "fee": "₹200 per person",
     "teamSize": "30(Individual)",
     "format": "Solo",
-    "image": "/images/events/utopian-land.png",
+    "image": "/images/events/utopian-land.webp",
     "registrationLink": "https://docs.google.com/forms/d/e/1FAIpQLScAbvcMO2zxxLCQZ-G1X6nMSGpPRvvu9cIhHswFSurOSxKq3w/viewform?usp=publish-editor",
     "coordinators": [
       {
@@ -2746,7 +2746,7 @@ const RAW_EVENTS_DATA: EventDetail[] = [
     "fee": "₹750 per team",
     "teamSize": "3-11 members",
     "format": "Team",
-    "image": "/images/events/acapella.jpg",
+    "image": "/images/events/acapella.webp",
     "registrationLink": "https://forms.gle/PkraEryzWEApYSvT6",
     "coordinators": [
       {
@@ -2795,7 +2795,7 @@ const RAW_EVENTS_DATA: EventDetail[] = [
     "fee": "₹750 per team",
     "teamSize": "7-15 members",
     "format": "Team",
-    "image": "/images/events/theme-dance.jpg",
+    "image": "/images/events/theme-dance.webp",
     "registrationLink": "https://forms.gle/WXcmyEkzchRZLxms5",
     "coordinators": [
       {
@@ -2842,7 +2842,7 @@ const RAW_EVENTS_DATA: EventDetail[] = [
     "fee": "₹750",
     "teamSize": "7-15 members",
     "format": "Team",
-    "image": "/images/events/non-theme-dance.jpg",
+    "image": "/images/events/non-theme-dance.webp",
     "registrationLink": "https://forms.gle/fqt9MKF6mRjpHrbc8",
     "coordinators": [
       {
@@ -2893,7 +2893,7 @@ const RAW_EVENTS_DATA: EventDetail[] = [
     "fee": "₹300",
     "teamSize": "Solo",
     "format": "Solo",
-    "image": "/images/events/street-dance.jpg",
+    "image": "/images/events/street-dance.webp",
     "registrationLink": "https://forms.gle/bRUzwjUyfZD8AhYMA",
     "coordinators": [
       {
@@ -2939,7 +2939,7 @@ const RAW_EVENTS_DATA: EventDetail[] = [
     "fee": "₹750",
     "teamSize": "Maximum 20 members",
     "format": "Team",
-    "image": "/images/events/street-play.jpg",
+    "image": "/images/events/street-play.webp",
     "registrationLink": "https://forms.gle/UUsv3MNZUJekGiN27",
     "coordinators": [
       {

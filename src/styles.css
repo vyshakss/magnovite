@@ -145,6 +145,23 @@
     0 40px 120px -40px oklch(0 0 0 / 90%);
 }
 
+/* The home footer is a full-bleed page terminator, not a floating card, so it
+   can't use glass-panel: backdrop-filter blur() over the fixed starfield turns
+   the pinpoint stars into low-frequency grey blotches, and at ~30% tint those
+   blotches were the dominant thing on the surface. A plain scrim instead — the
+   stars stay crisp at the top edge and resolve into solid black by the bottom,
+   so there is no blur seam and nothing shimmers as the canvas scrolls behind. */
+@utility page-footer {
+  position: relative;
+  background: linear-gradient(
+    to bottom,
+    oklch(0.02 0.004 260 / 0%) 0%,
+    oklch(0.02 0.004 260 / 72%) 22%,
+    oklch(0.02 0.004 260 / 94%) 55%,
+    oklch(0.02 0.004 260) 100%
+  );
+}
+
 @utility glass-pill {
   border-radius: 999px;
   border: 1px solid oklch(1 0 0 / 12%);
@@ -221,14 +238,6 @@
   gap: 1.2rem;
 }
 
-.footer-brand {
-  display: flex;
-  align-items: center;
-  gap: 1rem;
-  padding-bottom: 0.9rem;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
-}
-
 .footer-logo {
   height: 40px;
   width: auto;
@@ -240,30 +249,61 @@
   height: 44px;
 }
 
-.footer-divider {
-  width: 1px;
-  height: 32px;
-  background: rgba(255, 255, 255, 0.15);
-  flex-shrink: 0;
-}
-
 .footer-columns {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1fr 1.3fr;
+  gap: 5rem;
+  align-items: start;
+}
+
+/* CHRIST block and the social links share the right half, the links sitting
+   outboard of the copy so they stay the last thing on the line. */
+.footer-right {
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-end;
   gap: 2.5rem;
+  /* Hangs the group out past the container's right padding, into the outer
+     margin the centred 80rem column leaves on wide screens. Scales with that
+     margin rather than a fixed step: max() zeroes it out once there is no
+     margin left to borrow, min() caps it so it never reaches the screen edge.
+     100vw counts the scrollbar, which is the few px of slack at the cap. */
+  margin-right: calc(-1 * min(12rem, max(0px, (100vw - 80rem) / 2)));
 }
 
 .footer-col {
   display: flex;
   flex-direction: column;
-  gap: 1rem;
+  align-items: flex-start;
+  gap: 1.1rem;
+}
+
+/* The butterfly and the CHRIST wordmark are different heights, which used to
+   push the copy under them out of step by the difference. Both now hang from
+   the bottom of a slot of one fixed height, so the first line of copy starts
+   on the same level on either side. */
+.footer-logo-slot {
+  display: flex;
+  align-items: flex-end;
+  height: 50px;
+}
+
+/* Mirror of .footer-col: pins the CHRIST mark and its copy to the right edge
+   so the two blocks read as bookends with the grid gap between them. */
+.footer-col--end {
+  align-items: flex-end;
+  text-align: right;
 }
 
 .footer-col p {
-  color: rgba(255, 255, 255, 0.7);
-  line-height: 1.6;
-  font-size: 0.95rem;
+  color: rgba(255, 255, 255, 0.65);
+  line-height: 1.7;
+  font-size: 0.9rem;
   margin: 0;
+  /* Caps the measure so both blocks wrap to the same number of lines. Without
+     it the right column inherits the .footer-right overhang and stretches the
+     CHRIST copy into two very long lines. */
+  max-width: 30rem;
 }
 
 .footer-social {
@@ -301,6 +341,17 @@
 @media (max-width: 700px) {
   .footer-columns {
     grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
+
+  .footer-col--end {
+    align-items: flex-start;
+    text-align: left;
+  }
+
+  .footer-right {
+    flex-direction: column;
+    align-items: flex-start;
     gap: 1.5rem;
   }
 }

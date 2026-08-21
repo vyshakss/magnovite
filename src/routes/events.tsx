@@ -225,7 +225,7 @@ export function EventsPage() {
                 alt={currentEvent.title}
                 className="h-full w-full object-cover object-center"
                 onError={(e) => {
-                  (e.target as HTMLImageElement).src = "/images/shaan-new-poster.jpg";
+                  (e.target as HTMLImageElement).src = "/images/shaan-new-poster.webp";
                 }}
               />
               <div className="absolute inset-0 bg-gradient-to-t from-[#06080e] via-transparent to-transparent opacity-80" />
@@ -483,7 +483,7 @@ export function EventsPage() {
                       loading="lazy"
                       className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
                       onError={(e) => {
-                        (e.target as HTMLImageElement).src = "/images/shaan-new-poster.jpg";
+                        (e.target as HTMLImageElement).src = "/images/shaan-new-poster.webp";
                       }}
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-[#06080e] via-transparent to-transparent" />

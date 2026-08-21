@@ -212,14 +212,18 @@ export function useCosmicScene(hostRef: React.RefObject<HTMLDivElement | null>) 
     renderer.setPixelRatio(isMobileDevice ? 1.0 : Math.min(window.devicePixelRatio, 2));
     renderer.outputColorSpace = THREE.SRGBColorSpace;
     renderer.toneMapping = THREE.ACESFilmicToneMapping;
-    renderer.toneMappingExposure = 0.9;
+    renderer.toneMappingExposure = 1.0;
     host.appendChild(renderer.domElement);
 
     /* ── Post-processing ── */
     const composer = new EffectComposer(renderer);
     composer.addPass(new RenderPass(scene, camera));
+    // Half-resolution bloom. The pass is a chain of downsampled blurs, so its
+    // own buffers do not need to match the render size — quartering the pixels
+    // it touches is invisible on a blur but is the single biggest saving in
+    // the post chain.
     const bloomPass = new UnrealBloomPass(
-      new THREE.Vector2(window.innerWidth, window.innerHeight),
+      new THREE.Vector2(window.innerWidth / 2, window.innerHeight / 2),
       0.3, 0.5, 0.82
     );
     if (!isMobileDevice) composer.addPass(bloomPass);
@@ -240,7 +244,7 @@ export function useCosmicScene(hostRef: React.RefObject<HTMLDivElement | null>) 
       transparent: true,
       depthWrite: false,
       blending: THREE.AdditiveBlending,
-      opacity: 0.75,
+      opacity: 0.82,
     });
 
     // Inject custom vertex shader for the explosion → scatter → formation animation
@@ -424,20 +428,39 @@ export function useCosmicScene(hostRef: React.RefObject<HTMLDivElement | null>) 
     updateCameraFov();
 
     /* ── Events ── */
-    const onResize = () => {
+    // setSize reallocates the renderer and every composer render target, so an
+    // undebounced resize listener reallocates them on each of the hundreds of
+    // events a window drag emits.
+    let resizeTimer = 0;
+    const applyResize = () => {
       isMobileDevice = checkMobile();
       updateCameraFov();
       renderer.setSize(window.innerWidth, window.innerHeight);
       composer.setSize(window.innerWidth, window.innerHeight);
+      bloomPass.setSize(window.innerWidth / 2, window.innerHeight / 2);
       renderer.setPixelRatio(isMobileDevice ? 1.0 : Math.min(window.devicePixelRatio, 2));
+      measureScrollRange();
+    };
+    const onResize = () => {
+      clearTimeout(resizeTimer);
+      resizeTimer = window.setTimeout(applyResize, 150);
     };
     window.addEventListener('resize', onResize);
 
+    // scrollHeight is a layout-forcing read. Doing it inside the scroll handler
+    // made every scroll event synchronously flush layout; it is cached here and
+    // refreshed only when the page can actually have changed height.
+    let maxScroll = 1;
+    const measureScrollRange = () => {
+      maxScroll = Math.max(document.documentElement.scrollHeight - window.innerHeight, 1);
+    };
+    measureScrollRange();
+    const bodyObserver = new ResizeObserver(measureScrollRange);
+    bodyObserver.observe(document.body);
+
     const onScroll = () => {
       if (!introComplete) return;
-      const scrollY = window.scrollY;
-      const maxScroll = Math.max(document.documentElement.scrollHeight - window.innerHeight, 1);
-      const scrollFrac = Math.min(Math.max(scrollY / maxScroll, 0), 1);
+      const scrollFrac = Math.min(Math.max(window.scrollY / maxScroll, 0), 1);
       targetSpinAngle = scrollFrac * Math.PI * 6;
     };
     window.addEventListener('scroll', onScroll, { passive: true });
@@ -497,7 +520,7 @@ export function useCosmicScene(hostRef: React.RefObject<HTMLDivElement | null>) 
         intensity:
           0.95 * smoothstep(0.0, 0.08, x) * seed +
           1.6 * flash +
-          (0.62 + 0.06 * breath) * galaxy,
+          (0.72 + 0.07 * breath) * galaxy,
         // A star has spikes; a galactic bulge does not.
         spike: seed * 0.9 + flash * 0.5,
       };
@@ -537,7 +560,7 @@ export function useCosmicScene(hostRef: React.RefObject<HTMLDivElement | null>) 
       if (!introComplete) {
         const flash = bump(p, 0.15, 0.36);
         bloomPass.strength = 0.3 + 1.9 * flash;
-        renderer.toneMappingExposure = 0.9 + 0.5 * bump(p, 0.15, 0.32);
+        renderer.toneMappingExposure = 1.0 + 0.5 * bump(p, 0.15, 0.32);
       }
 
       // ── UI fade: show after galaxy is mostly formed ──
@@ -601,6 +624,8 @@ export function useCosmicScene(hostRef: React.RefObject<HTMLDivElement | null>) 
     const cleanup = () => {
       disposed = true;
       cancelAnimationFrame(animId);
+      clearTimeout(resizeTimer);
+      bodyObserver.disconnect();
       window.removeEventListener('resize', onResize);
       window.removeEventListener('scroll', onScroll);
       window.removeEventListener('mousemove', onMouseMove);

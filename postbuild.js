@@ -57,3 +57,37 @@ for (const route of allRoutes) {
 fs.copyFileSync(indexHtmlPath, path.join(distDir, '404.html'));
 
 console.log(`Successfully copied index.html to ${allRoutes.length} route folders, plus 404.html.`);
+
+/* Preload the cosmic scene chunk on the home page only.
+ *
+ * The home route imports CosmicScene dynamically, so the browser only learns
+ * the chunk exists after index.js and the route chunk have each downloaded AND
+ * parsed — three requests end to end before the intro can draw its first frame.
+ * On localhost that chain costs ~130ms; over a network it costs an extra round
+ * trip per hop. A modulepreload hint lets the scene download in parallel with
+ * the main bundle instead.
+ *
+ * This runs after the route folders and 404.html have been copied, so the hint
+ * lands only in the home page's index.html. The other routes never render the
+ * scene and must keep their smaller payload — preloading it everywhere would
+ * undo the code split.
+ */
+const assetsDir = path.join(distDir, 'assets');
+const sceneChunk = fs.existsSync(assetsDir)
+  ? fs.readdirSync(assetsDir).find((f) => /^CosmicScene-.*\.js$/.test(f))
+  : undefined;
+
+if (!sceneChunk) {
+  // Not fatal: the site works without the hint, it just starts the scene later.
+  console.warn('No CosmicScene-*.js chunk found in dist/assets — skipping the modulepreload hint.');
+} else {
+  const html = fs.readFileSync(indexHtmlPath, 'utf-8');
+  const tag = `<link rel="modulepreload" crossorigin href="/assets/${sceneChunk}">`;
+
+  if (!html.includes('</head>')) {
+    console.warn('dist/index.html has no </head> — skipping the modulepreload hint.');
+  } else {
+    fs.writeFileSync(indexHtmlPath, html.replace('</head>', `  ${tag}\n  </head>`));
+    console.log(`Preloading ${sceneChunk} from the home page.`);
+  }
+}

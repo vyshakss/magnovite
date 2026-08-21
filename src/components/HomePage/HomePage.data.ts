@@ -88,6 +88,6 @@ export const GALLERY = [
 export const FOOTER_COPY = "Magnovite 2026 · 16th Edition";
 
 export const SHAAN = {
-  url: "/images/shaan-new-poster.jpg",
+  url: "/images/shaan-new-poster.webp",
   alt: "Music composer and singer Shaan Rahman performing live",
 };

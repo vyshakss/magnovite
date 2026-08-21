@@ -83,7 +83,7 @@ const GALLERY_ITEMS: GalleryItem[] = [
   },
   {
     id: "9",
-    src: "/images/Gallery/AnotherDance.jpg",
+    src: "/images/Gallery/AnotherDance.webp",
     title: "Futuristic Themed Dance",
     category: "cultural",
     badge: "Cultural",
@@ -91,7 +91,7 @@ const GALLERY_ITEMS: GalleryItem[] = [
   },
   {
     id: "10",
-    src: "/images/Gallery/imsolonely.jpg",
+    src: "/images/Gallery/imsolonely.webp",
     title: "Contemporary Solo Act",
     category: "cultural",
     badge: "Solo",
@@ -99,7 +99,7 @@ const GALLERY_ITEMS: GalleryItem[] = [
   },
   {
     id: "11",
-    src: "/images/Gallery/BattleOfBands.jpg",
+    src: "/images/Gallery/BattleOfBands.webp",
     title: "Battle of the Bands Grand Finale",
     category: "music",
     badge: "Live Bands",
