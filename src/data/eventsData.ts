@@ -56,7 +56,7 @@ const RAW_EVENTS_DATA: EventDetail[] = [
     "teamSize": "2",
     "format": "Team",
     "image": "/images/events/antrix.webp",
-    "registrationLink": "https://forms.gle/srhDJHDLEG9JLUmN6",
+    "registrationLink": "https://forms.gle/NBQny7LPm8GbfK7RA",
     "coordinators": [
       {
         "name": "John Victor Jose",
@@ -109,7 +109,7 @@ const RAW_EVENTS_DATA: EventDetail[] = [
     "teamSize": "2–5",
     "format": "Team",
     "image": "/images/events/apex-strategy.webp",
-    "registrationLink": "https://docs.google.com/forms/d/e/1FAIpQLScDjJnENvIJJNrBV6VUGO5jGaKd_Qmy4_jc9kMBnBsZw-FCWw/viewform?usp=publish-editor",
+    "registrationLink": "https://docs.google.com/forms/d/e/1FAIpQLSd3cpUjAriT0-zPawOE3rGk6A_GMbLCeS8sSGJ2pCB-WBH8-w/viewform?usp=dialog",
     "coordinators": [
       {
         "name": "Aarush Verma",
@@ -133,7 +133,7 @@ const RAW_EVENTS_DATA: EventDetail[] = [
   },
   {
     "slug": "arkicraft",
-    "title": "Arki Craft 2.0",
+    "title": "Archicraft 2.0",
     "tagline": "A time-bound AutoCAD design challenge where participants transform a real-world planning brief into creative, functional, and technically precise designs.",
     "category": "Engineering",
     "department": "Civil Engineering",
@@ -160,7 +160,7 @@ const RAW_EVENTS_DATA: EventDetail[] = [
     "teamSize": "2",
     "format": "Team",
     "image": "/images/events/arkicraft.webp",
-    "registrationLink": "https://docs.google.com/forms/d/e/1FAIpQLSdtmwLIO4NbikAp0BqHjKqGKSsicjB_DrDYRvNfQW6gVzpt_Q/viewform?usp=dialog",
+    "registrationLink": "https://docs.google.com/forms/d/e/1FAIpQLSd3rK9gnk1U_X6kTgJej5CsiO5DY0Zx_3ChJj-3xISA2gUDwg/viewform?usp=dialog",
     "coordinators": [
       {
         "name": "Deeba Dharshan S",
@@ -445,7 +445,7 @@ const RAW_EVENTS_DATA: EventDetail[] = [
     "teamSize": "3",
     "format": "Team",
     "image": "/images/events/bitforge.webp",
-    "registrationLink": "https://forms.gle/nv6z4T6bDnmH7XGa7",
+    "registrationLink": "https://forms.gle/MrJieP6j78v6e9BE9",
     "coordinators": [
       {
         "name": "Lourdes Xavier",
@@ -502,7 +502,7 @@ const RAW_EVENTS_DATA: EventDetail[] = [
     "teamSize": "4–6",
     "format": "Team",
     "image": "/images/events/bot-wars.webp",
-    "registrationLink": "https://docs.google.com/forms/d/e/1FAIpQLSdG1KnrDU70YdjZb-FWfhAQMert_tDCCI6w-ubPNGmoKcViHQ/viewform?usp=publish-editor",
+    "registrationLink": "https://docs.google.com/forms/d/e/1FAIpQLSeXRym4GgRvWfTcTFdtDWiXcPwLpv_bJPegNSnEzcWvmU3GsQ/viewform?usp=dialog",
     "coordinators": [
       {
         "name": "Mayank Ramesh",
@@ -580,7 +580,7 @@ const RAW_EVENTS_DATA: EventDetail[] = [
       {
         "name": "Dr Aparna Sreedharan",
         "phone": "7598430592",
-        "email": "sreedharan@christuniversity.in",
+        "email": "aparna.sreedharan@christuniversity.in",
         "role": "Faculty POC"
       }
     ]
@@ -619,7 +619,7 @@ const RAW_EVENTS_DATA: EventDetail[] = [
     "teamSize": "2-4 members",
     "format": "Team",
     "image": "/images/events/casecraft.jpg",
-    "registrationLink": "https://forms.gle/y3jVJjrsipLa3a2NA",
+    "registrationLink": "https://forms.gle/vBXPTD6fsJ2jTUiR7",
     "coordinators": [
       {
         "name": "Rebecca Lenin Koshy",
@@ -805,17 +805,17 @@ const RAW_EVENTS_DATA: EventDetail[] = [
     "tagline": "A high-speed RC drag racing challenge where teams race their custom-built vehicles over a straight track, competing for the fastest finish.",
     "category": "Engineering",
     "department": "Automotive Engineering",
-    "overview": "RC Drag Race is a high-speed remote-controlled vehicle competition where participants compete to cover a 35-metre straight-line track in the shortest possible time.\n\nThe event gives participants freedom to design, build, modify and optimize their own RC vehicles while applying concepts of acceleration, traction, power transmission, gearing, vehicle dynamics and control.\n\nThe competition follows an Open Build approach, with only essential dimensional, weight, drivetrain, battery and safety restrictions. Participants can experiment with different motors, gearing, tyres, chassis configurations and other engineering solutions.\n\nThe event aims to promote hands-on engineering, innovation, practical problem-solving and competitive spirit among students from different institutions.",
+    "overview": "RC Drag Race is a high-speed remote-controlled vehicle competition where participants compete to cover a 50-metre straight-line track in the shortest possible time.\n\nThe event gives participants freedom to design, build, modify and optimize their own RC vehicles while applying concepts of acceleration, traction, power transmission, gearing, vehicle dynamics and control.\n\nThe competition follows an Open Build approach, with only essential dimensional, weight, drivetrain, battery and safety restrictions. Participants can experiment with different motors, gearing, tyres, chassis configurations and other engineering solutions.\n\nThe event aims to promote hands-on engineering, innovation, practical problem-solving and competitive spirit among students from different institutions.",
     "stages": [
       {
         "title": "Event Structure",
-        "desc": "Qualification — Time Trial\nAll registered teams will participate individually.\nEach team will get 2 timed runs on the 35-metre straight track.\nThe best valid time from the two runs will be considered as the team's qualifying time.\nAll teams will be ranked according to their best qualifying time.\nThe top 8 teams with the fastest qualifying times will advance to the head-to-head stage.\nHead-to-Head Stage — Quarter-Finals\nThe 8 qualified teams will be seeded according to their qualification ranking:\nTeam 1 vs Team 8\nTeam 2 vs Team 7\nTeam 3 vs Team 6\nTeam 4 vs Team 5\nTwo teams will race simultaneously on the two parallel 35-metre tracks.\nThe first vehicle to cross the finish line wins and advances.\nThe qualifying times will not be considered for determining the winner of a head-to-head race.\nSemi-Finals\nThe four quarter-final winners will compete in two head-to-head races.\nWinner QF1 vs Winner QF2\nWinner QF3 vs Winner QF4\nThe first vehicle to cross the finish line advances to the Grand Final.\nThird-Place Race\nThe two semi-final losers will compete against each other.\nThe winner will be awarded 3rd place.\nGrand Final\nThe two semi-final winners will compete head-to-head.\nThe first vehicle to cross the 35-metre finish line will be declared the RC Drag Race Champion.\nCrash / Restart Rule:\nFrom the Head-to-Head Stage onwards, there will be no restart due to: Crash, Collision, Loss of control, Vehicle malfunction, Hitting an obstacle, Any other participant-related incident,\nThe race will continue, and the team that successfully crosses the finish line first will win.\nException: A restart may be authorized by the event officials only if the race is affected by an external factor, track obstruction, timing-system failure, or other technical issue beyond the participants' control. The decision of the event officials will be final."
+        "desc": "Qualification — Time Trial\nAll registered teams will participate individually.\nEach team will get 2 timed runs on the 50-metre straight track.\nThe best valid time from the two runs will be considered as the team's qualifying time.\nAll teams will be ranked according to their best qualifying time.\nThe top 8 teams with the fastest qualifying times will advance to the head-to-head stage.\nHead-to-Head Stage — Quarter-Finals\nThe 8 qualified teams will be seeded according to their qualification ranking:\nTeam 1 vs Team 8\nTeam 2 vs Team 7\nTeam 3 vs Team 6\nTeam 4 vs Team 5\nTwo teams will race simultaneously on the two parallel 50-metre tracks.\nThe first vehicle to cross the finish line wins and advances.\nThe qualifying times will not be considered for determining the winner of a head-to-head race.\nSemi-Finals\nThe four quarter-final winners will compete in two head-to-head races.\nWinner QF1 vs Winner QF2\nWinner QF3 vs Winner QF4\nThe first vehicle to cross the finish line advances to the Grand Final.\nThird-Place Race\nThe two semi-final losers will compete against each other.\nThe winner will be awarded 3rd place.\nGrand Final\nThe two semi-final winners will compete head-to-head.\nThe first vehicle to cross the 50-metre finish line will be declared the RC Drag Race Champion.\nCrash / Restart Rule:\nFrom the Head-to-Head Stage onwards, there will be no restart due to: Crash, Collision, Loss of control, Vehicle malfunction, Hitting an obstacle, Any other participant-related incident,\nThe race will continue, and the team that successfully crosses the finish line first will win.\nException: A restart may be authorized by the event officials only if the race is affected by an external factor, track obstruction, timing-system failure, or other technical issue beyond the participants' control. The decision of the event officials will be final."
       }
     ],
     "rules": [
       "Each team shall consist of 2–4 participants.",
       "Each team shall register one RC vehicle for the competition.",
-      "The competition will be conducted on a 35-metre straight drag track.",
+      "The competition will be conducted on a 50-metre straight drag track.",
       "There shall be no restriction on the drive configuration. 2WD, 4WD, AWD and other drive configurations are permitted.",
       "The maximum vehicle dimensions shall be:",
       "Length: 300 mm (5% tolerance allowed)",
@@ -934,7 +934,7 @@ const RAW_EVENTS_DATA: EventDetail[] = [
     "teamSize": "4",
     "format": "Team",
     "image": "/images/events/drone.jpg",
-    "registrationLink": "https://docs.google.com/forms/d/e/1FAIpQLSdum7ERDW35nOUZ20XmsqnTXiWki_2LjVSbUfy4zuK8HHQL7A/viewform?usp=publish-editor",
+    "registrationLink": "https://docs.google.com/forms/d/e/1FAIpQLSccwV19H_4NnJqvx8U_rFoH-gfpJPqgW9I35SbYBy0DWokwPA/viewform?usp=dialog",
     "coordinators": [
       {
         "name": "Nithish Krishna",
@@ -991,7 +991,7 @@ const RAW_EVENTS_DATA: EventDetail[] = [
     "teamSize": "2–4",
     "format": "Team",
     "image": "/images/events/ecoforge.jpg",
-    "registrationLink": "https://docs.google.com/forms/d/e/1FAIpQLSfQnvaYdFwdmgv1PIodCkED6_W0MqHiBxDAAvIhLqGmVIFAdA/viewform?usp=dialog",
+    "registrationLink": "https://docs.google.com/forms/d/e/1FAIpQLSdTjaIazTfBtx1iNdFPVcZePZnsxLvGpBiI1rzSEA6WVB-9cQ/viewform?usp=dialog",
     "coordinators": [
       {
         "name": "Deeba Dharshan S",
@@ -1108,7 +1108,7 @@ const RAW_EVENTS_DATA: EventDetail[] = [
     "teamSize": "2–4",
     "format": "Team",
     "image": "/images/events/evmotion26.webp",
-    "registrationLink": "https://docs.google.com/forms/d/e/1FAIpQLSeRQ002Hr-N0oWkKxA0q30BwI2oz3VWwJWbSUV9A2sn8JWkgg/viewform?usp=publish-editor",
+    "registrationLink": "https://docs.google.com/forms/d/e/1FAIpQLSeMUSwXL94tew8TEaAO_acMerNgfLDirKqWeJeUAWJHJRUBVw/viewform?usp=dialog",
     "coordinators": [
       {
         "name": "Suryan E",
@@ -1299,7 +1299,7 @@ const RAW_EVENTS_DATA: EventDetail[] = [
     "teamSize": "2–4",
     "format": "Team",
     "image": "/images/events/grid.jpg",
-    "registrationLink": "https://docs.google.com/forms/d/e/1FAIpQLSfDCFRLBkoWWKhFL7QwU0B7cd-Pv2bNO-3c_QlTQlfGd7MUbA/viewform?usp=publish-editor",
+    "registrationLink": "https://docs.google.com/forms/d/e/1FAIpQLScXahlJK2mwWoH32KT3Mz7qFPGpay8YTCIdTKAIsCjg8MoIkA/viewform?usp=dialog",
     "coordinators": [
       {
         "name": "Aishwarya Vijayakumar",
@@ -1402,7 +1402,7 @@ const RAW_EVENTS_DATA: EventDetail[] = [
     "teamSize": "4",
     "format": "Team",
     "image": "/images/events/infinity-code-red.webp",
-    "registrationLink": "https://forms.gle/nNKk1G8uEybNkM8e6",
+    "registrationLink": "https://forms.gle/7vnnNPxMUSWBqnZL6",
     "coordinators": [
       {
         "name": "Melvin S Jacob",
@@ -1522,7 +1522,7 @@ const RAW_EVENTS_DATA: EventDetail[] = [
     "teamSize": "2–5",
     "format": "Team",
     "image": "/images/events/mud-run.webp",
-    "registrationLink": "https://docs.google.com/forms/d/e/1FAIpQLSfZV6QoABzAvXT4SAjjS9D8h4rTHO9fv9fVDbQ2xhL7l-sfnQ/viewform?usp=publish-editor",
+    "registrationLink": "https://docs.google.com/forms/d/e/1FAIpQLSfoG8gltSqqeoexwShVpMlRtwnM_zEXvjrY8dKekdff8bShew/viewform?usp=dialog",
     "coordinators": [
       {
         "name": "Shane Christopher",
@@ -1673,7 +1673,7 @@ const RAW_EVENTS_DATA: EventDetail[] = [
     "teamSize": "2–4",
     "format": "Team",
     "image": "/images/events/technicalworkshop.jpg",
-    "registrationLink": "https://docs.google.com/forms/d/e/1FAIpQLSe8JnGaSXJkqRMYFgxCfrhG9dFa3vrzFKdFGlhEDCutz9qCsQ/viewform?usp=publish-editor",
+    "registrationLink": "https://docs.google.com/forms/d/e/1FAIpQLSd_CMF7qp4WEytpWY2lr3u68B6m9Oeva0D0ycr6HpAVzp6opQ/viewform?usp=dialog",
     "coordinators": [
       {
         "name": "Jeni Riya Lobo",
@@ -1855,7 +1855,7 @@ const RAW_EVENTS_DATA: EventDetail[] = [
     "teamSize": "4–6",
     "format": "Team",
     "image": "/images/events/robosoccer.jpg",
-    "registrationLink": "https://docs.google.com/forms/d/e/1FAIpQLSdLYwfe13hDr1b6tDnn4GfYS0FG_3oOyvpV4FCCwIH16VctBw/viewform?usp=publish-editor",
+    "registrationLink": "https://docs.google.com/forms/d/e/1FAIpQLSf4ahN9WNUT-1g0NqpYso5NaXkE6wM2U3bfm7Nk02ys6ocDXA/viewform?usp=dialog",
     "coordinators": [
       {
         "name": "Anuj Anand E. K.",
@@ -1964,7 +1964,7 @@ const RAW_EVENTS_DATA: EventDetail[] = [
     "teamSize": "2–4",
     "format": "Team",
     "image": "/images/events/archicraft.jpg",
-    "registrationLink": "https://docs.google.com/forms/d/e/1FAIpQLSctvSCNm7wuM8HHOhJwBEMyZv_WkovefNjITufjEMFGT4v7SQ/viewform?usp=publish-editor",
+    "registrationLink": "https://docs.google.com/forms/d/e/1FAIpQLScr2md-jUJrLVgE6hYrA0Gq31gaMLrhLmQYD8cxK01tORUYJA/viewform?usp=dialog",
     "coordinators": [
       {
         "name": "Saud Khan",
