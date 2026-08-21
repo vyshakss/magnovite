@@ -461,7 +461,9 @@ export function useCosmicScene(hostRef: React.RefObject<HTMLDivElement | null>) 
     const onScroll = () => {
       if (!introComplete) return;
       const scrollFrac = Math.min(Math.max(window.scrollY / maxScroll, 0), 1);
-      targetSpinAngle = scrollFrac * Math.PI * 6;
+      // Total rotation across a full page scroll, in radians. Math.PI * 2 is
+      // one complete turn — raise the multiplier for a faster spin.
+      targetSpinAngle = scrollFrac * Math.PI * 2;
     };
     window.addEventListener('scroll', onScroll, { passive: true });
 

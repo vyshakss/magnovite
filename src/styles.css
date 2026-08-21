@@ -115,6 +115,35 @@
 
   html {
     scroll-behavior: smooth;
+    /* Sections snap to just below the fixed header rather than under it. */
+    scroll-padding-top: 5rem;
+  }
+
+  /* Gentle scroll snapping, home page only.
+     `proximity` rather than `mandatory` on purpose: it only pulls the page to a
+     section when the scroll already ended near one, so a deliberate long scroll
+     still passes straight through and sections taller than the viewport never
+     trap the reader. Scoped via :has(#top) because the events grid and gallery
+     are continuous lists where snapping would fight the user. */
+  html:has(#top) {
+    scroll-snap-type: y proximity;
+  }
+
+  #top > section,
+  #top > footer {
+    scroll-snap-align: start;
+  }
+
+  /* Snapping moves the viewport without the user asking, so honour the OS
+     setting that says not to do that. */
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+
+    html:has(#top) {
+      scroll-snap-type: none;
+    }
   }
 
   body {

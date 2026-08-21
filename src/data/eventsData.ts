@@ -61,19 +61,19 @@ const RAW_EVENTS_DATA: EventDetail[] = [
       {
         "name": "John Victor Jose",
         "phone": "9986383984",
-        "email": "",
+        "email": "john.victor@btech.christuniversity.in",
         "role": "Student POC"
       },
       {
         "name": "Tanusharvesh",
         "phone": "94437 45725",
-        "email": "",
+        "email": "tanusharvesh.d@btech.christuniversity.in",
         "role": "Student POC"
       },
       {
         "name": "Dr. Shashi Kumar D",
         "phone": "9916947645",
-        "email": "",
+        "email": "shashi.kumar@christuniversity.in",
         "role": "Faculty POC"
       }
     ]
@@ -104,7 +104,7 @@ const RAW_EVENTS_DATA: EventDetail[] = [
     ],
     "faqs": [],
     "prizePool": "22K",
-    "date": "15",
+    "date": "15 Sept 2026",
     "fee": "₹700 per team",
     "teamSize": "2–5",
     "format": "Team",
@@ -155,7 +155,7 @@ const RAW_EVENTS_DATA: EventDetail[] = [
     ],
     "faqs": [],
     "prizePool": "22K",
-    "date": "15 Sept 2026",
+    "date": "16 Sept 2026",
     "fee": "₹500 per team",
     "teamSize": "2",
     "format": "Team",
@@ -209,7 +209,7 @@ const RAW_EVENTS_DATA: EventDetail[] = [
     ],
     "faqs": [],
     "prizePool": "22K",
-    "date": "15-16",
+    "date": "15-16 Sept 2026",
     "fee": "₹400 per team",
     "teamSize": "2",
     "format": "Team",
@@ -219,19 +219,19 @@ const RAW_EVENTS_DATA: EventDetail[] = [
       {
         "name": "Blessing Roshan",
         "phone": "7810008415",
-        "email": "",
+        "email": "blessing.roshan@btech.christuniversity.in",
         "role": "Student POC"
       },
       {
         "name": "G Nagul",
         "phone": "9788820820",
-        "email": "",
+        "email": "g.nagul@btech.christuniversity.in",
         "role": "Student POC"
       },
       {
         "name": "Dr. Rithwik Sankar",
         "phone": "8547343870",
-        "email": "",
+        "email": "rithwik.sankae@christuniversity.in",
         "role": "Faculty POC"
       }
     ]
@@ -266,7 +266,7 @@ const RAW_EVENTS_DATA: EventDetail[] = [
     ],
     "faqs": [],
     "prizePool": "22K",
-    "date": "15",
+    "date": "15 Sept 2026",
     "fee": "₹500 per team",
     "teamSize": "2–3",
     "format": "Team",
@@ -276,19 +276,19 @@ const RAW_EVENTS_DATA: EventDetail[] = [
       {
         "name": "MothilalRam U",
         "phone": "9342869367",
-        "email": "",
+        "email": "Mothilalram.u@arch.christuniversity.in",
         "role": "Student POC"
       },
       {
         "name": "Mariya John",
         "phone": "8848025263",
-        "email": "",
+        "email": "mariya.john@christuniversity.in",
         "role": "Student POC"
       },
       {
         "name": "Prof.  Rashmi S",
         "phone": "9986406742",
-        "email": "",
+        "email": "rashmi.s@christuniversity.in",
         "role": "Faculty POC"
       }
     ]
@@ -328,7 +328,7 @@ const RAW_EVENTS_DATA: EventDetail[] = [
     ],
     "faqs": [],
     "prizePool": "22K",
-    "date": "15,16",
+    "date": "15-16 Sept 2026",
     "fee": "₹900 per team",
     "teamSize": "3 members",
     "format": "Team",
@@ -338,19 +338,19 @@ const RAW_EVENTS_DATA: EventDetail[] = [
       {
         "name": "Samuel Philip",
         "phone": "8299811658",
-        "email": "",
+        "email": "samuel.philip@mba.christuniversity.in",
         "role": "Student POC"
       },
       {
         "name": "Lisa Shibu George",
         "phone": "8434673061",
-        "email": "",
+        "email": "lisa.shibu@mba.christuniversity.in",
         "role": "Student POC"
       },
       {
         "name": "Dr. Prathima V G",
         "phone": "9845458055",
-        "email": "",
+        "email": "prathima.vg@christuniversity.in",
         "role": "Faculty POC"
       }
     ]
@@ -381,7 +381,7 @@ const RAW_EVENTS_DATA: EventDetail[] = [
     ],
     "faqs": [],
     "prizePool": "22K",
-    "date": "15 Sept 2026",
+    "date": "15-16 Sept 2026",
     "fee": "₹600 per team",
     "teamSize": "Individual",
     "format": "Solo",
@@ -391,19 +391,19 @@ const RAW_EVENTS_DATA: EventDetail[] = [
       {
         "name": "Reuben John Paul",
         "phone": "8848041322",
-        "email": "",
+        "email": "reuben.john@bba.christuniversity.in",
         "role": "Student POC"
       },
       {
         "name": "Ananya Suresh",
         "phone": "8086530146",
-        "email": "",
+        "email": "ananya.suresh@bba.christuniversity.in",
         "role": "Student POC"
       },
       {
         "name": "Dr Charunayan Kamath",
         "phone": "9585587443",
-        "email": "",
+        "email": "charunayan.kamath@christuniversity.in",
         "role": "Faculty POC"
       }
     ]
@@ -450,19 +450,19 @@ const RAW_EVENTS_DATA: EventDetail[] = [
       {
         "name": "Lourdes Xavier",
         "phone": "80957 65526",
-        "email": "",
+        "email": "lourdes.xavier@btech.christuniversity.in",
         "role": "Student POC"
       },
       {
         "name": "Sravan N",
         "phone": "6385781722",
-        "email": "",
+        "email": "sravan.n@btech.christuniversity.in",
         "role": "Student POC"
       },
       {
         "name": "Dr. Praghash K",
         "phone": "95856 35381",
-        "email": "",
+        "email": "praghash.k@christuniversity.in",
         "role": "Faculty POC"
       }
     ]
@@ -497,7 +497,7 @@ const RAW_EVENTS_DATA: EventDetail[] = [
     ],
     "faqs": [],
     "prizePool": "22K",
-    "date": "15,16",
+    "date": "15-16 Sept 2026",
     "fee": "₹800 per team",
     "teamSize": "4–6",
     "format": "Team",
@@ -657,7 +657,7 @@ const RAW_EVENTS_DATA: EventDetail[] = [
     "faqs": [],
     "prizePool": "15K",
     "date": "15 Sept 2026",
-    "fee": "₹200",
+    "fee": "₹200 per person",
     "teamSize": "Individual",
     "format": "Solo",
     "image": "/images/events/chess-grandmaster.webp",
@@ -713,7 +713,7 @@ const RAW_EVENTS_DATA: EventDetail[] = [
     ],
     "faqs": [],
     "prizePool": "22K",
-    "date": "15 Sept",
+    "date": "15 Sept 2026",
     "fee": "₹400 per team",
     "teamSize": "2–4",
     "format": "Team",
@@ -723,13 +723,13 @@ const RAW_EVENTS_DATA: EventDetail[] = [
       {
         "name": "Dinesh Babu",
         "phone": "8300196030",
-        "email": "",
+        "email": "dinesh.babu@btech.christuniversity.in",
         "role": "Student POC"
       },
       {
         "name": "Ridhi M Chabbria",
         "phone": "9444693407",
-        "email": "",
+        "email": "ridhi.m@btech.christuniversity.in",
         "role": "Student POC"
       },
       {
@@ -772,7 +772,7 @@ const RAW_EVENTS_DATA: EventDetail[] = [
     ],
     "faqs": [],
     "prizePool": "22K",
-    "date": "15 Sept 2026",
+    "date": "15-16 Sept 2026",
     "fee": "₹400 per team",
     "teamSize": "2",
     "format": "Team",
@@ -782,19 +782,19 @@ const RAW_EVENTS_DATA: EventDetail[] = [
       {
         "name": "Manasi Padmnabh Bhake",
         "phone": "9730619566",
-        "email": "",
+        "email": "manasi.padmnabh@bba.christuniversity.in",
         "role": "Student POC"
       },
       {
         "name": "Rishabh Agrawal",
         "phone": "8809953158",
-        "email": "",
+        "email": "agrawal.rishabh@bba.christuniversity.in",
         "role": "Student POC"
       },
       {
         "name": "Dr. Shilpa Rajagopal",
         "phone": "8301057146",
-        "email": "",
+        "email": "shilpa.rajagopal@christuniversity.in",
         "role": "Faculty POC"
       }
     ]
@@ -845,7 +845,7 @@ const RAW_EVENTS_DATA: EventDetail[] = [
     ],
     "faqs": [],
     "prizePool": "22K",
-    "date": "15,16",
+    "date": "15-16 Sept 2026",
     "fee": "₹800 per team",
     "teamSize": "2–4",
     "format": "Team",
@@ -855,19 +855,19 @@ const RAW_EVENTS_DATA: EventDetail[] = [
       {
         "name": "Albin Laiju",
         "phone": "9108156940",
-        "email": "",
+        "email": "albin.laiju@btech.christuniversity.in",
         "role": "Student POC"
       },
       {
         "name": "Swapnabit Das",
         "phone": "7029449122",
-        "email": "",
+        "email": "swapnabit.das@btech.christuniversity.in",
         "role": "Student POC"
       },
       {
         "name": "Dr. Hadiya Pritesh",
         "phone": "9591668787",
-        "email": "",
+        "email": "hadia.pritesh@christuniversity.in",
         "role": "Faculty POC"
       }
     ]
@@ -929,7 +929,7 @@ const RAW_EVENTS_DATA: EventDetail[] = [
     ],
     "faqs": [],
     "prizePool": "22K",
-    "date": "16",
+    "date": "16 Sept 2026",
     "fee": "₹800 per team",
     "teamSize": "4",
     "format": "Team",
@@ -1039,7 +1039,7 @@ const RAW_EVENTS_DATA: EventDetail[] = [
     ],
     "faqs": [],
     "prizePool": "15K",
-    "date": "15",
+    "date": "15 Sept 2026",
     "fee": "₹200 per person",
     "teamSize": "Individual",
     "format": "Solo",
@@ -1234,7 +1234,7 @@ const RAW_EVENTS_DATA: EventDetail[] = [
     ],
     "faqs": [],
     "prizePool": "22K",
-    "date": "15,16",
+    "date": "15-16 Sept 2026",
     "fee": "₹600 per team",
     "teamSize": "6",
     "format": "Team",
@@ -1349,7 +1349,7 @@ const RAW_EVENTS_DATA: EventDetail[] = [
     ],
     "faqs": [],
     "prizePool": "22K",
-    "date": "15,16",
+    "date": "15-16 Sept 2026",
     "fee": "₹400 per team",
     "teamSize": "4",
     "format": "Team",
@@ -1359,19 +1359,19 @@ const RAW_EVENTS_DATA: EventDetail[] = [
       {
         "name": "Maanya Bhatia",
         "phone": "73048 53140",
-        "email": "",
+        "email": "maanya.bhatia@psyh.christuniversity.in",
         "role": "Student POC"
       },
       {
         "name": "Rifat Khan",
         "phone": "77550 99853",
-        "email": "",
+        "email": "rifat.khan@psyh.christuniversity.in",
         "role": "Student POC"
       },
       {
         "name": "Dr.Ganesh Kumar J",
         "phone": "95004 90815",
-        "email": "",
+        "email": "ganesh.kumar.j@christuniversity.in",
         "role": "Faculty POC"
       }
     ]
@@ -1407,19 +1407,19 @@ const RAW_EVENTS_DATA: EventDetail[] = [
       {
         "name": "Melvin S Jacob",
         "phone": "9380257221",
-        "email": "",
+        "email": "melvin.s@btech.christuniversity.in",
         "role": "Student POC"
       },
       {
         "name": "Merrick Dias",
         "phone": "9022469808",
-        "email": "",
+        "email": "merric.dias@btech.christuniversity.in",
         "role": "Student POC"
       },
       {
         "name": "Dr. Ambily Babu",
         "phone": "9632581800",
-        "email": "",
+        "email": "ambily.babu@christuniversity.in",
         "role": "Faculty POC"
       }
     ]
@@ -1451,7 +1451,7 @@ const RAW_EVENTS_DATA: EventDetail[] = [
     ],
     "faqs": [],
     "prizePool": "22K",
-    "date": "15 Sept 2026",
+    "date": "15-16 Sept 2026",
     "fee": "₹500 per team",
     "teamSize": "2",
     "format": "Team",
@@ -1461,19 +1461,19 @@ const RAW_EVENTS_DATA: EventDetail[] = [
       {
         "name": "Aadithya Hegde",
         "phone": "9962997772",
-        "email": "",
+        "email": "aadithya.hegde@bba.christuniversity.in",
         "role": "Student POC"
       },
       {
         "name": "Jahnavi Khedia",
         "phone": "7501798111",
-        "email": "",
+        "email": "jahnavi.khedia@bba.christuniversity.in",
         "role": "Student POC"
       },
       {
         "name": "Dr.Ramya JB",
         "phone": "9894799610",
-        "email": "",
+        "email": "ramya.jb@christuniversity.in",
         "role": "Faculty POC"
       }
     ]
@@ -1517,7 +1517,7 @@ const RAW_EVENTS_DATA: EventDetail[] = [
     ],
     "faqs": [],
     "prizePool": "22k",
-    "date": "15,16",
+    "date": "15-16 Sept 2026",
     "fee": "₹800 per team",
     "teamSize": "2–5",
     "format": "Team",
@@ -1615,19 +1615,19 @@ const RAW_EVENTS_DATA: EventDetail[] = [
       {
         "name": "Rachel Febin",
         "phone": "8310202676",
-        "email": "",
+        "email": "rachel.febin@btech.christuniversity.in",
         "role": "Student POC"
       },
       {
         "name": "Samuel Biju",
         "phone": "9535635046",
-        "email": "",
+        "email": "samuel.biju@btech.christuniversity.in",
         "role": "Student POC"
       },
       {
         "name": "Prof Cynthia C",
         "phone": "9952246458",
-        "email": "",
+        "email": "cynthia.c@christuniversity.in",
         "role": "Faculty POC"
       }
     ]
@@ -1726,7 +1726,7 @@ const RAW_EVENTS_DATA: EventDetail[] = [
     ],
     "faqs": [],
     "prizePool": "22K",
-    "date": "15 Sept",
+    "date": "15 Sept 2026",
     "fee": "₹400 per team",
     "teamSize": "2–4",
     "format": "Team",
@@ -1783,19 +1783,19 @@ const RAW_EVENTS_DATA: EventDetail[] = [
       {
         "name": "Aakash K",
         "phone": "9940475493",
-        "email": "",
+        "email": "aakash.k@mba.christuniversity.in",
         "role": "Student POC"
       },
       {
         "name": "Rahul Neelakantan S",
         "phone": "7306628193",
-        "email": "",
+        "email": "rahul.neelankantan@mba.christuniversity.in",
         "role": "Student POC"
       },
       {
         "name": "Prof. Keerthana A R",
         "phone": "7406949055",
-        "email": "",
+        "email": "keerthana.ar@christuniversity.in",
         "role": "Faculty POC"
       }
     ]
@@ -1850,7 +1850,7 @@ const RAW_EVENTS_DATA: EventDetail[] = [
     ],
     "faqs": [],
     "prizePool": "22K",
-    "date": "15,16",
+    "date": "15-16 Sept 2026",
     "fee": "₹800 per team",
     "teamSize": "4–6",
     "format": "Team",
@@ -1908,7 +1908,7 @@ const RAW_EVENTS_DATA: EventDetail[] = [
     ],
     "faqs": [],
     "prizePool": "22K",
-    "date": "16",
+    "date": "16 Sept 2026",
     "fee": "₹600 per team",
     "teamSize": "8–15",
     "format": "Team",
@@ -1918,19 +1918,19 @@ const RAW_EVENTS_DATA: EventDetail[] = [
       {
         "name": "Vibha Shetty",
         "phone": "6362976342",
-        "email": "",
+        "email": "vibha.m@arch.christuniversity.in",
         "role": "Student POC"
       },
       {
         "name": "Aadhira T",
         "phone": "9980600266",
-        "email": "",
+        "email": "Aadhira.t@christuniversity.in",
         "role": "Student POC"
       },
       {
         "name": "Prof.  Albert Joseph Hefferan",
         "phone": "8248348086",
-        "email": "",
+        "email": "albertjoseph.hefferan@christuniversity.in",
         "role": "Faculty POC"
       }
     ]
@@ -2015,7 +2015,7 @@ const RAW_EVENTS_DATA: EventDetail[] = [
     ],
     "faqs": [],
     "prizePool": "15K",
-    "date": "15,16",
+    "date": "15-16 Sept 2026",
     "fee": "₹200 per person",
     "teamSize": "Individual",
     "format": "Solo",
@@ -2069,7 +2069,7 @@ const RAW_EVENTS_DATA: EventDetail[] = [
     ],
     "faqs": [],
     "prizePool": "22K",
-    "date": "15-16",
+    "date": "15-16 Sept 2026",
     "fee": "₹600 per team",
     "teamSize": "6",
     "format": "Team",
@@ -2079,19 +2079,19 @@ const RAW_EVENTS_DATA: EventDetail[] = [
       {
         "name": "Rithvik Sunil",
         "phone": "7306599726",
-        "email": "",
+        "email": "rithvik.sunil@btech.christuniversity.in",
         "role": "Student POC"
       },
       {
         "name": "Catherine",
         "phone": "99677 83363",
-        "email": "",
+        "email": "Catherine.susan@btech.christuniversity.in",
         "role": "Student POC"
       },
       {
         "name": "Dr Jopaul Mathew",
         "phone": "81380 11592",
-        "email": "",
+        "email": "jopaul.mathew@christuniversity.in",
         "role": "Faculty POC"
       }
     ]
@@ -2125,7 +2125,7 @@ const RAW_EVENTS_DATA: EventDetail[] = [
     ],
     "faqs": [],
     "prizePool": "22K",
-    "date": "15,16",
+    "date": "15-16 Sept 2026",
     "fee": "₹500 per team",
     "teamSize": "2 members",
     "format": "Team",
@@ -2135,19 +2135,19 @@ const RAW_EVENTS_DATA: EventDetail[] = [
       {
         "name": "K I Nihala Enoon",
         "phone": "7907386107",
-        "email": "",
+        "email": "nihala.enoon@mba.christuniversity.in",
         "role": "Student POC"
       },
       {
         "name": "Aradhana M",
         "phone": "9902662782",
-        "email": "",
+        "email": "aradhana.m@mba.christuniversity.in",
         "role": "Student POC"
       },
       {
         "name": "Dr. Ravindra Babu S",
         "phone": "9880525788",
-        "email": "",
+        "email": "ravindrababu.s@christuniversity.in",
         "role": "Faculty POC"
       }
     ]
@@ -2176,7 +2176,7 @@ const RAW_EVENTS_DATA: EventDetail[] = [
     ],
     "faqs": [],
     "prizePool": "22K",
-    "date": "15 Sept 2026",
+    "date": "15-16 Sept 2026",
     "fee": "₹500 per team",
     "teamSize": "2",
     "format": "Team",
@@ -2186,19 +2186,19 @@ const RAW_EVENTS_DATA: EventDetail[] = [
       {
         "name": "Jash Parekh",
         "phone": "9321007501",
-        "email": "",
+        "email": "Jash.kunal@bba.christuniversity.in",
         "role": "Student POC"
       },
       {
         "name": "Mohak Bansal",
         "phone": "6399911920",
-        "email": "",
+        "email": "Mohak.krishnam@bba.christuniversity.in",
         "role": "Student POC"
       },
       {
         "name": "Dr. Muthulakshmi P",
         "phone": "9003687190",
-        "email": "",
+        "email": "muthulakshmi.p@christuniversity.in",
         "role": "Faculty POC"
       }
     ]
@@ -2233,7 +2233,7 @@ const RAW_EVENTS_DATA: EventDetail[] = [
     ],
     "faqs": [],
     "prizePool": "15K",
-    "date": "16 Sept",
+    "date": "16 Sept 2026",
     "fee": "₹200 per person",
     "teamSize": "1",
     "format": "Solo",
@@ -2243,19 +2243,19 @@ const RAW_EVENTS_DATA: EventDetail[] = [
       {
         "name": "Vora Chanchal",
         "phone": "8160556005",
-        "email": "",
+        "email": "vora.chanchal@btech.christuniversity.in",
         "role": "Student POC"
       },
       {
         "name": "Suraj Adhikari",
         "phone": "6361038223",
-        "email": "",
+        "email": "suraj.adhikari@btech.christuniversity.in",
         "role": "Student POC"
       },
       {
         "name": "Dr. Bejoy BJ",
         "phone": "8281300742",
-        "email": "",
+        "email": "bejoy.bj@christuniversity.in",
         "role": "Faculty POC"
       }
     ]
@@ -2289,7 +2289,7 @@ const RAW_EVENTS_DATA: EventDetail[] = [
     ],
     "faqs": [],
     "prizePool": "22K",
-    "date": "16 Sept",
+    "date": "16 Sept 2026",
     "fee": "₹400 per team",
     "teamSize": "2–4",
     "format": "Team",
@@ -2345,7 +2345,7 @@ const RAW_EVENTS_DATA: EventDetail[] = [
     ],
     "faqs": [],
     "prizePool": "22K",
-    "date": "15",
+    "date": "15 Sept 2026",
     "fee": "₹400 per team",
     "teamSize": "2",
     "format": "Team",
@@ -2539,19 +2539,19 @@ const RAW_EVENTS_DATA: EventDetail[] = [
       {
         "name": "Joel Jacob Roji",
         "phone": "7012032686",
-        "email": "",
+        "email": "joel.jacob@btech.christuniversity.in",
         "role": "Student POC"
       },
       {
         "name": "Darren Samuel Dcruz",
         "phone": "6364419705",
-        "email": "",
+        "email": "darren.samuel@btech.christuniversity.in",
         "role": "Student POC"
       },
       {
         "name": "Dr Binson V A",
         "phone": "9526738829",
-        "email": "",
+        "email": "binson.va@christuniversity.in",
         "role": "Faculty POC"
       }
     ]
@@ -2581,7 +2581,7 @@ const RAW_EVENTS_DATA: EventDetail[] = [
     ],
     "faqs": [],
     "prizePool": "15K",
-    "date": "15",
+    "date": "15 Sept 2026",
     "fee": "₹200 per person",
     "teamSize": "30(Individual)",
     "format": "Solo",
@@ -2591,19 +2591,19 @@ const RAW_EVENTS_DATA: EventDetail[] = [
       {
         "name": "Jaden Ross Rebello",
         "phone": "8080248809",
-        "email": "",
+        "email": "jaden.ross@arch.christuniversity.in",
         "role": "Student POC"
       },
       {
         "name": "Aleena Elizabeth Mary",
         "phone": "(+971)50820199",
-        "email": "",
+        "email": "aleena.elizabeth@arch.christuniversity.in",
         "role": "Student POC"
       },
       {
         "name": "Prof. Aleena Mariya Silvester",
         "phone": "8714491574",
-        "email": "",
+        "email": "aleena.mariya@christuniversity.in",
         "role": "Faculty POC"
       }
     ]
@@ -2639,7 +2639,7 @@ const RAW_EVENTS_DATA: EventDetail[] = [
     ],
     "faqs": [],
     "prizePool": "USD 225",
-    "date": "15,16",
+    "date": "15-16 Sept 2026",
     "fee": "USD 5 per participant",
     "teamSize": "1-3 members",
     "format": "Individual / Team",
@@ -2693,7 +2693,7 @@ const RAW_EVENTS_DATA: EventDetail[] = [
     ],
     "faqs": [],
     "prizePool": "22k",
-    "date": "15 sept",
+    "date": "15 Sept 2026",
     "fee": "₹750 per team",
     "teamSize": "4-10 members",
     "format": "Team",
@@ -2742,7 +2742,7 @@ const RAW_EVENTS_DATA: EventDetail[] = [
     ],
     "faqs": [],
     "prizePool": "22k",
-    "date": "15 sept",
+    "date": "15 Sept 2026",
     "fee": "₹750 per team",
     "teamSize": "3-11 members",
     "format": "Team",
@@ -2791,9 +2791,9 @@ const RAW_EVENTS_DATA: EventDetail[] = [
     ],
     "faqs": [],
     "prizePool": "22k",
-    "date": "15 sept",
+    "date": "15 Sept 2026",
     "fee": "₹750 per team",
-    "teamSize": "7-15 members",
+    "teamSize": "7-12 members",
     "format": "Team",
     "image": "/images/events/theme-dance.webp",
     "registrationLink": "https://forms.gle/WXcmyEkzchRZLxms5",
@@ -2838,9 +2838,9 @@ const RAW_EVENTS_DATA: EventDetail[] = [
     ],
     "faqs": [],
     "prizePool": "22k",
-    "date": "15 sept",
+    "date": "15 Sept 2026",
     "fee": "₹750",
-    "teamSize": "7-15 members",
+    "teamSize": "6-15 members",
     "format": "Team",
     "image": "/images/events/non-theme-dance.webp",
     "registrationLink": "https://forms.gle/fqt9MKF6mRjpHrbc8",
@@ -2889,7 +2889,7 @@ const RAW_EVENTS_DATA: EventDetail[] = [
     ],
     "faqs": [],
     "prizePool": "15k",
-    "date": "16 sept",
+    "date": "16 Sept 2026",
     "fee": "₹300",
     "teamSize": "Solo",
     "format": "Solo",
@@ -2935,7 +2935,7 @@ const RAW_EVENTS_DATA: EventDetail[] = [
     ],
     "faqs": [],
     "prizePool": "22k",
-    "date": "16 sept",
+    "date": "16 Sept 2026",
     "fee": "₹750",
     "teamSize": "Maximum 20 members",
     "format": "Team",
