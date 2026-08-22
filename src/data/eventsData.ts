@@ -1070,7 +1070,7 @@ const RAW_EVENTS_DATA: EventDetail[] = [
     "slug": "evmotion-26",
     "title": "EVMOTION 26",
     "tagline": "A three-stage EV challenge combining ADAS simulation, complete vehicle design, and hands-on prototype development.",
-    "category": "General Fest Events",
+    "category": "Engineering",
     "department": "Electrical & Electronics Engineering (EEE)",
     "overview": "EVMOTION 26 is an interdisciplinary technical competition that challenges participants to take an electric vehicle concept from problem identification to simulation, complete system design and physical implementation. All teams receive a common set of fixed technical constraints based on the hardware platform available to the organizers, while each team is assigned a different real-world EV application such as indoor mobility, industrial utility, campus transportation or assistive mobility. The event consists of three progressive rounds: ADAS SIMULATION, where teams develop an application-specific ADAS feature using offline simulation; EV DESIGN & PITCH, where teams design and defend the complete EV concept; and EV BUILD, where selected finalist teams implement their design using the organizer-provided hardware. The event aims to develop EV engineering, electrical and electronic systems thinking, control and software skills, mechanical design, problem-solving, innovation and practical implementation.",
     "stages": [
