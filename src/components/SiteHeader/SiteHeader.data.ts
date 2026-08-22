@@ -10,7 +10,6 @@ export const MEGA_LINKS = [
   { num: "02", label: "Events", href: "/events" },
   { num: "03", label: "About", href: "/about" },
   { num: "04", label: "Gallery", href: "/gallery" },
-  { num: "05", label: "Register", href: "/events" },
 ];
 
 export const ASSETS = {

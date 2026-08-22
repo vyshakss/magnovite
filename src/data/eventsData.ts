@@ -1390,7 +1390,7 @@ const RAW_EVENTS_DATA: EventDetail[] = [
       }
     ],
     "rules": [
-      "Teams of 4–5 members. Must carry college IDs.",
+      "Teams of 4 members. Must carry college IDs.",
       "Timing: Arrive 15 minutes prior to start time.",
       "Fair Play: No electronics (phones/smartwatches), no sharing clues, no physical locking, and no force-opening props.",
       "Disqualification: Cheating, prop damage, or misconduct results in an immediate ban."

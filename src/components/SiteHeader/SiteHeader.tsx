@@ -47,9 +47,9 @@ export function SiteHeader({ isFixed = false }: SiteHeaderProps) {
             : "bg-[#06080e]/60 backdrop-blur-lg border-b border-white/5 opacity-100"
         }`}
       >
-        <div className="mx-auto flex max-w-7xl items-center justify-between px-5 py-3.5 sm:px-8">
+        <div className="mx-auto grid max-w-7xl grid-cols-[1fr_auto_1fr] items-center px-5 py-3.5 sm:px-8">
           {/* Brand Logo (Butterfly) */}
-          <Link to="/" className="flex items-center gap-3 group" aria-label="Magnovite 2026 home">
+          <Link to="/" className="col-start-1 flex items-center gap-3 group justify-self-start" aria-label="Magnovite 2026 home">
             <img
               src={ASSETS.butterfly}
               alt="Magnovite butterfly"
@@ -58,7 +58,7 @@ export function SiteHeader({ isFixed = false }: SiteHeaderProps) {
           </Link>
 
           {/* Desktop Direct Links */}
-          <nav className="hidden items-center gap-8 md:flex">
+          <nav className="col-start-2 hidden items-center gap-8 md:flex">
             {NAV.map((n) => {
               const isActive = currentPath === n.href;
               return (
@@ -78,7 +78,7 @@ export function SiteHeader({ isFixed = false }: SiteHeaderProps) {
           </nav>
 
           {/* Right Group: Menu Toggle + CHRIST University Logo */}
-          <div className="flex items-center gap-4">
+          <div className="col-start-3 flex items-center gap-4 justify-self-end">
             <button
               onClick={() => setOpen((v) => !v)}
               aria-label={open ? "Close navigation menu" : "Open navigation menu"}
