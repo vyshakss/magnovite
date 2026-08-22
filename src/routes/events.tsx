@@ -129,21 +129,11 @@ export function EventsPage() {
     }
   }, [searchParams.event]);
 
-  const handleCategoryChange = (val: string) => {
-    setSelectedCategory(val);
-    setSelectedDepartment("All"); // Reset department when category changes
-    navigate({ search: (prev) => ({ ...prev, category: val === "All" ? undefined : val, department: undefined }) });
-  };
-
   const handleDepartmentChange = (val: string) => {
     setSelectedDepartment(val);
     setSelectedCategory("All"); // Reset category when department changes
     navigate({ search: (prev) => ({ ...prev, department: val === "All" ? undefined : val, category: undefined }) });
   };
-
-  const categories = useMemo(() => {
-    return ["All", ...Array.from(new Set(EVENTS_DATA.map((e) => e.category)))];
-  }, []);
 
   const departments = useMemo(() => {
     return ["All", ...Array.from(new Set(EVENTS_DATA.map((e) => e.department)))];
@@ -232,13 +222,13 @@ export function EventsPage() {
             </div>
 
             {/* 2-Column Main Layout */}
-            <div className="grid gap-10 lg:grid-cols-[1fr_360px] lg:items-start">
+            <div className="grid gap-10 lg:grid-cols-[minmax(0,1fr)_360px] lg:items-start">
               {/* LEFT COLUMN: Overview, Stages, Rules, FAQs */}
-              <div className="space-y-8">
+              <div className="min-w-0 space-y-8">
                 {/* Overview Card */}
                 <div className="glass-panel p-7 sm:p-9">
                   <h2 className="font-display text-xl font-semibold text-white">Event Overview</h2>
-                  <p className="mt-4 text-base leading-relaxed text-white/80 whitespace-pre-wrap">
+                  <p className="mt-4 text-base leading-relaxed text-white/80 whitespace-pre-wrap break-words">
                     {currentEvent.overview}
                   </p>
                 </div>
@@ -258,7 +248,7 @@ export function EventsPage() {
                           <strong className="block text-base font-semibold text-indigo-300">
                             {st.title}
                           </strong>
-                          <p className="mt-1.5 text-sm leading-relaxed text-white/70 whitespace-pre-wrap">{st.desc}</p>
+                          <p className="mt-1.5 text-sm leading-relaxed text-white/70 whitespace-pre-wrap break-words">{st.desc}</p>
                         </div>
                       ))}
                     </div>
@@ -278,7 +268,7 @@ export function EventsPage() {
                           className="flex items-start gap-3 text-sm leading-relaxed text-white/80"
                         >
                           <CheckCircle2 className="mt-0.5 size-4 shrink-0 text-indigo-400" />
-                          <span>{rule}</span>
+                          <span className="min-w-0 break-words">{rule}</span>
                         </li>
                       ))}
                     </ul>
@@ -300,7 +290,7 @@ export function EventsPage() {
                           <strong className="block text-sm font-semibold text-white">
                             Q: {faq.q}
                           </strong>
-                          <p className="mt-2 text-sm leading-relaxed text-indigo-200/75">
+                          <p className="mt-2 text-sm leading-relaxed text-indigo-200/75 break-words">
                             A: {faq.a}
                           </p>
                         </div>
@@ -311,7 +301,7 @@ export function EventsPage() {
               </div>
 
               {/* RIGHT COLUMN: Sticky Sidebar Metrics & Action */}
-              <div className="sticky top-24 space-y-6">
+              <div className="min-w-0 space-y-6 lg:sticky lg:top-24">
                 {/* Total Prize Pool Card */}
                 <div className="rounded-2xl border border-indigo-500/35 bg-gradient-to-br from-indigo-600/20 via-violet-600/10 to-transparent p-6 shadow-xl shadow-indigo-500/10 backdrop-blur-xl">
                   <span className="text-xs font-bold tracking-[0.18em] text-indigo-300 uppercase">
@@ -370,15 +360,16 @@ export function EventsPage() {
                               href={`tel:${coord.phone.replace(/\\s+/g, '')}`}
                               className="flex items-center gap-2 text-xs text-indigo-300 transition-colors hover:text-indigo-200"
                             >
-                              <Phone className="size-3.5" /> {coord.phone}
+                              <Phone className="size-3.5 shrink-0" /> {coord.phone}
                             </a>
                           )}
                           {coord.email && (
                             <a
                               href={`mailto:${coord.email}`}
-                              className="flex items-center gap-2 text-xs text-white/70 transition-colors hover:text-white"
+                              className="flex items-start gap-2 text-xs text-white/70 transition-colors hover:text-white"
                             >
-                              <Mail className="size-3.5" /> {coord.email}
+                              <Mail className="mt-0.5 size-3.5 shrink-0" />
+                              <span className="min-w-0 break-all">{coord.email}</span>
                             </a>
                           )}
                         </div>
@@ -414,7 +405,7 @@ export function EventsPage() {
               </h1>
               <p className="mt-4 text-base leading-relaxed text-white/70 sm:text-lg">
                 Discover national battlegrounds spanning Coding, AI, Robotics, Strategic Management,
-                Digital Design, and Stage Arts at CHRIST University Kengeri Campus.
+                Digital Design, and Stage Arts at CHRIST (Deemed to be University) Kengeri Campus.
               </p>
 
               {/* Stats Bar */}
@@ -437,7 +428,7 @@ export function EventsPage() {
 
             {/* Filter Controls Bar */}
             <div className="glass-panel relative z-20 mx-auto mt-12 max-w-5xl p-4 sm:p-5">
-              <div className="grid gap-4 sm:grid-cols-[1fr_auto_auto]">
+              <div className="grid gap-4 sm:grid-cols-[1fr_auto]">
                 {/* Search Box */}
                 <div className="relative flex items-center">
                   <Search className="absolute left-3.5 size-4 text-white/40" />
@@ -449,14 +440,6 @@ export function EventsPage() {
                     className="w-full rounded-xl border border-white/10 bg-black/40 py-2.5 pr-4 pl-10 text-sm text-white placeholder-white/40 focus:border-indigo-500 focus:outline-none"
                   />
                 </div>
-
-                {/* Category Dropdown */}
-                <CustomSelect
-                  value={selectedCategory}
-                  onChange={handleCategoryChange}
-                  options={categories}
-                  placeholder="All Categories"
-                />
 
                 {/* Department Dropdown */}
                 <CustomSelect
@@ -541,7 +524,7 @@ export function EventsPage() {
 
       {/* Global Footer */}
       <footer className="relative z-10 border-t border-white/8 px-6 py-12 text-center text-xs tracking-[0.2em] text-white/40 uppercase">
-        MAGNOVITE 2026 · CHRIST UNIVERSITY KENGERI CAMPUS
+        MAGNOVITE 2026 · CHRIST (Deemed to be University) Kengeri Campus
       </footer>
     </div>
   );

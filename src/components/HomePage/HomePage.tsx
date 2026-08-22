@@ -52,7 +52,7 @@ export function HomePage() {
               className="text-[0.5rem] sm:text-[0.6rem] tracking-[0.3em] sm:tracking-[0.5em] text-white/50 uppercase font-medium text-center"
               style={{ textShadow: '0 2px 12px rgba(0,0,0,0.9)' }}
             >
-              Christ University · Kengeri Campus
+              CHRIST (Deemed to be University) · Kengeri Campus
             </p>
 
             <img
@@ -211,7 +211,7 @@ export function HomePage() {
 
           <div className="mt-8 border-t border-white/8 pt-6">
             <p className="max-w-md text-xs text-muted-foreground">
-              Technical, Cultural &amp; Management flagship events hosted across <span className="whitespace-nowrap">CHRIST University Kengeri Campus</span>.
+              Technical, Cultural &amp; Management flagship events hosted across <span className="whitespace-nowrap">CHRIST (Deemed to be University) Kengeri Campus</span>.
             </p>
           </div>
         </div>
@@ -275,7 +275,7 @@ export function HomePage() {
           className="mt-5 text-sm tracking-[0.28em] text-white/90 uppercase font-medium"
           style={{ textShadow: '0 2px 10px rgba(0,0,0,0.8)' }}
         >
-          CHRIST University · Kengeri Campus
+          CHRIST (Deemed to be University) · Kengeri Campus
         </p>
       </section>
 
@@ -299,7 +299,7 @@ export function HomePage() {
                 />
               </div>
               <p>
-                MAGNOVITE, the 16th edition of CHRIST University's
+                MAGNOVITE, the 16th edition of CHRIST (Deemed to be University)'s
                 flagship fest, fosters creativity, collaboration,
                 healthy competition, and positive connections among
                 participants.
@@ -312,7 +312,7 @@ export function HomePage() {
                 <div className="footer-logo-slot">
                   <img
                     src="/logos/christwhite.png"
-                    alt="CHRIST University"
+                    alt="CHRIST (Deemed to be University)"
                     className="footer-logo footer-logo--christ"
                     loading="lazy"
                     decoding="async"
@@ -320,7 +320,7 @@ export function HomePage() {
                   />
                 </div>
                 <p>
-                  Christ University, Kengeri Campus offers a blend of
+                  CHRIST (Deemed to be University), Kengeri Campus offers a blend of
                   traditional and world-class facilities, including
                   department-specific buildings, libraries, research
                   facilities, and residences, amidst the city's greenery.

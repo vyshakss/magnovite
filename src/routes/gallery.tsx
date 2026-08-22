@@ -336,7 +336,7 @@ export function GalleryPage() {
                         {item.title}
                       </h3>
                       <p className="mt-1 text-xs text-indigo-300/80">
-                        CHRIST University Kengeri Campus
+                        CHRIST (Deemed to be University) Kengeri Campus
                       </p>
                     </div>
                   </div>
@@ -402,7 +402,7 @@ export function GalleryPage() {
 
       {/* Global Footer */}
       <footer className="relative z-10 border-t border-white/8 px-6 py-12 text-center text-xs tracking-[0.2em] text-white/40 uppercase">
-        MAGNOVITE 2026 · CHRIST UNIVERSITY KENGERI CAMPUS
+        MAGNOVITE 2026 · CHRIST (Deemed to be University) Kengeri Campus
       </footer>
     </div>
   );

@@ -380,9 +380,9 @@ const RAW_EVENTS_DATA: EventDetail[] = [
       "Disqualification: Any form of cheating, plagiarism, misconduct, impersonation, unauthorized assistance, or violation of event rules may lead to immediate disqualification."
     ],
     "faqs": [],
-    "prizePool": "22K",
+    "prizePool": "10K",
     "date": "15-16 Sept 2026",
-    "fee": "₹600 per team",
+    "fee": "₹750 per person",
     "teamSize": "Individual",
     "format": "Solo",
     "image": "/images/events/bestmanager.avif",
@@ -589,7 +589,7 @@ const RAW_EVENTS_DATA: EventDetail[] = [
     "slug": "casecraft-pitch-and-pivot",
     "title": "CaseCraft: Pitch & Pivot",
     "tagline": "An immersive industry case challenge where teams analyse, strategise, adapt to the unexpected, and convince stakeholders that their solution can survive.",
-    "category": "General Fest Events",
+    "category": "Management",
     "department": "IIIC",
     "overview": "This event is designed to enable student teams to apply strategic and technical reasoning to a live, real-world industry case, thereby bridging academic theory with the pace and complexity of actual critical problem-solving.\n\nParticipating teams are presented with an unseen industry case on the day of the event and are required to analyse it and formulate a viable solution, submitted as a strategic pitch deck of up to three slides. Every team then draws a random twist, an unforeseen disruption to their case, and must revise their solution's future prospects accordingly, presenting and defending it as a hand-made poster, created using art supplies provided by the organising committee, before a panel acting as skeptical investors. Results are announced at a valedictory ceremony the following day.",
     "stages": [
@@ -645,8 +645,8 @@ const RAW_EVENTS_DATA: EventDetail[] = [
     "slug": "chess-grandmaster",
     "title": "Chess Grandmaster",
     "tagline": "“A competitive chess showdown where participants put their strategic thinking, tactical skills, and decision-making to the test in a battle of intellect and precision.”",
-    "category": "General Fest Events",
-    "department": "SPORTS TOURNAMENT",
+    "category": "Arts & Humanities",
+    "department": "Science & Humanities",
     "overview": "A competitive chess showdown where participants put their strategic thinking, tactical skills, and decision-making to the test in a battle of intellect and precision. Players will compete across timed rounds demonstrating acute concentration, board vision, and mastery under pressure.",
     "stages": [],
     "rules": [
@@ -1070,8 +1070,8 @@ const RAW_EVENTS_DATA: EventDetail[] = [
     "slug": "evmotion-26",
     "title": "EVMOTION 26",
     "tagline": "A three-stage EV challenge combining ADAS simulation, complete vehicle design, and hands-on prototype development.",
-    "category": "General Fest Events",
-    "department": "FEST EVENT",
+    "category": "Engineering",
+    "department": "Electrical & Electronics Engineering (EEE)",
     "overview": "EVMOTION 26 is an interdisciplinary technical competition that challenges participants to take an electric vehicle concept from problem identification to simulation, complete system design and physical implementation. All teams receive a common set of fixed technical constraints based on the hardware platform available to the organizers, while each team is assigned a different real-world EV application such as indoor mobility, industrial utility, campus transportation or assistive mobility. The event consists of three progressive rounds: ADAS SIMULATION, where teams develop an application-specific ADAS feature using offline simulation; EV DESIGN & PITCH, where teams design and defend the complete EV concept; and EV BUILD, where selected finalist teams implement their design using the organizer-provided hardware. The event aims to develop EV engineering, electrical and electronic systems thinking, control and software skills, mechanical design, problem-solving, innovation and practical implementation.",
     "stages": [
       {
@@ -1135,7 +1135,7 @@ const RAW_EVENTS_DATA: EventDetail[] = [
     "title": "Final Override",
     "tagline": "A five-stage technical escape mission where teams recover hidden key fragments through media analysis, decoding, AI prompting, and CTF challenges before combining them to unlock the final system.",
     "category": "Coding & Tech",
-    "department": "Artificial Intelligence & Data Science (AIDS)",
+    "department": "AI and Data Science Engineering (ADSE)",
     "overview": "Final Override is a five-stage technical escape mission where teams must recover hidden key fragments through media analysis, decoding, AI prompting, and logical reasoning, before combining them to unlock a final system. It is designed for participants from technical backgrounds who enjoy structured problem-solving under time pressure./Teams progress sequentially through five connected stages, each testing a different technical skill area. As they move forward, they must extract clues from audio and video files, decode encrypted text, craft precise prompts for a locked AI system, solve logic-based patterns, and finally merge all recovered fragments to complete a last verification task that unlocks the system./The event tests observation, decoding logic, prompt engineering, pattern recognition, and integrative reasoning, while also introducing a layer of deliberately misleading clues that challenge participants to think critically rather than rely blindly on tools. It offers strong learning value in digital analysis and AI interaction, along with high entertainment value through its escape-mission format, and is expected to leave participants with a practical understanding of structured technical problem-solving.",
     "stages": [
       {
@@ -1548,8 +1548,8 @@ const RAW_EVENTS_DATA: EventDetail[] = [
     "slug": "pixel-whisper",
     "title": "Pixel Whisper",
     "tagline": "A team-based AI challenge where participants study a complex target image, recreate it through a communication-free generation relay, and compete to achieve the highest visual similarity to the original.",
-    "category": "Coding & Tech",
-    "department": "Artificial Intelligence & Data Science (AIDS)",
+    "category": "Design",
+    "department": "AI and Data Science Engineering (ADSE)",
     "overview": "Pixel Whisper is a creative, team-based AI image recreation challenge in which participants compete to reproduce a bizarre and visually complex target image using an organizer-provided image-generation platform. The event combines observation, memory, creativity, and teamwork in a structured relay format that prevents direct collaboration during the generation process.\n\nAt the beginning of each match, both competing teams are shown the same target image and are given a short discussion period to analyze its composition, objects, colours, and unusual visual details. Once the relay begins, team members take turns generating their interpretations without communicating with one another. Each participant may either refine the previous image or create a completely new interpretation before passing only the final generated image to the next teammate.\n\nThe event is designed to test visual observation, strategic thinking, adaptability, time management, and creative interpretation under communication constraints. It provides an engaging and entertaining competitive experience while encouraging participants to think critically about visual details and collaborative decision-making in an AI-assisted creative environment.",
     "stages": [
       {
@@ -1758,7 +1758,7 @@ const RAW_EVENTS_DATA: EventDetail[] = [
     "title": "Quiz–Whizz: Business Unplugged",
     "tagline": "“A two-day battle of business knowledge, strategic thinking, quick decisions, and calculated risk-taking.”",
     "category": "Management",
-    "department": "MBA BUSINESS QUIZ",
+    "department": "MBA",
     "overview": "Qizz–Whizz: Business Unplugged is a two-day, team-based business quiz designed to move beyond traditional question-and-answer formats. Instead of testing only memory, the event challenges participants to observe business clues, connect ideas, interpret commercial situations, identify brands and business models, make strategic decisions and take calculated risks. The quiz begins with broad preliminary rounds for all participating teams and progressively moves towards high-pressure championship rounds. Day 1 tests business awareness, observation, connections, commercial reasoning and strategic thinking. The top eight teams qualify for Day 2, where the format becomes more competitive through progressive clues, an interactive business board, an auction-style strategy round, a live boardroom battle and a final wagering challenge. The format is deliberately non-technical and suitable for both UG and PG participants. Questions may draw from brands, companies, entrepreneurship, marketing, strategy, consumer behaviour, business history, Indian business, markets and contemporary business developments without requiring specialist calculations or advanced technical knowledge.",
     "stages": [
       {
@@ -2376,8 +2376,8 @@ const RAW_EVENTS_DATA: EventDetail[] = [
     "slug": "the-last-turn",
     "title": "The Last Turn",
     "tagline": "Navigate a horror-themed maze, face a randomly assigned obstruction, solve puzzles along the way, and find your way to the exit before time runs out.",
-    "category": "Coding & Tech",
-    "department": "Artificial Intelligence & Data Science (AIDS)",
+    "category": "Non-Technical",
+    "department": "AI and Data Science Engineering (ADSE)",
     "overview": "Maze Runner is an immersive, time-based physical maze competition designed to test how participants navigate uncertainty, solve challenges and adapt under pressure. Rather than being a conventional haunted house or escape room, the event combines maze navigation, short puzzles and competitive time-based progression in a controlled, themed environment.\n\nBefore entering the maze, each participant spins the Obstruction Wheel, which assigns a restriction, neutral outcome or limited advantage for their run. Participants then navigate multiple maze sections, make route decisions, reach checkpoints, solve short challenges and manage their assigned condition before completing the final route to the exit.\n\nThe event tests observation, problem-solving, decision-making, adaptability, time management and composure under pressure while providing a high-energy and immersive competitive experience. Its unpredictable mechanics and themed environment ensure that each run is different, encouraging participants to think quickly, adapt their strategy and reach the finish as efficiently as possible.",
     "stages": [
       {
@@ -2463,7 +2463,7 @@ const RAW_EVENTS_DATA: EventDetail[] = [
     "title": "Trace",
     "tagline": "Dig Through Digital Evidence, Trace Every Technical Indicator, Connect the Attack Chain, and Reveal What Really Happened.",
     "category": "Coding & Tech",
-    "department": "Artificial Intelligence & Data Science (AIDS)",
+    "department": "AI and Data Science Engineering (ADSE)",
     "overview": "TRACE (Track → Retrieve → Analyze → Correlate → Examine) challenges you to answer one question: Can you uncover a cyber incident from the digital traces it leaves behind? Built around the tagline “Every Move Leaves a Trace,” TRACE places participants in the role of cyber investigators, turning raw technical data into an evidence-backed story.\n\nTeams investigate three independent cybersecurity cases using system logs, packet captures, file hashes, metadata and network records. With forensic and analysis tools at their disposal, participants extract indicators, identify anomalies, connect evidence and reconstruct how each incident unfolded.  Teams can choose to investigate one, two or all three cases, creating their own strategy.\n\nTRACE offers a hands-on introduction to digital forensics, network analysis, log analysis and incident reconstruction while testing technical reasoning, problem-solving and evidence correlation. The challenge is to move beyond simply finding information - to prove what happened, how it happened and why the evidence supports it.",
     "stages": [
       {
@@ -2612,7 +2612,7 @@ const RAW_EVENTS_DATA: EventDetail[] = [
     "slug": "ai-film-fest",
     "title": "AI Film Fest",
     "tagline": "Where AI Meets Global Creativity",
-    "category": "General Fest Events",
+    "category": "Design",
     "department": "Office of International Affairs (OIA)",
     "overview": "AI Film Fest is a creative and engaging filmmaking competition organized by the Office of International Affairs (OIA), CHRIST (Deemed to be University), Kengeri Campus, as part of MAGNOVITE 2026. The event brings together students from universities and colleges across the world to explore the possibilities of Artificial Intelligence in filmmaking, storytelling, visual communication, and creative expression. The competition is open to Grade 11, Grade 12, and undergraduate (UG) students from institutions outside India. Participants will have an opportunity to showcase their creativity, storytelling abilities, technological skills, and cultural perspectives through AI-powered filmmaking. Participants may compete individually or in teams of up to three members, with all members of a team belonging to the same university or college. Participants will create a short film based on a theme or creative challenge announced by the organizers. Artificial Intelligence may be creatively incorporated into various stages of production, including scriptwriting, image and video generation, voiceovers, music, animation, editing, visual effects, and other permitted aspects of filmmaking. The event aims to encourage global creativity, cultural expression, innovation, responsible use of emerging technologies, and cross-cultural exchange, while providing students from diverse international backgrounds with a platform to connect and share their unique perspectives through visual storytelling.",
     "stages": [
