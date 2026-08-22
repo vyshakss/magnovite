@@ -83,7 +83,7 @@ const RAW_EVENTS_DATA: EventDetail[] = [
     "title": "Apex Strategy",
     "tagline": "Develop and execute winning F1 race strategies using data, pit stops, telemetry, and quick decision-making.",
     "category": "Engineering",
-    "department": "Automotive Engineering",
+    "department": "Automobile Engineering",
     "overview": "Apex Strategy is a technical motorsport engineering competition that challenges participants to step into the role of Formula 1 Race Engineers. The event bridges theoretical strategy with real-time execution using an official Formula 1 Video Game. In Phase 1, teams are provided with a race setup dataset including track length, tire degradation profiles, pit lane loss time, fuel consumption rates, and weather forecasts to formulate an optimal stint and pit stop strategy. In Phase 2, these strategies are put to the test in a controlled in-game race scenario. Real-time telemetry (telemetry screen / UDP dashboard output displaying speed, tire wear, fuel levels, and lap deltas) is monitored by the teams as they make pit calls. The competition tests data analysis, decision-making under pressure, and dynamic adaptability.",
     "stages": [
       {
@@ -231,7 +231,7 @@ const RAW_EVENTS_DATA: EventDetail[] = [
       {
         "name": "Dr. Rithwik Sankar",
         "phone": "8547343870",
-        "email": "rithwik.sankae@christuniversity.in",
+        "email": "rithwik.sankar@christuniversity.in",
         "role": "Faculty POC"
       }
     ]
@@ -532,7 +532,7 @@ const RAW_EVENTS_DATA: EventDetail[] = [
   },
   {
     "slug": "canvas-of-minds",
-    "title": "Canvas of Minds: STME Face Art Challenge",
+    "title": "Canvas of Minds: STEM Face Art Challenge",
     "tagline": "When faces become canvases, each has a story to tell",
     "category": "Arts & Humanities",
     "department": "Science & Humanities",
@@ -590,7 +590,7 @@ const RAW_EVENTS_DATA: EventDetail[] = [
     "title": "CaseCraft: Pitch & Pivot",
     "tagline": "An immersive industry case challenge where teams analyse, strategise, adapt to the unexpected, and convince stakeholders that their solution can survive.",
     "category": "Management",
-    "department": "IIIC",
+    "department": "Industry Institute Interaction Cell (IIIC)",
     "overview": "This event is designed to enable student teams to apply strategic and technical reasoning to a live, real-world industry case, thereby bridging academic theory with the pace and complexity of actual critical problem-solving.\n\nParticipating teams are presented with an unseen industry case on the day of the event and are required to analyse it and formulate a viable solution, submitted as a strategic pitch deck of up to three slides. Every team then draws a random twist, an unforeseen disruption to their case, and must revise their solution's future prospects accordingly, presenting and defending it as a hand-made poster, created using art supplies provided by the organising committee, before a panel acting as skeptical investors. Results are announced at a valedictory ceremony the following day.",
     "stages": [
       {
@@ -735,7 +735,7 @@ const RAW_EVENTS_DATA: EventDetail[] = [
       {
         "name": "Dr. Sherin Paul",
         "phone": "9385446508",
-        "email": "",
+        "email": "shein98@gmail.com",
         "role": "Faculty POC"
       }
     ]
@@ -804,7 +804,7 @@ const RAW_EVENTS_DATA: EventDetail[] = [
     "title": "Drag Race Xtreme",
     "tagline": "A high-speed RC drag racing challenge where teams race their custom-built vehicles over a straight track, competing for the fastest finish.",
     "category": "Engineering",
-    "department": "Automotive Engineering",
+    "department": "Automobile Engineering",
     "overview": "RC Drag Race is a high-speed remote-controlled vehicle competition where participants compete to cover a 50-metre straight-line track in the shortest possible time.\n\nThe event gives participants freedom to design, build, modify and optimize their own RC vehicles while applying concepts of acceleration, traction, power transmission, gearing, vehicle dynamics and control.\n\nThe competition follows an Open Build approach, with only essential dimensional, weight, drivetrain, battery and safety restrictions. Participants can experiment with different motors, gearing, tyres, chassis configurations and other engineering solutions.\n\nThe event aims to promote hands-on engineering, innovation, practical problem-solving and competitive spirit among students from different institutions.",
     "stages": [
       {
@@ -1483,7 +1483,7 @@ const RAW_EVENTS_DATA: EventDetail[] = [
     "title": "Mud Run: RC Off-Road Challenge",
     "tagline": "Race your RC vehicle through challenging off road obstacles, where speed, skill, and precision decide the winner.",
     "category": "Engineering",
-    "department": "Automotive Engineering",
+    "department": "Automobile Engineering",
     "overview": "MUD RUN – RC Off-Road Challenge is an adrenaline-fuelled off-road racing experience that puts precision, control, and driving skill to the ultimate test.\n\nParticipants will take on a specially engineered off-road arena featuring mud pits, rock gardens, ramps, uneven terrain, bridges, tight turns, and challenging technical sections, with every obstacle demanding a different approach.\n\nThe objective is simple: conquer the terrain and complete the course in the shortest possible time. But speed alone won't be enough—every turn, climb, jump, and obstacle will test the driver's concentration, control, and ability to master their machine. Penalties for collisions and missed sections will ensure that precision is just as important as pace.\n\nDesigned to bring the excitement of off-road motorsport to the college arena, MUD RUN promises an immersive and highly competitive experience for both\n\nparticipants and spectators. The event aims to ignite an interest in automobiles and motorsport while encouraging teamwork, confidence, strategic thinking, and skilled vehicle handling—turning every lap into a battle between speed, skill, and terrain.",
     "stages": [
       {
@@ -1755,7 +1755,7 @@ const RAW_EVENTS_DATA: EventDetail[] = [
   },
   {
     "slug": "quiz-whizz",
-    "title": "Quiz–Whizz: Business Unplugged",
+    "title": "Qizz–Whizz: Business Unplugged",
     "tagline": "“A two-day battle of business knowledge, strategic thinking, quick decisions, and calculated risk-taking.”",
     "category": "Management",
     "department": "MBA",
