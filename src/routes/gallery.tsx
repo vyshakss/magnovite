@@ -260,7 +260,7 @@ export function GalleryPage() {
         {/* Gallery Hero Section */}
         <div className="mx-auto max-w-4xl px-5 text-center sm:px-8">
           <div className="inline-flex items-center gap-2 rounded-full border border-indigo-500/30 bg-indigo-500/10 px-4 py-1.5 text-xs font-semibold tracking-wider text-indigo-300 uppercase">
-            <Sparkles className="size-3.5" /> 16th Edition Memories
+            <Sparkles className="size-3.5" /> 15th Edition Memories
           </div>
           <h1 className="font-display mt-5 text-4xl font-bold tracking-tight text-white sm:text-6xl">
             Visual Showcase

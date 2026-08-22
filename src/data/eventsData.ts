@@ -217,9 +217,9 @@ const RAW_EVENTS_DATA: EventDetail[] = [
     "registrationLink": "https://docs.google.com/forms/d/e/1FAIpQLSc65v6inFjiO8l4TDoU8rXNRjPNZLLi07flASttEsurC5m6cw/viewform?usp=publish-editor",
     "coordinators": [
       {
-        "name": "Blessing Roshan",
-        "phone": "7810008415",
-        "email": "blessing.roshan@btech.christuniversity.in",
+        "name": "Bhavya Somashekhar",
+        "phone": "9251116547",
+        "email": "bhavya.somashekhar@btech.christuniversity.in",
         "role": "Student POC"
       },
       {
@@ -1323,7 +1323,7 @@ const RAW_EVENTS_DATA: EventDetail[] = [
   },
   {
     "slug": "how-i-met-your-killer",
-    "title": "How I Met Your Killer",
+    "title": "How I Met Your Killer?",
     "tagline": "Everyone knows something. Nobody knows everything",
     "category": "Arts & Humanities",
     "department": "Psychology",
@@ -1754,7 +1754,7 @@ const RAW_EVENTS_DATA: EventDetail[] = [
     ]
   },
   {
-    "slug": "quiz-whizz",
+    "slug": "qizz-whizz",
     "title": "Qizz–Whizz: Business Unplugged",
     "tagline": "“A two-day battle of business knowledge, strategic thinking, quick decisions, and calculated risk-taking.”",
     "category": "Management",
@@ -2085,7 +2085,7 @@ const RAW_EVENTS_DATA: EventDetail[] = [
       {
         "name": "Catherine",
         "phone": "99677 83363",
-        "email": "Catherine.susan@btech.christuniversity.in",
+        "email": "catherine.susan@btech.christuniversity.in",
         "role": "Student POC"
       },
       {
